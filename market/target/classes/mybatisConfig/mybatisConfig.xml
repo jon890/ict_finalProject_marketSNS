@@ -9,7 +9,7 @@
 		<setting name="useColumnLabel" value="true" />
 		<setting name="useGeneratedKeys" value="false" />
 		<setting name="defaultExecutorType" value="SIMPLE" />
-		<setting name="defaultStatementTimeout" value="25000" />
+		<setting name="defaultStatementTimeout" value="25000" /> 
 		<!-- 전통적인 데이터베이스 컬럼명 형태인 A_Column을 camel case 형태의  -->
 		<!-- 자바 프로퍼티 명 형태인 aColumd으로 자동 매핑하도록 함  -->
 		<setting name="mapUnderscoreToCamelCase" value="false" />

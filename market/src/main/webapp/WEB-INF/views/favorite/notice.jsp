@@ -7,7 +7,7 @@
 	    <meta charset="utf-8">
 	    <title>OOO - 공지사항</title>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <link rel="stylesheet" href="/resources/css/favorite/notice.css">
+	    <link rel="stylesheet" href="./resources/css/favorite/notice.css">
 	</head>
 	
 	<body>
@@ -17,9 +17,9 @@
 			<%@ include file="./../common/mainMenu.jsp" %>
 		</header>
 		
-		<section>
+		<section id="container">
 		
-			<article>
+			<article id="noticeTop">
 				<img id="noticeImg" src="./resources/images/favorite/notice.png">
 				<div id="noticeTitle">
 					<h1>Favorite</h1>
@@ -27,7 +27,7 @@
 				</div>
 				
 			</article>
-			
+				
 			<article>
 			
 			</article>

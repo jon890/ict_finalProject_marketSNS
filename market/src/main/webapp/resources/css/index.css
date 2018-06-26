@@ -19,6 +19,8 @@ ul{
 /* *************** 전체 레이아웃 *************** */
 header{
 	float : left;
+	z-index : 20;
+	height : 80px;
 }
 
 section{
@@ -27,12 +29,13 @@ section{
 
 footer{
 	clear : both;
+	height : 200px;
 }
 
 header, footer{
 	margin : 0 auto;
 	width : 1080px;
-	height : 200px;
+	
 }
 
 #container{
@@ -42,27 +45,32 @@ header, footer{
 
 
 
+/* *************** 메인 1 - 영상 나오는 부분 *************** */
+#mainVideoDiv, #mainVideo, #mainVideoFilter{
+	width : 100%;
+	height : 1000px;
+	z-index : 10;
+}
+
 #mainVideoDiv{
 	position : relative;
-	width : 100%;
-	height : 594px;
+
 }
 
 #mainVideo{
 	position : absolute;
-	width : 100%;
-	height : 594px;
 	left : 0px;
 }
 
 #mainVideoFilter{
 	position : absolute;
-	width : 100%;
-	height : 594px;
 	left : 0px;
 	background-color : black;
 	opacity: 0.7;
 }
+/* *************** 메인 1 - 영상 나오는 부분 *************** */
+
+
 
 #main2{
 	position : relative;

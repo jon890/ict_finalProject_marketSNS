@@ -47,7 +47,7 @@
 	            </li>
 	            <li id="li05" class="li">
 	                <a href="#">페이보릿</a>
-	                <div id="div04">
+	                <div id="div04" class="sub">
 	                    <ul class="ul">
 	                        <li><a href="#">공지사항</a></li>
 	                        <li><a href="#">핫플레이스</a></li>

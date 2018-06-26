@@ -2,14 +2,15 @@
 @font-face{font-family:'MaplestoryLight'; src:url('./../fonts/MaplestoryLight.ttf')}
 
 /* *************** 공통 스타일 부분 *************** */
+body{
+	margin : 0;
+}
 
-/* 모든 a태그의 밑줄을 제거하고, 마우스 포인터를 준다 */
 a{
 	text-decoration: none;
 	cursor : pointer;
 }
 
-/* 모든 ul태그의 list-style을 없앤다. */
 ul{
 	list-style : none;
 	padding-left:0px;
@@ -99,11 +100,11 @@ footer{
 /* *************** 메인 1 - 영상 나오는 부분 *************** */
 
 
-
+/* *************** 메인 2 - 축제 정보가 시간마다 바뀌는 페이지 *************** */
 #main2{
 	position : relative;
 	width : 100%;
-	height : 1080px;
+	height : 960px;
 }
 
 #main2Background{
@@ -114,45 +115,23 @@ footer{
 	left : 0px;
 }
 
-#main2Filter{
+#carouselExampleIndicators{
 	position : absolute;
-	background: url("./../images/menu/1.png") no-repeat;
 	width : 700px;
 	height : 400px;
-	left : 200px;
 	bottom : 0px;
-	border : 1px solid red;
+	left : 200px;
 }
 
-#main2FilterBtn{
+#main2Title{
 	position : absolute;
-	right : 20px;
-	top : 20px;
-}
-
-#main2FilterTitle{
-	position : absolute;
-	right : 30px;
 	top : 50px;
-}
-
-#main2FilterTitle p{
+	right : 10px;
 	font-size : 30px;
-	font-weight: bold;
-	border-bottom : 2px solid lightgrey;
-	width : 100%;
-}
-
-
-#main2FilterBtn input[type=button]{
-	background-color : rgba(255, 255, 255, 0);
-	color : white;
 	font-weight : bold;
-	font-size : 15px;
-	cursor : pointer;
-	width : 35px;
-	height : 35px;
+	color : white;
 }
+/* *************** 메인 2 - 축제 정보가 시간마다 바뀌는 페이지 *************** */
 
 #main3{
 	position : relative;

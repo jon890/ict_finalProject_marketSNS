@@ -1,62 +1,70 @@
-nav ul{
-    position:absolute;
+* {box-sizing: border-box}
+
+#img{
+    background-color: white;
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px;
+    font-size: 20px;
+    width: 16.6%;
+    border:1px solid black;/*test*/
 }
 
-nav ul li{
+/* Style tab links */
+.tablink {
+    background-color: white;
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 16.6%;
+    border:1px solid black;/*test*/
+}
+
+.tablink:hover {
+    background-color: lightgray;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;/*block, none*/
+    padding-top: 50px;
+    height: 300px;
+    padding-left:240px;/*첫번째*/
+}
+
+#li01{
+    margin-right:50px;/*두번째*/
+}
+
+#li02{
+    margin-right:50px;
+}
+
+#li03{
+    margin-right:50px;
+}
+
+#Home {
+    /*background-color: pink;*/
+    border-bottom:3px solid dimgray;
+}
+
+.sub ul li{
     display:inline-block;
-    font-size:30px;
+    /*border:1px solid black;/*test*/
+    width:200px;
+    text-align:center;
 }
 
-nav ul li:hover > a{
-    /*color:rgb(255,25,0);/*red*/
-    /*color:rgb(25,255,0);/*green*/
-    color:rgb(0,77,0);/*blue*/
-}/*test*/
-
-nav ul #li01, #li02, #li03, #li04, #li05{
-    border-right:2px solid rgb(255,25,0);
-    padding-left:5px;
-    padding-right:10px;
-}
-
-nav ul #li06{
-    padding-left:5px;
-    padding-right:10px;
-}
-
-div.sub{
-    display:none;
-}
-
-/*nav ul li:hover div{
-    display:block;
-}*/
-
-nav ul #li02 ul{
-    padding-left:50px;
-}
-
-nav ul #li03 ul{
-    padding-left:50px;
-}
-
-nav ul #li04 ul{
-    padding-left:25px;
-}
-
-nav ul #li05 ul{
-    padding-left:15px;
-}
-
-nav ul li ul li{
-    display:block;
+a{
+    text-decoration:none;
     font-size:20px;
-    padding-top:3px;
-    text-align:center;
-}
-
-nav ul li input{
-    height:30px;
-    text-align:center;
-    padding-top:15px;
 }

@@ -11,7 +11,9 @@
 		<session-timeout>10</session-timeout>
 	</session-config>
 	
-	<!-- filter 설정 servlet이 실행되기 전에  -->
+	
+	<!-- 요청을 처리하기 전에 동작한다. -->
+	<!-- UTF-8 인코딩 필터 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -38,10 +40,12 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	
 
 	<!-- Processes application requests -->
 	<servlet>
-		<servlet-name>appServlet</servlet-name>
+		<servlet-name>mainServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -51,8 +55,10 @@
 	</servlet>
 		
 	<servlet-mapping>
-		<servlet-name>appServlet</servlet-name>
+		<servlet-name>mainServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	
 
 </web-app>

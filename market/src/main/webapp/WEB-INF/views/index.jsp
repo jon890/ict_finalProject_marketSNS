@@ -28,7 +28,10 @@
 						<source src="./resources/videos/main.mp4">
 					</video>
 					
-					<div id="mainVideoFilter"></div>
+					<div id="mainVideoFilter">
+						<p>GWANGJU MARKET SNS</p>
+						<img src="./resources/images/clickhere.png">
+					</div>
 				</div>
 			</article>
 
@@ -55,6 +58,7 @@
 					<div class="btnBox">
 						<div class="btnBoxTitle"><h2>공지사항</h2></div>
 						<ul>
+							<!-- DB에서 공지 뿌리기  -->
 							<li><a>공지1...</a></li>
 							<li><a>공지2...</a></li>
 							<li><a>공지3...</a></li>
@@ -66,12 +70,13 @@
 					<div class="btnBox">
 						<div class="btnBoxTitle"><h2>고객센터</h2></div>
 						<ul>
-								<li><a>질문1...</a></li>
-								<li><a>질문2...</a></li>
-								<li><a>질문3...</a></li>
-								<li><a>질문4...</a></li>
-								<li><input type="button" value="더 보기 >"></li>
-							</ul>
+							<!-- DB에서 고객센터 글 뿌리기  -->	
+							<li><a>질문1...</a></li>
+							<li><a>질문2...</a></li>
+							<li><a>질문3...</a></li>
+							<li><a>질문4...</a></li>
+							<li><input type="button" value="더 보기 >"></li>
+						</ul>
 					</div>
 
 					<div class="btnBox">

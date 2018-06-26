@@ -14,6 +14,6 @@ public class marketController {
 	@RequestMapping(value="/")
 	public String main() {
 		logger.info("ÁøÀÔ");
-		return "main";
+		return "index";
 	}
 }

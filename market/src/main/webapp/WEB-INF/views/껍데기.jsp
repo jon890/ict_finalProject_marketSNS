@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>가격비교</title>
+<title>Insert title here</title>
 </head>
 <body>
 

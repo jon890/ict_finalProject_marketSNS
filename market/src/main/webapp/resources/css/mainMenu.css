@@ -1,14 +1,3 @@
-﻿body{
-    width:1080px;
-    margin:0 auto;
-    text-align:center;
-}
-
-a{
-    text-decoration:none;
-    color:black;
-}
-
 nav ul{
     position:absolute;
     padding-left:0px;
@@ -37,13 +26,13 @@ nav ul #li06{
     padding-right:10px;
 }
 
-div{
+div.sub{
     display:none;
 }
 
-/* nav ul li:hover div{
+/*nav ul li:hover div{
     display:block;
-} */
+}*/
 
 nav ul #li02 ul{
     padding-left:50px;

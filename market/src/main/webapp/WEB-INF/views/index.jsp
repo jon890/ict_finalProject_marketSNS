@@ -11,7 +11,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<script>
-			function asdf(){
+			function moveToMain2(){
 				location.href = "#main2";
 			}
 		
@@ -20,15 +20,15 @@
 						  "./../images/menu/3.png"];
 			let imgLoopIndex = 0;
 			
-			function imgLoop(){
-				if( imgLoopIndex < imgSrc.length){
+			/* function imgLoop(){
+				if( imgLoo63pIndex < imgSrc.length){
 					$("main2FilterTitle").css("background-image", "url(" + imgSrc[imgLoopIndex] + ")");
 					imgLoopIndex++;
 				} else {
 					imgLoopIndex = 0;
 				}
 				
-			}
+			} */
 		</script>
 	</head>
 
@@ -50,7 +50,9 @@
 					
 					<div id="mainVideoFilter">
 						<p>GWANGJU MARKET SNS</p>
-						<div id="mainVideoClickHere"><img src="./resources/images/clickhere.png" onclick="move()"></div>
+						<div id="mainVideoClickHere">
+						<img src="./resources/images/clickhere.png" onclick="moveToMain2()">
+						</div>
 					</div>
 				</div>
 			</article>

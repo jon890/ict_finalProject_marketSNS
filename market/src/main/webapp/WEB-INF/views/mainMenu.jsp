@@ -14,10 +14,10 @@
 	<body>
 	    <nav>
 	        <ul>
-	            <li id="li01" class="li"><a href="#"><img src="./resources/images/mainMenu_logo.png" id="mainMenu_logo"></a></li>
-	            <li id="li02" class="li">
+	            <li id="li01"><a href="#"><img src="./resources/images/mainMenu_logo.png" id="mainMenu_logo"></a></li>
+	            <li id="li02" class="mainMenu">
 	                <a href="#">광주의 시장</a>
-	                <div id="div01" class="sub">
+	                <div class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="#">동구</a></li>
 	                        <li><a href="#">서구</a></li>
@@ -27,17 +27,17 @@
 	                    </ul>
 	                </div>
 	            </li>
-	            <li id="li03" class="li">
+	            <li id="li03" class="mainMenu">
 	                <a href="#">시장스타그램</a>
-	                <div id="div02" class="sub">
+	                <div class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="#">사진공유</a></li>
 	                    </ul>
 	                </div>
 	            </li>
-	            <li id="li04" class="li">
+	            <li id="li04" class="mainMenu">
 	                <a href="#">가격비교</a>
-	                <div id="div03" class="sub">
+	                <div class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="#">대형마트</a></li>
 	                        <li><a href="#">전통시장</a></li>
@@ -45,9 +45,9 @@
 	                    </ul>
 	                </div>
 	            </li>
-	            <li id="li05" class="li">
+	            <li id="li05" class="mainMenu">
 	                <a href="#">페이보릿</a>
-	                <div id="div04" class="sub">
+	                <div class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="#">공지사항</a></li>
 	                        <li><a href="#">핫플레이스</a></li>

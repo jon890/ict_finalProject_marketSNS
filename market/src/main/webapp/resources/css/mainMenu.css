@@ -1,70 +1,95 @@
-* {box-sizing: border-box}
-
-#img{
-    background-color: white;
-    color: black;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 7px;
-    font-size: 20px;
-    width: 16.6%;
-    border:1px solid black;/*test*/
+@font-face{
+    font-family:'MaplestoryLight'; 
+    src:url('./../font/MaplestoryLight.ttf');
 }
 
-/* Style tab links */
-.tablink {
-    background-color: white;
-    color: black;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 20px;
-    width: 16.6%;
-    border:1px solid black;/*test*/
+#mainMenuNav{
+	font-family : MaplestoryLight;
+	text-decoration : none;
+    text-align : center;
 }
 
-.tablink:hover {
-    background-color: lightgray;
+.mainMenu a{
+	color : black;
 }
 
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-    color: white;
-    display: none;/*block, none*/
-    padding-top: 50px;
-    height: 300px;
-    padding-left:240px;/*첫번째*/
+.subMenu a{
+	color : white;
 }
 
-#li01{
-    margin-right:50px;/*두번째*/
+#mainMenuNav ul{
+    position:absolute;
+    padding-left:0px;
 }
 
-#li02{
-    margin-right:50px;
-}
-
-#li03{
-    margin-right:50px;
-}
-
-#Home {
-    /*background-color: pink;*/
-    border-bottom:3px solid dimgray;
-}
-
-.sub ul li{
+#mainMenuNav ul li{
     display:inline-block;
-    /*border:1px solid black;/*test*/
-    width:200px;
+    font-size:35px;
+}
+
+#mainMenuNav ul li:hover > a{
+    color:rgb(0,77,0);/*blue*/
+}
+
+#mainMenuNav ul #li01, #li02, #li03, #li04, #li05{
+    padding-left:15px;
+    padding-right:20px;
+}
+
+#mainMenuNav ul #li06{
+    padding-left:15px;
+    padding-right:10px;
+}
+
+#mainMenuNav div{
+    display:none;
+}
+
+#mainMenuNav ul #li02 ul{
+    padding-left:50px;
+}
+
+#mainMenuNav ul #li03 ul{
+    padding-left:50px;
+}
+
+#mainMenuNav ul #li04 ul{
+    padding-left:25px;
+}
+
+#mainMenuNav ul #li05 ul{
+    padding-left:15px;
+}
+
+#mainMenuNav ul li ul li{
+    display:block;
+    font-size:23px;
+    padding-top:3px;
     text-align:center;
 }
 
-a{
-    text-decoration:none;
-    font-size:20px;
+#mainMenuNav ul li input{
+    height:30px;
+    text-align:center;
+    padding-top:15px;
+}
+
+#mainMenuNav div {
+    width: 100%;
+    height: 200px;
+    background-color : rgba(255, 255, 255, 0);
+    position: relative;
+    animation: mymove;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+}
+
+@keyframes mymove {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: 20px;
+    }
 }

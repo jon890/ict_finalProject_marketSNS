@@ -6,7 +6,8 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>OOO에 오신것을 환영합니다.</title>
-		<link rel="stylesheet" href="./resources/css/index.css">	
+		<link rel="stylesheet" href="./resources/css/common/common.css">
+		<link rel="stylesheet" href="./resources/css/index.css">
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="./resources/js/index.js"></script>

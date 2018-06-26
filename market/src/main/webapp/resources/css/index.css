@@ -1,58 +1,10 @@
 @charset "UTF-8";
 @font-face{font-family:'MaplestoryLight'; src:url('./../fonts/MaplestoryLight.ttf')}
 
-/* *************** 공통 스타일 부분 *************** */
-body{
-	margin : 0;
-}
-
-a{
-	text-decoration: none;
-	cursor : pointer;
-}
-
-ul{
-	list-style : none;
-	padding-left:0px;
-}
-/* *************** 공통 스타일 부분 *************** */
-
-
-/* *************** 전체 레이아웃 *************** */
-header{
-	float : left;
-	height : 80px;
-	width : 100%;
-	position : sticky;
-	top: 0px;
-	z-index : 20;
-	background-color : white;
-}
-
-nav{
-	width : 1080px;
-	height : 80px;
-	margin : 0 auto;
-}
-
-section{
-	float : left;
-}
-
-footer{
-	clear : both;
-	height : 200px;
-	margin : 0 auto;
-	width : 1080px;
-}
-
 #container{
 	width : 100%;
 	z-index : 20;
 }
-/* *************** 전체 레이아웃 *************** */
-
-
 
 /* *************** 메인 1 - 영상 나오는 부분 *************** */
 #mainVideoDiv, #mainVideo, #mainVideoFilter{

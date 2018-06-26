@@ -11,14 +11,10 @@ public class mainController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(mainController.class);
 
-	@RequestMapping(value="/")
-	public String welcome() {
-		logger.info("INDEX PAGE");
-		return "index";
-	}
-	
-	@RequestMapping(value="/login.do")
+
+	@RequestMapping(value="/login.main")
 	public String login() {
+		logger.info("LOGIN 페이지 이동");
 		return "/common/login";
 	}
 	

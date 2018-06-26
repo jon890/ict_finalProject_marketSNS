@@ -26,7 +26,7 @@
 	                    <li id="li01"><a href="#">동구</a></li>
 	                    <li id="li02"><a href="#">사진공유</a></li>
 	                    <li id="li03"><a href="#">대형마트</a></li>
-	                    <li><a href="#">공지사항</a></li>
+	                    <li><a href="./notice.favorite">공지사항</a></li>
 	                </ul>
 	            </div>
 	            <div id="div02" class="sub">

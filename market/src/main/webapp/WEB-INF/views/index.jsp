@@ -20,8 +20,8 @@
 			<%@ include file="mainMenu.jsp" %>
 		</header>
 
-
-		<section>
+		
+		<section id="container">
 			<article>
 				<div id="mainVideoDiv">
 					<video loop muted autoplay id="mainVideo">

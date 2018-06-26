@@ -1,0 +1,48 @@
+#div01{
+    width:500px;
+    height:300px;
+    margin:0 auto;
+    border: 1px solid black;
+}
+
+#p{
+    font-size:30px;
+    color:black;
+    margin:0 auto;
+    text-align:center;
+}
+
+#div02{
+    width:400px;
+    height:200px;
+    /*border:1px solid red;/*test*/
+    margin-left:50px;
+}
+
+#div03 {
+    float: left;
+    /*border:1px solid orange;/*test*/
+    margin-left:50px;
+}
+
+.input{
+    width:200px;
+    height:30px;
+    border:1px solid gray;
+}
+
+#clear{
+    clear:both;
+}
+
+#submit{
+    float:left;
+    width:73px;
+    height:70px;
+    background:gray;
+    color:white;
+    font-weight:bold;
+    border-radius:3px;
+    border:1px solid rgb(0,77,0);
+    margin-left:5px;
+}

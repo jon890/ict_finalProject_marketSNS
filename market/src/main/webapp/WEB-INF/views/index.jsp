@@ -10,6 +10,26 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
+		<script>
+			function asdf(){
+				location.href = "#main2";
+			}
+		
+			let imgSrc = ["./../images/menu/1.png",
+						  "./../images/menu/2.png",
+						  "./../images/menu/3.png"];
+			let imgLoopIndex = 0;
+			
+			function imgLoop(){
+				if( imgLoopIndex < imgSrc.length){
+					$("main2FilterTitle").css("background-image", "url(" + imgSrc[imgLoopIndex] + ")");
+					imgLoopIndex++;
+				} else {
+					imgLoopIndex = 0;
+				}
+				
+			}
+		</script>
 	</head>
 
 
@@ -30,7 +50,7 @@
 					
 					<div id="mainVideoFilter">
 						<p>GWANGJU MARKET SNS</p>
-						<img src="./resources/images/clickhere.png">
+						<div id="mainVideoClickHere"><img src="./resources/images/clickhere.png" onclick="move()"></div>
 					</div>
 				</div>
 			</article>
@@ -94,29 +114,6 @@
 			<!-- mainFooter.jsp 파일 include -->
 			<%@ include file="mainFooter.jsp" %>
 		</footer>
-
-
-
-
-		<script>
-				let imgSrc = ["./resources/images/menu/1.png", 
-							  "./resources/images/menu/2.png",
-							  "./resources/images/menu/3.png"]
-				let imgIndex = 0;
-
-				function imgLoop(){
-					if( imgIndex < imgSrc){
-						$("#main2Filter").css("background-image", "url(imgSrc[imgIndex])");
-					} else {
-						imgIndex = 0;
-					}
-					imgIndex++;
-					setTimeout(imgLoop, 5000);
-				};
-
-				setTimeout(imgLoop, 5000);
-	
-		</script>
 
     </body>
 </html>

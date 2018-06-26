@@ -80,10 +80,16 @@ footer{
 	top : 250px;
 }
 
-#mainVideoFilter img{
+#mainVideoClickHere{
 	position : absolute;
+	width : 100%;
+	bottom : 0px;	
+}
+
+#mainVideoClickHere img{
+	display : block;
 	margin : 0 auto;
-	bottom : 0px;
+	cursor : pointer;
 }
 /* *************** 메인 1 - 영상 나오는 부분 *************** */
 

@@ -24,45 +24,51 @@
 		<section>
 		
 		    <div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <img src="./resources/images/favorite/favorite_main.png">
 	            <div class="transbox">
 	                <p id="marketStagramTitle01">마켓스타그램</p>
 	                <p id="marketStagramTitle02">광주 전통시장의 사진을 공유해보세요</p>
 	            </div>
         	</div>
 		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
-		    
-		    <article>
-		    </article>
+		    <div id="articles">
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/aa.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/bb.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/cc.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/dd.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/ee.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/ff.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/gg.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/hh.jpg">
+			    </article>
+			    
+			    <article class="article">
+			    	<img src="./resources/images/marketStaGram/ii.jpg">
+			    </article>
+		    </div>
 		    
 		</section>
-	    
-	    <footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-			<%@ include file="./../common/mainFooter.jsp" %>
-		</footer>
 	</body>
 </html>

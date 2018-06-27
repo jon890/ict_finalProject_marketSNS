@@ -18,6 +18,7 @@
 	
 	<typeAliases>
 		<typeAlias alias ="member" type="com.ict.market.main.dto.MarketMemberDto"/>
+		<typeAlias alias ="market" type="com.ict.market.compare.dto.CompareDTO"/>
 	</typeAliases>
 	
 	<!-- <mappers>

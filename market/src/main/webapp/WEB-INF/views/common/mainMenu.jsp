@@ -40,11 +40,11 @@
 	                </div>
 	            </li>
 	            <li id="li04" class="mainMenu">
-	                <a href="#">가격비교</a>
+	                <a href="./market.compare">가격비교</a>
 	                <div id="div03" class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="#">대형마트</a></li>
-	                        <li><a href="#">전통시장</a></li>
+	                        <li><a href="./market.compare">전통시장</a></li>
 	                        <li><a href="#">가격비교</a></li>
 	                    </ul>
 	                </div>

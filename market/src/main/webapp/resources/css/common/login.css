@@ -1,41 +1,41 @@
-#div01{
+#loginContainer{
     width:500px;
     height:300px;
     margin:0 auto;
     border: 1px solid black;
 }
 
-#p{
+#loginTitle{
     font-size:30px;
     color:black;
     margin:0 auto;
     text-align:center;
 }
 
-#div02{
+#loginDiv01{
     width:400px;
     height:200px;
     /*border:1px solid red;/*test*/
     margin-left:50px;
 }
 
-#div03 {
+#loginDiv02 {
     float: left;
     /*border:1px solid orange;/*test*/
     margin-left:50px;
 }
 
-.input{
+input[type=text], input[type=password]{
     width:200px;
     height:30px;
     border:1px solid gray;
 }
 
-#clear{
+.clear{
     clear:both;
 }
 
-#submit{
+input[type=submit]{
     float:left;
     width:73px;
     height:70px;

@@ -51,6 +51,12 @@ public class MainController {
 		session.invalidate();
 		return "index";
 	}
+	
+	@RequestMapping(value="/register.main" , method = RequestMethod.GET)
+	public String register() {
+		logger.info("REGISTER - 페이지 이동 ");
+		return "/common/register";
+	}
 	/* ********** 로그인 관련 기능 ********** */
 	
 	

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ict.market.main.dto.MarketMemberDto;
 import com.ict.market.main.service.MainService;
 
 @Controller
@@ -53,9 +54,18 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/register.main" , method = RequestMethod.GET)
-	public String register() {
+	public String moveRegister() {
 		logger.info("REGISTER - 페이지 이동 ");
 		return "/common/register";
+	}
+	
+	
+	@RequestMapping(value="/register.main" , method = RequestMethod.POST)
+	public String register(MarketMemberDto member) {
+		logger.info("REGISTER - Submit 버튼 확인 ");
+		
+		mainService.register(member);
+		return "index";
 	}
 	/* ********** 로그인 관련 기능 ********** */
 	

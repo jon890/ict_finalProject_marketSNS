@@ -5,10 +5,17 @@
 
 <mapper namespace="com.ict.market.main.dao.MainDao">
 
+	<!-- 로그인 기능 -->
 	<select id="login" parameterType="String" resultType="String">
 		SELECT PASSWORD
 		FROM MARKETMEMBER
 		WHERE ID = #{id}
 	</select>
+	
+	<!-- 회원 가입 기능 -->
+	<insert id="register" parameterType="member">
+		INSERT INTO MARKETMEMBER
+		VALUES(#{id}, #{password}, #{name}, #{age}, #{gender}, #{adminchk})
+	</insert>
 
 </mapper>

@@ -17,7 +17,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias ="login" type="com.ict.market.main.dto.MarketMemberDto"/>
+		<typeAlias alias ="member" type="com.ict.market.main.dto.MarketMemberDto"/>
 	</typeAliases>
 	
 	<!-- <mappers>

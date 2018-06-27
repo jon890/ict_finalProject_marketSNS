@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ict.market.main.dao.MainDao;
+import com.ict.market.main.dto.MarketMemberDto;
 
 @Service
 public class MainServiceImpl implements MainService {
@@ -18,6 +19,8 @@ public class MainServiceImpl implements MainService {
 	@Autowired
 	private MainDao mainDao;
 
+	
+	/* ********** 로그인 관련 기능 ********** */
 	@Override
 	public String login(String id, String password, HttpSession session, HttpServletRequest req) {
 		String dbPassword = mainDao.login(id);
@@ -41,5 +44,15 @@ public class MainServiceImpl implements MainService {
 		
 		return view;
 	}
+
+	
+	@Override
+	public void register(MarketMemberDto member) {
+		logger.info("REGISTER - 회원정보 출력" + member);
+		mainDao.register(member);
+	}
+	/* ********** 로그인 관련 기능 ********** */
+	
+	
 	
 }

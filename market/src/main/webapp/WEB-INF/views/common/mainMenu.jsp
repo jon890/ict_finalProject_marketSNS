@@ -32,7 +32,7 @@
 	                </div>
 	            </li>
 	            <li id="li03" class="mainMenu">
-	                <a href="#">시장스타그램</a>
+	                <a href="">시장스타그램</a>
 	                <div id="div02" class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="#">사진공유</a></li>

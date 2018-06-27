@@ -1,3 +1,8 @@
+@font-face{
+    font-family:'MaplestoryLight'; 
+    src:url('./../font/MaplestoryLight.ttf');
+}
+
 #mainFooter_logo {
     padding-top:50px;
     padding-left:50px;

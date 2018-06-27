@@ -50,7 +50,7 @@ public class MainController {
 	public String logout(HttpSession session) {
 		logger.info("LOGOUT - ·Î±×¾Æ¿ô ");
 		session.invalidate();
-		return "index";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/register.main" , method = RequestMethod.GET)

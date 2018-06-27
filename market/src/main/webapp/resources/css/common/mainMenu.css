@@ -5,15 +5,16 @@
 
 #mainMenuNav{
 	font-family : MaplestoryLight;
-	text-decoration : none;
     text-align : center;
+    height : 60px;
+    margin-top : 20px;
 }
 
-.mainMenu a{
+#mainMenuNav > ul > li > a{
 	color : black;
 }
 
-.subMenu a{
+.mainMenu > .subMenu a{
 	color : white;
 }
 
@@ -22,27 +23,27 @@
     padding-left:0px;
 }
 
-#mainMenuNav ul li{
-    display:inline-block;
-    font-size:35px;
-}
-
 #mainMenuNav ul li:hover > a{
     color:rgb(0,77,0);/*blue*/
 }
 
 #mainMenuNav ul #li01, #li02, #li03, #li04, #li05{
+	display:inline-block;
+    font-size:30px;
     padding-left:15px;
     padding-right:20px;
 }
 
 #mainMenuNav ul #li06{
+	display:inline-block;
+	font-size : 16px;
     padding-left:15px;
     padding-right:10px;
 }
 
-#mainMenuNav div{
-    display:none;
+#mainMenuNav ul #li07{
+	display:inline-block;
+	font-size : 16px;
 }
 
 #mainMenuNav ul #li02 ul{
@@ -63,7 +64,7 @@
 
 #mainMenuNav ul li ul li{
     display:block;
-    font-size:23px;
+    font-size:20px;
     padding-top:3px;
     text-align:center;
 }
@@ -92,4 +93,8 @@
     to {
         top: 20px;
     }
+}
+
+#mainMenuNav div{
+    display:none;
 }

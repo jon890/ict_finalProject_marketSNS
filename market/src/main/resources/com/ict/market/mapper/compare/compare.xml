@@ -6,16 +6,7 @@
 <mapper namespace="com.ict.market.compare.dao.CompareDao">
 	
 	<select id="marketList" resultType="market">
-	SELECT *
-	FROM (SELECT ROWNUM RM,HUMAN.*
-		 FROM(SELECT articleNum,id,title,to_char(writeDate,'YYYY-MM-DD')as writeDate,depth,hit,fileStatus,
-		 (select count(*) from comments where bbs1.articleNum=comments.articleNum)as commentCount
-			  FROM BBS1
-			  START WITH groupId=0
-			  CONNECT BY PRIOR articleNum=groupId
-			  ORDER SIBLINGS BY articleNum DESC)HUMAN
-		  )
-	WHERE RM BETWEEN #{startRow} and #{endRow}
+	SELECT m
 	</select>
 	
 	

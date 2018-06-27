@@ -75,7 +75,6 @@
 						</div>							`````
 						<!-- 부트스트랩 테마 적용 -->
 					</div>
-				</div>
 			</article>
 
 			<article>

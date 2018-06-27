@@ -1,6 +1,6 @@
 package com.ict.market.main.dto;
 
-public class LoginDto {
+public class MarketMemberDto {
 	
 	private String id;
 	private String password;

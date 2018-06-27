@@ -7,7 +7,7 @@
 
 	<select id="login" parameterType="String" resultType="String">
 		SELECT PASSWORD
-		FROM LOGIN
+		FROM MARKETMEMBER
 		WHERE ID = #{id}
 	</select>
 

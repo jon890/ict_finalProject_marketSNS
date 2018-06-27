@@ -33,7 +33,7 @@ public class MainServiceImpl implements MainService {
 			logger.info("LOGIN - 비밀번호가 틀림");
 			view = "passwordFail";
 		} else {
-			view = "index";
+			view = "redirect:/";
 			session.invalidate();
 			session = req.getSession();
 			session.setAttribute("id", id);

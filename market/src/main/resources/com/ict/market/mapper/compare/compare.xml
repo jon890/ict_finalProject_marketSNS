@@ -3,13 +3,11 @@
 
 <!-- dtd = document type definition -->
 
-<mapper namespace="com.ict.market.compare.dao.CompareDao">
+<mapper namespace="com.ict.market.compare.dao.CompareDAO">
 	
 	<select id="marketList" resultType="market">
-	SELECT m
+		 select price,goodsName from marketInfo m1,goods m2 where m1.goodsCode=m2.goodsCode and m1.goodsCode=10
 	</select>
 	
-	
-	
-	
+
 </mapper>

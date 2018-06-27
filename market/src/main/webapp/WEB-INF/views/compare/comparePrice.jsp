@@ -34,6 +34,14 @@
 	            color: #000000;
 	            text-align:center;
 	        }
+	        #p01{
+	            font-size:50px;
+	        }
+	
+	        #p02{
+	            font-size:20px;
+	        }
+	        
 	      </style>
 	      
 <title>가격비교</title>
@@ -51,15 +59,18 @@
 		            <p id="p02">전통시장 가격과 대형마트의 가격을 제공해 드립니다</p>
 		        </div>
 		    </div>
-		    
-	<div class="list-group">
-			<a href="#" class="list-group-item active">
-			가격비교를 해보자
-			</a>
-			<a href="#" class="list-group-item">전통시장</a>
-			<a href="#" class="list-group-item">대형마트</a>
-			<a href="#" class="list-group-item">전통시장vs대형마트</a>
-	</div>
+		   <div id="wrapper">
+				<ul class="nav nav-pills" role="tablist">
+		            <li class="nav-item">
+		                <a class="nav-link active" data-toggle="pill" href="#home">전통시장가격</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link active" data-toggle="pill" href="#menu1">대형마트가격</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link active" data-toggle="pill" href="#menu2">전통시장vs대형마트</a>
+		            </li>
+		       </ul>
 	<!-- Single button -->
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -100,24 +111,13 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>일반미상품20kg</td>
-				<td>50,000</td>
-				<td>47,000</td>
-				<td>45,800</td>
-				<td>45,000</td>
-				<td>44,000</td>
+			  <c:forEach var="market" items="${marketPriceList}">
+				<td><c:out value="${market.price}"/></td>
+			 </c:forEach>
 			  </tr>
-			  	<tr>
-					<td>찰보리쌀</td>
-					<td>3,500</td>
-					<td>2,500</td>
-					<td>3,500</td>
-					<td>3,000</td>
-					<td>3,000</td>
-			  	</tr>
 			</tbody>
 		  </table>
-		    
+	</div>	    
 		    
 
 <footer id="mainFooter">

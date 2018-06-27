@@ -1,15 +1,16 @@
 package com.ict.market.compare.dto;
 
 public class CompareDTO {
-	private String goods;
+	private String goodsName;
 	private String martName;
 	private String marketName;
-	private int goodsPrice;
-	public String getGoods() {
-		return goods;
+	private int price;
+	
+	public String getGoodsName() {
+		return goodsName;
 	}
-	public void setGoods(String goods) {
-		this.goods = goods;
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
 	}
 	public String getMartName() {
 		return martName;
@@ -23,17 +24,20 @@ public class CompareDTO {
 	public void setMarketName(String marketName) {
 		this.marketName = marketName;
 	}
-	public int getGoodsPrice() {
-		return goodsPrice;
+	public int getPrice() {
+		return price;
 	}
-	public void setGoodsPrice(int goodsPrice) {
-		this.goodsPrice = goodsPrice;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	@Override
 	public String toString() {
-		return "CompareDTO [goods=" + goods + ", martName=" + martName + ", marketName=" + marketName + ", goodsPrice="
-				+ goodsPrice + "]";
+		return "CompareDTO [goodsName=" + goodsName + ", martName=" + martName + ", marketName=" + marketName
+				+ ", price=" + price + "]";
 	}
+	
+	
+	
 	
 	
 	

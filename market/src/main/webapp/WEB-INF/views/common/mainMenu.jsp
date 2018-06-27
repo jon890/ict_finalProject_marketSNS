@@ -59,7 +59,7 @@
 	                    </ul>
 	                </div>
 	            </li>
-	            <li id="li06" class="mainMenu"><a href="#">로그인</a></li>
+	            <li id="li06" class="mainMenu"><a href="./login.main">로그인</a></li>
 	        </ul>
 	    </nav>
 	</body>

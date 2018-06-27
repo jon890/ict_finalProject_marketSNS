@@ -72,7 +72,7 @@
 						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 						    <span class="sr-only">다음</span>
 						  </a>
-						</div>
+						</div>							`````
 						<!-- 부트스트랩 테마 적용 -->
 					</div>
 				</div>

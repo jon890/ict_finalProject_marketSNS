@@ -31,7 +31,16 @@
 		<property name="jndiName" value="ict"/>
 		<property name="resourceRef" value="true"/>
 	</bean> -->
-	 <bean id="dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<!-- 3. jee 엘리먼트를 이용해서 커넥션 풀 설정 -->
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="ict" resource-ref="true"/> -->
+	
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  		<property name="location" value="classpath:db.properties"/>
+  	</bean>
+	
+	
+	<bean id="dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${driverClassName}"/>
 		<property name="url" value= "${url}"/>
 		<property name="username" value ="${username}"/>
@@ -39,30 +48,20 @@
 	</bean>
 	
 	 
-	 <!-- 3. jee 엘리먼트를 이용해서 커넥션 풀 설정 -->
-	 <!-- <jee:jndi-lookup id="dataSource" jndi-name="ict" resource-ref="true"/> -->
-	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	<!-- p:dataSource-ref="dataSource" p:configLocation="classpath:/mybatisConfig/mybatisConfig.xml" -->
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:/mybatisConfig/mybatisConfig.xml"/>
-		<!-- <property name="mapperLocations" value="classpath:/com/ict/human/mapper/**/*.xml"></property> -->
+		<property name="mapperLocations" value="classpath:/com/ict/market/mapper/**/*.xml"/>
+	</bean>
+	
+	<bean id="sqlSession" class ="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"/>
 	</bean>
 	
 
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 	p:dataSource-ref="dataSource"/>
-   
-   
-  	<bean id="propertyConfigurer" 
-  	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-  		<property name="location" value="classpath:db.properties"/>
-  	</bean>
-  	
-  
-	<bean id="sqlSession" class ="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="sqlSessionFactory"/>
-	</bean>
+
 	
 	<bean id="pageSize" class = "java.lang.Integer">
 		<constructor-arg value="10"/>
@@ -71,9 +70,5 @@
 	<bean id="pageBlock" class = "java.lang.Integer">
 		<constructor-arg value="10"/>
 	</bean>
-	<!-- 파일 업로드에 한 파일의 저장 위치 지정-->
-	<bean id="saveDir" class = "java.lang.String">
-		<constructor-arg value ="e:\upload\"/>
-	</bean>
-	
+
 </beans>

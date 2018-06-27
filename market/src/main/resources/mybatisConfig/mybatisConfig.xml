@@ -16,13 +16,12 @@
 		<setting name="jdbcTypeForNull" value="VARCHAR" />
 	</settings>
 	
-	<!-- <typeAliases>
-		<typeAlias alias ="article" type="com.ict.market.main.dto.mainDto"/>
-		
-	</typeAliases> -->
+	<typeAliases>
+		<typeAlias alias ="login" type="com.ict.market.main.dto.LoginDto"/>
+	</typeAliases>
 	
-	<!-- <mappers>
-		<mapper resource="com/ict/market/mapper/bbs/bbs.xml"/>
-	</mappers> -->
+	<mappers>
+		<mapper resource="com/ict/market/mapper/main/main.xml"/>
+	</mappers>
 	
 </configuration>

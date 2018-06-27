@@ -15,26 +15,26 @@
 	    
 	    
 	    <style>
-	        div.background {
-	            background: url(./resources/images/favorite/favorite_main.png) repeat;
-	            border: 2px solid black;
+	        div.background{
+	            width:100%;
 	            height:300px;
-	            opacity:0.7;
+        	}
+
+	        div.background img{
+	            width:100%;
+	            height: 300px;
+	            /*opacity: 1;*/
+	            z-index:1;
 	        }
 	
-	        div.transbox {
-	            margin: 30px;
-	            background-color: #ffffff;
-	            border: 1px solid black;
-	            opacity: 0.7;
-	            filter: alpha(opacity=60); /* For IE8 and earlier */
-	        }
-	
-	        div.transbox p {
+	        div.transbox p{
 	            margin: 3%;
 	            font-weight: bold;
-	            color: #000000;
+	            color: white;
 	            text-align:center;
+	            z-index:2;
+	            top:-300px;
+	            position:relative;
 	        }
 	
 	        #p01{
@@ -69,12 +69,15 @@
 		</header>
 		
 		<section>
+		
 		    <div class="background">
-		        <div class="transbox">
-		            <p id="p01"><ins>Favorite</ins></p>
-		            <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
-		        </div>
-		    </div>
+	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <div class="transbox">
+	                <p id="p01"><ins>Favorite</ins></p>
+	                <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
+	            </div>
+        	</div>
+        	
 		    <br>
 		    <div class="container">
 		        <!--<p>Favorite</p>
@@ -122,7 +125,6 @@
 		                <br>
 		                <h3>고객센터</h3>
 		                <p>TEST1</p>
-		                <iframe src="notice.html" width="100%" height="1080px"></iframe>
 		            </div>
 		        </div>
 		    </div>

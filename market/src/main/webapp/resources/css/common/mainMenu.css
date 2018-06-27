@@ -1,8 +1,3 @@
-@font-face{
-    font-family:'MaplestoryLight'; 
-    src:url('./../../font/MaplestoryLight.ttf');
-}
-
 #mainMenuNav{
 	font-family : MaplestoryLight;
     text-align : center;

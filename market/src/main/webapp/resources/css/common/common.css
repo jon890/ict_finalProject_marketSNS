@@ -27,6 +27,7 @@ header{
 	top: 0px;
 	z-index : 20;
 	background-color : white;
+	font-family : MaplestoryLight;
 }
 
 nav{
@@ -45,7 +46,7 @@ footer{
 	height : 200px;
 	margin : 0 auto;
 	width : 1080px;
-	font-family : MaplestoryLight;	
+	font-family : MaplestoryLight;
 }
 
 /* *************** 전체 레이아웃 *************** */

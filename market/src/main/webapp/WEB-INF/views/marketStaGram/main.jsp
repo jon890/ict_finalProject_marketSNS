@@ -49,10 +49,17 @@
 		<section>
 		    <div class="background">
 		        <div class="transbox">
-		            <p id="p01"><ins>Favorite</ins></p>
-		            <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
+		            <p id="p01"><ins>마켓스타그램</ins></p>
+		            <p id="p02">광주 전통시장 사진을 공유해보세요</p>
 		        </div>
 		    </div>
+		    
+		    <article>
+		    </article>
+		    
+		    <article>
+		    </article>
+		    
 		</section>
 	    
 	    <footer id="mainFooter">

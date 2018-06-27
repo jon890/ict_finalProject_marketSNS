@@ -5,6 +5,10 @@
 
 <mapper namespace="com.ict.market.main.dao.MainDao">
 
-
+	<select id="login" parameterType="String" resultType="String">
+		SELECT PASSWORD
+		FROM LOGIN
+		WHERE ID = #{id}
+	</select>
 
 </mapper>

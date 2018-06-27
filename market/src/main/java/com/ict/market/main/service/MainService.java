@@ -1,6 +1,9 @@
 package com.ict.market.main.service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 public interface MainService {
 	
-	public void login(String id, String password);
+	public String login(String id, String password, HttpSession session, HttpServletRequest req);
 }

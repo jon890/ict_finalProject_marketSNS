@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -11,7 +12,6 @@
 	    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	    <script src="./resources/js/mainMenu.js"></script>
 	</head>
-	
 	
 	<body>
 	    <nav id="mainMenuNav">
@@ -59,7 +59,18 @@
 	                    </ul>
 	                </div>
 	            </li>
-	            <li id="li06" class="mainMenu"><a href="./login.main">로그인</a></li>
+	            
+				<c:if test="${id!=null}">
+		 			<li id="li06" class="mainMenu">${id}님 환영합니다!</li>
+		 			<li id="li07" class="mainMenu"><a href="./logout.main">로그아웃</a></li>
+		 		</c:if>
+		 
+		 		<c:if test="${id==null}">
+		 			<li id="li06" class="mainMenu"><a href="./login.main">로그인</a></li>
+		 			<li id="li07" class="mainMenu"><a href="./register.main">회원가입</a></li>
+		 		</c:if>
+		 		
+	            
 	        </ul>
 	    </nav>
 	</body>

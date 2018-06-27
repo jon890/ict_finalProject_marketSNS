@@ -20,8 +20,8 @@
 		<typeAlias alias ="login" type="com.ict.market.main.dto.LoginDto"/>
 	</typeAliases>
 	
-	<mappers>
+	<!-- <mappers>
 		<mapper resource="com/ict/market/mapper/main/main.xml"/>
-	</mappers>
+	</mappers> -->
 	
 </configuration>

@@ -1,5 +1,8 @@
 package com.ict.market.main.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +22,8 @@ public class MainController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
-//	@RequestMapping(value="/")
-//	public String moveIndex() {
-//		logger.info("Index - 페이지 이동");
-//		return "index";
-//	}
 
-
+    /* ********** 로그인 관련 기능 ********** */
 	@RequestMapping(value="/login.main" , method = RequestMethod.GET)
 	public String moveLogin() {
 		logger.info("LOGIN - 페이지 이동");
@@ -34,14 +32,29 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
-	public String login(@RequestParam String id, @RequestParam String password) {
+	public String login(@RequestParam String id, 
+						@RequestParam String password, 
+						HttpSession session,
+						HttpServletRequest req) {
 		logger.info("LOGIN - Submit버튼 확인");
 		logger.info("LOGIN - ID 출력 // " + id);
-		logger.info("LOGIN - PASSWORD 출력 //" + password);
+		logger.info("LOGIN - PASSWORD 출력 // " + password);
 		
-		mainService.login(id, password);
+		String view = mainService.login(id, password, session, req);
 		
+		return view;
+	}
+	
+	@RequestMapping(value="/logout.main" , method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		logger.info("LOGOUT - 로그아웃 ");
+		session.invalidate();
 		return "index";
 	}
+	/* ********** 로그인 관련 기능 ********** */
+	
+	
+	
+	
 	
 }

@@ -5,7 +5,6 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>mainFooter</title>
 	    <link rel="stylesheet" href="./resources/css/common/mainFooter.css">
 	</head>
 	

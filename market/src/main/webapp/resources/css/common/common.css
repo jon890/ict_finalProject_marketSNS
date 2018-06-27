@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@font-face{font-family:'MaplestoryLight'; src:url('./../fonts/MaplestoryLight.ttf')}
+@font-face{font-family:'MaplestoryLight'; src:url('./../../fonts/MaplestoryLight.ttf')}
 
 /* *************** 공통 스타일 부분 *************** */
 body{
@@ -37,6 +37,7 @@ nav{
 
 section{
 	float : left;
+	width : 100%;
 }
 
 footer{

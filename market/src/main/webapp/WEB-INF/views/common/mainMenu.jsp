@@ -6,17 +6,19 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>mainMenu</title>
 	    <link rel="stylesheet" href="./resources/css/common/mainMenu.css">
+	   	<script src="./resources/js/mainMenu.js"></script>
+	   	
+	   	<!-- jQuery CDN에서 로드 -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	    <script src="./resources/js/mainMenu.js"></script>
+
 	</head>
 	
 	<body>
 	    <nav id="mainMenuNav">
 	        <ul>
-	            <li id="li01"><a href="#"><img src="./resources/images/mainMenu_logo.png" id="mainMenu_logo"></a></li>
+	            <li id="li01"><a href="./"><img src="./resources/images/mainMenu_logo.png" id="mainMenu_logo"></a></li>
 	            <li id="li02" class="mainMenu">
 	                <a href="#">광주의 시장</a>
 	                <div id="div01" class="subMenu">
@@ -48,10 +50,10 @@
 	                </div>
 	            </li>
 	            <li id="li05" class="mainMenu">
-	                <a href="#">페이보릿</a>
+	                <a href="./favorite.favorite">페이보릿</a>
 	                <div id="div04" class="subMenu">
 	                    <ul class="ul">
-	                        <li><a href="#">공지사항</a></li>
+	                        <li><a href="./notice.favorite">공지사항</a></li>
 	                        <li><a href="#">핫플레이스</a></li>
 	                        <li><a href="#">축제정보</a></li>
 	                        <li><a href="#">야시장정보</a></li>

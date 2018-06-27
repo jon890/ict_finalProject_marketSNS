@@ -12,9 +12,16 @@ public class favoriteController {
 	private static final Logger logger = LoggerFactory.getLogger(favoriteController.class);
 
 
+	@RequestMapping(value="/favorite.favorite")
+	public String main() {
+		logger.info("Favorite - 페이지 이동");
+		return "favorite";
+	}
+	
+	
 	@RequestMapping(value="/notice.favorite")
-	public String login() {
-		logger.info("공지사항 페이지 이동");
+	public String notice() {
+		logger.info("Notice - 페이지 이동");
 		return "notice";
 	}
 	

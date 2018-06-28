@@ -95,6 +95,10 @@ div.transbox p{
 	font-weight : bold;
 }
 
+#writeForm textarea{
+	width : 90%;
+}
+
 #writeBtns{
 	text-align : right;
 }
@@ -118,19 +122,21 @@ div.transbox p{
     cursor : pointer;
 }
 
-#writeForm {
-	float : left;
+#thumNailImgs{
+	margin-top : 20px;
+	height : 120px;
 }
 
+#thumNailImgs p{
+	text-align : center;
+	font-size : 16px;
+	font-weight : bold;
+}
 
 #thumNailImgs img{
 	display : inline-block;
 	width : 100px;
 	height : 100px;
-}
-
-textarea{
-	resize : none;
 }
 
 input[type=file]{

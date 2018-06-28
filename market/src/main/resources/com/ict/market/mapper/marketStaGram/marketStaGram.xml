@@ -3,6 +3,10 @@
 
 <!-- dtd = document type definition -->
 
-<mapper namespace="com.ict.market.marketStagram.dao.MsgDao">
-
+<mapper namespace="com.ict.market.marketStaGram.dao.MsgDao">
+	
+	<insert id="write" parameterType="snsArticle">
+		INSERT INTO MARKETSTAGRAM
+		VALUES(MARKETSTAGRAM_SEQ.NEXTVAL, #{id}, #{content}, 0, SYSDATE)
+	</insert>
 </mapper>

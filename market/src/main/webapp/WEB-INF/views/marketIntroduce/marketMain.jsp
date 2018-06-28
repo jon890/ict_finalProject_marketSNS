@@ -72,7 +72,7 @@
         <div class="background">
             <img src="./../img/favorite_main.png" />
             <div class="transbox">
-                <p id="p01"><u>광주의 시장</u></p>
+                <p id="p01"><ins>광주의 시장</ins></p>
                 <p id="p02">광주전통시장의 지역시장정보를 제공해 드립니다</p>
             </div>
         </div>

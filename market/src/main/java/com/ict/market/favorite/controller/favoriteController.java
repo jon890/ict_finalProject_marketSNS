@@ -11,13 +11,11 @@ public class favoriteController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(favoriteController.class);
 
-
 	@RequestMapping(value="/favorite.favorite")
 	public String main() {
 		logger.info("Favorite - 페이지 이동");
 		return "favorite";
 	}
-	
 	
 	@RequestMapping(value="/notice.favorite")
 	public String notice() {

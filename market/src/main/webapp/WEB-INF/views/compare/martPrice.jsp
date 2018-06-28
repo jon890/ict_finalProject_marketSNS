@@ -55,8 +55,8 @@
 		<section>
 		    <div class="background">
 		        <div class="transbox">
-		            <p id="p01"><ins>comparePrice</ins></p>
-		            <p id="p02">전통시장 가격과 대형마트의 가격을 제공해 드립니다</p>
+		            <p id="p01"><ins>대형마트</ins></p>
+		            <p id="p02">대형마트의 가격을 제공해 드립니다</p>
 		        </div>
 		    </div>
 		   <div id="wrapper">
@@ -101,24 +101,24 @@
 	<table class="table table-striped">
 			<thead>
 			  <tr>
-				<th>품목/전통시장명</th>
-				<th>대인시장(동구)</th>
-				<th>양동시장(서구)</th>
-				<th>말바우시장(북구)</th>
-				<th>무등시장(남구)</th>
-				<th>하남월곡시장(광산구)</th>
+				<th>품목/마트명</th>
+				<th>이마트봉선점(남구)</th>
+				<th>홈플러스두암점(북구)</th>
+				<th>롯데마트수완점(광산구)</th>
+				<th>영암마트지산점(동구)</th>
+				<th>롯데마트월드컵점(서구)</th>
 			  </tr>
 			</thead>
 			<tbody>
-	
+
 			<tr>
-			<c:forEach var="market" items="${marketPriceList}">
-			    <td><c:out value="${market.goodsName}"/></td>
-			    <td><c:out value="${market.daeInPrice}"/></td>
-			    <td><c:out value="${market.yangDongPrice}"/></td>
-			    <td><c:out value="${market.muDeungPrice}"/></td>
-			    <td><c:out value="${market.malBawooPrice}"/></td>
-			    <td><c:out value="${market.moonPrice}"/></td>
+			<c:forEach var="mart" items="${martPriceList}">
+			    <td><c:out value="${mart.goodsName}"/></td>
+			    <td><c:out value="${mart.emartPrice}"/></td>
+			    <td><c:out value="${mart.homePlusPrice}"/></td>
+			    <td><c:out value="${mart.lotteMartPrice}"/></td>
+			    <td><c:out value="${mart.yeongAmMartPrice}"/></td>
+			    <td><c:out value="${mart.lotteMartSouthPrice}"/></td>
 			</tr>
 		  	</c:forEach>
 			

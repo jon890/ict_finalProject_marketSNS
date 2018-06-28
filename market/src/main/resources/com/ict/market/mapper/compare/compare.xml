@@ -4,10 +4,25 @@
 <!-- dtd = document type definition -->
 
 <mapper namespace="com.ict.market.compare.dao.CompareDAO">
-	
+		
 	<select id="marketList" resultType="market">
-		 select price,goodsName from marketInfo m1,goods m2 where m1.goodsCode=m2.goodsCode and m1.goodsCode=10
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
 	</select>
 	
+	<select id="martList" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 and m4.martCode=44 and m5.martCode=55
+	</select>
 
 </mapper>

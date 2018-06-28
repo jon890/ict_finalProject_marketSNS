@@ -55,8 +55,8 @@
 		<section>
 		    <div class="background">
 		        <div class="transbox">
-		            <p id="p01"><ins>comparePrice</ins></p>
-		            <p id="p02">전통시장 가격과 대형마트의 가격을 제공해 드립니다</p>
+		            <p id="p01"><ins>전통시장</ins></p>
+		            <p id="p02">전통시장 가격을 제공해 드립니다</p>
 		        </div>
 		    </div>
 		   <div id="wrapper">

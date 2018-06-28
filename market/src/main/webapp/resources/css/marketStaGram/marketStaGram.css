@@ -95,11 +95,11 @@ div.transbox p{
 	font-weight : bold;
 }
 
-#thumNailImgs{
+#writeBtns{
 	text-align : right;
 }
 
-#thumNailImgs > img{
+#writeBtns > img{
 	display : inline-block;
 	width : 60px;
 	height : 60px;
@@ -107,7 +107,7 @@ div.transbox p{
 	margin-right : 20px;
 }
 
-#thumNailImgs > input[type=button]{
+#writeBtns > input[type=submit]{
     width : 60px;
     height : 60px;
     background : gray;
@@ -118,8 +118,23 @@ div.transbox p{
     cursor : pointer;
 }
 
+#writeForm {
+	float : left;
+}
+
+
+#thumNailImgs img{
+	display : inline-block;
+	width : 100px;
+	height : 100px;
+}
+
 textarea{
 	resize : none;
+}
+
+input[type=file]{
+	display : none;
 }
 /* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
 

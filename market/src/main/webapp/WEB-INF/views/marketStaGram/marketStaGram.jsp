@@ -38,19 +38,29 @@
         	 </div>
         	 
         	 <div id="writeFormModal" class="modal">
+        	 	<form action="./write.msg" method="post">
         	 
-        	 	<div class="modal-content">
-        	 		<!-- X버튼을 눌러서 닫기 버튼 만들기 -->
-        	 		<span class="close">&times;</span>
-        	 		<div id="writeForm">
-        	 			<p>게시물 작성</p>
-        	 			<textarea rows="13" cols="45"></textarea>
-        	 		</div>
-        	 		<div id="thumNailImgs">
-        	 			<img src="./resources/images/marketStaGram/uploadbtn.png">
-        	 			<input type="button" value="게시" id="submitBtn">
-        	 		</div>
-        	 	</div>
+	        	 	<div class="modal-content">
+	        	 		<!-- X버튼을 눌러서 닫기 버튼 만들기 -->
+	        	 		<span class="close">&times;</span>
+	        	 		<div id="writeForm">
+	        	 			<p>게시물 작성</p>
+	        	 			<textarea rows="13" cols="45" name="content"></textarea>
+	        	 		</div>
+	        	 		
+	        	 		<div id="thumNailImgs">
+	        	 			kk
+	        	 		</div>
+	        	 		
+	        	 		<div id="writeBtns">
+	       	 				<input type="hidden" name="id" value="${id}">
+	        	 			<input type="file" name="file" id="uploadImgs" multiple>
+	        	 			<img src="./resources/images/marketStaGram/uploadbtn.png" id="uploadbtn">
+	        	 			<input type="submit" value="게시">
+	        	 		</div>
+	        	 	</div>
+	        	 	
+				</form>
         	 </div>
 		    
 		    <div id="articles">

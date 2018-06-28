@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class marketIntroduceController {
+public class MarketIntroduceController {
 	
 	
-	private static final Logger logger = LoggerFactory.getLogger(marketIntroduceController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MarketIntroduceController.class);
 	
 	@RequestMapping(value="/main.mid" , method = RequestMethod.GET)
 	public String marketMain() {

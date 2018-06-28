@@ -13,6 +13,8 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
+	    <script src="./resources/js/marketStaGram/marketStaGram.js"></script>
+	    
 	</head>
 	
 	<body>
@@ -26,10 +28,30 @@
 		    <div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png">
 	            <div class="transbox">
-	                <p id="marketStagramTitle01">마켓스타그램</p>
+	                <p id="marketStagramTitle01">#시장스타그램</p>
 	                <p id="marketStagramTitle02">광주 전통시장의 사진을 공유해보세요</p>
 	            </div>
         	</div>
+        	
+        	 <div id="writeBtnDiv">
+        	 	<input type="button" value="글쓰기" id="writeBtn">
+        	 </div>
+        	 
+        	 <div id="writeFormModal" class="modal">
+        	 
+        	 	<div class="modal-content">
+        	 		<!-- X버튼을 눌러서 닫기 버튼 만들기 -->
+        	 		<span class="close">&times;</span>
+        	 		<div id="writeForm">
+        	 			<p>게시물 작성</p>
+        	 			<textarea rows="13" cols="45"></textarea>
+        	 		</div>
+        	 		<div id="thumNailImgs">
+        	 			<img src="./resources/images/marketStaGram/uploadbtn.png">
+        	 			<input type="button" value="게시" id="submitBtn">
+        	 		</div>
+        	 	</div>
+        	 </div>
 		    
 		    <div id="articles">
 			    <article class="article">
@@ -67,8 +89,7 @@
 			    <article class="article">
 			    	<img src="./resources/images/marketStaGram/ii.jpg">
 			    </article>
-		    </div>
-		    
+		    </div> 
 		</section>
 	</body>
 </html>

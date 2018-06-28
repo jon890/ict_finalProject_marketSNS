@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -7,10 +8,8 @@
 	    <meta charset="utf-8">
 	    <title>OOO - 마켓스타그램</title>
 	    
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	    	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
 	    <script src="./resources/js/marketStaGram/marketStaGram.js"></script>
@@ -33,9 +32,17 @@
 	            </div>
         	</div>
         	
-        	 <div id="writeBtnDiv">
-        	 	<input type="button" value="글쓰기" id="writeBtn">
-        	 </div>
+        	<c:if test="${id != null}">
+	        	<div id="writeBtnDiv">
+	        		<input type="button" value="글쓰기" id="writeBtn">
+	        	</div>
+        	</c:if>
+        	
+        	<c:if test="${id == null}">
+        		<div id="writeBtnDiv">
+	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a>
+	        	</div>  	
+        	</c:if>
         	 
         	 <div id="writeFormModal" class="modal">
         	 	<form action="./write.msg" method="post" enctype="multipart/form-data">
@@ -64,42 +71,15 @@
         	 </div>
 		    
 		    <div id="articles">
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/aa.jpg">
-			    </article>
+
+			    <c:forEach var="img" items="${imgList}">
+			    	<article class="article">
+			    	<a href="#"><img src="./resources/uploadImgs/${img}"></a>
+			    	</article>
+			    </c:forEach>
 			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/bb.jpg">
-			    </article>
-			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/cc.jpg">
-			    </article>
-			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/dd.jpg">
-			    </article>
-			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/ee.jpg">
-			    </article>
-			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/ff.jpg">
-			    </article>
-			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/gg.jpg">
-			    </article>
-			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/hh.jpg">
-			    </article>
-			    
-			    <article class="article">
-			    	<img src="./resources/images/marketStaGram/ii.jpg">
-			    </article>
 		    </div> 
+		    
 		</section>
 	</body>
 </html>

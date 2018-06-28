@@ -20,6 +20,7 @@
 		<typeAlias alias ="member" type="com.ict.market.main.dto.MarketMemberDto"/>
 		<typeAlias alias ="market" type="com.ict.market.compare.dto.CompareDTO"/>
 		<typeAlias alias ="snsArticle" type="com.ict.market.marketStaGram.dto.SnsArticleDto"/>
+		<typeAlias alias ="img" type="com.ict.market.marketStaGram.dto.ImgDto"/>
 	</typeAliases>
 	
 	<!-- <mappers>

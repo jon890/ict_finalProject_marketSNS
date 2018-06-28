@@ -120,7 +120,7 @@
 	</div>	    
 		    
 
-<footer id="mainFooter">
+		<footer id="mainFooter">
 			<!-- mainFooter.jsp 파일 include -->
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>

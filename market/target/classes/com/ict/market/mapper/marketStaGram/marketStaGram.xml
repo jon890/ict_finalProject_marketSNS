@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- dtd = document type definition -->
+
+<mapper namespace="com.ict.market.marketStaGram.dao.MsgDao">
+
+	<!-- ********** 메인 페이지 로딩시 글 가져오기 기능 ********** -->
+	<select id="list" resultType="String">
+		SELECT STOREDIMGNAME
+		FROM IMGLIST
+		WHERE ROWNUM BETWEEN 1 AND 9
+	</select>
+
+
+
+	
+	<!-- ********** 게시판 글쓰기 기능 ********** -->
+	<insert id="write" parameterType="snsArticle" useGeneratedKeys="true" keyProperty="articleNum" keyColumn="articleNum">
+		INSERT INTO MARKETSTAGRAM 
+		VALUES(MARKETSTAGRAM_SEQ.NEXTVAL, #{id}, #{content}, 0, SYSDATE)
+	</insert>
+	
+	
+	<insert id="insertImg" parameterType="img">
+		INSERT INTO IMGLIST
+		VALUES(IMGLIST_SEQ.NEXTVAL, #{storedImgName}, #{articleNum})
+	</insert>
+	<!-- ********** 게시판 글쓰기 기능 ********** -->
+</mapper>

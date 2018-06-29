@@ -1,5 +1,6 @@
 package com.ict.market.favorite.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ict.market.favorite.dao.FavoriteDao;
@@ -7,6 +8,7 @@ import com.ict.market.favorite.dto.FavoriteDto;
 
 @Service
 public class FavoriteServiceImpl implements FavoriteService {
+	@Autowired
 	private FavoriteDao favoriteDao;
 
 	@Override

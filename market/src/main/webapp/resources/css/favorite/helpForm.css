@@ -1,4 +1,4 @@
-﻿body{
+body{
     width:1080px;
     margin:0 auto;
     /*text-align:center;*/
@@ -69,7 +69,7 @@ textarea{
     float:right;
 }
 
-#div02 #submit{
+#div02 .faba{
     float:right;
     width:170px;
     height:30px;

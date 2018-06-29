@@ -102,7 +102,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
+                    <td></td>
                     <td>Doe</td>
                     <td>john</td>
                     <td>2018.06.27</td>
@@ -125,12 +125,11 @@
 
     <div class="container">
         <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+             ${pageCode}
         </ul>
     </div>
+    
+    <!-- http://bigfat.tistory.com/83 -->
     </section>
     
      <footer id="mainFooter">

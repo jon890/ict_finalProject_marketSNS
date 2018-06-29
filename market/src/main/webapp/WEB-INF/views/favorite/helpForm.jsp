@@ -21,7 +21,7 @@
 	            <br>신속하게 답변해 드리겠습니다.
 	        </div>
 	        <div id="div02">
-	        <form action="./helpForm.favorite" method="post">
+	        <form action="./write.favorite" method="post">
 	            <table>
 	                <tr>
 	                	<td id="td01">아이디</td>
@@ -36,15 +36,15 @@
 	                    <td id="td02"><textarea name="content" id="content"></textarea></td>
 	                </tr>
 	            </table>
-	         </form>
+	        
 	        </div>
 	    </div>
 	    <div id="div02">
-	        <input type="submit" value="SEND MESSAGE" id="submit"/>
-	        <input type="reset" value="BACK" id="submit"/>	        
+	        <input type="submit" value="SEND MESSAGE" class="faba"/>
+	        <input type="reset" value="BACK" class="faba"/>	        
 	    </div>
-	    
-	   <script type="text/javascript">
+	    </form>
+	    <script type="text/javascript">
 	    $("input[type=submit]").on("click",function(event){
 			
 			let title = $("#title").val().trim();

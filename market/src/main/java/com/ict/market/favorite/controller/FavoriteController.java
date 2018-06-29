@@ -39,14 +39,15 @@ public class FavoriteController {
 	
 	@RequestMapping(value="/helpForm.favorite",method=RequestMethod.GET)
 	public String helpForm(FavoriteDto helpArticle,HttpSession session) {
-		helpArticle.setId((String)session.getAttribute("id"));
 		return "helpForm";
 	}
 	
-	@RequestMapping(value="/helpForm.favorite",method=RequestMethod.POST)
+	@RequestMapping(value="/write.favorite",method=RequestMethod.POST)
 	public String writeForm(FavoriteDto helpArticle,HttpSession session) {
+		logger.info("write - 페이지 이동");
+		helpArticle.setId((String)session.getAttribute("id"));
 		favoriteService.write(helpArticle);
-		return "redirect://help.favorite";
+		return "redirect:/help.favorite";
 	}
 
 	

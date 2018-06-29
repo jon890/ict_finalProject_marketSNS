@@ -22,7 +22,9 @@
 	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
 	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
 	where m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
-	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 and m4.martCode=44 and m5.martCode=55
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
 	</select>
 
 </mapper>

@@ -6,11 +6,13 @@
 <mapper namespace="com.ict.market.marketStaGram.dao.MsgDao">
 
 	<!-- ********** 메인 페이지 로딩시 글 가져오기 기능 ********** -->
-	<select id="list" resultType="String">
-		SELECT STOREDIMGNAME
+	<select id="list" resultType="img">
+		SELECT STOREDIMGNAME, ARTICLENUM
 		FROM IMGLIST
 		WHERE ROWNUM BETWEEN 1 AND 9
+		ORDER BY ROWNUM ASC
 	</select>
+	<!-- ********** 메인 페이지 로딩시 글 가져오기 기능 ********** -->
 
 
 
@@ -27,4 +29,20 @@
 		VALUES(IMGLIST_SEQ.NEXTVAL, #{storedImgName}, #{articleNum})
 	</insert>
 	<!-- ********** 게시판 글쓰기 기능 ********** -->
+	
+	
+	
+	<!-- ********** 게시판 글 읽기 기능 ********** -->
+	<select id="read" parameterType="Integer" resultType="snsArticle">
+		SELECT ID, CONTENT, LIKENUM, WRITEDATE
+		FROM MARKETSTAGRAM
+		WHERE ARTICLENUM = #{articleNum}
+	</select>
+	
+	<select id="getImgList" parameterType="Integer" resultType="String">
+		SELECT STOREDIMGNAME
+		FROM IMGLIST
+		WHERE ARTICLENUM = #{articleNum}
+	</select>
+	<!-- ********** 게시판 글 읽기 기능 ********** -->
 </mapper>

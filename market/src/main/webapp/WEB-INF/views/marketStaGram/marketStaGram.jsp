@@ -9,7 +9,7 @@
 	    <title>OOO - 마켓스타그램</title>
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
 	    <script src="./resources/js/marketStaGram/marketStaGram.js"></script>
@@ -74,7 +74,7 @@
 
 			    <c:forEach var="img" items="${imgList}">
 			    	<article class="article">
-			    	<a href="#"><img src="./resources/uploadImgs/${img}"></a>
+			    		<a href="read.msg?articleNum=${img.articleNum}"><img src="./resources/uploadImgs/${img.storedImgName}"></a>					
 			    	</article>
 			    </c:forEach>
 			    

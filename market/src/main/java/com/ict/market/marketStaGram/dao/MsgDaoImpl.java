@@ -21,7 +21,7 @@ public class MsgDaoImpl implements MsgDao {
 	
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	@Override
-	public List<String> list() {
+	public List<ImgDto> list() {
 		return sqlSession.selectList(nameSpace.concat(".list"));
 	}
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
@@ -39,6 +39,24 @@ public class MsgDaoImpl implements MsgDao {
 		sqlSession.insert(nameSpace.concat(".insertImg"), imgDto);
 	}
 	/* ********** 게시판 글쓰기 기능 ********** */
+
 	
+	
+
+	/* ********** 게시판 글 읽기 기능 ********** */
+	@Override
+	public SnsArticleDto read(int articleNum) {
+		return sqlSession.selectOne(nameSpace.concat(".read"), articleNum);
+	}
+	
+	@Override
+	public List<String> getImgList(int articleNum) {
+		return sqlSession.selectList(nameSpace.concat(".getImgList"), articleNum);
+	}
+	/* ********** 게시판 글 읽기 기능 ********** */
+
+	
+	
+
 	
 }

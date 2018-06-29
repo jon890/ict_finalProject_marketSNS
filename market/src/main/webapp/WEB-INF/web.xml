@@ -7,6 +7,8 @@
 		<welcome-file>/WEB-INF/views/index.jsp</welcome-file>
 	</welcome-file-list>
 	
+	
+	<!--  -->
 	<session-config>
 		<session-timeout>10</session-timeout>
 	</session-config>

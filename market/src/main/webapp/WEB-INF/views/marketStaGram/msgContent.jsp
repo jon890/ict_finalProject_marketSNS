@@ -47,6 +47,10 @@
 			#marketStagramTitle02{
 				font-size : 20px;
 			}
+			
+			#snsArticleBtns img{
+				cursor : pointer;
+			}
 		</style>
 	</head>
 	
@@ -103,14 +107,21 @@
 					<div id="snsArticleId">${snsArticle.id}</div>
 					<hr>
 					<div>${snsArticle.id} : ${snsArticle.content}</div>
-					<div>댓글1</div>
-					<div>댓글2</div>
-					<div>댓글3</div>
-					
-					
+					<div>댓글test...</div>
+					<div>댓글test...</div>
+					<div>댓글test...</div>
 					<hr>
-					<div>좋아요수 : ${snsArticle.likeNum}</div>
-					<div>글쓴날짜 : ${snsArticle.writeDate}</div>
+					
+					<form>
+						<div id="snsArticleBtns">
+							<input type="button" src="./resources/images/marketStaGram/likebtn.png">
+							<input type="button" src="./resources/images/marketStaGram/commentbtn.png">
+						</div>
+						<div>좋아요수 : ${snsArticle.likeNum}</div>
+						<div>글쓴날짜 : ${snsArticle.writeDate}</div>
+						<hr>	
+						<div><textarea cols="30" placeholder="댓글 달기..." autocomplete="off" name="commentContent"></textarea></div>
+					</form>
 				</div>
 			</article>
 		</section>

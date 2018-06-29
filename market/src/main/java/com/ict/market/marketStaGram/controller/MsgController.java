@@ -68,4 +68,13 @@ public class MsgController {
 	/* ********** 게시판 글 읽기 기능 ********** */
 	
 	
+	/* ********** 댓글 달기 기능 ********** */
+	@RequestMapping(value="/commentWrite.msg" , method = RequestMethod.POST)
+	public String commentWrite(@RequestParam int articleNum, Model model) {
+		logger.info("MARKETSTAGRAM - 게시물 읽기 // 게시물 번호 확인 : " + articleNum);
+		msgService.read(articleNum, model);
+		return "msgContent";
+	}
+	
+	
 }

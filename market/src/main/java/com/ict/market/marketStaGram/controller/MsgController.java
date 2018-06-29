@@ -73,7 +73,7 @@ public class MsgController {
 	@RequestMapping(value="/commentWrite.msg" , method = RequestMethod.POST)
 	public String commentWrite(MsgCommentDto comment) {
 		logger.info("MARKETSTAGRAM - 댓글 달기 버튼 SUBMIT");
-		return "redirect:/read.msg".concat(Integer.toString(comment.getArticleNum()));
+		return "redirect:/read.msg?articleNum=".concat(Integer.toString(comment.getArticleNum()));
 	}
 	/* ********** 댓글 달기 기능 ********** */
 	

@@ -6,7 +6,8 @@
 	<head>
 	    <meta charset="utf-8">
 	    <title>help</title>
-	    <link rel="stylesheet" href="help.css">
+	    <link rel="stylesheet" href="./resources/css/favorite/helpForm.css">
+	    <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
 	</head>
 	
 	<body>
@@ -20,24 +21,48 @@
 	            <br>신속하게 답변해 드리겠습니다.
 	        </div>
 	        <div id="div02">
+	        <form action="./helpForm.favorite" method="post">
 	            <table>
 	                <tr>
-	                    <td id="td01">제목</td>
-	                    <td id="td02"><input type="text" id="text" /></td>
+	                	<td id="td01">아이디</td>
+	                    <td>${id}</td>
 	                </tr>
 	                <tr>
-	                    <td id="td01">아이디</td>
-	                    <td id="td02"><input type="text" id="text" /></td>
+		                 <td id="td01">제목</td>
+		                 <td id="td02"><input type="text" id="title" name="title"/></td>
 	                </tr>
 	                <tr>
 	                    <td id="td01">내용</td>
-	                    <td id="td02"><textarea></textarea></td>
+	                    <td id="td02"><textarea name="content" id="content"></textarea></td>
 	                </tr>
 	            </table>
+	         </form>
 	        </div>
 	    </div>
 	    <div id="div02">
 	        <input type="submit" value="SEND MESSAGE" id="submit"/>
+	        <input type="reset" value="BACK" id="submit"/>	        
 	    </div>
+	    
+	   <script type="text/javascript">
+	    $("input[type=submit]").on("click",function(event){
+			
+			let title = $("#title").val().trim();
+			
+			let content= $("#content").val().trim();
+			
+			if(title==null || title.length==0){
+				alert("제목을 입력하세요.");
+				return false;
+			}
+			if(content==null||content.length==0){
+				alert("내용을 입력하세요.");
+				return false;
+			}
+
+		});
+	   </script> 
+	    
+	    
 	</body>
 </html>

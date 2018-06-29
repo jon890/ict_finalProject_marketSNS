@@ -23,6 +23,7 @@
 		<typeAlias alias ="snsArticle" type="com.ict.market.marketStaGram.dto.SnsArticleDto"/>
 		<typeAlias alias ="Img" type="com.ict.market.marketStaGram.dto.ImgDto"/>
 		<typeAlias alias="compare" type="com.ict.market.compare.dto.ComparePriceDTO"/>
+		<typeAlias alias="helpArticle" type="com.ict.market.favorite.dto.FavoriteDto"/>
 	</typeAliases>
 	
 	<!-- <mappers>

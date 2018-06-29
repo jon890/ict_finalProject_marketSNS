@@ -62,5 +62,19 @@ public class MsgServiceImpl implements MsgService {
 		return storedImgName;
 	}
 	/* ********** 게시판 글쓰기 기능 ********** */
+
+
+
+	
+	
+	/* ********** 게시판 글 읽기 기능 ********** */
+	@Override
+	public void read(int articleNum, Model model) {
+		model.addAttribute("snsArticle", msgDao.read(articleNum));
+		model.addAttribute("imgs", msgDao.getImgList(articleNum));
+	}
+	/* ********** 게시판 글 읽기 기능 ********** */
+	
+	
 	
 }

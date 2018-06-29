@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,16 +26,20 @@ public class MsgController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MsgController.class);
 	
+	
+
+	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	@RequestMapping(value="/main.msg" , method = RequestMethod.GET)
 	public String marketStaGram(Model model) {
-		logger.info("MARKETSTAGRAM - 메인 페이지 이동");
-		
-	    
+		logger.info("MARKETSTAGRAM - 메인 페이지 이동"); 
 		msgService.list(model);
 		return "marketStaGram";	
 	}
+	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	
 	
+	
+	/* ********** 게시판 글쓰기 기능 ********** */
 	@RequestMapping(value="/write.msg" , method = RequestMethod.POST)
 	public String write(SnsArticleDto snsArticle,
 						@RequestPart("imgname") List<MultipartFile> imgname,
@@ -50,5 +55,17 @@ public class MsgController {
 		
 		return "redirect:/main.msg";
 	}
+	/* ********** 게시판 글쓰기 기능 ********** */
+	
+	
+	/* ********** 게시판 글 읽기 기능 ********** */
+	@RequestMapping(value="/read.msg" , method = RequestMethod.GET)
+	public String read(@RequestParam int articleNum, Model model) {
+		logger.info("MARKETSTAGRAM - 게시물 읽기 // 게시물 번호 확인 : " + articleNum);
+		msgService.read(articleNum, model);
+		return "msgContent";
+	}
+	/* ********** 게시판 글 읽기 기능 ********** */
+	
 	
 }

@@ -8,7 +8,6 @@
 	</welcome-file-list>
 	
 	
-	<!--  -->
 	<session-config>
 		<session-timeout>10</session-timeout>
 	</session-config>
@@ -32,20 +31,18 @@
 
 
 
-	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/springConfig/root-context.xml</param-value>
 	</context-param>
 	
-	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
 	
 
-	<!-- Processes application requests -->
+
 	<servlet>
 		<servlet-name>mainServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -62,7 +59,10 @@
 		<url-pattern>*.main</url-pattern>
 	</servlet-mapping>
 	
-	<!-- Processes application requests -->
+
+
+
+
 	<servlet>
 		<servlet-name>favoriteServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -78,7 +78,9 @@
 		<url-pattern>*.favorite</url-pattern>
 	</servlet-mapping>
 	
-	<!-- Processes application requests -->
+	
+	
+
 	<servlet>
 		<servlet-name>marketStaGramServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -94,6 +96,9 @@
 		<url-pattern>*.msg</url-pattern>
 	</servlet-mapping>
 	
+	
+	
+	
 	<servlet>
 		<servlet-name>compareServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -107,6 +112,23 @@
 	<servlet-mapping>
 		<servlet-name>compareServlet</servlet-name>
 		<url-pattern>*.compare</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+		<servlet>
+		<servlet-name>marketIntroduceServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:/springConfig/marketIntroduce-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>marketIntroduceServlet</servlet-name>
+		<url-pattern>*.mid</url-pattern>
 	</servlet-mapping>
 	
 	

@@ -110,17 +110,24 @@
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr>
-			  <c:forEach var="market" items="${marketPriceList}">
-				<td><c:out value="${market.price}"/></td>
-			 </c:forEach>
-			  </tr>
+	
+			<tr>
+			<c:forEach var="market" items="${marketPriceList}">
+			    <td><c:out value="${market.goodsName}"/></td>
+			    <td><c:out value="${market.daeInPrice}"/></td>
+			    <td><c:out value="${market.yangDongPrice}"/></td>
+			    <td><c:out value="${market.muDeungPrice}"/></td>
+			    <td><c:out value="${market.malBawooPrice}"/></td>
+			    <td><c:out value="${market.moonPrice}"/></td>
+			</tr>
+		  	</c:forEach>
+			
 			</tbody>
 		  </table>
 	</div>	    
 		    
 
-		<footer id="mainFooter">
+<footer id="mainFooter">
 			<!-- mainFooter.jsp 파일 include -->
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>

@@ -2,8 +2,10 @@ package com.ict.market.compare.dao;
 
 import java.util.List;
 
-import com.ict.market.compare.dto.CompareDTO;
+import com.ict.market.compare.dto.marketPriceDTO;
+import com.ict.market.compare.dto.martPriceDTO;
 
 public interface CompareDAO {
-	public List<CompareDTO> marketPrice();
+	public List<marketPriceDTO> marketPrice();
+	public List<martPriceDTO> martPrice();
 }

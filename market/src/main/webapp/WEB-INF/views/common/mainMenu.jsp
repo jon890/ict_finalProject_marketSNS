@@ -32,7 +32,7 @@
 	                </div>
 	            </li>
 	            <li id="li03" class="mainMenu">
-	                <a href="./main.msg">#시장스타그램</a>
+	                <a href="./main.msg">시장스타그램</a>
 	                <div id="div02" class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="./main.msg">사진공유</a></li>
@@ -43,9 +43,9 @@
 	                <a href="./market.compare">가격비교</a>
 	                <div id="div03" class="subMenu">
 	                    <ul class="ul">
-	                        <li><a href="#">대형마트</a></li>
+	                        <li><a href="./mart.compare">대형마트</a></li>
 	                        <li><a href="./market.compare">전통시장</a></li>
-	                        <li><a href="#">가격비교</a></li>
+	                        <li><a href="./compare.compare">가격비교</a></li>
 	                    </ul>
 	                </div>
 	            </li>

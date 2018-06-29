@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.ui.Model;
 
-import com.ict.market.compare.dto.CompareDTO;
+import com.ict.market.compare.dto.marketPriceDTO;
+import com.ict.market.compare.dto.martPriceDTO;
 
 public interface CompareService {
-	public List<CompareDTO> marketPrice(Model model);
+	public List<marketPriceDTO> marketPrice(Model model);
+	public List<martPriceDTO> martPrice(Model model);
 }

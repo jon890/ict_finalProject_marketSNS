@@ -18,8 +18,16 @@ public class CompareController {
 	
 	@RequestMapping(value="/market.compare")
 	public String marketPrice(Model model){
-		logger.info("compare진입");
+		logger.info("market진입");
 		compareService.marketPrice(model);
-		return "comparePrice";
+		return "marketPrice";
 	}
+	@RequestMapping(value="/mart.compare")
+	public String martPrice(Model model){
+		logger.info("mart진입");
+		compareService.martPrice(model);
+		return "martPrice";
+	}
+	
+	
 }

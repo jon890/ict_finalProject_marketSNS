@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 import com.ict.market.marketStaGram.service.MsgService;
 
@@ -70,11 +71,20 @@ public class MsgController {
 	
 	/* ********** 댓글 달기 기능 ********** */
 	@RequestMapping(value="/commentWrite.msg" , method = RequestMethod.POST)
-	public String commentWrite(@RequestParam int articleNum, Model model) {
-		logger.info("MARKETSTAGRAM - 게시물 읽기 // 게시물 번호 확인 : " + articleNum);
-		msgService.read(articleNum, model);
+	public String commentWrite(MsgCommentDto comment) {
+		logger.info("MARKETSTAGRAM - 댓글 달기 버튼 SUBMIT");
+		return "redirect:/read.msg".concat(Integer.toString(comment.getArticleNum()));
+	}
+	/* ********** 댓글 달기 기능 ********** */
+	
+	
+	
+	/* ********** 좋아요 기능 ********** */
+	@RequestMapping(value="/like.msg" , method = RequestMethod.POST)
+	public String like(@RequestParam int articleNum) {
+		logger.info("MARKETSTAGRAM - 좋아요 버튼 클릭");
 		return "msgContent";
 	}
-	
+	/* ********** 좋아요 기능 ********** */
 	
 }

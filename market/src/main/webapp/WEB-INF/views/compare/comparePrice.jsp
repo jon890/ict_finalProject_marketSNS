@@ -132,11 +132,13 @@
 		    <td><c:out value="${compare.emartPrice}"/></td>
 			<td><c:out value="${compare.homePlusPrice}"/></td>
 			<td><c:out value="${compare.lotteMartPrice}"/></td>
-			</tr>
 			</c:forEach>
+			</tr>
+
 			</tbody>
 		  </table>
-	</div>	    
+	</div>	
+	</section>    
 		    
 
 <footer id="mainFooter">

@@ -112,16 +112,17 @@
 					<div>댓글test...</div>
 					<hr>
 					
-					<form>
+					<form id="snsArticleForm">
 						<div id="snsArticleBtns">
-							<input type="button" src="./resources/images/marketStaGram/likebtn.png">
-							<input type="button" src="./resources/images/marketStaGram/commentbtn.png">
+							<input type="image" id="likebtn" src="./resources/images/marketStaGram/likebtn.png">	
+							<input type="image" id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png">
+							<input type="hidden" name="articleNum" value="${snsArticle.articleNum}">
 						</div>
 						<div>좋아요수 : ${snsArticle.likeNum}</div>
 						<div>글쓴날짜 : ${snsArticle.writeDate}</div>
 						<hr>	
-						<div><textarea cols="30" placeholder="댓글 달기..." autocomplete="off" name="commentContent"></textarea></div>
-					</form>
+						<div><textarea cols="30" placeholder="댓글 달기..." name="commentContent"></textarea></div>
+						</form>
 				</div>
 			</article>
 		</section>
@@ -130,6 +131,27 @@
 			<!-- mainFooter.jsp 파일 include -->
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>
+		
+		<script>
+		
+			$(document).ready(function(){
+				
+				$("#commentbtn").on("click", function(e){
+					e.preventDefault;
+					$("#snsArticleForm").attr("action", "./commentWrite.msg");
+					$("#snsArticleForm").attr("method", "POST");
+					$("#snsArticleForm").submit();				
+				});
+				
+				$("#likebtn").on("click", function(e){
+					e.preventDefault;
+					$("#snsArticleForm").attr("action", "./like.msg");
+					$("#snsArticleForm").attr("method", "POST");
+					$("#snsArticleForm").submit();				
+				});
+			});
+		
+		</script>
  
 	</body>
 </html>

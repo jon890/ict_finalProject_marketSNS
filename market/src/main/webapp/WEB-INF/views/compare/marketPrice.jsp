@@ -127,14 +127,14 @@
 			    <td><c:out value="${market.muDeungPrice}"/></td>
 			    <td><c:out value="${market.malBawooPrice}"/></td>
 			    <td><c:out value="${market.moonPrice}"/></td>
+			</c:forEach>
 			</tr>
-		  	</c:forEach>
+
 			
 			</tbody>
 		  </table>
-	</div>	    
-		    
-
+	</div>
+	</section>
 <footer id="mainFooter">
 			<!-- mainFooter.jsp 파일 include -->
 			<%@ include file="./../common/mainFooter.jsp" %>

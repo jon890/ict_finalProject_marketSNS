@@ -127,8 +127,9 @@
 			    <td><c:out value="${mart.lotteMartPrice}"/></td>
 			    <td><c:out value="${mart.yeongAmMartPrice}"/></td>
 			    <td><c:out value="${mart.lotteMartSouthPrice}"/></td>
+			</c:forEach>
 			</tr>
-		  	</c:forEach>
+		  	
 			
 			</tbody>
 		  </table>

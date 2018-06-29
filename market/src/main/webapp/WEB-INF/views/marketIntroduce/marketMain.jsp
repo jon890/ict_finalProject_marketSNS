@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -64,64 +65,154 @@
 	                            <thead>
 	                                <tr>
 	                                    <th id="th01">이름</th>
-	                                    <th id="th02">위치</th>
+	                                    <th id="th02">개설주기</th>
 	                                    <th id="th03">이용시간</th>
+	                                    <th id="th04">주소</th>
+	                                    <th id="th05">전화번호</th>
 	                                </tr>
 	                            </thead>
 	                            <tbody>
-	                                <tr>
-	                                    <td>남광주야시장</td>
-	                                    <td>광주 동구 제봉로17번길 9-9</td>
-	                                    <td>07:00 ~ 20:00 / 야시장운영 금,토 일몰후 ~ 23:00</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>양동시장</td>
-	                                    <td>광주 서구 천변좌로 238</td>
-	                                    <td>07:00 ~ 21:00</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>무등시장</td>
-	                                    <td>광주 남구 군분로 27</td>
-	                                    <td>08:00 ~ 20:00</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>말바우시장</td>
-	                                    <td>광주 북구 서방로81번길 27</td>
-	                                    <td>08:00 ~ 20:00</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>1913 송정역시장</td>
-	                                    <td>광주 광산구 송정로8번길 13</td>
-	                                    <td>주중 11:00 ~ 22:00 / 금,토,일 11:00 ~ 23:00 / 주류판매점 ~ 24:00</td>
-	                                </tr>
+	                            	<c:forEach var="market" items="${marketList}">
+	                            		<tr>
+	                            			<td>${market.marketName}</td>
+	                            			<td>${market.marketOpening}</td>
+	                            			<td>${market.marketHours}</td>
+	                            			<td>${market.marketAddress}</td>
+	                            			<td>${market.marketPhone}</td>	                            			
+	                            	</c:forEach>
 	                            </tbody>
 	                        </table>
 	                    </div>
 	                </div>
 	                <div id="menu1" class="container tab-pane fade">
 	                    <br>
-	                    <h3>동구</h3>
-	                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	                    <div class="container">
+	                        <table class="table table-striped">
+	                            <thead>
+	                                <tr>
+	                                    <th id="th01">이름</th>
+	                                    <th id="th02">개설주기</th>
+	                                    <th id="th03">이용시간</th>
+	                                    <th id="th04">주소</th>
+	                                    <th id="th05">전화번호</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                            	<c:forEach var="market" items="${marketList}">
+	                            		<tr>
+	                            			<td>${market.marketName}</td>
+	                            			<td>${market.marketOpening}</td>
+	                            			<td>${market.marketHours}</td>
+	                            			<td>${market.marketAddress}</td>
+	                            			<td>${market.marketPhone}</td>	                            			
+	                            	</c:forEach>
+	                            </tbody>
+	                        </table>
+	                    </div>
 	                </div>
 	                <div id="menu2" class="container tab-pane fade">
 	                    <br>
-	                    <h3>서구</h3>
-	                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+	                    <div class="container">
+	                        <table class="table table-striped">
+	                            <thead>
+	                                <tr>
+	                                    <th id="th01">이름</th>
+	                                    <th id="th02">개설주기</th>
+	                                    <th id="th03">이용시간</th>
+	                                    <th id="th04">주소</th>
+	                                    <th id="th05">전화번호</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                            	<c:forEach var="market" items="${marketList}">
+	                            		<tr>
+	                            			<td>${market.marketName}</td>
+	                            			<td>${market.marketOpening}</td>
+	                            			<td>${market.marketHours}</td>
+	                            			<td>${market.marketAddress}</td>
+	                            			<td>${market.marketPhone}</td>	                            			
+	                            	</c:forEach>
+	                            </tbody>
+	                        </table>
+	                    </div>
 	                </div>
 	                <div id="menu3" class="container tab-pane fade">
 	                    <br>
-	                    <h3>남구</h3>
-	                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+	                    <div class="container">
+	                        <table class="table table-striped">
+	                            <thead>
+	                                <tr>
+	                                    <th id="th01">이름</th>
+	                                    <th id="th02">개설주기</th>
+	                                    <th id="th03">이용시간</th>
+	                                    <th id="th04">주소</th>
+	                                    <th id="th05">전화번호</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                            	<c:forEach var="market" items="${marketList}">
+	                            		<tr>
+	                            			<td>${market.marketName}</td>
+	                            			<td>${market.marketOpening}</td>
+	                            			<td>${market.marketHours}</td>
+	                            			<td>${market.marketAddress}</td>
+	                            			<td>${market.marketPhone}</td>	                            			
+	                            	</c:forEach>
+	                            </tbody>
+	                        </table>
+	                    </div>
 	                </div>
 	                <div id="menu4" class="container tab-pane fade">
 	                    <br>
-	                    <h3>북구</h3>
-	                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+	                    <div class="container">
+	                        <table class="table table-striped">
+	                            <thead>
+	                                <tr>
+	                                    <th id="th01">이름</th>
+	                                    <th id="th02">개설주기</th>
+	                                    <th id="th03">이용시간</th>
+	                                    <th id="th04">주소</th>
+	                                    <th id="th05">전화번호</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                            	<c:forEach var="market" items="${marketList}">
+	                            		<tr>
+	                            			<td>${market.marketName}</td>
+	                            			<td>${market.marketOpening}</td>
+	                            			<td>${market.marketHours}</td>
+	                            			<td>${market.marketAddress}</td>
+	                            			<td>${market.marketPhone}</td>	                            			
+	                            	</c:forEach>
+	                            </tbody>
+	                        </table>
+	                    </div>
 	                </div>
 	                <div id="menu5" class="container tab-pane fade">
 	                    <br>
-	                    <h3>광산구</h3>
-	                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+	                    <div class="container">
+	                        <table class="table table-striped">
+	                            <thead>
+	                                <tr>
+	                                    <th id="th01">이름</th>
+	                                    <th id="th02">개설주기</th>
+	                                    <th id="th03">이용시간</th>
+	                                    <th id="th04">주소</th>
+	                                    <th id="th05">전화번호</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                            	<c:forEach var="market" items="${marketList}">
+	                            		<tr>
+	                            			<td>${market.marketName}</td>
+	                            			<td>${market.marketOpening}</td>
+	                            			<td>${market.marketHours}</td>
+	                            			<td>${market.marketAddress}</td>
+	                            			<td>${market.marketPhone}</td>	                            			
+	                            	</c:forEach>
+	                            </tbody>
+	                        </table>
+	                    </div>
 	                </div>
 	            </div>
 	        </div>

@@ -29,8 +29,9 @@ public class CompareController {
 		return "martPrice";
 	}
 	@RequestMapping(value="/compare.compare")
-	public String martPrice(){
+	public String comparePrice(Model model){
 		logger.info("compare¡¯¿‘");
+		compareService.comparePrice(model);
 		return "comparePrice";
 	}
 	

@@ -26,5 +26,17 @@
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
 	and m4.martCode=44 and m5.martCode=55
 	</select>
+	
+	<select id="compareList" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	
 
 </mapper>

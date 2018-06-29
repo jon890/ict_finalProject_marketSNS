@@ -37,6 +37,7 @@
 	
 	        #p01{
 	            font-size:50px;
+	            color:#6799FF;
 	        }
 	
 	        #p02{
@@ -46,6 +47,8 @@
 	        	background-color:#FFDFFF;
 	        	font-size:15px;
 	        }
+	        
+	        
 	      </style>
 	      
 <title>가격비교</title>

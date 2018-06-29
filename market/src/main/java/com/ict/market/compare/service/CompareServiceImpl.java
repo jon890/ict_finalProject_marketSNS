@@ -33,5 +33,10 @@ public class CompareServiceImpl implements CompareService {
 		return null;
 	}
 
+	@Override
+	public void comparePrice(Model model) {
+		model.addAttribute("comparePriceList",compareDAO.comparePrice());
+	}
+ 
 	
 }

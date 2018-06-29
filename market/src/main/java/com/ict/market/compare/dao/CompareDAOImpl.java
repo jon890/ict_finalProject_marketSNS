@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ict.market.compare.dto.ComparePriceDTO;
 import com.ict.market.compare.dto.marketPriceDTO;
 import com.ict.market.compare.dto.martPriceDTO;
 
@@ -25,6 +26,11 @@ public class CompareDAOImpl implements CompareDAO {
 	@Override
 	public List<martPriceDTO> martPrice() {
 		return sqlSession.selectList(nameSpace+".martList");
+	}
+
+	@Override
+	public List<ComparePriceDTO> comparePrice() {
+		return sqlSession.selectList(nameSpace+".compareList");
 	}
 	
 	

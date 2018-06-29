@@ -37,6 +37,7 @@
 	
 	        #p01{
 	            font-size:50px;
+	            color:red;
 	        }
 	
 	        #p02{
@@ -61,7 +62,7 @@
 		    <div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>ComparePrice</ins></p>
+	                <p id="p01"><ins>가격비교</ins></p>
 	                <p id="p02">전통시장과 대형마트의 가격을 비교해 드립니다</p>
 	            </div>
         	</div>
@@ -108,24 +109,31 @@
 			<thead>
 			  <tr>
 				<th>품목/이름</th>
+				<th>대인시장</th>
+				<th>말바우시장</th>
+				<th>양동시장</th>
 				<th>시장평균가</th>
-				<th>차이</th>
 				<th>마트평균가</th>
+				<th>이마트</th>
+				<th>롯데마트</th>
+				<th>홈플러스</th>
 			  </tr>
 			</thead>
 			<tbody>
 	
 			<tr>
-			<%-- <c:forEach var="market" items="${marketPriceList}">
-			    <td><c:out value="${market.goodsName}"/></td>
-			    <td><c:out value="${market.daeInPrice}"/></td>
-			    <td><c:out value="${market.yangDongPrice}"/></td>
-			    <td><c:out value="${market.muDeungPrice}"/></td>
-			    <td><c:out value="${market.malBawooPrice}"/></td>
-			    <td><c:out value="${market.moonPrice}"/></td>
+			<c:forEach var="compare" items="${comparePriceList}">
+			<td><c:out value="${compare.goodsName}"/></td>
+			<td><c:out value="${compare.daeInPrice}"/></td>
+			<td><c:out value="${compare.malbawooPrice}"/></td>
+			<td><c:out value="${compare.yangdongPrice}"/></td>
+			<td><c:out value="${compare.avgMarket}"/></td>
+			<td><c:out value="${compare.avgMart}"/></td>
+		    <td><c:out value="${compare.emartPrice}"/></td>
+			<td><c:out value="${compare.homePlusPrice}"/></td>
+			<td><c:out value="${compare.lotteMartPrice}"/></td>
 			</tr>
-		  	</c:forEach> --%>
-			
+			</c:forEach>
 			</tbody>
 		  </table>
 	</div>	    

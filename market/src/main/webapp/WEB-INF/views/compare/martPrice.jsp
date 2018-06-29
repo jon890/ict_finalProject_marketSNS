@@ -46,6 +46,9 @@
 	        	background-color:#FFDFFF;
 	        	font-size:15px;
 	        }
+	        table{
+	        width:900px;
+	        }
 	      </style>
 	      
 <title>가격비교</title>

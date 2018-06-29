@@ -22,6 +22,7 @@
 		<typeAlias alias ="mart" type="com.ict.market.compare.dto.martPriceDTO"/>
 		<typeAlias alias ="snsArticle" type="com.ict.market.marketStaGram.dto.SnsArticleDto"/>
 		<typeAlias alias ="Img" type="com.ict.market.marketStaGram.dto.ImgDto"/>
+		<typeAlias alias="compare" type="com.ict.market.compare.dto.ComparePriceDTO"/>
 	</typeAliases>
 	
 	<!-- <mappers>

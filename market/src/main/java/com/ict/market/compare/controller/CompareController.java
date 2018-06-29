@@ -28,6 +28,13 @@ public class CompareController {
 		compareService.martPrice(model);
 		return "martPrice";
 	}
+	@RequestMapping(value="/compare.compare")
+	public String martPrice(){
+		logger.info("compare¡¯¿‘");
+		return "comparePrice";
+	}
+	
+	
 	
 	
 }

@@ -10,7 +10,30 @@
 		values(helpArticle_SEQ.nextVal,#{id},#{title},#{content},0,0,0,sysdate,0)
 	</insert>
 	
+	<select id="help" resultType="helpArticle">
+		SELECT *
+		FROM (SELECT ROWNUM RM,HUMAN.*
+		 FROM(SELECT articleNum,id,title,to_char(writeDate,'YYYY-MM-DD')as writeDate,depth,hit,fileStatus
+		 <!-- (select count(*) from comments where bbs1.articleNum=comments.articleNum)as commentCount -->
+			  FROM helpArticle
+			  START WITH groupId=0
+			  CONNECT BY PRIOR articleNum=groupId
+			  ORDER SIBLINGS BY articleNum DESC)HUMAN
+		  )
+		WHERE RM BETWEEN #{startRow} and #{endRow}
+	</select>
 	
+	<select id="getTotalCount" resultType="int">
+		select count(*)
+		from helpArticle	
+	</select>
 	
+	<select id="content" parameterType="String" resultType="helpArticle">
+		select *
+		from helpArticle
+		where articleNum=#{articleNum}
+	</select>
+	
+
 
 </mapper>

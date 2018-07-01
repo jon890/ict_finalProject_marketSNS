@@ -56,15 +56,7 @@
 	        .nav-link{
 	            color:black;
 	        }
-	        #writeBtnDiv{
-	        	width:100%;
-	        	height:50px;
-	        }
 	        
-	       	#writeBtnDiv < a{
-	       		float:right;
-	       	} 
-	       	
 	       
     </style>
 </head>
@@ -89,7 +81,7 @@
     
     		<c:if test="${id != null}">
 	        	<div id="writeBtnDiv">
-	        		 <a class="btn btn-primary" href="./helpForm.favorite">글쓰기</a>
+	        		 <a class="btn btn-default" href="./helpForm.favorite">글쓰기</a>
 	        	</div>
         	</c:if>
         	
@@ -98,52 +90,57 @@
 	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a>
 	        	</div>  	
         	</c:if>
- 		<b>글목록(전체 글:${totalCount})</b>
+ 		
         <table class="table table-hover">
             <thead>
-                <tr>
-                    <th id="th01">번호</th>
-                    <th id="th02">제목</th>
-                    <th id="th03">글쓴이</th>
-                    <th id="th04">등록일</th>
-                    <th id="th05">조회수</th>
-                </tr>
+            <tr>
+ 			 <th>글쓴이 :</th> <td>${helpArticle.id}</td> 			 
+ 			 <th>조회수 :</th> <td>${helpArticle.hit}</td>
+ 			</tr>
+ 			<tr>	 
+			 <th>제목 : </th><td>${helpArticle.title}</td>
+			 <th>날짜 : </th><td>${helpArticle.writeDate}</td>
+		 	</tr>
+            
             </thead>
             <tbody>
-            	<c:forEach var="helpArticle" items="${helpArticleList}">
-						<tr>
-							<td width="50"><c:out value="${helpArticle.articleNum}" /></td>
-							<td width="250"><c:if test="${helpArticle.depth > 0}">
-									<img src="resources/img/re.png"
-										width="${10 * helpArticle.depth}" height="16">
-									<img src=" ">
-								</c:if> <c:if test="${article.depth == 0}">
-									<img src="resources/img/re.png" width="0" height="16">
-								</c:if> <a
-								href="/market/content.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}&fileStatus=${helpArticle.fileStatus}">
-									${helpArticle.title} 
-									<c:if test="${helpArticle.commentCount!=0 }">
-										<span style="color: red">(${helpArticle.commentCount})</span>
-									</c:if>
-							</a> <c:if test="${article.hit >= 20}">
-									<img src="images/image3.png" border="0" height="16">
-								</c:if></td>
-							<td width="100">${helpArticle.id}</td>
-							<td width="100">${helpArticle.writeDate}</td>
-							<td width="50">${helpArticle.hit}</td>
-						</tr>
-					</c:forEach>
+            <tr>			 
+			  <td colspan="4">${helpArticle.content}</td>
+	     	</tr>
+	     	 <tr>
+	      <c:if test="${id !=null}">
+	    	  <td colspan="4" align="right">	    	
+	    	  <input type="submit" class="btn btn-primary" value="답글달기">
+	    	  <c:if test="${id ==helpArticle.id}">
+	    	  <input type="button" class="btn btn-primary" value="수정하기" onclick="document.location.href='/market/update.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}&fileStatus=${HelpArticle.fileStatus}'">
+	    	  <input type="button" class="btn btn-primary" value="삭제하기" onclick="document.location.href='/market/delete.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}'">
+	    	  </c:if>
+	    	  <c:if test="${id !=helpArticle.id}">
+	    	  <input type="button" class="btn btn-primary" value="수정하기" disabled="disabled">
+	    	  <input type="button" class="btn btn-primary" value="삭제하기" disabled="disabled">
+	    	  </c:if>
+	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=${pageNum}'">
+	    	  </td>
+	      </c:if>
+	      		    	
+	      <c:if test="${id ==null}">
+	    	  <td colspan="4" align="right">
+	    	  <input type="submit" class="btn btn-primary" value="답글달기" disabled="disabled">
+	    	  <input type="button" class="btn btn-primary" value="수정하기" disabled="disabled">
+	    	  <input type="button" class="btn btn-primary" value="삭제하기" disabled="disabled">
+	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=${pageNum}'">
+	    	  </td>   
+	      </c:if>      	 	      	 
+	     </tr>
+	     	
+	     	
+	     	 	
             </tbody>
         </table>
       
     </div>
 
-    <div class="container">
-        <ul class="pagination justify-content-center">
-             ${pageCode}
-        </ul>
-    </div>
-    
+        
     <!-- http://bigfat.tistory.com/83 -->
     </section>
     

@@ -40,6 +40,23 @@
 		where articleNum=#{articleNum}
 	</select>
 	
+	<select id="getTotalCount" resultType="int">
+		select count(*)
+		from helpArticle	
+	</select>
+	
+	<select id="content" parameterType="String" resultType="helpArticle">
+		select *
+		from helpArticle
+		where articleNum=#{articleNum}
+	</select>
+	
+	<select id="getUpdateArticle" parameterType="String" resultType="helpArticle">
+		select title,content
+		from helpArticle
+		where articleNum=#{articleNum}
+	</select>
+	
 	<update id="updateArticle" parameterType="helpArticle">
 		update helpArticle
 		set title=#{title},content=#{content},fileStatus=#{fileStatus}
@@ -62,6 +79,7 @@
 			where rownum between 1 and #{commentRow}
 	</select>
 	
+
 
 
 </mapper>

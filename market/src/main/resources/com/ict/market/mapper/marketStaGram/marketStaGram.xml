@@ -6,7 +6,7 @@
 <mapper namespace="com.ict.market.marketStaGram.dao.MsgDao">
 
 	<!-- ********** 메인 페이지 로딩시 글 가져오기 기능 ********** -->
-	<select id="list" resultType="img">
+	<select id="list" resultType="msgImg">
 		SELECT STOREDIMGNAME, ARTICLENUM
 		FROM IMGLIST
 		WHERE ROWNUM BETWEEN 1 AND 9
@@ -24,7 +24,7 @@
 	</insert>
 	
 	
-	<insert id="insertImg" parameterType="img">
+	<insert id="insertImg" parameterType="msgImg">
 		INSERT INTO IMGLIST
 		VALUES(IMGLIST_SEQ.NEXTVAL, #{storedImgName}, #{articleNum})
 	</insert>
@@ -34,9 +34,11 @@
 	
 	<!-- ********** 게시판 글 읽기 기능 ********** -->
 	<select id="read" parameterType="Integer" resultType="snsArticle">
-		SELECT ARTICLENUM, ID, CONTENT, LIKENUM, WRITEDATE
+		SELECT MARKETSTAGRAM. *, (SELECT COUNT(*)
+								  FROM MSGCOMMENT
+								  WHERE MARKETSTAGRAM.ARTICLENUM = MSGCOMMENT.ARTICLENUM) as COMMENTCOUNT
 		FROM MARKETSTAGRAM
-		WHERE ARTICLENUM = #{articleNum}
+		WHERE MARKETSTAGRAM.ARTICLENUM = #{articleNum}
 	</select>
 	
 	<select id="getImgList" parameterType="Integer" resultType="String">
@@ -45,4 +47,28 @@
 		WHERE ARTICLENUM = #{articleNum}
 	</select>
 	<!-- ********** 게시판 글 읽기 기능 ********** -->
+	
+	
+	
+	<!-- ********** 댓글 쓰기 기능 ********** -->
+	<insert id="commentWrite" parameterType="msgComment">
+		INSERT INTO MSGCOMMENT
+		VALUES(MSGCOMMENT_SEQ.NEXTVAL, #{id}, #{commentContent}, SYSDATE, #{articleNum})
+	</insert>
+	<!-- ********** 댓글 글쓰기 기능 ********** -->
+	
+	
+	
+	<!-- ********** 댓글 가져오기 기능 ********** -->
+	<select id="getComments" parameterType="HashMap" resultType="msgComment">
+		SELECT *
+		FROM (SELECT ID, COMMENTCONTENT, COMMENTDATE, ARTICLENUM
+			  FROM MSGCOMMENT
+			  WHERE ARTICLENUM = #{articleNum}
+			  ORDER BY COMMENTNUM DESC)
+		WHERE ROWNUM BETWEEN 1 AND #{commentRow}
+	</select>
+	<!-- ********** 댓글 가져오기 기능 ********** -->
+	
+	
 </mapper>

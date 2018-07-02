@@ -42,9 +42,8 @@ public class FavoriteDaoImpl implements FavoriteDao {
 
 	@Override
 	public FavoriteDto getUpdateArticle(String articleNum) {
-		
-		return sqlsession.selectOne(nameSpace+".getUpdateArticle",articleNum);
-		
+
+		return sqlsession.selectOne(nameSpace+".getUpdateArticle",articleNum);	
 	}
 
 	@Override
@@ -67,14 +66,5 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		System.out.println(sqlsession.selectList(nameSpace+".getComments",hm));
 		return sqlsession.selectList(nameSpace+".getComments",hm);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

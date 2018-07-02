@@ -33,7 +33,7 @@ public class MsgController {
 	
 
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
-	@RequestMapping(value="/main.msg" , method = RequestMethod.GET)
+	@RequestMapping(value = "/main.msg" , method = RequestMethod.GET)
 	public String marketStaGram(Model model) {
 		logger.info("MARKETSTAGRAM - 메인 페이지 이동"); 
 		msgService.list(model);
@@ -44,7 +44,7 @@ public class MsgController {
 	
 	
 	/* ********** 게시판 글쓰기 기능 ********** */
-	@RequestMapping(value="/write.msg" , method = RequestMethod.POST)
+	@RequestMapping(value = "/write.msg" , method = RequestMethod.POST)
 	public String write(SnsArticleDto snsArticle,
 						@RequestPart("imgname") List<MultipartFile> imgname,
 						HttpServletRequest req) {
@@ -63,7 +63,7 @@ public class MsgController {
 	
 	
 	/* ********** 게시판 글 읽기 기능 ********** */
-	@RequestMapping(value="/read.msg" , method = RequestMethod.GET)
+	@RequestMapping(value = "/read.msg" , method = RequestMethod.GET)
 	public String read(@RequestParam int articleNum, Model model) {
 		logger.info("MARKETSTAGRAM - 게시물 읽기 // 게시물 번호 확인 : " + articleNum);
 		msgService.read(articleNum, model);
@@ -72,22 +72,33 @@ public class MsgController {
 	/* ********** 게시판 글 읽기 기능 ********** */
 	
 	
+
 	/* ********** 댓글 달기 기능 ********** */
-	@RequestMapping(value="/commentWrite.msg" , method = RequestMethod.POST)
+	@RequestMapping(value = "/commentWrite.msg" , method = RequestMethod.POST)
 	@ResponseBody
 	public HashMap<String, Object> commentWrite(MsgCommentDto comment, HttpSession session) {
 		logger.info("MARKETSTAGRAM - 댓글 달기 버튼 SUBMIT");
-		
 		comment.setId((String)session.getAttribute("id"));
 		msgService.commentWrite(comment);
-		return null;
+		List<MsgCommentDto> commentList = msgService.getComments(comment.getArticleNum(), 10);
+		HashMap<String, Object> hm = new HashMap<>();
+		hm.put("result", 1);
+		hm.put("commentList", commentList);
+		return hm;
 	}
 	/* ********** 댓글 달기 기능 ********** */
 	
 	
+	@RequestMapping(value = "/commentRead.msg")
+	@ResponseBody
+	public List<MsgCommentDto> commentRead(@RequestParam("articleNum") int articleNum,
+										@RequestParam("commentRow") int commentRow){
+		return msgService.getComments(articleNum, commentRow);	
+	}
 	
+
 	/* ********** 좋아요 기능 ********** */
-	@RequestMapping(value="/like.msg" , method = RequestMethod.POST)
+	@RequestMapping(value = "/like.msg" , method = RequestMethod.POST)
 	public String like(@RequestParam int articleNum) {
 		logger.info("MARKETSTAGRAM - 좋아요 버튼 클릭");
 		return "msgContent";

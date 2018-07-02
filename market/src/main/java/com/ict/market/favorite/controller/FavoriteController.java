@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
 import com.ict.market.favorite.service.FavoriteService;
@@ -71,8 +72,8 @@ public class FavoriteController {
 
 	@RequestMapping(value="/update.favorite",method=RequestMethod.GET)
 	public String getUpdateArticle(@ModelAttribute("articleNum")String articleNum,
-			@ModelAttribute("fileStatus")int fileStatus,
-			@ModelAttribute("pageNum")String pageNum,Model model) {
+		@ModelAttribute("fileStatus")int fileStatus,
+		@ModelAttribute("pageNum")String pageNum,Model model) {
 		logger.info("update - 페이지 이동");
 		favoriteService.getUpdateArticle(articleNum,fileStatus,model);
 		return null;
@@ -109,7 +110,4 @@ public class FavoriteController {
 		System.out.println(commentRow);
 		return favoriteService.getComments(articleNum,commentRow);
 	}
-	
-	
-	
 }

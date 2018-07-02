@@ -13,6 +13,7 @@
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
 	    <script src="./resources/js/marketStaGram/marketStaGram.js"></script>
+	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 	    
 	</head>
 	
@@ -27,22 +28,20 @@
 		    <div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png">
 	            <div class="transbox">
-	                <p id="marketStagramTitle01">#시장스타그램</p>
-	                <p id="marketStagramTitle02">광주 전통시장의 사진을 공유해보세요</p>
+	                <p id="p01">#시장스타그램</p>
+	                <p id="p02">광주 전통시장의 사진을 공유해보세요</p>
 	            </div>
         	</div>
         	
-        	<c:if test="${id != null}">
-	        	<div id="writeBtnDiv">
-	        		<input type="button" value="글쓰기" id="writeBtn">
-	        	</div>
-        	</c:if>
-        	
-        	<c:if test="${id == null}">
-        		<div id="writeBtnDiv">
-	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a>
-	        	</div>  	
-        	</c:if>
+        	<div id="btnDiv">
+        		<input type="text" placeholder="# 해쉬태그를 이용하여 검색">
+        		<c:if test="${id != null}">
+	        		<input type="button" value="글쓰기" id="writeBtn">	
+        		</c:if>
+        		<c:if test="${id == null}">
+	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a> 	
+        		</c:if>
+        	</div>
         	 
         	 <div id="writeFormModal" class="modal">
         	 	<form action="./write.msg" method="post" enctype="multipart/form-data">

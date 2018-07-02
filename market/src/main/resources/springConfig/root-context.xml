@@ -34,6 +34,8 @@
 	<!-- 3. jee 엘리먼트를 이용해서 커넥션 풀 설정 -->
 	<!-- <jee:jndi-lookup id="dataSource" jndi-name="ict" resource-ref="true"/> -->
 	
+	<tx:annotation-driven />
+	
 	
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
   		<property name="location" value="classpath:db.properties"/>

@@ -69,11 +69,5 @@ public class FavoriteServiceImpl implements FavoriteService {
 	public List<CommentDto> getComments(int articleNum, int commentRow) {
 		return favoriteDao.getComments(articleNum,commentRow);
 	}
-	
-	
-	
-	
-	
-	
 
 }

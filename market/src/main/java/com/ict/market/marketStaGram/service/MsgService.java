@@ -14,4 +14,5 @@ public interface MsgService {
 	public void write(SnsArticleDto snsArticle, List<MultipartFile> imgname, String uploadDir);
 	public void read(int articleNum, Model model);
 	public void commentWrite(MsgCommentDto comment);
+	public List<MsgCommentDto> getComments(int articleNum, int commentRow);
 }

@@ -5,10 +5,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ict.market.marketIntroduce.service.MarketIntroduceService;
+
 
 @Controller
 public class MarketIntroduceController {
@@ -119,7 +121,7 @@ public class MarketIntroduceController {
 	@RequestMapping(value="/seongjung.mid", method = RequestMethod.GET)
 	public String seongjung() {
 		System.out.println("1913송정시장 요청을 받습니다.");
-		return "malbawoo";
+		return "seongjung";
 	}
 	
 	@RequestMapping(value="/seongjungStore.mid", method = RequestMethod.GET)

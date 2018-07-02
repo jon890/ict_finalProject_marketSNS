@@ -4,7 +4,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-	<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
+	<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
 	
   <title>OOO시장 볼거리</title>
 	<script src="https://code.jquery.com/jquery-3.3.2.min.js"></script>
@@ -21,39 +21,35 @@
 			<div class="table_list">
 				<table>
 					<colgroup>
-						<col width="200px">
-						<col width="630px">
-						<col width="100px">
+						<col width="280px">
+						<col width="500px">
+						<col width="150px">
 					</colgroup>
 					<tbody>
 						<tr>
 							<td>
-								<img src="resources/images/marketIntroduce/어여쁘다궁동.jpg">
+								<img src="./resources/images/marketIntroduce/갱소년.jpg" >
 							</td>
 							<td class="left">
-								<h3>[축제]어여쁘다 궁동</h3>
-								<span>4월 7일 개막<br> </span>
-								<span>2018.4.07(토) ~10.27(토)[7~8월 휴장]<br> </span>
-								<span>축제프로그램 : 스탬프투어, 예술심리치료<br>
-								예술체험, 아트마켓, 아트경매, 예술영화극장</span>
+								<h3>갱소년</h3>
+								<span>앙갱<br></span>
+								<span>다시 소년,소녀로 돌아갈 시간<br></span>
 							</td>
 							<td>
-								<img src="resources/images/marketIntroduce/siteicon.png">
+								<span>tel : 010-7633-9213</span>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<img src="resources/images/marketIntroduce/어여쁘다궁동.jpg">
+								<img src="./resources/images/marketIntroduce/갱소년.jpg" >
 							</td>
 							<td class="left">
-								<h3>[축제]어여쁘다 궁동</h3>
-								<span>4월 7일 개막<br> </span>
-								<span>2018.4.07(토) ~10.27(토)[7~8월 휴장]<br> </span>
-								<span>축제프로그램 : 스탬프투어, 예술심리치료<br>
-								예술체험, 아트마켓, 아트경매, 예술영화극장</span>
+								<h3>갱소년</h3>
+								<span>앙갱<br></span>
+								<span>다시 소년,소녀로 돌아갈 시간<br></span>
 							</td>
 							<td>
-								<img src="resources/images/marketIntroduce/siteicon.png">
+								<span>tel : 010-7633-9213</span>
 							</td>
 						</tr>
 					</tbody>

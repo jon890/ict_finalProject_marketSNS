@@ -92,37 +92,37 @@ infowindow.open(map, marker);
 	<div class="station_ride">
 		<h4 class="tit_findway">버스정류장</h4>
 		<div class="bus-box">
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51985" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장역(북)-상행</a></em><br>
+			<div class="bus"><a href="http://map.daum.net?busStopId=51985" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장역(북)-상행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 첨단30 | 송암31 | 봉선37 | 금남36 | 금남59 |160 <br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 매월61 | 유덕65 |송암72 | 임곡89 <br></div>
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51986" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장역(북)-하행</a></em><br>
+			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 매월61 | 유덕65 |송암72 | 임곡89 </a></div>
+			<div class="bus"><a href="http://map.daum.net?busStopId=51986" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장역(북)-하행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 첨단30 | 송암31 | 금호36 | 봉선37 | 금남59 | 160 <br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 매월61 | 유덕65 | 송암72 | 임곡89 <br>		
-			<img src="resources/images/marketIntroduce/sym_bus_sq3.png"> 마을760</div>
+			<img src="resources/images/marketIntroduce/sym_bus_sq3.png"> 마을760 </a></div>
 			
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51502" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장-상행</a></em><br>
+			<div class="bus"><a href="http://map.daum.net?busStopId=51502" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장-상행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 송암31 | 금남59 <br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 매월61 | 유덕65 | 대촌71 | 진월79 | 진월177 <br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 101 | 102 | 103 | 104 | 105 | 106 | 107 </div>	
+			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 101 | 102 | 103 | 104 | 105 | 106 | 107 </a></div>	
 			
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51503" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장-하행</a></em><br>
+			<div class="bus"><a href="http://map.daum.net?busStopId=51503" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장-하행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 송암31 | 금남59 <br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 매월61 | 유덕65 | 대촌71 | 진월79 | 진월177 <br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 101 | 102 | 103 | 104 | 105 | 106 | 107 | 108 | 109 </div>	
+			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 101 | 102 | 103 | 104 | 105 | 106 | 107 | 108 | 109 </a></div>	
 			
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=53500" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장역(천변)-상행</a></em><br>
+			<div class="bus"><a href="http://map.daum.net?busStopId=53500" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장역(천변)-상행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 대촌71 | 용전84 | 송정99 | 진월177 <br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 101 | 102 | 103 | 104 | 105 | 106 | 107 </div>
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=BS119436" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장역(천변)-하행</a></em><br>
+			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 101 | 102 | 103 | 104 | 105 | 106 | 107 </a></div>
+			<div class="bus"><a href="http://map.daum.net?busStopId=BS119436" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장역(천변)-하행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 대촌69 | 대촌71 | 용전84 | 송정99 | 진월177 <br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq3.png"> 마을760 </div>
+			<img src="resources/images/marketIntroduce/sym_bus_sq3.png"> 마을760 </a></div>
 			
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51983" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장역(남)-상행</a></em><br>
+			<div class="bus"><a href="http://map.daum.net?busStopId=51983" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장역(남)-상행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 송정19 | 문흥39 <br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 지원56 | 대촌69 | 진월79 | 송정99 <br></div>
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51984" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">양동시장역(남)-하행</a></em><br>
+			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 지원56 | 대촌69 | 진월79 | 송정99 </a></div>
+			<div class="bus"><a href="http://map.daum.net?busStopId=51984" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장역(남)-하행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 송정19 | 문흥39 <br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 지원56 | 대촌69 | 진월79 | 송정99 <br></div>
+			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 지원56 | 대촌69 | 진월79 | 송정99 </a></div>
 			
 		</div>
 	</div>

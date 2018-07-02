@@ -10,4 +10,5 @@ public interface FavoriteDao {
 	public int getTotalCount();
 	public List<FavoriteDto>help(HashMap<String,String> pagingMap);
 	public FavoriteDto content(String articleNum);
+	public FavoriteDto getUpdateArticle(String articleNum);
 }

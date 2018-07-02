@@ -46,6 +46,13 @@ public class FavoriteServiceImpl implements FavoriteService {
 		FavoriteDto helpArticle = favoriteDao.content(articleNum); 
 		model.addAttribute("helpArticle",helpArticle);
 	}
+
+	@Override
+	public void getUpdateArticle(String articleNum, int fileStatus, Model model) {
+		
+		model.addAttribute("helpArticle",favoriteDao.getUpdateArticle(articleNum));
+		
+	}
 	
 	
 	

@@ -64,5 +64,14 @@ public class FavoriteController {
 		return "content";
 	}
 
+	@RequestMapping(value="/update.favorite",method=RequestMethod.GET)
+	public String getUpdateArticle(@ModelAttribute("articleNum")String articleNum,
+			@ModelAttribute("fileStatus")int fileStatus, Model model) {
+		logger.info("update - 페이지 이동");
+		favoriteService.getUpdateArticle(articleNum,fileStatus,model);
+		return null;
+	}
+	
+	
 	
 }

@@ -37,6 +37,14 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		
 		return sqlsession.selectOne(nameSpace+".content",articleNum);
 	}
+
+	@Override
+	public FavoriteDto getUpdateArticle(String articleNum) {
+		
+		return sqlsession.selectOne(nameSpace+".getUpdateArticle",articleNum);
+	}
+	
+	
 	
 	
 	

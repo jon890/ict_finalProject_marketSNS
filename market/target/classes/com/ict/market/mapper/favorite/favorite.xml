@@ -34,6 +34,13 @@
 		where articleNum=#{articleNum}
 	</select>
 	
+	<select id="getUpdateArticle" parameterType="String" resultType="helpArticle">
+		select title,content
+		from helpArticle
+		where articleNum=#{articleNum}
+	</select>
+	
+	
 
 
 </mapper>

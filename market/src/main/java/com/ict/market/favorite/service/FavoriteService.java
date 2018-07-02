@@ -10,4 +10,5 @@ public interface FavoriteService {
 	public void write(FavoriteDto helpArticle);
 	public List<FavoriteDto> help(String pageNum,Model model);
 	public void content(String articleNum,int fileStatus,Model model);
+	public void getUpdateArticle(String articleNum,int fileStatus,Model model);
 }

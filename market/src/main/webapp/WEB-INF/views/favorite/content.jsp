@@ -151,6 +151,5 @@
 	 <%@ include file="./../common/mainFooter.jsp" %>
 	</footer>
     
->>>>>>> refs/remotes/origin/byoungtae
 </body>
 </html>

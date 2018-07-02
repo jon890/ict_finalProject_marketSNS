@@ -229,6 +229,7 @@
 	                            	<c:forEach var="market" items="${marketList}">
 										<c:if test="${market.marketName.equals('말바우시장')}">
 											<tr>
+												<td><a href="./malbawoo.mid">${market.marketName}</a></td>
 												<td>${market.marketOpening}</td>
 												<td>${market.marketHours}</td>
 												<td>${market.marketAddress}</td>
@@ -271,6 +272,7 @@
 	                            	<c:forEach var="market" items="${marketList}">
 										<c:if test="${market.marketName.equals('1913송정역시장')}">
 											<tr>
+												<td><a href="./seongjung.mid">${market.marketName}</a></td>
 												<td>${market.marketOpening}</td>
 												<td>${market.marketHours}</td>
 												<td>${market.marketAddress}</td>

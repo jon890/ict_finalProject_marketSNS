@@ -12,28 +12,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
-		
-		<style>
-			.nav-item{
-			    width:20%;
-			    text-align:center;
-			    font-size:20px;
-			    font-weight:bold;
-			}
-			
-			.nav-link{
-			    color:black;
-			}
-			
-			#p01{
-				font-size : 50px;
-			}
-			
-			#p02{
-				font-size : 20px;
-			}
-		</style>
-		
 	</head>
 	
 	
@@ -46,7 +24,7 @@
 			<div class="background">
 		            <img src="./resources/images/favorite/favorite_main.png" />
 		            <div class="transbox">
-		                <p id="p01"><ins>말바우시장</ins></p>
+		                <p id="p01">말바우시장</p>
 		                <p id="p02">"호남 최대의 5일장과 상설시장의 상생"</p>
 		            </div>
 	        </div>

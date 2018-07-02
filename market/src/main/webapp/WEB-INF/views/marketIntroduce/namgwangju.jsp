@@ -11,28 +11,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
-		
-		<style>
-			.nav-item{
-			    width:20%;
-			    text-align:center;
-			    font-size:20px;
-			    font-weight:bold;
-			}
-			
-			.nav-link{
-			    color:black;
-			}
-			
-			#p01{
-				font-size : 50px;
-			}
-			
-			#p02{
-				font-size : 20px;
-			}
-		</style>
-		
 	</head>
 	
 	<body>
@@ -44,7 +22,7 @@
 			<div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>남광주시장</ins></p>
+	                <p id="p01">남광주시장</p>
 	                <p id="p02">"남도의 씽씽한 해산물 맞볼 수 있는 해산물시장"</p>
 	            </div>
 	        </div>

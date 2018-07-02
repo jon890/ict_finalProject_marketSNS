@@ -1,8 +1,10 @@
 package com.ict.market.marketStaGram.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
@@ -71,9 +74,13 @@ public class MsgController {
 	
 	/* ********** 댓글 달기 기능 ********** */
 	@RequestMapping(value="/commentWrite.msg" , method = RequestMethod.POST)
-	public String commentWrite(MsgCommentDto comment) {
+	@ResponseBody
+	public HashMap<String, Object> commentWrite(MsgCommentDto comment, HttpSession session) {
 		logger.info("MARKETSTAGRAM - 댓글 달기 버튼 SUBMIT");
-		return "redirect:/read.msg?articleNum=".concat(Integer.toString(comment.getArticleNum()));
+		
+		comment.setId((String)session.getAttribute("id"));
+		msgService.commentWrite(comment);
+		return null;
 	}
 	/* ********** 댓글 달기 기능 ********** */
 	

@@ -11,8 +11,7 @@ public class FavoriteDto {
 	private int groupId;
 	private String writeDate;
 	private int commentCount;
-	
-	
+	private int fileStatus;
 	public int getArticleNum() {
 		return articleNum;
 	}
@@ -67,12 +66,19 @@ public class FavoriteDto {
 	public void setCommentCount(int commentCount) {
 		this.commentCount = commentCount;
 	}
+	public int getFileStatus() {
+		return fileStatus;
+	}
+	public void setFileStatus(int fileStatus) {
+		this.fileStatus = fileStatus;
+	}
 	@Override
 	public String toString() {
 		return "FavoriteDto [articleNum=" + articleNum + ", id=" + id + ", title=" + title + ", content=" + content
 				+ ", depth=" + depth + ", hit=" + hit + ", groupId=" + groupId + ", writeDate=" + writeDate
-				+ ", commentCount=" + commentCount + "]";
+				+ ", commentCount=" + commentCount + ", fileStatus=" + fileStatus + "]";
 	}
+	
 	
 	
 }

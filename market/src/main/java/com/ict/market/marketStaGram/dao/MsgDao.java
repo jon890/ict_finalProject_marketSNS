@@ -3,6 +3,7 @@ package com.ict.market.marketStaGram.dao;
 import java.util.List;
 
 import com.ict.market.marketStaGram.dto.ImgDto;
+import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 public interface MsgDao {
@@ -22,6 +23,16 @@ public interface MsgDao {
 	public SnsArticleDto read(int articleNum);
 	public List<String> getImgList(int articleNum);
 	/* ********** 게시판 글 읽기 기능 ********** */
+	
+	
+	/* ********** 댓글 달기 기능 ********** */
+	public void commentWrite(MsgCommentDto comment);
+	/* ********** 댓글 달기 기능 ********** */
+	
+	
+	/* ********** 댓글 가져오기 기능 ********** */
+	public List<MsgCommentDto> getComments(int articleNum, int commentRow);
+	/* ********** 댓글 달기 기능 ********** */
 	
 	
 }

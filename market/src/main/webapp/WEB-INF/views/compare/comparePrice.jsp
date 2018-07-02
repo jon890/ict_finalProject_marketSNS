@@ -132,9 +132,8 @@
 		    <td><c:out value="${compare.emartPrice}"/></td>
 			<td><c:out value="${compare.homePlusPrice}"/></td>
 			<td><c:out value="${compare.lotteMartPrice}"/></td>
-			</c:forEach>
 			</tr>
-
+			</c:forEach>
 			</tbody>
 		  </table>
 	</div>	

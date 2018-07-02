@@ -127,13 +127,13 @@
 			    <td><c:out value="${mart.lotteMartPrice}"/></td>
 			    <td><c:out value="${mart.yeongAmMartPrice}"/></td>
 			    <td><c:out value="${mart.lotteMartSouthPrice}"/></td>
-			</c:forEach>
 			</tr>
-		  	
-			
+		  	</c:forEach>
+			<!-- forEach문 제대로 한거니 수정하지마세요... -->
 			</tbody>
 		  </table>
-	</div>	    
+	</div>	
+	</section>    
 		    
 
 <footer id="mainFooter">

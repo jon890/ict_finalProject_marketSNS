@@ -10,25 +10,23 @@
 		<setting name="useGeneratedKeys" value="false" />
 		<setting name="defaultExecutorType" value="SIMPLE" />
 		<setting name="defaultStatementTimeout" value="25000" /> 
-		<!-- 전통적인 데이터베이스 컬럼명 형태인 A_Column을 camel case 형태의  -->
-		<!-- 자바 프로퍼티 명 형태인 aColumd으로 자동 매핑하도록 함  -->
 		<setting name="mapUnderscoreToCamelCase" value="false" />
 		<setting name="jdbcTypeForNull" value="VARCHAR" />
 	</settings>
 	
 	<typeAliases>
 		<typeAlias alias ="member" type="com.ict.market.main.dto.MarketMemberDto"/>
+		
 		<typeAlias alias ="market" type="com.ict.market.compare.dto.marketPriceDTO"/>
 		<typeAlias alias ="mart" type="com.ict.market.compare.dto.martPriceDTO"/>
-		<typeAlias alias ="snsArticle" type="com.ict.market.marketStaGram.dto.SnsArticleDto"/>
-		<typeAlias alias ="Img" type="com.ict.market.marketStaGram.dto.ImgDto"/>
 		<typeAlias alias="compare" type="com.ict.market.compare.dto.ComparePriceDTO"/>
+		
+		<typeAlias alias ="snsArticle" type="com.ict.market.marketStaGram.dto.SnsArticleDto"/>
+		<typeAlias alias ="msgImg" type="com.ict.market.marketStaGram.dto.ImgDto"/>
+		<typeAlias alias ="msgComment" type="com.ict.market.marketStaGram.dto.MsgCommentDto"/>
+
 		<typeAlias alias="helpArticle" type="com.ict.market.favorite.dto.FavoriteDto"/>
 		<typeAlias alias="marketList" type="com.ict.market.marketIntroduce.dto.MarketDto"/>
 	</typeAliases>
-	
-	<!-- <mappers>
-		<mapper resource="com/ict/market/mapper/main/main.xml"/>
-	</mappers> -->
 	
 </configuration>

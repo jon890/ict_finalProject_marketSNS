@@ -127,9 +127,8 @@
 			    <td><c:out value="${market.muDeungPrice}"/></td>
 			    <td><c:out value="${market.malBawooPrice}"/></td>
 			    <td><c:out value="${market.moonPrice}"/></td>
-			</c:forEach>
 			</tr>
-
+			</c:forEach>
 			
 			</tbody>
 		  </table>

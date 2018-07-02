@@ -76,14 +76,22 @@ public class MsgServiceImpl implements MsgService {
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
 
-
-
-
+	
+	
+	/* ********** 댓글 달기 기능 ********** */
 	@Override
 	public void commentWrite(MsgCommentDto comment) {
-		// TODO Auto-generated method stub
-		
+		msgDao.commentWrite(comment);
 	}
-	
-	
+	/* ********** 댓글 달기 기능 ********** */
+
+
+
+	/* ********** 댓글 가져오기 기능 ********** */
+	@Override
+	public List<MsgCommentDto> getComments(int articleNum, int commentRow) {
+		return msgDao.getComments(articleNum, commentRow);
+	}
+	/* ********** 댓글 가져오기 기능 ********** */
+
 }

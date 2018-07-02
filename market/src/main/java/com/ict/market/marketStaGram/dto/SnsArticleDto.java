@@ -6,6 +6,7 @@ public class SnsArticleDto {
 	private String content;
 	private int likeNum;
 	private String writeDate;
+	private int commentCount;
 	
 	public int getArticleNum() {
 		return articleNum;
@@ -37,11 +38,19 @@ public class SnsArticleDto {
 	public void setWriteDate(String writeDate) {
 		this.writeDate = writeDate;
 	}
+	public int getCommentCount() {
+		return commentCount;
+	}
+	public void setCommentCount(int commentCount) {
+		this.commentCount = commentCount;
+	}
+	
 	
 	@Override
 	public String toString() {
-		return "ArticleDto [articleNum=" + articleNum + ", id=" + id + ", content=" + content + ", likeNum=" + likeNum
-				+ ", writeDate=" + writeDate + "]";
+		return "SnsArticleDto [articleNum=" + articleNum + ", id=" + id + ", content=" + content + ", likeNum="
+				+ likeNum + ", writeDate=" + writeDate + ", commentCount=" + commentCount + "]";
 	}
+	
 	
 }

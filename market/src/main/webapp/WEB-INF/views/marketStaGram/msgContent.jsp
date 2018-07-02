@@ -8,50 +8,13 @@
 		<title>OOO - #시장스타그램 글 읽기</title>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+		<link rel="stylesheet" href="./resources/css/marketStaGram/msgContent.css">
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-		
-		<style>
-		
-			#contents{
-				width : 1080px;
-				height : 400px;
-				margin : 0 auto;
-				margin-top : 30px;
-				border : 1px solid red;
-			}
-			
-			#contents > div{
-				height : 400px;
-				float : left;
-			}
-			
-			#imgs{
-				width : 600px;
-				margin-right : 15px;
-			}
-		
-			#snsArticle{
-				width : 400px;
-				margin-left : 15px;
-			}
-			
-			#marketStagramTitle01{
-				font-size : 50px;
-			}
-
-			#marketStagramTitle02{
-				font-size : 20px;
-			}
-			
-			#snsArticleBtns img{
-				cursor : pointer;
-			}
-		</style>
 	</head>
 	
 	
@@ -107,22 +70,21 @@
 					<div id="snsArticleId">${snsArticle.id}</div>
 					<hr>
 					<div>${snsArticle.id} : ${snsArticle.content}</div>
-					<div>댓글test...</div>
-					<div>댓글test...</div>
-					<div>댓글test...</div>
+					<div>
+						<div id="showComment" align="center">
+					</div>
+					<input type="hidden" id="commPageNum" value="1">
+					</div>	
 					<hr>
 					
-					<form id="snsArticleForm">
-						<div id="snsArticleBtns">
-							<input type="image" id="likebtn" src="./resources/images/marketStaGram/likebtn.png">	
-							<input type="image" id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png">
-							<input type="hidden" name="articleNum" value="${snsArticle.articleNum}">
-						</div>
-						<div>좋아요수 : ${snsArticle.likeNum}</div>
-						<div>글쓴날짜 : ${snsArticle.writeDate}</div>
-						<hr>	
-						<div><textarea cols="30" placeholder="댓글 달기..." name="commentContent"></textarea></div>
-					</form>
+					<div id="snsArticleBtns">
+						<input type="image" id="likebtn" src="./resources/images/marketStaGram/likebtn.png">	
+						<input type="image" id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png">
+					</div>
+					<div>좋아요수 : ${snsArticle.likeNum}</div>
+					<div>글쓴날짜 : ${snsArticle.writeDate}</div>
+					<hr>	
+					<div><textarea cols="30" placeholder="댓글 달기..." name="commentContent" id="commentContent"></textarea></div>
 				</div>
 			</article>
 		</section>
@@ -132,25 +94,87 @@
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>
 		
+		
+		
 		<script>
-		
-			$(document).ready(function(){
-				
-				$("#commentbtn").on("click", function(e){
-					e.preventDefault;
-					$("#snsArticleForm").attr("action", "./commentWrite.msg");
-					$("#snsArticleForm").attr("method", "POST");
-					$("#snsArticleForm").submit();				
-				});
-				
-				$("#likebtn").on("click", function(e){
-					e.preventDefault;
-					$("#snsArticleForm").attr("action", "./like.msg");
-					$("#snsArticleForm").attr("method", "POST");
-					$("#snsArticleForm").submit();				
-				});
+			
+			$.ajaxSetup({
+				type : "POST",
+				async : true,
+				dataType : "json",
+				error : function(xhr){
+					alert("오류가 발생했습니다! 에러코드 =  " + xhr.statusText);
+				}
 			});
+
 		
+			$("#commentbtn").on("click", function(event){
+				event.preventDefault;
+				event.stopPropagation();
+				
+				$.ajax({
+					url : "/market/commentWrite.msg",
+					data : {
+						commentContent : $("#commentContent").val(),
+						articleNum : "${snsArticle.articleNum}"
+					},
+					
+					success : function(data){
+						if(data.result == 1){
+							$("#commentContent").val("");
+							showHtml(data.commentList, 1);
+						}
+					}
+				});		
+			});
+			
+			function showHtml(data, commPageNum){
+				let html = "<table width='500' align='center'>";
+				html += "<tr>";
+				html += "<td class='desc'>댓글 작성자</td>";
+				html += "<td class='desc'>댓글 내용</td>";
+				html += "<td class='desc'>댓글 작성시간</td>";
+				html += "</tr>";
+				
+				$.each(data, function(index, comment){
+					html += "<tr>";
+					html += "<td>" + comment.id + "</td>";
+					html += "<td>" + comment.commentContent + "</td>";
+					html += "<td>" + comment.commentDate + "</td>";
+					html += "</tr>";
+				});
+				
+				html += "</table>";
+				commPageNum = parseInt(commPageNum);
+				
+				if("${snsArticle.commentCount}" > commPageNum * 10){
+					nextPageNum = commPageNum + 1;
+					html += "<br> <input type='button' onclick='getComment(nextPageNum, event)' value='다음 댓글 보기'>"
+				}
+				
+				$("#showComment").html(html);
+				$("#commentContent").val("");
+			}
+			
+			function getComment(commPageNum, event){
+				event.preventDefault();
+				$.ajax({
+					url : "/market/commentRead.comment",
+					data : {
+						articleNum : "${snsArticle.articleNum}",
+						commentRow : commPageNum * 10
+					},
+					success : function(data){
+						showHtml(data, commPageNum);
+					}
+				});
+			}
+
+
+			$("#likebtn").on("click", function(event){
+				event.preventDefault;
+				$("#snsArticleForm").attr("action", "./like.msg");			
+			});
 		</script>
  
 	</body>

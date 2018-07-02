@@ -6,8 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ict.market.favorite.dto.FavoriteDto;
 import com.ict.market.favorite.service.FavoriteService;
@@ -31,23 +34,44 @@ public class FavoriteController {
 		logger.info("Notice - 페이지 이동");
 		return "notice";
 	}
-	
+	/*글 목록 출력 페이지*/
 	@RequestMapping(value="/help.favorite")
-	public String help() {
+	public String help(@ModelAttribute("pageNum") String pageNum, Model model) {
+		logger.info("help - 페이지 이동");
+		logger.info(pageNum);
+		favoriteService.help(pageNum,model);
 		return "help";
 	}
 	
 	@RequestMapping(value="/helpForm.favorite",method=RequestMethod.GET)
 	public String helpForm(FavoriteDto helpArticle,HttpSession session) {
-		helpArticle.setId((String)session.getAttribute("id"));
 		return "helpForm";
 	}
-	
-	@RequestMapping(value="/helpForm.favorite",method=RequestMethod.POST)
+	/*글 남길때 포스트 방식으로 입력*/
+	@RequestMapping(value="/write.favorite",method=RequestMethod.POST)
 	public String writeForm(FavoriteDto helpArticle,HttpSession session) {
+		logger.info("write - 페이지 이동");
+		helpArticle.setId((String)session.getAttribute("id"));
 		favoriteService.write(helpArticle);
-		return "redirect://help.favorite";
+		return "redirect:/help.favorite?pageNum=1";
+	}
+	
+	@RequestMapping(value="/content.favorite")
+	public String content(@RequestParam("articleNum")String articleNum,
+			@ModelAttribute("pageNum")String pageNum,
+			@RequestParam("fileStatus")int fileStatus,Model model) {
+		favoriteService.content(articleNum,fileStatus,model);
+		return "content";
 	}
 
+	@RequestMapping(value="/update.favorite",method=RequestMethod.GET)
+	public String getUpdateArticle(@ModelAttribute("articleNum")String articleNum,
+			@ModelAttribute("fileStatus")int fileStatus, Model model) {
+		logger.info("update - 페이지 이동");
+		favoriteService.getUpdateArticle(articleNum,fileStatus,model);
+		return null;
+	}
+	
+	
 	
 }

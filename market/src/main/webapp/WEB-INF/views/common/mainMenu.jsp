@@ -50,14 +50,14 @@
 	                </div>
 	            </li>
 	            <li id="li05" class="mainMenu">
-	                <a href="./favorite.favorite">페이보릿</a>
+	                <a href="./notice.favorite">페이보릿</a>
 	                <div id="div04" class="subMenu">
 	                    <ul class="ul">
 	                        <li><a href="./notice.favorite">공지사항</a></li>
-	                        <li><a href="#">핫플레이스</a></li>
-	                        <li><a href="#">축제정보</a></li>
-	                        <li><a href="#">야시장정보</a></li>
-	                        <li><a href="./help.favorite?pageNum=1">고객센터</a></li>
+	                        <li><a href="./hotPlace.favorite">핫플레이스</a></li>
+	                        <li><a href="./festival.favorite">축제정보</a></li>
+	                        <li><a href="./nightMarket.favorite">야시장정보</a></li>
+	                        <li><a href="./help.favorite">고객센터</a></li>
 	                    </ul>
 	                </div>
 	            </li>

@@ -40,6 +40,26 @@ public class FavoriteController {
 		logger.info("Notice - 페이지 이동");
 		return "notice";
 	}
+	
+	@RequestMapping(value="/hotPlace.favorite")
+	public String hotPlace() {
+		logger.info("HotPlace - 페이지 이동");
+		return "hotPlace";
+	}
+	
+	@RequestMapping(value="/festival.favorite")
+	public String festival() {
+		logger.info("festival - 페이지 이동");
+		return "festival";
+	}
+	
+	@RequestMapping(value="/nightMarket.favorite")
+	public String nightMarket() {
+		logger.info("nightMarket - 페이지 이동");
+		return "nightMarket";
+	}
+	
+	
 	/*글 목록 출력 페이지*/
 	@RequestMapping(value="/help.favorite")
 	public String help(@ModelAttribute("pageNum") String pageNum, Model model) {

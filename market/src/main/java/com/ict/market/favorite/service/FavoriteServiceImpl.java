@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 
 import com.ict.market.favorite.common.Page;
 import com.ict.market.favorite.dao.FavoriteDao;
+import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
 
 @Service
@@ -53,6 +54,24 @@ public class FavoriteServiceImpl implements FavoriteService {
 		model.addAttribute("helpArticle",favoriteDao.getUpdateArticle(articleNum));
 		
 	}
+
+	@Override
+	public void updateArticle(FavoriteDto helpArticle, Model model) {
+		favoriteDao.updateArticle(helpArticle);
+	}
+
+	@Override
+	public void insertComment(CommentDto comment) {
+		favoriteDao.insertComment(comment);
+	}
+
+	@Override
+	public List<CommentDto> getComments(int articleNum, int commentRow) {
+		return favoriteDao.getComments(articleNum,commentRow);
+	}
+	
+	
+	
 	
 	
 	

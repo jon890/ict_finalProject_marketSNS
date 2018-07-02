@@ -40,6 +40,27 @@
 		where articleNum=#{articleNum}
 	</select>
 	
+	<update id="updateArticle" parameterType="helpArticle">
+		update helpArticle
+		set title=#{title},content=#{content},fileStatus=#{fileStatus}
+		where articleNum=#{articleNum}
+	</update>
+	
+	<!--  comment 관련 sql문   -->
+	<insert id="insertComment" parameterType="commentList">
+		insert into comments
+		values
+		(comments_seq.nextval,#{id},#{commentContent},sysdate,#{articleNum})
+	</insert>
+	
+	<select id="getComments" parameterType="java.util.HashMap" resultType="commentList">
+		select *
+		from(select id,commentContent,commentDate,articleNum
+			from comments
+			where articleNum=#{articleNum}
+			order by commentNum desc)
+			where rownum between 1 and #{commentRow}
+	</select>
 	
 
 

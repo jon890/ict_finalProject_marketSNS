@@ -90,16 +90,20 @@
 	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a>
 	        	</div>  	
         	</c:if>
-	 	
+	 
+		
+		<form action="/market/update.favorite" method="post">
+		<input type="hidden" name="articleNum" value="${articleNum}">
+		<input type="hidden" name="pageNum" value="${pageNum}">
+		<input type="hidden" name="fileStatus" value="${fileStatus}">
+		<%-- <input type="hidden" name="fileCount" value="${fileCount}"> --%>
         <table class="table table-hover">
             <thead>
             <tr>
- 			 <th>글쓴이 :</th> <td>${helpArticle.id}</td> 			 
- 			 <th>조회수 :</th> <td>${helpArticle.hit}</td>
+ 			 <th>글쓴이 :</th> <td>${id}</td> 
  			</tr>
  			<tr>	 
 			 <th>제목 : </th><td><input type="text" id="title" name="title" value="${helpArticle.title}"/></td>
-			 <th>날짜 : </th><td>${helpArticle.writeDate}</td>
 		 	</tr>
             
             </thead>
@@ -119,7 +123,7 @@
 	    	  <input type="button" class="btn btn-primary" value="수정하기" disabled="disabled">
 	    	  <input type="button" class="btn btn-primary" value="삭제하기" disabled="disabled">
 	    	  </c:if>
-	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=${pageNum}'">
+	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=1'">
 	    	  </td>
 	      </c:if>
 	      		    	
@@ -128,7 +132,7 @@
 	    	  <input type="submit" class="btn btn-primary" value="답글달기" disabled="disabled">
 	    	  <input type="button" class="btn btn-primary" value="수정하기" disabled="disabled">
 	    	  <input type="button" class="btn btn-primary" value="삭제하기" disabled="disabled">
-	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=${pageNum}'">
+	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=1'">
 	    	  </td>   
 	      </c:if>      	 	      	 
 	     </tr>
@@ -137,7 +141,7 @@
 	     	 	
             </tbody>
         </table>
-      
+      </form>
     </div>
 
         

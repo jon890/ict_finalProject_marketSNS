@@ -12,6 +12,7 @@ public class FavoriteDto {
 	private String writeDate;
 	private int commentCount;
 	private int fileStatus;
+	
 	public int getArticleNum() {
 		return articleNum;
 	}

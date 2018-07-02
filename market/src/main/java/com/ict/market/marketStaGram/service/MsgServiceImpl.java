@@ -76,8 +76,7 @@ public class MsgServiceImpl implements MsgService {
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
 
-	
-	
+
 	/* ********** 댓글 달기 기능 ********** */
 	@Override
 	public void commentWrite(MsgCommentDto comment) {

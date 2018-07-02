@@ -123,6 +123,7 @@ infowindow.open(map, marker);
 			<div class="bus"><a href="http://map.daum.net?busStopId=51984" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop"><em>양동시장역(남)-하행</em><br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 송정19 | 문흥39 <br>
 			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 지원56 | 대촌69 | 진월79 | 송정99 </a></div>
+>>>>>>> refs/remotes/origin/byoungtae
 			
 		</div>
 	</div>

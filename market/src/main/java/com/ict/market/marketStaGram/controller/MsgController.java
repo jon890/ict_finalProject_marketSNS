@@ -72,12 +72,12 @@ public class MsgController {
 	/* ********** 게시판 글 읽기 기능 ********** */
 	
 	
+
 	/* ********** 댓글 달기 기능 ********** */
 	@RequestMapping(value = "/commentWrite.msg" , method = RequestMethod.POST)
 	@ResponseBody
 	public HashMap<String, Object> commentWrite(MsgCommentDto comment, HttpSession session) {
 		logger.info("MARKETSTAGRAM - 댓글 달기 버튼 SUBMIT");
-		
 		comment.setId((String)session.getAttribute("id"));
 		msgService.commentWrite(comment);
 		List<MsgCommentDto> commentList = msgService.getComments(comment.getArticleNum(), 10);

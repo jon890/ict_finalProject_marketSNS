@@ -90,9 +90,9 @@ infowindow.open(map, marker);
 	<div class="station_wayout">
 		<h4 class="tit_findway">지하철역</h4>
 		<ul class="list_wayout">
-			<li>
-			<a href="http://map.daum.net?subwayId=KJS310300" target="_blank" class="link_station" data-logtarget data-logevent="waytogo,subway"><em>금남로4가역
-			</em><img src="resources/images/marketIntroduce/ic_sw51.png">  | 3번 출구 <b>도보8분</b></a></li>
+			<li><em>
+			<a href="http://map.daum.net?subwayId=KJS310300" target="_blank" class="link_station" data-logtarget data-logevent="waytogo,subway">금남로4가역</a>
+			</em><img src="resources/images/marketIntroduce/ic_sw51.png">  | 3번 출구 <b>도보8분</b></li>
 		</ul>
 	</div>
 	<div class="station_ride">

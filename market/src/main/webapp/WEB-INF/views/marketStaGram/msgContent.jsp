@@ -82,7 +82,6 @@
 					</div>
 					
 					<hr>
-					
 					<div id="snsArticleBtns">
 						<input type="image" id="likebtn" src="./resources/images/marketStaGram/likebtn.png">	
 						<input type="image" id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png">

@@ -51,6 +51,7 @@
 								<span>2018.4.07(토) ~10.27(토)[7~8월 휴장]<br> </span>
 								<span>축제프로그램 : 스탬프투어, 예술심리치료<br>
 								예술체험, 아트마켓, 아트경매, 예술영화극장</span>
+>>>>>>> refs/remotes/origin/byoungtae
 							</td>
 							<td>
 								<img src="resources/images/marketIntroduce/siteicon.png">

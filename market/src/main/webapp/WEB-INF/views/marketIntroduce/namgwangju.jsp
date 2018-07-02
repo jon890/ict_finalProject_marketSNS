@@ -2,81 +2,55 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="./resources/css/common/common.css">
-	 
-	<style type="text/css">
-		div.background{
-	            width:100%;
-	            height:300px;
-        	}
-
-	        div.background img{
-	            width:100%;
-	            height: 300px;
-	            /*opacity: 1;*/
-	            z-index:1;
-	        }
+	<head>
+	<meta charset="UTF-8">
+	<title>OOO - 남광주시장</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="./resources/css/common/common.css">
+		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+		
+		<style>
+			.nav-item{
+			    width:20%;
+			    text-align:center;
+			    font-size:20px;
+			    font-weight:bold;
+			}
+			
+			.nav-link{
+			    color:black;
+			}
+			
+			#p01{
+				font-size : 50px;
+			}
+			
+			#p02{
+				font-size : 20px;
+			}
+		</style>
+		
+	</head>
 	
-	        div.transbox p{
-	            margin: 3%;
-	            font-weight: bold;
-	            color: white;
-	            text-align:center;
-	            z-index:2;
-	            top:-300px;
-	            position:relative;
-	        }
-	
-	        #p01{
-	            font-size:50px;
-	        }
-	
-	        #p02{
-	            font-size:20px;
-	        }	        
-	        
-	        .nav-item{
-	            width:20%;
-	            text-align:center;
-	            font-size:20px;
-	            font-weight:bold;
-	        }
-	
-	        .nav-link{
-	            color:black;
-	        }
-	        
-	        iframe{
-	        	border : none;
-	        }
-	        
-	        
-	
-	</style>     
-</head>
-<body>
-	<header>
-		<%@include file="./../common/mainMenu.jsp"%>
-	</header>
-	<section>
-		<div class="background">
+	<body>
+		<header>
+			<%@include file="./../common/mainMenu.jsp"%>
+		</header>
+		
+		<section>
+			<div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
 	                <p id="p01"><ins>남광주시장</ins></p>
 	                <p id="p02">"남도의 씽씽한 해산물 맞볼 수 있는 해산물시장"</p>
 	            </div>
-        </div>
-        
-        <div class="container">
-		        <!--<p>Favorite</p>
-		        <!-- Nav pills -->
+	        </div>
+	              
+	        <br>
+	        <div class="container">
 		        <ul class="nav nav-pills" role="tablist">
 		            <li class="nav-item">
 		                <a class="nav-link active" data-toggle="pill" href="#home">개요</a>
@@ -95,7 +69,6 @@
 		            </li>
 		        </ul>
 		
-		        <!-- Tab panes -->
 		        <div class="tab-content">
 		            <div id="home" class="container tab-pane active">
 		                <br>
@@ -123,9 +96,10 @@
 		            </div>
 		        </div>
 		    </div>
-	</section>
-	<footer>
-		<%@include file="./../common/mainFooter.jsp"%>
-	</footer>
-</body>
+		</section>
+		
+		<footer>
+			<%@include file="./../common/mainFooter.jsp"%>
+		</footer>
+	</body>
 </html>

@@ -84,33 +84,6 @@ infowindow.open(map, marker);
 	<div class="station_wayout">
 		<h4 class="tit_findway">지하철역</h4>
 		<ul class="list_wayout">
-<<<<<<< HEAD
-			<li><em>
-			<a href="http://map.daum.net?subwayId=KJS310200" targer="_blank" class="link_station" data-logtarget data-logevent="waytogo,subway">남광주역</a>
-			</em><img src="resources/images/marketIntroduce/ic_sw51.png">  | 3번 출구 <b>도보3분</b></li>
-		</ul>
-	</div>
-	<div class="station_ride">
-		<h4 class="tit_findway">버스정류장</h4>
-		<div class="bus-box">
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51708" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">남광주역-상행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 순환01 | 수완03<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 진월17 | 지원25 | 봉선27 | 일곡28 | 봉선37 | 운림50 | 금남59 | 첨단95 | 송정98<br>		
-			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 200 | 200-1 | 216 | 217 | 217-1 | 218 | 218-1 | 1111</div>
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51707" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">남광주역-하행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 순환01 | 수완03<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 진월17 | 지원25 | 봉선27 | 일곡28 | 봉선37 | 운림50 | 금남59 | 첨단95 | 송정98<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq20.png"> 200 | 200-1 | 216 | 217 | 217-1 | 218 | 218-1 | 1111</div>
-			
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51704" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">전남대병원/남광주시장-상행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 첨단09<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 수완12 | 봉선37 | 지원45 | 운림51 | 운림54 | 금남59 | 첨단95 | 999 | 999-1<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 수완49 | 지원52 | 지원151 | 지원152 </div>	
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51705" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">전남대병원/남광주시장-하행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 첨단09<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 수완12 | 봉선37 | 지원45 | 운림51 | 운림54 | 금남59 | 첨단95 | 999 | 999-1<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 수완49 | 지원52 | 지원151 | 지원152 | </div>	
-=======
 			<li>
 			<a href="http://map.daum.net?subwayId=KJS310200" target="_blank" class="link_station" data-logtarget data-logevent="waytogo,subway"><em>남광주역</em>
 			<img src="resources/images/marketIntroduce/ic_sw51.png">  | 3번 출구 <b>도보3분</b></a></li>

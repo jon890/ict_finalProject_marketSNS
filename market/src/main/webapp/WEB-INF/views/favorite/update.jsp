@@ -90,9 +90,6 @@
 	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a>
 	        	</div>  	
         	</c:if>
-<<<<<<< HEAD
-	 
-		
 		<form action="/market/update.favorite" method="post">
 		<input type="hidden" name="articleNum" value="${articleNum}">
 		<input type="hidden" name="pageNum" value="${pageNum}">
@@ -143,7 +140,6 @@
             </tbody>
         </table>
       </form>
-=======
 	 	
         <table class="table table-hover">
             <thead>
@@ -192,7 +188,6 @@
             </tbody>
         </table>
       
->>>>>>> refs/remotes/origin/byoungtae
     </div>
 
         

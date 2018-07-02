@@ -3,10 +3,7 @@ package com.ict.market.favorite.dao;
 import java.util.HashMap;
 import java.util.List;
 
-<<<<<<< HEAD
 import com.ict.market.favorite.dto.CommentDto;
-=======
->>>>>>> refs/remotes/origin/byoungtae
 import com.ict.market.favorite.dto.FavoriteDto;
 
 public interface FavoriteDao {

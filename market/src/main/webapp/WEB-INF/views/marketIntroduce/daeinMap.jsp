@@ -91,34 +91,8 @@ infowindow.open(map, marker);
 		<h4 class="tit_findway">지하철역</h4>
 		<ul class="list_wayout">
 			<li><em>
-			<a href="http://map.daum.net?subwayId=KJS310300" targer="_blank" class="link_station" data-logtarget data-logevent="waytogo,subway">금남로4가역</a>
+			<a href="http://map.daum.net?subwayId=KJS310300" target="_blank" class="link_station" data-logtarget data-logevent="waytogo,subway">금남로4가역</a>
 			</em><img src="resources/images/marketIntroduce/ic_sw51.png">  | 3번 출구 <b>도보8분</b></li>
-		</ul>
-	</div>
-	<div class="station_ride">
-		<h4 class="tit_findway">버스정류장</h4>
-		<div class="bus-box">
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=52002" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">대인시장(서)-상행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 좌석02 | 진월07<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 봉선37 | 금남58<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 지원52 | 두암81 | 지원152<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq3.png"> 마을715</div>
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=52586" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">대인시장(서)-하행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 좌석02<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 봉선37 | 금남58<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 지원52 | 대촌70 | 두암81 | 지원152 | 대촌170<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq3.png"> 마을715</div>
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=51999" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">대인시장(동)-상행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 좌석06<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 문흥39 | 운림54 | 송정98<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 석곡87 | 지원151 | 용전184 | 419 | 518 </div>	
-			<div class="bus"><em><a href="http://map.daum.net?busStopId=52586" class="link_wayout" target="_blank" data-logtarget data-logevent="waytogo,busstop">대인시장(동)-하행</em><br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq15.png"> 좌석06<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq11.png"> 문흥39 | 운림54 | 송정98<br>
-			<img src="resources/images/marketIntroduce/sym_bus_sq12.png"> 석곡87 | 지원151 | 용전184 | 419 | 518</div>	
-			<li>
-			<a href="http://map.daum.net?subwayId=KJS310300" target="_blank" class="link_station" data-logtarget data-logevent="waytogo,subway"><em>금남로4가역
-			</em><img src="resources/images/marketIntroduce/ic_sw51.png">  | 3번 출구 <b>도보8분</b></a></li>
 		</ul>
 	</div>
 	<div class="station_ride">

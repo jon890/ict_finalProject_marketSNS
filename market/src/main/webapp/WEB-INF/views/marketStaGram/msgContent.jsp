@@ -122,7 +122,7 @@
 						<div>글쓴날짜 : ${snsArticle.writeDate}</div>
 						<hr>	
 						<div><textarea cols="30" placeholder="댓글 달기..." name="commentContent"></textarea></div>
-						</form>
+					</form>
 				</div>
 			</article>
 		</section>

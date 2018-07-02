@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ict.market.marketStaGram.dao.MsgDao;
 import com.ict.market.marketStaGram.dto.ImgDto;
+import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 @Service
@@ -74,7 +75,15 @@ public class MsgServiceImpl implements MsgService {
 		model.addAttribute("imgs", msgDao.getImgList(articleNum));
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
-	
+
+
+
+
+	@Override
+	public void commentWrite(MsgCommentDto comment) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

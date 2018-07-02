@@ -27,32 +27,15 @@
 		select count(*)
 		from helpArticle	
 	</select>
-	
-	<select id="content" parameterType="String" resultType="helpArticle">
-		select *
-		from helpArticle
-		where articleNum=#{articleNum}
-	</select>
-	
+		
 	<select id="getUpdateArticle" parameterType="String" resultType="helpArticle">
 		select title,content
 		from helpArticle
 		where articleNum=#{articleNum}
 	</select>
-	
-	<select id="getTotalCount" resultType="int">
-		select count(*)
-		from helpArticle	
-	</select>
-	
+		
 	<select id="content" parameterType="String" resultType="helpArticle">
 		select *
-		from helpArticle
-		where articleNum=#{articleNum}
-	</select>
-	
-	<select id="getUpdateArticle" parameterType="String" resultType="helpArticle">
-		select title,content
 		from helpArticle
 		where articleNum=#{articleNum}
 	</select>

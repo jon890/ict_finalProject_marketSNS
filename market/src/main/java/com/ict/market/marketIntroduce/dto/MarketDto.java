@@ -6,6 +6,7 @@ public class MarketDto {
 	private String marketHours;
 	private String marketAddress;
 	private String marketPhone;
+	private String marketLoc;
 	public String getMarketName() {
 		return marketName;
 	}
@@ -36,12 +37,19 @@ public class MarketDto {
 	public void setMarketPhone(String marketPhone) {
 		this.marketPhone = marketPhone;
 	}
-	@Override
-	public String toString() {
-		return "MarketDto [marketName=" + marketName + ", marketOpening=" + marketOpening + ", marketHours="
-				+ marketHours + ", marketAddress=" + marketAddress + ", marketPhone=" + marketPhone + "]";
+	public String getMarketLoc() {
+		return marketLoc;
+	}
+	public void setMarketLoc(String marketLoc) {
+		this.marketLoc = marketLoc;
 	}
 	
 	
-
+	@Override
+	public String toString() {
+		return "MarketDto [marketName=" + marketName + ", marketOpening=" + marketOpening + ", marketHours="
+				+ marketHours + ", marketAddress=" + marketAddress + ", marketPhone=" + marketPhone + ", marketLoc="
+				+ marketLoc + "]";
+	}
+	
 }

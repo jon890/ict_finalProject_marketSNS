@@ -140,7 +140,7 @@
 
     <div class="container">
         <ul class="pagination justify-content-center">
-             ${pageCode}
+            <%--  ${pageCode} --%>
         </ul>
     </div>
     

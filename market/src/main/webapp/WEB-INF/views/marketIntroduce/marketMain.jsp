@@ -84,6 +84,7 @@
 	                        </table>
 	                    </div>
 	                </div>
+	                <!-- 동구만 출력 -->
 	                <div id="menu1" class="container tab-pane fade">
 	                    <br>
 	                    <div class="container">
@@ -99,12 +100,15 @@
 	                            </thead>
 	                            <tbody>
 	                            	<c:forEach var="market" items="${marketList}">
+	                            	<c:if test="${market.marketLoc.equals('동구')}">
 	                            		<tr>
 	                            			<td>${market.marketName}</td>
 	                            			<td>${market.marketOpening}</td>
 	                            			<td>${market.marketHours}</td>
 	                            			<td>${market.marketAddress}</td>
-	                            			<td>${market.marketPhone}</td>	                            			
+	                            			<td>${market.marketPhone}</td>
+	                            		</tr>
+	                            	</c:if>                           			
 	                            	</c:forEach>
 	                            </tbody>
 	                        </table>
@@ -125,12 +129,15 @@
 	                            </thead>
 	                            <tbody>
 	                            	<c:forEach var="market" items="${marketList}">
+	                            	<c:if test="${market.marketLoc.equals('서구')}">
 	                            		<tr>
 	                            			<td>${market.marketName}</td>
 	                            			<td>${market.marketOpening}</td>
 	                            			<td>${market.marketHours}</td>
 	                            			<td>${market.marketAddress}</td>
-	                            			<td>${market.marketPhone}</td>	                            			
+	                            			<td>${market.marketPhone}</td>
+	                            		</tr>
+	                            	</c:if>	                            			
 	                            	</c:forEach>
 	                            </tbody>
 	                        </table>
@@ -151,12 +158,15 @@
 	                            </thead>
 	                            <tbody>
 	                            	<c:forEach var="market" items="${marketList}">
+	                            	<c:if test="${market.marketLoc.equals('남구')}">
 	                            		<tr>
 	                            			<td>${market.marketName}</td>
 	                            			<td>${market.marketOpening}</td>
 	                            			<td>${market.marketHours}</td>
 	                            			<td>${market.marketAddress}</td>
-	                            			<td>${market.marketPhone}</td>	                            			
+	                            			<td>${market.marketPhone}</td>
+	                            		</tr>
+	                            	</c:if>	                            			
 	                            	</c:forEach>
 	                            </tbody>
 	                        </table>
@@ -177,12 +187,15 @@
 	                            </thead>
 	                            <tbody>
 	                            	<c:forEach var="market" items="${marketList}">
+	                            	<c:if test="${market.marketLoc.equals('북구')}">
 	                            		<tr>
 	                            			<td>${market.marketName}</td>
 	                            			<td>${market.marketOpening}</td>
 	                            			<td>${market.marketHours}</td>
 	                            			<td>${market.marketAddress}</td>
-	                            			<td>${market.marketPhone}</td>	                            			
+	                            			<td>${market.marketPhone}</td>
+	                            		</tr>
+	                            	</c:if>	                            			
 	                            	</c:forEach>
 	                            </tbody>
 	                        </table>
@@ -203,12 +216,15 @@
 	                            </thead>
 	                            <tbody>
 	                            	<c:forEach var="market" items="${marketList}">
+	                            	<c:if test="${market.marketLoc.equals('광산구')}">
 	                            		<tr>
 	                            			<td>${market.marketName}</td>
 	                            			<td>${market.marketOpening}</td>
 	                            			<td>${market.marketHours}</td>
 	                            			<td>${market.marketAddress}</td>
-	                            			<td>${market.marketPhone}</td>	                            			
+	                            			<td>${market.marketPhone}</td>
+	                            		</tr>
+	                            	</c:if>	                            			
 	                            	</c:forEach>
 	                            </tbody>
 	                        </table>

@@ -132,7 +132,8 @@
 			<!-- forEach문 제대로 한거니 수정하지마세요... -->
 			</tbody>
 		  </table>
-	</div>	    
+	</div>	
+	</section>    
 		    
 
 <footer id="mainFooter">

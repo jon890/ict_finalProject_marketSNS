@@ -12,6 +12,7 @@
 	
 	<body>
 	    <p>고객센터</p>
+	    <form action="./write.favorite" method="post">
 	    <div id="div">
 	        <div id="div01">
 	            <span id="span01">광주전통시장</span>에서
@@ -21,7 +22,6 @@
 	            <br>신속하게 답변해 드리겠습니다.
 	        </div>
 	        <div id="div02">
-	        <form action="./write.favorite" method="post">
 	            <table>
 	                <tr>
 	                	<td id="td01">아이디</td>

@@ -17,7 +17,7 @@
 #imgs img{
 	display : inline-block;
 	width : 500px;
-	height : 500px;
+	height : 650px;
 }
 
 #snsArticle{
@@ -35,4 +35,30 @@
 
 #snsArticleBtns img{
 	cursor : pointer;
+}
+
+#snsArticleId{
+	cursor : pointer;
+
+}
+
+#snsArticleId > img, #snsArticleContent > .writerId, .commentId, .commentContent{
+	margin-right : 10px;
+}
+
+.writerId, .commentId{
+	font-size : 18px;
+	font-weight : 500;
+}
+
+#showComment{
+	margin-top : 20px;
+	height : 300px;
+	overflow : auto;
+}
+
+#commentContent{
+	border : none;
+	resize : none;
+	overflow : auto;
 }

@@ -67,14 +67,20 @@
 				</div>
 				
 				<div id="snsArticle">
-					<div id="snsArticleId">${snsArticle.id}</div>
+					<span id="snsArticleId">
+						<img src="./resources/images/marketStaGram/profile.png" width=40px height=40px>
+						<span class="writerId">${snsArticle.id}</span>
+					</span>
 					<hr>
-					<div>${snsArticle.id} : ${snsArticle.content}</div>
+					<div id="snsArticleContent">
+						<span class="writerId">${snsArticle.id}</span>
+						<span>${snsArticle.content}</span></div>
+						
 					<div>
-						<div id="showComment" align="center">
+						<div id="showComment"></div>
+						<input type="hidden" id="commPageNum" value="1">
 					</div>
-					<input type="hidden" id="commPageNum" value="1">
-					</div>	
+					
 					<hr>
 					
 					<div id="snsArticleBtns">
@@ -84,7 +90,7 @@
 					<div>좋아요수 : ${snsArticle.likeNum}</div>
 					<div>글쓴날짜 : ${snsArticle.writeDate}</div>
 					<hr>	
-					<div><textarea cols="30" placeholder="댓글 달기..." name="commentContent" id="commentContent"></textarea></div>
+					<div><textarea cols="40" placeholder="댓글 달기..." name="commentContent" id="commentContent"></textarea></div>
 				</div>
 			</article>
 		</section>
@@ -129,37 +135,30 @@
 			});
 			
 			function showHtml(data, commPageNum){
-				let html = "<table width='500' align='center'>";
-				html += "<tr>";
-				html += "<td class='desc'>댓글 작성자</td>";
-				html += "<td class='desc'>댓글 내용</td>";
-				html += "<td class='desc'>댓글 작성시간</td>";
-				html += "</tr>";
+				let html = "<div class='comments'>";
 				
 				$.each(data, function(index, comment){
-					html += "<tr>";
-					html += "<td>" + comment.id + "</td>";
-					html += "<td>" + comment.commentContent + "</td>";
-					html += "<td>" + comment.commentDate + "</td>";
-					html += "</tr>";
+					html += "<span class='commentId'>" + comment.id + "</span>";
+					html += "<span class='commentContent'>" + comment.commentContent + "</span>";
+					html += "<span class='commentDate'>" + comment.commentDate + "</span><br>";
 				});
 				
-				html += "</table>";
+				html += "</div>";
 				commPageNum = parseInt(commPageNum);
 				
 				if("${snsArticle.commentCount}" > commPageNum * 10){
 					nextPageNum = commPageNum + 1;
 					html += "<br> <input type='button' onclick='getComment(nextPageNum, event)' value='다음 댓글 보기'>"
 				}
-				
 				$("#showComment").html(html);
 				$("#commentContent").val("");
 			}
 			
+			
 			function getComment(commPageNum, event){
 				event.preventDefault();
 				$.ajax({
-					url : "/market/commentRead.comment",
+					url : "/market/commentRead.msg",
 					data : {
 						articleNum : "${snsArticle.articleNum}",
 						commentRow : commPageNum * 10

@@ -31,14 +31,14 @@ div.transbox p{
 	font-size : 20px;
 }
 
-#writeBtnDiv{
+#btnDiv{
 	margin : 0 auto;
 	width : 1080px;
 	height : 50px;
 	text-align : right;
 }
 
-#writeBtnDiv > input[type=button]{
+#btnDiv > input[type=button]{
     width : 145px;
     height : 45px;
     background : gray;
@@ -47,6 +47,12 @@ div.transbox p{
     border-radius : 3px;
     border : 1px solid rgb(0,77,0);
     margin-right : 100px;
+}
+
+#btnDiv > input[type=text]{
+	width : 50%;
+	height : 45px;
+	margin-right : 100px;
 }
 
 /* ********** 글쓰기 양식을 모달박스로 만들기 ********** */

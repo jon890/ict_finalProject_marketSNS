@@ -108,6 +108,14 @@ public class FavoriteController {
 		favoriteService.updateArticle(helpArticle,model);
 		return "redirect:/content.favorite?articleNum="+helpArticle.getArticleNum()+"&pageNum="+pageNum+"&fileStatus="+fileStatus;
 	}
+	@RequestMapping(value="/delete.favorite")
+	public String delete(@RequestParam String articleNum,@RequestParam String pageNum) {
+		
+		favoriteService.delete(articleNum);
+		
+		return "redirect:/help.favorite?pageNum="+pageNum;
+	}
+	
 	
 	@RequestMapping(value="/commentWrite.favorite")
 	@ResponseBody

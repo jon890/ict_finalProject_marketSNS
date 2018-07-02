@@ -13,8 +13,8 @@
 	<select id="help" resultType="helpArticle">
 		SELECT *
 		FROM (SELECT ROWNUM RM,HUMAN.*
-		 FROM(SELECT articleNum,id,title,to_char(writeDate,'YYYY-MM-DD')as writeDate,depth,hit,fileStatus
-		 <!-- (select count(*) from comments where bbs1.articleNum=comments.articleNum)as commentCount -->
+		 FROM(SELECT articleNum,id,title,to_char(writeDate,'YYYY-MM-DD')as writeDate,depth,hit,fileStatus,
+		 (select count(*) from comments where helpArticle.articleNum=comments.articleNum)as commentCount
 			  FROM helpArticle
 			  START WITH groupId=0
 			  CONNECT BY PRIOR articleNum=groupId
@@ -45,6 +45,12 @@
 		set title=#{title},content=#{content},fileStatus=#{fileStatus}
 		where articleNum=#{articleNum}
 	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete
+		from helpArticle
+		where articleNum=#{articleNum}
+	</delete>
 	
 	<!--  comment 관련 sql문   -->
 	<insert id="insertComment" parameterType="commentList">

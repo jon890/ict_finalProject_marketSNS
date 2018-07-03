@@ -28,7 +28,7 @@
 			<div class="background">
 		            <img src="./resources/images/favorite/favorite_main.png" />
 		            <div class="transbox">
-		                <p id="p01"><ins>대인시장</ins></p>
+		                <p id="p01">대인시장</p>
 		                <p id="p02">"예술이 공존하는 문화관광시장"</p>
 		            </div>
 	        </div>

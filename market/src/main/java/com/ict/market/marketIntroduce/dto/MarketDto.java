@@ -7,6 +7,7 @@ public class MarketDto {
 	private String marketAddress;
 	private String marketPhone;
 	private String marketLoc;
+	
 	public String getMarketName() {
 		return marketName;
 	}
@@ -43,7 +44,6 @@ public class MarketDto {
 	public void setMarketLoc(String marketLoc) {
 		this.marketLoc = marketLoc;
 	}
-	
 	
 	@Override
 	public String toString() {

@@ -90,6 +90,12 @@
 					<div>글쓴날짜 : ${snsArticle.writeDate}</div>
 					<hr>	
 					<div><textarea cols="40" placeholder="댓글 달기..." name="commentContent" id="commentContent"></textarea></div>
+					
+					<div id="snsArticleBtns2">
+						<input type="button" value="글 수정">
+						<input type="button" value="글 삭제">
+					</div>
+					
 				</div>
 			</article>
 		</section>
@@ -102,6 +108,10 @@
 		
 		
 		<script>
+		
+			$(document).ready(function(event){
+				getComment(1, event);
+			});
 			
 			$.ajaxSetup({
 				type : "POST",
@@ -113,10 +123,7 @@
 			});
 
 		
-			$("#commentbtn").on("click", function(event){
-				event.preventDefault;
-				event.stopPropagation();
-				
+			$("#commentbtn").on("click", function(event){	
 				$.ajax({
 					url : "/market/commentWrite.msg",
 					data : {
@@ -147,7 +154,7 @@
 				
 				if("${snsArticle.commentCount}" > commPageNum * 10){
 					nextPageNum = commPageNum + 1;
-					html += "<br> <input type='button' onclick='getComment(nextPageNum, event)' value='다음 댓글 보기'>"
+					html += "<br> <input type='button' id='nextComments' onclick='getComment(nextPageNum, event)' value='다음 댓글 보기...'>"
 				}
 				$("#showComment").html(html);
 				$("#commentContent").val("");
@@ -155,7 +162,6 @@
 			
 			
 			function getComment(commPageNum, event){
-				event.preventDefault();
 				$.ajax({
 					url : "/market/commentRead.msg",
 					data : {
@@ -170,7 +176,6 @@
 
 
 			$("#likebtn").on("click", function(event){
-				event.preventDefault;
 				$("#snsArticleForm").attr("action", "./like.msg");			
 			});
 		</script>

@@ -6,5 +6,4 @@ import com.ict.market.marketIntroduce.dto.MarketDto;
 
 public interface MarketIntroduceDao {
 	public List<MarketDto> marketList();
-
 }

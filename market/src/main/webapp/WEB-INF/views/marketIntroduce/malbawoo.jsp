@@ -28,7 +28,7 @@
 			<div class="background">
 		            <img src="./resources/images/favorite/favorite_main.png" />
 		            <div class="transbox">
-		                <p id="p01"><ins>말바우시장</ins></p>
+		                <p id="p01">말바우시장</p>
 		                <p id="p02">"호남 최대의 5일장과 상설시장의 상생"</p>
 		            </div>
 	        </div>

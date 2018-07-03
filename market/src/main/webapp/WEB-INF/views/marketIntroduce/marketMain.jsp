@@ -27,7 +27,7 @@
 	        <div class="background">
 	            <img src="./resources/images/marketIntroduce/marketIntroduce_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>광주의 시장</ins></p>
+	                <p id="p01">광주의 시장</p>
 	                <p id="p02">광주전통시장의 지역시장정보를 제공해 드립니다</p>
 	            </div>
 	        </div>

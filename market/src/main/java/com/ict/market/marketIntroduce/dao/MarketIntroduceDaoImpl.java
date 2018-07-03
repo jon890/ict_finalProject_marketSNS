@@ -12,7 +12,6 @@ import com.ict.market.marketIntroduce.dto.MarketDto;
 public class MarketIntroduceDaoImpl implements MarketIntroduceDao {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-	
 	private final String nameSpace = "com.ict.market.marketIntroduce.dao.MarketIntroduceDao";
 
 	@Override
@@ -20,5 +19,4 @@ public class MarketIntroduceDaoImpl implements MarketIntroduceDao {
 		
 		return sqlSession.selectList(nameSpace+".marketList");
 	}
-
 }

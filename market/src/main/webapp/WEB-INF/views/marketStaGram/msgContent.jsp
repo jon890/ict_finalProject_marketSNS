@@ -81,11 +81,20 @@
 						<input type="hidden" id="commPageNum" value="1">
 					</div>
 					
+					
 					<hr>
 					<div id="snsArticleBtns">
-						<input type="image" id="likebtn" src="./resources/images/marketStaGram/likebtn.png">	
-						<input type="image" id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png">
+						<c:if test="${id == null}">
+							<a href="javaScript:login()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
+							<a href="javaScript:login()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
+						</c:if>
+					
+						<c:if test="${id != null}">
+							<a href="javaScript:likefunc()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
+							<a href="javaScript:commentfunc()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
+						</c:if>	
 					</div>
+					
 					<div>좋아요수 : ${snsArticle.likeNum}</div>
 					<div>글쓴날짜 : ${snsArticle.writeDate}</div>
 					<hr>	
@@ -138,7 +147,7 @@
 			});
 
 		
-			$("#commentbtn").on("click", function(event){
+			function commentfunc(){
 				// 댓글내용을 입력하지 않으면 댓글쓰는 칸으로 포커스 주기
 				if($("#commentContent").val() == ""){
 					$("#commentContent").focus();
@@ -159,7 +168,7 @@
 						}
 					});	
 				}
-			});
+			}
 			
 			function showHtml(data, commPageNum){
 				let html = "<div class='comments'>";
@@ -196,9 +205,23 @@
 			}
 
 
-			$("#likebtn").on("click", function(event){
-				$("#snsArticleForm").attr("action", "./like.msg");			
-			});
+			function likefunc(){
+				$.ajax({
+					url : "/market/like.msg",
+					data : {
+						articleNum : "${snsArticle.articleNum}",
+						id : "${id}"
+					},
+					success : function(data){
+						$("#likebtnImg").attr("src", "./resources/images/marketStaGram/likebtn.png");
+						alert($("#likebtnImg").attr("src"));
+					}
+				});
+			}
+			
+			function login(){
+				location.href = "./login.main";
+			}
 		
 		</script>
 		

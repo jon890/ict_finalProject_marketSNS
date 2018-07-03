@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
@@ -20,4 +21,7 @@ public interface MsgService {
 	
 	public void commentWrite(MsgCommentDto comment);
 	public List<MsgCommentDto> getComments(int articleNum, int commentRow);
+	
+	
+	public void like(LikeDto like);
 }

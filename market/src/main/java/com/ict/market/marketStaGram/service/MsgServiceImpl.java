@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ict.market.marketStaGram.dao.MsgDao;
 import com.ict.market.marketStaGram.dto.ImgDto;
+import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
@@ -98,20 +99,25 @@ public class MsgServiceImpl implements MsgService {
 
 	
 
-	/* ********** 댓글 달기 기능 ********** */
+	/* ********** 댓글  기능 ********** */
 	@Override
 	public void commentWrite(MsgCommentDto comment) {
 		msgDao.commentWrite(comment);
 	}
-	/* ********** 댓글 달기 기능 ********** */
 
-
-	
-	/* ********** 댓글 가져오기 기능 ********** */
 	@Override
 	public List<MsgCommentDto> getComments(int articleNum, int commentRow) {
 		return msgDao.getComments(articleNum, commentRow);
 	}
-	/* ********** 댓글 가져오기 기능 ********** */
+	/* ********** 댓글 기능 ********** */
+
+	
+	
+	/* ********** 좋아요 기능 ********** */
+	@Override
+	public void like(LikeDto like) {
+		msgDao.like(like);
+	}
+	/* ********** 좋아요 기능 ********** */
 
 }

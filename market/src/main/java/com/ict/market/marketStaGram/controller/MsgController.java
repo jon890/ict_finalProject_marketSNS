@@ -6,6 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 import com.ict.market.marketStaGram.service.MsgService;
@@ -25,7 +28,8 @@ public class MsgController {
 	
 	@Autowired
 	MsgService msgService;
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(MsgController.class);
 
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	@RequestMapping(value = "/main.msg" , method = RequestMethod.GET)
@@ -98,8 +102,17 @@ public class MsgController {
 	
 	/* ********** 좋아요 기능 ********** */
 	@RequestMapping(value = "/like.msg" , method = RequestMethod.POST)
-	public String like(@RequestParam int articleNum) {
-		return "msgContent";
+	@ResponseBody
+	public LikeDto like(LikeDto like) {
+		msgService.like(like);
+		System.out.println(like);
+		return like;
+	}
+
+	@RequestMapping(value = "/likeCancel.msg" , method = RequestMethod.POST)
+	public String likeCancel(@RequestParam int articleNum,
+							 @RequestParam String id) {
+		return "redirect:/read.msg?articleNum="+articleNum;
 	}
 	/* ********** 좋아요 기능 ********** */
 	

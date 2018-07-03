@@ -64,6 +64,7 @@
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 	p:dataSource-ref="dataSource"/>
 
+	<tx:annotation-driven/>
 	
 	<bean id="pageSize" class = "java.lang.Integer">
 		<constructor-arg value="10"/>

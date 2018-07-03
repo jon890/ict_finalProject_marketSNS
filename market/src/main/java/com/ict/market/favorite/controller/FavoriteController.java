@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -74,6 +75,7 @@ public class FavoriteController {
 		return "helpForm";
 	}
 	/*글 남길때 포스트 방식으로 입력*/
+	@Transactional
 	@RequestMapping(value="/write.favorite",method=RequestMethod.POST)
 	public String writeForm(FavoriteDto helpArticle,HttpSession session) {
 		logger.info("write - 페이지 이동");
@@ -81,11 +83,13 @@ public class FavoriteController {
 		favoriteService.write(helpArticle);
 		return "redirect:/help.favorite?pageNum=1";
 	}
-	
+	/*게시물 조회*/
+	@Transactional
 	@RequestMapping(value="/content.favorite")
 	public String content(@RequestParam("articleNum")String articleNum,
 			@ModelAttribute("pageNum")String pageNum,
-			@RequestParam("fileStatus")int fileStatus,Model model) {
+			@RequestParam("fileStatus")int fileStatus,Model model,HttpSession session) {
+		favoriteService.increaseHit(articleNum,session);
 		favoriteService.content(articleNum,fileStatus,model);
 		return "content";
 	}
@@ -115,15 +119,15 @@ public class FavoriteController {
 		
 		return "redirect:/help.favorite?pageNum="+pageNum;
 	}
-	
-	
+	/*고객센터 안에 답글 달기 기능*/ 
+	@Transactional
 	@RequestMapping(value="/commentWrite.favorite")
 	@ResponseBody
-	public HashMap<String,Object> commentWrite(CommentDto comment,HttpSession session) {
+	public HashMap<String,Object> commentWrite(CommentDto comment,HttpSession session,Model model) {
 		logger.info("댓글페이지 - 페이지 접근");
 		comment.setId((String)session.getAttribute("id"));
 		favoriteService.insertComment(comment);
-		List<CommentDto> commentList = favoriteService.getComments(comment.getArticleNum(),10);
+		List<CommentDto> commentList = favoriteService.getComments(comment.getArticleNum(),10,model);
 		HashMap<String,Object> hm = new HashMap<>();
 		hm.put("result",1);
 		hm.put("commentList",commentList);
@@ -133,9 +137,19 @@ public class FavoriteController {
 	@RequestMapping(value="/commentRead.favorite")
 	@ResponseBody
 	public List<CommentDto> commentRead(@RequestParam("articleNum") int articleNum,
-			@RequestParam("commentRow") int commentRow){
+			@RequestParam("commentRow") int commentRow,Model model){
 		System.out.println(articleNum);
 		System.out.println(commentRow);
-		return favoriteService.getComments(articleNum,commentRow);
+		return favoriteService.getComments(articleNum,commentRow,model);
 	}
+	
+	@RequestMapping(value="/commentDelete.favorite")
+	@ResponseBody
+	public String commentDelete(@RequestParam("commentNum") String commentNum) {
+		logger.info("삭제페이지 - 접근 ");
+		logger.info(commentNum);
+		favoriteService.commentDelete(commentNum);
+		return null;
+	}
+	
 }

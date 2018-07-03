@@ -52,14 +52,18 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		sqlsession.update(nameSpace+".updateArticle",helpArticle);
 		
 	}
-	
-	
+	@Override
+	public void increaseHit(String articleNum) {
+		
+		sqlsession.update(nameSpace+".increaseHit",articleNum);
+		
+	}
 
 	@Override
 	public void delete(String articleNum) {
 		sqlsession.delete(nameSpace+".delete",articleNum);
 	}
-
+	/*comment관련 메소드*/
 	@Override
 	public void insertComment(CommentDto comment) {
 		sqlsession.insert(nameSpace+".insertComment",comment);
@@ -73,5 +77,12 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		System.out.println(sqlsession.selectList(nameSpace+".getComments",hm));
 		return sqlsession.selectList(nameSpace+".getComments",hm);
 	}
+
+	@Override
+	public void commentDelete(String commentNum) {
+		sqlsession.delete(nameSpace+".commentDelete",commentNum);
+	}
+	
+	
 
 }

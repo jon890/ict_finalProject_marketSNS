@@ -2,6 +2,8 @@ package com.ict.market.favorite.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.ui.Model;
 
 import com.ict.market.favorite.dto.CommentDto;
@@ -14,6 +16,8 @@ public interface FavoriteService {
 	public void getUpdateArticle(String articleNum,int fileStatus,Model model);
 	public void updateArticle(FavoriteDto helpArticle,Model model);
 	public void insertComment(CommentDto comment);
-	public List<CommentDto> getComments(int articleNum, int commentRow);
+	public List<CommentDto> getComments(int articleNum, int commentRow,Model model);
 	public void delete(String articleNum);
+	public void increaseHit(String articleNum,HttpSession session);
+	public void commentDelete(String commentNum);
 }

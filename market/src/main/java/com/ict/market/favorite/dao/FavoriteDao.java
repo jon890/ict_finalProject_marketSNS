@@ -16,4 +16,6 @@ public interface FavoriteDao {
 	public void insertComment(CommentDto comment);
 	public List<CommentDto>getComments(int articleNum,int commentRow);
 	public void delete(String articleNum);
+	public void increaseHit(String articleNum);
+	public void commentDelete(String commentNum);
 }

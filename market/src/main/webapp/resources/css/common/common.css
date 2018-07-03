@@ -19,6 +19,10 @@ ul{
 textarea{
 	resize : none;
 }
+
+iframe{
+	border : none;
+}
 /* *************** 공통 스타일 부분 *************** */
 
 

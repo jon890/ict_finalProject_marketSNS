@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
 	<head>
 	<meta charset="UTF-8">
@@ -12,8 +11,13 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+		
+		<style>
+			iframe{
+				border : none;
+			}
+		</style>
 	</head>
-	
 	
 	<body>
 		<header>
@@ -29,7 +33,6 @@
 		            </div>
 	        </div>
 	        
-	        <br>
 	        <div class="container">
 		        <ul class="nav nav-pills" role="tablist">
 		            <li class="nav-item">
@@ -48,11 +51,11 @@
 		                <a class="nav-link" data-toggle="pill" href="#menu4">편의시설</a>
 		            </li>
 		        </ul>
-			
+		
 		        <div class="tab-content">
 		            <div id="home" class="container tab-pane active">
 		                <br>
-		                <iframe src="notice.favorite" width="100%" height="1080px"></iframe>
+		                <iframe src="malbawooHistory.mid" width="100%" height="1080px"></iframe>
 		            </div>
 		            <div id="menu1" class="container tab-pane fade">
 		                <br>
@@ -81,5 +84,6 @@
 		<footer>
 			<%@include file="./../common/mainFooter.jsp"%>
 		</footer>
+		
 	</body>
 </html>

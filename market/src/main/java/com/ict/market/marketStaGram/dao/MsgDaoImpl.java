@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ict.market.marketStaGram.dto.ImgDto;
+import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
@@ -56,20 +57,22 @@ public class MsgDaoImpl implements MsgDao {
 		return sqlSession.selectList(nameSpace.concat(".getImgList"), articleNum);
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
-
-
 	
-	/* ********** 댓글 달기 기능 ********** */
+	
+	/* ********** 게시판 글 삭제 기능 ********** */
+	@Override
+	public void delete(int articleNum) {
+		sqlSession.delete(nameSpace.concat(".delete"), articleNum);
+	}
+	/* ********** 게시판 글 삭제 기능 ********** */
+	
+	
+
+	/* ********** 댓글  기능 ********** */
 	@Override
 	public void commentWrite(MsgCommentDto comment) {
 		sqlSession.insert(nameSpace.concat(".commentWrite"), comment);
 	}
-	/* ********** 댓글 달기 기능 ********** */
-
-
-
-	
-	/* ********** 댓글 가져오기 기능 ********** */
 	@Override
 	public List<MsgCommentDto> getComments(int articleNum, int commentRow) {
 		HashMap<String, Integer> hm = new HashMap<>();
@@ -77,10 +80,16 @@ public class MsgDaoImpl implements MsgDao {
 		hm.put("commentRow", commentRow);
 		return sqlSession.selectList(nameSpace.concat(".getComments"), hm);
 	}
-	/* ********** 댓글 가져오기 기능 ********** */
-	
-	
+	/* ********** 댓글 기능 ********** */
 
 
 	
+	
+	/* ********** 좋아요 기능 ********** */
+	@Override
+	public void like(LikeDto like) {
+		sqlSession.insert(nameSpace.concat(".like"), like);
+	}
+	/* ********** 좋아요 기능 ********** */
+
 }

@@ -1,11 +1,8 @@
 package com.ict.market.marketIntroduce.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -14,28 +11,33 @@ import com.ict.market.marketIntroduce.service.MarketIntroduceService;
 
 @Controller
 public class MarketIntroduceController {
+	
 	@Autowired
 	MarketIntroduceService marketIntroduceService;
 	
-	private static final Logger logger = LoggerFactory.getLogger(MarketIntroduceController.class);
-	
+	/* ********** 메인 페이지 이동 ********** */
 	@RequestMapping(value="/main.mid" , method = RequestMethod.GET)
 	public String marketMain(Model model) {
-		logger.info("광주의 시장 - 메인 페이지 이동");
 		marketIntroduceService.marketList(model);
 		return "marketMain";
 	}
+	/* ********** 메인 페이지 이동 ********** */
 	
-	//대인시장
+	
+	
+	/* ********** 대인시장 ********** */
 	@RequestMapping(value="/daein.mid", method = RequestMethod.GET)
 	public String daein() {
-		System.out.println("대인시장 요청을 받습니다.");
 		return "daein";
+	}
+	
+	@RequestMapping(value="daeinHistory", method = RequestMethod.GET)
+	public String daeinHistory() {
+		return "daeinHistory";
 	}
 	
 	@RequestMapping(value="/daeinStore.mid", method = RequestMethod.GET)
 	public String daeinStore() {
-		System.out.println("대인먹거리 요청을 받습니다.");
 		return "daeinStore";
 	}
 	
@@ -46,16 +48,21 @@ public class MarketIntroduceController {
 	
 	@RequestMapping(value="/daeinMap.mid", method = RequestMethod.GET)
 	public String daeinMap() {
-		System.out.println("대인시장 지도입니다.");
 		return "daeinMap";
 	}
+	/* ********** 대인시장 ********** */
 	
 	
-	//남광주시장
+	
+	/* ********** 남광주시장 ********** */
 	@RequestMapping(value="/namgwangju.mid", method = RequestMethod.GET)
 	public String namgwangju() {
-		System.out.println("남광주시장 요청을 받습니다.");
 		return "namgwangju";
+	}
+	
+	@RequestMapping(value="namgwangjuHistory", method = RequestMethod.GET)
+	public String namgwangjuHistory() {
+		return "namgwangjuHistory";
 	}
 	
 	@RequestMapping(value="/namgwangjuStore.mid", method = RequestMethod.GET)
@@ -72,12 +79,19 @@ public class MarketIntroduceController {
 	public String namgwangjuMap() {
 		return "namgwangjuMap";
 	}
+	/* ********** 남광주시장 ********** */
 	
-	//양동시장
+	
+	
+	/* ********** 양동시장 ********** */
 	@RequestMapping(value="/yangdong.mid", method = RequestMethod.GET)
 	public String yangdong() {
-		System.out.println("대인시장 요청을 받습니다.");
 		return "yangdong";
+	}
+	
+	@RequestMapping(value="yangdongHistory", method = RequestMethod.GET)
+	public String yangdongHistory() {
+		return "yangdongHistory";
 	}
 	
 	@RequestMapping(value="/yangdongStore.mid", method = RequestMethod.GET)
@@ -94,12 +108,19 @@ public class MarketIntroduceController {
 	public String yangdongMap() {
 		return "yangdongMap";
 	}
+	/* ********** 양동시장 ********** */
 	
-	//말바우시장
+	
+	
+	/* ********** 말바우시장 ********** */
 	@RequestMapping(value="/malbawoo.mid", method = RequestMethod.GET)
 	public String malbawoo() {
-		System.out.println("말바우시장 요청을 받습니다.");
 		return "malbawoo";
+	}
+	
+	@RequestMapping(value="malbawooHistory", method = RequestMethod.GET)
+	public String malbawooHistory() {
+		return "malbawooHistory";
 	}
 	
 	@RequestMapping(value="/malbawooStore.mid", method = RequestMethod.GET)
@@ -116,12 +137,19 @@ public class MarketIntroduceController {
 	public String malbawooMap() {
 		return "malbawooMap";
 	}
+	/* ********** 말바우시장 ********** */
 	
-	//1913송정역시장
+	
+	
+	/* ********** 송정시장 ********** */
 	@RequestMapping(value="/seongjung.mid", method = RequestMethod.GET)
 	public String seongjung() {
-		System.out.println("1913송정시장 요청을 받습니다.");
 		return "seongjung";
+	}
+	
+	@RequestMapping(value="seongjungHistory", method = RequestMethod.GET)
+	public String seongjungHistory() {
+		return "seongjungHistory";
 	}
 	
 	@RequestMapping(value="/seongjungStore.mid", method = RequestMethod.GET)
@@ -138,6 +166,5 @@ public class MarketIntroduceController {
 	public String seongjungMap() {
 		return "seongjungMap";
 	}
-	
-	
+	/* ********** 송정시장 ********** */
 }

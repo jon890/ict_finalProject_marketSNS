@@ -81,15 +81,45 @@
 						<input type="hidden" id="commPageNum" value="1">
 					</div>
 					
+					
 					<hr>
 					<div id="snsArticleBtns">
-						<input type="image" id="likebtn" src="./resources/images/marketStaGram/likebtn.png">	
-						<input type="image" id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png">
+						<c:if test="${id == null}">
+							<a href="javaScript:login()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
+							<a href="javaScript:login()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
+						</c:if>
+					
+						<c:if test="${id != null}">
+							<a href="javaScript:likefunc()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
+							<a href="javaScript:commentfunc()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
+						</c:if>	
 					</div>
+					
 					<div>좋아요수 : ${snsArticle.likeNum}</div>
 					<div>글쓴날짜 : ${snsArticle.writeDate}</div>
 					<hr>	
 					<div><textarea cols="40" placeholder="댓글 달기..." name="commentContent" id="commentContent"></textarea></div>
+					
+					<div id="snsArticleBtns2">
+						<c:if test="${id != null}">
+							<c:if test="${id == snsArticle.id}">
+								<input type="button" value="글 수정" onclick="document.location.href='/market/update.msg?articleNum=${snsArticle.articleNum}'">
+								<input type="button" value="글 삭제" onclick="document.location.href='/market/delete.msg?articleNum=${snsArticle.articleNum}'">
+							</c:if>
+								
+							<c:if test="${id != snsArticle.id}">
+								<input type="button" value="글 수정" disabled="disabled">
+								<input type="button" value="글 삭제" disabled="disabled">
+							</c:if>
+						</c:if>
+		
+						<c:if test="${id == null}">
+							<input type="button" value="수정하기" disabled="disabled">
+							<input type="button" value="삭제하기" disabled="disabled">
+						</c:if>
+						<input type="button" value="목록으로" onclick="document.location.href='/market/main.msg?'">
+					</div>
+					
 				</div>
 			</article>
 		</section>
@@ -102,6 +132,10 @@
 		
 		
 		<script>
+		
+			$(document).ready(function(event){
+				getComment(1, event);
+			});
 			
 			$.ajaxSetup({
 				type : "POST",
@@ -113,25 +147,28 @@
 			});
 
 		
-			$("#commentbtn").on("click", function(event){
-				event.preventDefault;
-				event.stopPropagation();
-				
-				$.ajax({
-					url : "/market/commentWrite.msg",
-					data : {
-						commentContent : $("#commentContent").val(),
-						articleNum : "${snsArticle.articleNum}"
-					},
-					
-					success : function(data){
-						if(data.result == 1){
-							$("#commentContent").val("");
-							showHtml(data.commentList, 1);
+			function commentfunc(){
+				// 댓글내용을 입력하지 않으면 댓글쓰는 칸으로 포커스 주기
+				if($("#commentContent").val() == ""){
+					$("#commentContent").focus();
+				}
+				else{
+					$.ajax({
+						url : "/market/commentWrite.msg",
+						data : {
+							commentContent : $("#commentContent").val(),
+							articleNum : "${snsArticle.articleNum}"
+						},
+						
+						success : function(data){
+							if(data.result == 1){
+								$("#commentContent").val("");
+								showHtml(data.commentList, 1);
+							}
 						}
-					}
-				});		
-			});
+					});	
+				}
+			}
 			
 			function showHtml(data, commPageNum){
 				let html = "<div class='comments'>";
@@ -147,7 +184,7 @@
 				
 				if("${snsArticle.commentCount}" > commPageNum * 10){
 					nextPageNum = commPageNum + 1;
-					html += "<br> <input type='button' onclick='getComment(nextPageNum, event)' value='다음 댓글 보기'>"
+					html += "<br> <input type='button' id='nextComments' onclick='getComment(nextPageNum, event)' value='다음 댓글 보기...'>"
 				}
 				$("#showComment").html(html);
 				$("#commentContent").val("");
@@ -155,7 +192,6 @@
 			
 			
 			function getComment(commPageNum, event){
-				event.preventDefault();
 				$.ajax({
 					url : "/market/commentRead.msg",
 					data : {
@@ -169,11 +205,26 @@
 			}
 
 
-			$("#likebtn").on("click", function(event){
-				event.preventDefault;
-				$("#snsArticleForm").attr("action", "./like.msg");			
-			});
+			function likefunc(){
+				$.ajax({
+					url : "/market/like.msg",
+					data : {
+						articleNum : "${snsArticle.articleNum}",
+						id : "${id}"
+					},
+					success : function(data){
+						$("#likebtnImg").attr("src", "./resources/images/marketStaGram/likebtn.png");
+						alert($("#likebtnImg").attr("src"));
+					}
+				});
+			}
+			
+			function login(){
+				location.href = "./login.main";
+			}
+		
 		</script>
+		
  
 	</body>
 </html>

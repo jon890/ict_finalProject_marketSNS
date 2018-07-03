@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ict.market.marketStaGram.dao.MsgDao;
 import com.ict.market.marketStaGram.dto.ImgDto;
+import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
@@ -66,8 +67,6 @@ public class MsgServiceImpl implements MsgService {
 
 
 
-	
-	
 	/* ********** 게시판 글 읽기 기능 ********** */
 	@Override
 	public void read(int articleNum, Model model) {
@@ -75,22 +74,50 @@ public class MsgServiceImpl implements MsgService {
 		model.addAttribute("imgs", msgDao.getImgList(articleNum));
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
+	
+	
+	
+	
+	/* ********** 게시판 글 삭제 기능 ********** */
+	@Override
+	public void delete(int articleNum, String uploadDir) {
+		// 글을 삭제 할 때 이미지를 스토리지에서 삭제
+		List<String> imgNameList = msgDao.getImgList(articleNum);
+		for( String imgName : imgNameList) {
+			File storageImg = new File(uploadDir + imgName);
+			System.out.println("파일삭제 이름 확인 = " + uploadDir + imgName);
+			if( storageImg.exists() ) {
+				System.out.println("파일삭제 확인");
+				storageImg.delete();
+			}
+		}
+		// 게시물 삭제
+		msgDao.delete(articleNum);
+	}
+	/* ********** 게시판 글 삭제 기능 ********** */
 
 
-	/* ********** 댓글 달기 기능 ********** */
+	
+
+	/* ********** 댓글  기능 ********** */
 	@Override
 	public void commentWrite(MsgCommentDto comment) {
 		msgDao.commentWrite(comment);
 	}
-	/* ********** 댓글 달기 기능 ********** */
 
-
-
-	/* ********** 댓글 가져오기 기능 ********** */
 	@Override
 	public List<MsgCommentDto> getComments(int articleNum, int commentRow) {
 		return msgDao.getComments(articleNum, commentRow);
 	}
-	/* ********** 댓글 가져오기 기능 ********** */
+	/* ********** 댓글 기능 ********** */
+
+	
+	
+	/* ********** 좋아요 기능 ********** */
+	@Override
+	public void like(LikeDto like) {
+		msgDao.like(like);
+	}
+	/* ********** 좋아요 기능 ********** */
 
 }

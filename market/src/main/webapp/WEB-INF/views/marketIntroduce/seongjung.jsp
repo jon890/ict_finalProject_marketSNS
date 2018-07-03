@@ -3,27 +3,34 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="UTF-8">
-	<title>OOO - 1913 송정역시장</title>
+		<meta charset="UTF-8">
+		<title>OOO - 1913 송정역시장</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
-		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css"> 
+		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+			
+		<style>
+			iframe{
+				border : none;
+			}
+		</style>
 	</head>
 	
 	<body>
 		<header>
 			<%@include file="./../common/mainMenu.jsp"%>
 		</header>
+		
 		<section>
 			<div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
-	            <div class="transbox">
-	                <p id="p01">1913 송정역시장</p>
-	                <p id="p02">"예술이 공존하는 문화관광시장"</p>
-	            </div>
+		            <img src="./resources/images/favorite/favorite_main.png" />
+		            <div class="transbox">
+		                <p id="p01">대인시장</p>
+		                <p id="p02">"예술이 공존하는 문화관광시장"</p>
+		            </div>
 	        </div>
 	        
 	        <div class="container">
@@ -45,11 +52,10 @@
 		            </li>
 		        </ul>
 			
-			        
 		        <div class="tab-content">
 		            <div id="home" class="container tab-pane active">
 		                <br>
-		                <iframe src="notice.favorite" width="100%" height="1080px"></iframe>
+		                <iframe src="seongjungHistory.mid" width="100%" height="1080px"></iframe>
 		            </div>
 		            <div id="menu1" class="container tab-pane fade">
 		                <br>
@@ -74,6 +80,7 @@
 		        </div>
 		    </div>
 		</section>
+		
 		<footer>
 			<%@include file="./../common/mainFooter.jsp"%>
 		</footer>

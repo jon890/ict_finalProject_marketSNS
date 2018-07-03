@@ -1,4 +1,3 @@
-// JavaScript source code
 $(document).ready(function () {
 
     $(".mainMenu").mouseover(function () {

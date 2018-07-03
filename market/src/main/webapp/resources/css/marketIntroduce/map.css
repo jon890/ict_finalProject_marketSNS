@@ -1,0 +1,35 @@
+.contact_area{
+	position:relative;
+	height:600px;
+	z-index:10;
+	margin:-62px 35px 0;
+	padding: 33px 35px 0px;
+	border:1px solid rgba(0,0,0,0.06);
+	box-shadow: 0 0 6px rgba(0,0,0,0.03);
+	background:#fff;
+	background-clip:padding-box;
+}
+.station_wayout{
+	boder-top: 1px solid #f2f2f2;
+	padding-bottom:13px;
+}
+ul{
+	list-style: none;
+}
+
+.tit_findway{
+	padding: 13px 0 3px;
+}
+.bus-box{
+	
+}
+.bus{
+	float: left;
+	width:45%;
+	margin-right:15px;
+	margin-bottom:15px;
+}
+a{
+	color : #000;
+	text-decoration: none;
+}

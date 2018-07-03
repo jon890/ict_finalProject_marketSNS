@@ -13,8 +13,6 @@ public class MarketIntroduceServiceImpl implements MarketIntroduceService {
 
 	@Override
 	public void marketList(Model model) {
-		System.out.println(marketIntroduceDao.marketList());
 		model.addAttribute("marketList", marketIntroduceDao.marketList());
 	}
-
 }

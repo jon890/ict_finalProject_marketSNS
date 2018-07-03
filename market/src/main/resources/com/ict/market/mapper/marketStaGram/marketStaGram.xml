@@ -36,7 +36,10 @@
 	<select id="read" parameterType="Integer" resultType="snsArticle">
 		SELECT MARKETSTAGRAM. *, (SELECT COUNT(*)
 								  FROM MSGCOMMENT
-								  WHERE MARKETSTAGRAM.ARTICLENUM = MSGCOMMENT.ARTICLENUM) as COMMENTCOUNT
+								  WHERE MARKETSTAGRAM.ARTICLENUM = MSGCOMMENT.ARTICLENUM) as COMMENTCOUNT,
+								 (SELECT COUNT(*)
+								  FROM LIKELIST
+								  WHERE MARKETSTAGRAM.ARTICLENUM = LIKELIST.ARTICLENUM) as LIKENUM
 		FROM MARKETSTAGRAM
 		WHERE MARKETSTAGRAM.ARTICLENUM = #{articleNum}
 	</select>
@@ -49,17 +52,21 @@
 	<!-- ********** 게시판 글 읽기 기능 ********** -->
 	
 	
+	<!-- ********** 게시판 글 삭제 기능 ********** -->
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM MARKETSTAGRAM
+		WHERE ARTICLENUM = #{articleNum}
+	</delete>
+	<!-- ********** 게시판 글 삭제 기능 ********** -->
 	
-	<!-- ********** 댓글 쓰기 기능 ********** -->
+	
+	
+	<!-- ********** 댓글 기능 ********** -->
 	<insert id="commentWrite" parameterType="msgComment">
 		INSERT INTO MSGCOMMENT
 		VALUES(MSGCOMMENT_SEQ.NEXTVAL, #{id}, #{commentContent}, SYSDATE, #{articleNum})
 	</insert>
-	<!-- ********** 댓글 글쓰기 기능 ********** -->
 	
-	
-	
-	<!-- ********** 댓글 가져오기 기능 ********** -->
 	<select id="getComments" parameterType="HashMap" resultType="msgComment">
 		SELECT *
 		FROM (SELECT ID, COMMENTCONTENT, COMMENTDATE, ARTICLENUM
@@ -68,7 +75,15 @@
 			  ORDER BY COMMENTNUM DESC)
 		WHERE ROWNUM BETWEEN 1 AND #{commentRow}
 	</select>
-	<!-- ********** 댓글 가져오기 기능 ********** -->
+	<!-- ********** 댓글 기능 ********** -->
+	
+	
+	
+	<!-- ********** 좋아요 기능 ********** -->
+	<insert id="like" parameterType="like">
+		INSERT INTO LIKELIST
+		VALUES(LIKELIST_SEQ.NEXTVAL, 1, #{id}, #{articleNum})
+	</insert>
 	
 	
 </mapper>

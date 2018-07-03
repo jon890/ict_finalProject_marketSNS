@@ -63,7 +63,7 @@
 		    <div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>대형마트</ins></p>
+	                <p id="p01">대형마트</p>
 	                <p id="p02">대형마트의 가격을 알려 드립니다</p>
 	            </div>
         	</div>

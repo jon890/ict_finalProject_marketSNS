@@ -87,7 +87,7 @@
 	    	<div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>Favorite</ins></p>
+	                <p id="p01">Favorite</p>
 	                <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
 	            </div>
         	</div>

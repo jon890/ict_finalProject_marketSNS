@@ -62,7 +62,7 @@
 		    <div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>가격비교</ins></p>
+	                <p id="p01">가격비교</p>
 	                <p id="p02">전통시장과 대형마트의 가격을 비교해 드립니다</p>
 	            </div>
         	</div>

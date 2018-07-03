@@ -63,12 +63,18 @@
 	        
 	       	#writeBtnDiv < a{
 	       		float:right;
-	       	} 
+	       	}
+	       	nav{
+		       	margin:0 auto;
+		       	text-align:center;
+	       	}
 	       	.pagination{
+	       		margin:0 auto;
 	       		font-size:20px;
 	       		font-weight:bold;
+	       		text-align:center;
 	       	}
-	       	
+	      
 	       
     </style>
 </head>
@@ -84,7 +90,7 @@
 		    <div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>고객센터</ins></p>
+	                <p id="p01">고객센터</p>
 	                <p id="p02">고객의 소리를 담아드립니다</p>
 	            </div>
         	</div>
@@ -142,11 +148,13 @@
       
     </div>
 
-    <div class="container">
-        <ul class="pagination justify-content-center">
-             ${pageCode}
-        </ul>
-    </div>
+    
+       <nav aria-label="Page navigation example">
+	  		<ul class="pagination justify-content-center">
+	    		${pageCode}
+	  		</ul>
+		</nav>
+   
     
     <!-- http://bigfat.tistory.com/83 -->
     </section>

@@ -72,7 +72,7 @@
 		    <div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>고객센터</ins></p>
+	                <p id="p01">고객센터</p>
 	                <p id="p02">고객의 소리를 담아드립니다</p>
 	            </div>
         	</div>

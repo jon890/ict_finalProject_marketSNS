@@ -21,6 +21,7 @@
 		        level: 5 // 지도의 확대 레벨
 		    };
 		
+			
 		var map = new daum.maps.Map(mapContainer, mapOption);
 		
 		// 마커가 표시될 위치입니다 
@@ -44,7 +45,7 @@
 		});
 		  
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-		infowindow.open(map, marker); 
+		infowindow.open(map, marker);  		
 		</script>
 		
 		

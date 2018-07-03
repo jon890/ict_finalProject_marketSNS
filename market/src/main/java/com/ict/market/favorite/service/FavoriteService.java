@@ -15,4 +15,5 @@ public interface FavoriteService {
 	public void updateArticle(FavoriteDto helpArticle,Model model);
 	public void insertComment(CommentDto comment);
 	public List<CommentDto> getComments(int articleNum, int commentRow);
+	public void delete(String articleNum);
 }

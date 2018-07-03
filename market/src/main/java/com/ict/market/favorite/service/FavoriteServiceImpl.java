@@ -59,7 +59,16 @@ public class FavoriteServiceImpl implements FavoriteService {
 	public void updateArticle(FavoriteDto helpArticle, Model model) {
 		favoriteDao.updateArticle(helpArticle);
 	}
+	
+	
+	
+	@Override
+	public void delete(String articleNum) {
+		favoriteDao.delete(articleNum);
+		
+	}
 
+	/*comment°ü·Ã service*/
 	@Override
 	public void insertComment(CommentDto comment) {
 		favoriteDao.insertComment(comment);

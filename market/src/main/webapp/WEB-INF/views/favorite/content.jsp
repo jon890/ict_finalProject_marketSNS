@@ -12,6 +12,7 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	    <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
     <style>
     
@@ -57,6 +58,12 @@
 	            color:black;
 	        }
 	        
+	       #commentList{
+	   			width:1110px;
+	   			height:300px;
+	   		}
+	      	
+	        
 	       
     </style>
 </head>
@@ -90,18 +97,19 @@
 	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a>
 	        	</div>  	
         	</c:if>
+       
  		<input type="hidden" name="pageNum" value="${pageNum}" id="market">                 
 	    <input type="hidden" name="depth" value="${helpArticle.depth}">
 	    <input type="hidden" name="groupId" value="${helpArticle.articleNum}">
         <table class="table table-hover">
             <thead>
             <tr>
- 			 <th>글쓴이 :</th> <td>${helpArticle.id}</td> 			 
- 			 <th>조회수 :</th> <td>${helpArticle.hit}</td>
+ 			 <td>글쓴이 :</td> <td>${helpArticle.id}</td> 			 
+ 			 <td>조회수 :</td> <td>${helpArticle.hit}</td>
  			</tr>
  			<tr>	 
-			 <th>제목 : </th><td>${helpArticle.title}</td>
-			 <th>날짜 : </th><td>${helpArticle.writeDate}</td>
+			 <td>제목 : </td><td>${helpArticle.title}</td>
+			 <td>날짜 : </td><td>${helpArticle.writeDate}</td>
 		 	</tr>
             
             </thead>
@@ -109,11 +117,19 @@
             <tr>			 
 			  <td colspan="4">${helpArticle.content}</td>
 	     	</tr>
-	     	 <tr>
-	      <c:if test="${id !=null}">
-	    	  <td colspan="4" align="right">	    	
-	    	  <input type="submit" class="btn btn-primary" value="답글달기">
+	     	</tbody>
+	     	</table>
+	     	
+	    	<div id="commentList">
+	    	
+	    	</div>
+	    <table>
+	    	<tr>
+	      	<c:if test="${id !=null}">
+	    	  <td colspan="4" align="right">
 	    	  <c:if test="${id ==helpArticle.id}">
+	    	  <input type="button" value="comment 읽기(${helpArticle.commentCount})" onclick="getComment(1,event)" id="commentRead" class="btn btn-primary">
+	    	  <input type="button" class="btn btn-primary" id="commentWrite" value="댓글달기">
 	    	  <input type="button" class="btn btn-primary" value="수정하기" onclick="document.location.href='/market/update.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}&fileStatus=${helpArticle.fileStatus}'">
 	    	  <input type="button" class="btn btn-primary" value="삭제하기" onclick="document.location.href='/market/delete.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}'">
 	    	  </c:if>
@@ -127,19 +143,21 @@
 	      		    	
 	      <c:if test="${id ==null}">
 	    	  <td colspan="4" align="right">
-	    	  <input type="submit" class="btn btn-primary" value="답글달기" disabled="disabled">
 	    	  <input type="button" class="btn btn-primary" value="수정하기" disabled="disabled">
 	    	  <input type="button" class="btn btn-primary" value="삭제하기" disabled="disabled">
 	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=${pageNum}'">
-	    	  </td>   
+	    	  </td> 
 	      </c:if>      	 	      	 
-	     </tr>
-	     	
-	     	
-	     	 	
-            </tbody>
-        </table>
-      
+	     </tr>  	
+	     </table>	 	
+            
+       
+        <div id="commentBottom">
+        <textarea rows="5" cols="150" name="commentContent" 
+        id="commentContent" placeholder="댓글을 입력하세요."></textarea>
+        </div>
+    
+        
     </div>
 
         
@@ -150,6 +168,82 @@
 			<!-- mainFooter.jsp 파일 include -->
 	 <%@ include file="./../common/mainFooter.jsp" %>
 	</footer>
+    <script type="text/javascript">
     
+    $(document).ready(function(){
+    	
+    	$.ajaxSetup({
+    		type :"POST",
+    		async :true,
+    		dataType:"json",
+    		error: function(hum){
+    			alert("error html =" + hum.statusText);
+    		}
+    	});
+    	$("#commentWrite").on("click",function(){
+    		event.preventDefault();
+    		let commentContent =$("#commentContent").val();
+    		if(commentContent.length==0||commentContent==null){
+    			alert("내용을 입력해주세요.");
+    			$("#commentContent").focus();
+    		}else{
+    		$.ajax({
+    			url:"/market/commentWrite.favorite",
+    			data:{
+    				commentContent:$("#commentContent").val(),
+    				articleNum:"${helpArticle.articleNum}"
+    			},
+    			success:function(data){
+    				if(data.result==1){
+    					alert("댓글입력성공!!");
+    					$("#commentContent").val("");
+    					showHtml(data.commentList,1);
+    				}
+    				
+    			}
+    			
+    		});
+    		}
+    	});
+    });	
+    function getComment(commPageNum,event){
+		event.preventDefault();
+		$.ajax({
+			url:"/market/commentRead.favorite",
+			data:{
+				articleNum:"${helpArticle.articleNum}",
+				//숫자와 문자연산에서 +제외하고는 숫자 우선  ex 1*10 10 
+				commentRow:commPageNum*10
+			},
+			success:function(data){
+				showHtml(data,commPageNum);
+			}
+		});
+	}
+	function showHtml(data,commPageNum){
+		let html="<table class='table table-hover' width='1100'>"; 
+		$.each(data,function(index,item){ 
+			html +="<tr>"; 
+			html +="<td width='100'>"+(index+1)+"</td>";
+			html +="<td	width='100'>"+item.id+"</td>";
+			html +="<td width='700'>"+item.commentContent+"</td>";
+			html +="<td	width='210'>"+item.commentDate+"</td>";
+			html +="</tr>"; 
+		});
+		 html +="</table>"; 
+		commPageNum=parseInt(commPageNum);
+		if("${article.commentCount}">commPageNum*10){
+			nextPageNum=commPageNum+1;
+			html+="<br/><input type='button' onclick='getComment(nextPageNum,event)' value='다음comment보기'<br>";
+		}
+		
+		$("#commentList").html(html);
+		$("#commentContent").val("");
+		$("#commentContent").focus();
+		
+	}
+
+	
+</script>
 </body>
 </html>

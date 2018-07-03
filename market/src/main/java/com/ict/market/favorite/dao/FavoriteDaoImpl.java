@@ -52,6 +52,13 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		sqlsession.update(nameSpace+".updateArticle",helpArticle);
 		
 	}
+	
+	
+
+	@Override
+	public void delete(String articleNum) {
+		sqlsession.delete(nameSpace+".delete",articleNum);
+	}
 
 	@Override
 	public void insertComment(CommentDto comment) {

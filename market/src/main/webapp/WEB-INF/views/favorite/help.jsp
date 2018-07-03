@@ -64,6 +64,10 @@
 	       	#writeBtnDiv < a{
 	       		float:right;
 	       	} 
+	       	.pagination{
+	       		font-size:20px;
+	       		font-weight:bold;
+	       	}
 	       	
 	       
     </style>
@@ -140,7 +144,7 @@
 
     <div class="container">
         <ul class="pagination justify-content-center">
-            <%--  ${pageCode} --%>
+             ${pageCode}
         </ul>
     </div>
     

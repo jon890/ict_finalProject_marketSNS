@@ -52,6 +52,12 @@
 		where articleNum=#{articleNum}
 	</delete>
 	
+	<update id="increaseHit" parameterType="String">
+		update helpArticle
+		set hit=hit+1
+		where articleNum=#{articleNum}
+	</update>
+	
 	<!--  comment 관련 sql문   -->
 	<insert id="insertComment" parameterType="commentList">
 		insert into comments
@@ -61,13 +67,18 @@
 	
 	<select id="getComments" parameterType="java.util.HashMap" resultType="commentList">
 		select *
-		from(select id,commentContent,commentDate,articleNum
+		from(select *
 			from comments
 			where articleNum=#{articleNum}
 			order by commentNum desc)
 			where rownum between 1 and #{commentRow}
 	</select>
 	
+	<delete id="commentDelete" parameterType="String">
+		delete
+		from comments
+		where commentNum=#{commentNum}
+	</delete>
 
 
 

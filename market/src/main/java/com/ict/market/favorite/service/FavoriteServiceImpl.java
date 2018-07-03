@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,11 +61,25 @@ public class FavoriteServiceImpl implements FavoriteService {
 		favoriteDao.updateArticle(helpArticle);
 	}
 	
-	
-	
 	@Override
 	public void delete(String articleNum) {
 		favoriteDao.delete(articleNum);
+	}
+	
+	@Override
+	public void increaseHit(String articleNum,HttpSession session) {
+		long update_time = 0;
+		//세션에 저장된 게시물의 조회시간 검색
+		if(session.getAttribute("update_time_"+articleNum)!=null) {
+			update_time=(long)session.getAttribute("update_time_"+articleNum);
+		}
+		//현재시간
+		long current_time=System.currentTimeMillis();
+		//일정 시간이 경가된 후 조회수 증가 처리
+		if(current_time-update_time>1*10000) {
+			favoriteDao.increaseHit(articleNum);
+			session.setAttribute("update_time_"+articleNum,current_time);
+		}
 		
 	}
 
@@ -75,8 +90,16 @@ public class FavoriteServiceImpl implements FavoriteService {
 	}
 
 	@Override
-	public List<CommentDto> getComments(int articleNum, int commentRow) {
+	public List<CommentDto> getComments(int articleNum, int commentRow,Model model) {
+		model.addAttribute("commentList",favoriteDao.getComments(articleNum,commentRow));
 		return favoriteDao.getComments(articleNum,commentRow);
 	}
+
+	@Override
+	public void commentDelete(String commentNum) {
+		favoriteDao.commentDelete(commentNum);
+	}
+	
+	
 
 }

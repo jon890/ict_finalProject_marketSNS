@@ -59,11 +59,15 @@
 	        }
 	        
 	       #commentList{
-	   			width:1110px;
+	       		width:1110px;
 	   			height:300px;
+	   			overflow:auto;
 	   		}
+	   		#commentBottom{
+	   			position:relative;
+	   		}
+	   	
 	      	
-	        
 	       
     </style>
 </head>
@@ -123,12 +127,11 @@
 	    	<div id="commentList">
 	    	
 	    	</div>
-	    <table>
+	    <table id="commentBottom">
 	    	<tr>
 	      	<c:if test="${id !=null}">
 	    	  <td colspan="4" align="right">
 	    	  <c:if test="${id ==helpArticle.id}">
-	    	  <input type="button" value="comment 읽기(${helpArticle.commentCount})" onclick="getComment(1,event)" id="commentRead" class="btn btn-primary">
 	    	  <input type="button" class="btn btn-primary" id="commentWrite" value="댓글달기">
 	    	  <input type="button" class="btn btn-primary" value="수정하기" onclick="document.location.href='/market/update.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}&fileStatus=${helpArticle.fileStatus}'">
 	    	  <input type="button" class="btn btn-primary" value="삭제하기" onclick="document.location.href='/market/delete.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}'">
@@ -148,15 +151,21 @@
 	    	  <input type="button" class="btn btn-primary" value="목록으로" onclick="document.location.href='/market/help.favorite?pageNum=${pageNum}'">
 	    	  </td> 
 	      </c:if>      	 	      	 
-	     </tr>  	
+	     </tr>
+	     <tr>
+	     <td colspan="4">
+		     <textarea rows="5" cols="150" name="commentContent" 
+	        id="commentContent" placeholder="댓글을 입력하세요."></textarea>
+         </td>
+	     </tr>
+	       	
 	     </table>	 	
             
        
-        <div id="commentBottom">
+      <!--   <div id="commentBottom">
         <textarea rows="5" cols="150" name="commentContent" 
         id="commentContent" placeholder="댓글을 입력하세요."></textarea>
-        </div>
-    
+        </div> -->
         
     </div>
 
@@ -172,12 +181,16 @@
     
     $(document).ready(function(){
     	
+    	/* $("#commentRead").on("load",function(){
+    		getComment(1,event);
+    	});  */
+    	$(window).on("load",getComment(1,event));
+   
     	$.ajaxSetup({
     		type :"POST",
     		async :true,
     		dataType:"json",
-    		error: function(hum){
-    			alert("error html =" + hum.statusText);
+    		error: function(){
     		}
     	});
     	$("#commentWrite").on("click",function(){
@@ -206,8 +219,27 @@
     		}
     	});
     });	
+    
+     function deleteComment(obj){
+    	let tr = $(obj).parent().parent();
+    	tr.remove();
+    	alert($(obj).val());
+    	$.ajax({
+    		url:"/market/commentDelete.favorite",
+    		data:{
+    			commentNum:$(obj).val()
+    		},
+    		success:function(data){
+    			if(data.result=1){
+    				alert("댓글삭제성공");
+    			}
+    		}
+    		
+    	});
+    }
+    
+    
     function getComment(commPageNum,event){
-		event.preventDefault();
 		$.ajax({
 			url:"/market/commentRead.favorite",
 			data:{
@@ -220,14 +252,22 @@
 			}
 		});
 	}
+    
 	function showHtml(data,commPageNum){
 		let html="<table class='table table-hover' width='1100'>"; 
 		$.each(data,function(index,item){ 
 			html +="<tr>"; 
 			html +="<td width='100'>"+(index+1)+"</td>";
 			html +="<td	width='100'>"+item.id+"</td>";
-			html +="<td width='700'>"+item.commentContent+"</td>";
+			html +="<td width='600'>"+item.commentContent+"</td>";
 			html +="<td	width='210'>"+item.commentDate+"</td>";
+			html +="<td	width='100'>"+item.commentNum+"</td>";
+			html +="<c:if test='${id=="+item.id+"}'>";
+			html +="<td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td>";
+			html +="</c:if>"
+			html +="<c:if test='${id!="+item.id+"}'>";
+			html +="<td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' disabled='disabled' id='deleteKey'>삭제</button></td>";
+			html +="</c:if>"
 			html +="</tr>"; 
 		});
 		 html +="</table>"; 
@@ -242,6 +282,8 @@
 		$("#commentContent").focus();
 		
 	}
+	
+	
 
 	
 </script>

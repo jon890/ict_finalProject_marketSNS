@@ -70,9 +70,15 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.5</version>
 		</dependency>
-
-
-
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+		<!-- 트렌젝션 처리  -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+				
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

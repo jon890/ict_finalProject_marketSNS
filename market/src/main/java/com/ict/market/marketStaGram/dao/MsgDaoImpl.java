@@ -90,6 +90,20 @@ public class MsgDaoImpl implements MsgDao {
 	public void like(LikeDto like) {
 		sqlSession.insert(nameSpace.concat(".like"), like);
 	}
+	
+	@Override
+	public void likeCancel(LikeDto like) {
+		sqlSession.delete(nameSpace.concat(".likeCancel"), like);
+	}
+
+	public String likeChk(LikeDto like) {
+		return sqlSession.selectOne(nameSpace.concat(".likeChk"), like);
+	}
+
+	@Override
+	public int getLikeNum(LikeDto like) {
+		return sqlSession.selectOne(nameSpace.concat(".getLikeNum"), like);
+	}
 	/* ********** 좋아요 기능 ********** */
 
 }

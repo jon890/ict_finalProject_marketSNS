@@ -24,6 +24,10 @@ public interface MsgDao {
 	public List<String> getImgList(int articleNum);
 	/* ********** 게시판 글 읽기 기능 ********** */
 	
+	/* ********** 게시판 글 삭제 기능 ********** */
+	public void delete(int articleNum);
+	/* ********** 게시판 글 삭제기능 ********** */
+	
 	
 	/* ********** 댓글 달기 기능 ********** */
 	public void commentWrite(MsgCommentDto comment);

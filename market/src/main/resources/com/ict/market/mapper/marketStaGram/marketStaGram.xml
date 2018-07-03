@@ -49,6 +49,14 @@
 	<!-- ********** 게시판 글 읽기 기능 ********** -->
 	
 	
+	<!-- ********** 게시판 글 삭제 기능 ********** -->
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM MARKETSTAGRAM
+		WHERE ARTICLENUM = #{articleNum}
+	</delete>
+	<!-- ********** 게시판 글 삭제 기능 ********** -->
+	
+	
 	
 	<!-- ********** 댓글 쓰기 기능 ********** -->
 	<insert id="commentWrite" parameterType="msgComment">

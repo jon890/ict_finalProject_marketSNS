@@ -56,9 +56,17 @@ public class MsgDaoImpl implements MsgDao {
 		return sqlSession.selectList(nameSpace.concat(".getImgList"), articleNum);
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
-
-
 	
+	
+	/* ********** 게시판 글 삭제 기능 ********** */
+	@Override
+	public void delete(int articleNum) {
+		sqlSession.delete(nameSpace.concat(".delete"), articleNum);
+	}
+	/* ********** 게시판 글 삭제 기능 ********** */
+	
+	
+
 	/* ********** 댓글 달기 기능 ********** */
 	@Override
 	public void commentWrite(MsgCommentDto comment) {
@@ -68,7 +76,8 @@ public class MsgDaoImpl implements MsgDao {
 
 
 
-	
+
+
 	/* ********** 댓글 가져오기 기능 ********** */
 	@Override
 	public List<MsgCommentDto> getComments(int articleNum, int commentRow) {
@@ -79,8 +88,5 @@ public class MsgDaoImpl implements MsgDao {
 	}
 	/* ********** 댓글 가져오기 기능 ********** */
 	
-	
 
-
-	
 }

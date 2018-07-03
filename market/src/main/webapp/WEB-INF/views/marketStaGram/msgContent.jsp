@@ -95,7 +95,7 @@
 						</c:if>	
 					</div>
 					
-					<div>좋아요수 : ${snsArticle.likeNum}</div>
+					<div>좋아요수 : <span id="likeNum">${snsArticle.likeNum}</span></div>
 					<div>글쓴날짜 : ${snsArticle.writeDate}</div>
 					<hr>	
 					<div><textarea cols="40" placeholder="댓글 달기..." name="commentContent" id="commentContent"></textarea></div>
@@ -135,6 +135,7 @@
 		
 			$(document).ready(function(event){
 				getComment(1, event);
+				likeChk();
 			});
 			
 			$.ajaxSetup({
@@ -213,18 +214,38 @@
 						id : "${id}"
 					},
 					success : function(data){
-						$("#likebtnImg").attr("src", "./resources/images/marketStaGram/likebtn.png");
-						alert($("#likebtnImg").attr("src"));
+						if(data.sw == 1){
+							$("#likebtnImg").attr("src", "./resources/images/marketStaGram/likebtn.png");
+						} else {
+							$("#likebtnImg").attr("src", "./resources/images/marketStaGram/dislikebtn.png");
+						}
+						$("#likeNum").html(data.likeNum);
+					}
+				});
+			}
+			
+			function likeChk(){
+				$.ajax({
+					url : "/market/likeChk.msg",
+					data : {
+						articleNum : "${snsArticle.articleNum}",
+						id : "${id}"
+					},
+					success : function(data){
+						if(data.sw == 1){
+							$("#likebtnImg").attr("src", "./resources/images/marketStaGram/likebtn.png");
+						} else {
+							$("#likebtnImg").attr("src", "./resources/images/marketStaGram/dislikebtn.png");
+						}
+						$("#likeNum").html(data.likeNum);
 					}
 				});
 			}
 			
 			function login(){
 				location.href = "./login.main";
-			}
-		
+			}	
 		</script>
 		
- 
 	</body>
 </html>

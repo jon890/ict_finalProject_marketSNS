@@ -38,6 +38,9 @@ public interface MsgDao {
 	
 	/* ********** 좋아요 기능 ********** */
 	public void like(LikeDto like);
+	public void likeCancel(LikeDto like);
+	public String likeChk(LikeDto like);
+	public int getLikeNum(LikeDto like);
 	/* ********** 좋아요 기능 ********** */
 	
 }

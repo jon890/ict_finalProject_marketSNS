@@ -24,4 +24,8 @@ public interface MsgService {
 	
 	
 	public void like(LikeDto like);
+	public void likeCancel(LikeDto like);
+	public boolean likeChk(LikeDto like);
+	public int getLikeNum(LikeDto like);
+	
 }

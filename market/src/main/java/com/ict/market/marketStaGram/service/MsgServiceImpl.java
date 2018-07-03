@@ -87,7 +87,6 @@ public class MsgServiceImpl implements MsgService {
 			File storageImg = new File(uploadDir + imgName);
 			System.out.println("파일삭제 이름 확인 = " + uploadDir + imgName);
 			if( storageImg.exists() ) {
-				System.out.println("파일삭제 확인");
 				storageImg.delete();
 			}
 		}
@@ -118,6 +117,27 @@ public class MsgServiceImpl implements MsgService {
 	public void like(LikeDto like) {
 		msgDao.like(like);
 	}
+	
+
+	@Override
+	public void likeCancel(LikeDto like) {
+		msgDao.likeCancel(like);
+	}
+
+	@Override
+	public boolean likeChk(LikeDto like) {
+		if( msgDao.likeChk(like) == null ) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	@Override
+	public int getLikeNum(LikeDto like) {
+		return msgDao.getLikeNum(like);
+	}
+	
 	/* ********** 좋아요 기능 ********** */
 
 }

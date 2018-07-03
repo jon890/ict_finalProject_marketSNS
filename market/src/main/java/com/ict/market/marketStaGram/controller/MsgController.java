@@ -103,16 +103,42 @@ public class MsgController {
 	/* ********** 좋아요 기능 ********** */
 	@RequestMapping(value = "/like.msg" , method = RequestMethod.POST)
 	@ResponseBody
-	public LikeDto like(LikeDto like) {
-		msgService.like(like);
-		System.out.println(like);
-		return like;
+	public HashMap<String, Integer> like(LikeDto like) {
+		
+		HashMap<String, Integer> hm = new HashMap<>();
+		int sw = 0;
+		
+		// true -> 이전에 like를 누른 사용자
+		if( msgService.likeChk(like) ) {
+			msgService.likeCancel(like);
+		} else {
+			// false -> like를 처음 누른 사용자
+			msgService.like(like);
+			sw = 1;
+		}
+		
+		hm.put("likeNum", msgService.getLikeNum(like));
+		// 이미지 교체를 위한 스위치 설정
+		hm.put("sw", sw);
+		return hm;
 	}
-
-	@RequestMapping(value = "/likeCancel.msg" , method = RequestMethod.POST)
-	public String likeCancel(@RequestParam int articleNum,
-							 @RequestParam String id) {
-		return "redirect:/read.msg?articleNum="+articleNum;
+	
+	@RequestMapping(value = "/likeChk.msg" , method = RequestMethod.POST)
+	@ResponseBody
+	public HashMap<String, Integer> likeChk(LikeDto like) {
+		
+		HashMap<String, Integer> hm = new HashMap<>();
+		int sw = 0;
+		
+		// true -> 이전에 like를 누른 사용자
+		if( msgService.likeChk(like) ) {
+			sw = 1;
+		} 
+	
+		hm.put("likeNum", msgService.getLikeNum(like));
+		// 이미지 교체를 위한 스위치 설정
+		hm.put("sw", sw);
+		return hm;
 	}
 	/* ********** 좋아요 기능 ********** */
 	

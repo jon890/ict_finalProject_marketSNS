@@ -20,7 +20,7 @@
 	<!-- ********** 게시판 글쓰기 기능 ********** -->
 	<insert id="write" parameterType="snsArticle" useGeneratedKeys="true" keyProperty="articleNum" keyColumn="articleNum">
 		INSERT INTO MARKETSTAGRAM 
-		VALUES(MARKETSTAGRAM_SEQ.NEXTVAL, #{id}, #{content}, 0, SYSDATE)
+		VALUES(MARKETSTAGRAM_SEQ.NEXTVAL, #{id}, #{content}, SYSDATE)
 	</insert>
 	
 	
@@ -36,10 +36,7 @@
 	<select id="read" parameterType="Integer" resultType="snsArticle">
 		SELECT MARKETSTAGRAM. *, (SELECT COUNT(*)
 								  FROM MSGCOMMENT
-								  WHERE MARKETSTAGRAM.ARTICLENUM = MSGCOMMENT.ARTICLENUM) as COMMENTCOUNT,
-								 (SELECT COUNT(*)
-								  FROM LIKELIST
-								  WHERE MARKETSTAGRAM.ARTICLENUM = LIKELIST.ARTICLENUM) as LIKENUM
+								  WHERE MARKETSTAGRAM.ARTICLENUM = MSGCOMMENT.ARTICLENUM) as COMMENTCOUNT
 		FROM MARKETSTAGRAM
 		WHERE MARKETSTAGRAM.ARTICLENUM = #{articleNum}
 	</select>
@@ -82,8 +79,24 @@
 	<!-- ********** 좋아요 기능 ********** -->
 	<insert id="like" parameterType="like">
 		INSERT INTO LIKELIST
-		VALUES(LIKELIST_SEQ.NEXTVAL, 1, #{id}, #{articleNum})
+		VALUES(LIKELIST_SEQ.NEXTVAL, #{id}, #{articleNum})
 	</insert>
 	
+	<delete id="likeCancel" parameterType="like">
+		DELETE FROM LIKELIST
+		WHERE ARTICLENUM = #{articleNum} AND ID = #{id}
+	</delete>
 	
+	<select id="likeChk" parameterType="like" resultType="String">
+		SELECT ID
+		FROM LIKELIST
+		WHERE ARTICLENUM = #{articleNum} AND ID = #{id}
+	</select>
+	
+	<select id="getLikeNum" parameterType="like" resultType="Integer">
+	SELECT COUNT(*)
+	FROM LIKELIST
+	WHERE ARTICLENUM = #{articleNum}
+	</select>
+	<!-- ********** 좋아요 기능 ********** -->
 </mapper>

@@ -13,13 +13,11 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <link rel="stylesheet" href="./resources/css/marketIntroduce/marketMain.css">
-	    
+	    <link rel="stylesheet" href="./resources/css/marketIntroduce/marketMain.css"> 
 	</head>
 	
 	
 	<body>
-	
     	<header id="mainMenu">
 			<!-- mainMenu.jsp 파일 include -->
 			<%@ include file="./../common/mainMenu.jsp" %>
@@ -305,5 +303,6 @@
 			<!-- mainFooter.jsp 파일 include -->
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>
+		
 	</body>
 </html>

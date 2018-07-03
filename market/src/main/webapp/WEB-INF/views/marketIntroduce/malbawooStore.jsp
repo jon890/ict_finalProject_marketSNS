@@ -2,10 +2,17 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<title>OOO - 남광주시장 먹을거리</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">	
+		<title>OOO - 말바우시장 먹을거리</title>
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
+		<script src="https://code.jquery.com/jquery-3.3.2.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.2/jquery.min.js"></script>
+					
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	</head>
 	
 	<body>

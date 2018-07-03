@@ -33,6 +33,11 @@ public class MarketIntroduceController {
 		return "daein";
 	}
 	
+	@RequestMapping(value="daeinHistory", method = RequestMethod.GET)
+	public String daeinHistory() {
+		return "daeinHistory";
+	}
+	
 	@RequestMapping(value="/daeinStore.mid", method = RequestMethod.GET)
 	public String daeinStore() {
 		System.out.println("대인먹거리 요청을 받습니다.");
@@ -58,6 +63,11 @@ public class MarketIntroduceController {
 		return "namgwangju";
 	}
 	
+	@RequestMapping(value="namgwangjuHistory", method = RequestMethod.GET)
+	public String namgwangjuHistory() {
+		return "namgwangjuHistory";
+	}
+	
 	@RequestMapping(value="/namgwangjuStore.mid", method = RequestMethod.GET)
 	public String namgwangjuStore() {
 		return "namgwangjuStore";
@@ -78,6 +88,11 @@ public class MarketIntroduceController {
 	public String yangdong() {
 		System.out.println("대인시장 요청을 받습니다.");
 		return "yangdong";
+	}
+	
+	@RequestMapping(value="yangdongHistory", method = RequestMethod.GET)
+	public String yangdongHistory() {
+		return "yangdongHistory";
 	}
 	
 	@RequestMapping(value="/yangdongStore.mid", method = RequestMethod.GET)
@@ -102,6 +117,11 @@ public class MarketIntroduceController {
 		return "malbawoo";
 	}
 	
+	@RequestMapping(value="malbawooHistory", method = RequestMethod.GET)
+	public String malbawooHistory() {
+		return "malbawooHistory";
+	}
+	
 	@RequestMapping(value="/malbawooStore.mid", method = RequestMethod.GET)
 	public String malbawooStore() {
 		return "yangdongStore";
@@ -122,6 +142,11 @@ public class MarketIntroduceController {
 	public String seongjung() {
 		System.out.println("1913송정시장 요청을 받습니다.");
 		return "seongjung";
+	}
+	
+	@RequestMapping(value="seongjungHistory", method = RequestMethod.GET)
+	public String seongjungHistory() {
+		return "seongjungHistory";
 	}
 	
 	@RequestMapping(value="/seongjungStore.mid", method = RequestMethod.GET)

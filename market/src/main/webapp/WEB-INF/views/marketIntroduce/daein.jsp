@@ -12,6 +12,12 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+		
+		<style>
+			iframe{
+				border : none;
+			}
+		</style>
 	</head>
 	
 	
@@ -29,7 +35,6 @@
 				</div>
 			</div>
 	
-			<br>
 			<div class="container">
 				<ul class="nav nav-pills" role="tablist">
 					<li class="nav-item"><a class="nav-link active"
@@ -47,7 +52,7 @@
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active">
 						<br>
-						<iframe src="notice.favorite" width="100%" height="1080px"></iframe>
+						<iframe src="daeinHistory.mid" width="100%" height="1080px"></iframe>
 					</div>
 					<div id="menu1" class="container tab-pane fade">
 						<br>
@@ -76,5 +81,6 @@
 		<footer>
 			<%@include file="./../common/mainFooter.jsp"%>
 		</footer>
+		
 	</body>
 </html>

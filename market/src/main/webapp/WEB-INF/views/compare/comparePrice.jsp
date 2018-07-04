@@ -43,9 +43,22 @@
 	        #p02{
 	            font-size:20px;
 	        }
-	        .nav-item{
-	        	background-color:#FFDFFF;
-	        	font-size:15px;
+	       .nav-item{
+	            width:33%;
+	            text-align:center;
+	            font-weight:bold;
+	        }
+	        #navPills{
+	        	margin:0 auto;
+	        }
+	        #navPills ul li a{
+	        	text-align:center;
+	        	font-size:25px;
+	        	margin:10px;
+	        	padding:10px;
+	        }
+	        .dropdown-menu li {
+	        	text-align:center;
 	        }
 	      
 	      </style>
@@ -67,17 +80,19 @@
 	            </div>
         	</div>
 		   <div id="wrapper">
-				<ul class="nav nav-pills" role="tablist">
-		              <li class="nav-item">
-		                <a href="market.compare" class="nav-link">전통시장가격</a>
+		  
+				<ul class="nav nav-tabs nav-justified" role="tablist">
+		             <li class="nav-item">
+		                <a href="market.compare" class="btn btn-primary">전통시장가격</a>
 		            </li>
 		            <li class="nav-item">
-		                <a href="mart.compare" class="nav-link">대형마트가격</a>
+		                <a href="mart.compare" class="btn btn-primary">대형마트가격</a>
 		            </li>
 		            <li class="nav-item">
-		                <a href="compare.compare" class="nav-link">전통시장vs대형마트</a>
+		                <a href="compare.compare" class="btn btn-primary">전통시장vs대형마트</a>
 		            </li>
 		       </ul>
+		  
 	<!-- Single button -->
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

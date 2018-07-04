@@ -12,6 +12,7 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	    <script src="./resources/js/favorite/favoriteMenu.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
     <style>
     
@@ -51,6 +52,10 @@
 	            text-align:center;
 	            font-size:20px;
 	            font-weight:bold;
+	        }
+	         .container{
+	        	width:1080px;
+	        	magin:0 auto;
 	        }
 	
 	        .nav-link{
@@ -96,7 +101,24 @@
         	</div>
 
     <div class="container">
-    
+    		<br>
+    		<ul class="nav nav-pills" role="tablist">
+			            <li class="nav-item">
+			                <a class="nav-link" data-toggle="pill" id="notice">공지사항</a>
+			            </li>
+			            <li class="nav-item">
+			                <a class="nav-link" data-toggle="pill" id="hotPlace">핫플레이스</a>
+			            </li>
+			            <li class="nav-item">
+			                <a class="nav-link" data-toggle="pill" id="festival">축제정보</a>
+			            </li>
+			            <li class="nav-item">
+			                <a class="nav-link" data-toggle="pill" id="nightMarket">야시장정보</a>
+			            </li>
+			            <li class="nav-item">
+			                <a class="nav-link active" data-toggle="pill" id="help">고객센터</a>
+			            </li>
+			</ul>
     		<c:if test="${id != null}">
 	        	<div id="writeBtnDiv">
 	        		 <a class="btn btn-primary" href="./helpForm.favorite">글쓰기</a>

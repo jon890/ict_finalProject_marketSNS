@@ -43,7 +43,7 @@
 		    
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker);
-		map.setCenter(new daum.maps.LatLng(35.137318, 126.787090));
+		map.setCenter(new daum.maps.LatLng(35.138599, 126.786090));
 		/* var points = [
 		    new daum.maps.LatLng(35.138887, 126.796558),
 		    new daum.maps.LatLng(35.139199, 126.786813),

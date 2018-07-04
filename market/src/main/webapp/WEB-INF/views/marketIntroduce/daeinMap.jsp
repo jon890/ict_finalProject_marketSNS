@@ -97,12 +97,13 @@
 		오른쪽 위 -35.155650, 126.923437
 		왼쪽 아래 - 35.152337, 126.913049(금남분식) */
 		 options = { 
-	        center: new daum.maps.LatLng(35.153411,126.918099), // 지도의 중심좌표
+	        center: new daum.maps.LatLng(35.153411,126.918099),// 지도의 중심좌표
+	        level : 3
 	    }; 
 		
 		var map = new daum.maps.Map(mapContainer, options);
 		
-		map.setLevel(3, {anchor: new daum.maps.LatLng(35.153411,126.918099)});
+		
 		// 마커가 표시될 위치입니다 
 		var markerPosition  = new daum.maps.LatLng(35.153411,126.918099); 
 		

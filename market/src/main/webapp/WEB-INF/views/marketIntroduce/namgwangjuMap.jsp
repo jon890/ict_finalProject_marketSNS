@@ -9,14 +9,14 @@
 	</head>
 	
 	<body>
-		<div id="map" style="width:100%;height:400px;"></div>
+		<div id="map" style="width:1080px;height:350px;"></div>
 		
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=829b550ef1d187e3eb8b49c2475f7f76"></script>
-		<script>
+		<!-- <script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = { 
 		        center: new daum.maps.LatLng(35.139046, 126.921685), // 지도의 중심좌표
-		        level: 5 // 지도의 확대 레벨
+		        level: 3 // 지도의 확대 레벨
 		    };
 		
 		var map = new daum.maps.Map(mapContainer, mapOption);
@@ -43,7 +43,65 @@
 		  
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker); 
+		35.140612, 126.916514 - 양림동주민센터
+		35.138120, 126.916965 - 방림신협
+		35.139844, 126.926589 - 조선대뒤편
+		</script> -->
+		<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    options = { 
+	        center: new daum.maps.LatLng(35.139046, 126.921685), // 지도의 중심좌표
+	    };
+		
+		var map = new daum.maps.Map(mapContainer, options);
+		
+		map.setCenter(new daum.maps.LatLng(35.139046, 126.921685));
+		map.setLevel(3, {anchor: new daum.maps.LatLng(35.139046, 126.921685)});
+		
+		// 마커가 표시될 위치입니다 
+		var markerPosition  = new daum.maps.LatLng(35.139046, 126.921685); 
+		
+		// 마커를 생성합니다
+		var marker = new daum.maps.Marker({
+		    position: markerPosition
+		});
+		
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+		
+		var iwContent = '<div style="padding:5px;">남광주시장 <br><a href="http://map.daum.net/link/map/남광주시장,35.139046, 126.921685" style="color:blue" target="_blank">큰지도보기</a> <a href="http://map.daum.net/link/to/남광주시장!,35.139046, 126.921685" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	    	iwPosition = new daum.maps.LatLng(35.139046, 126.921685); //인포윈도우 표시 위치입니다
+	
+		// 인포윈도우를 생성합니다
+		var infowindow = new daum.maps.InfoWindow({
+		    position : iwPosition, 
+		    content : iwContent 
+		});
+		  
+		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+		infowindow.open(map, marker); 
+		
+		var points = [
+		    new daum.maps.LatLng(35.140612, 126.916514),
+		    new daum.maps.LatLng(35.138120, 126.916965),
+		    new daum.maps.LatLng(35.139844, 126.926589)
+		];
+
+		// 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
+		var bounds = new daum.maps.LatLngBounds();    
+
+		var i
+		for (i = 0; i < points.length; i++) {		    
+		    // LatLngBounds 객체에 좌표를 추가합니다
+		    bounds.extend(points[i]);
+		}
+		map.setBounds(bounds);
+		map.setLevel(3);
+		map.setCenter(new daum.maps.LatLng(35.140612, 126.916514));
+		
 		</script>
+		
+		
 		<div class="contact_area">
 			<h3>남광주시장 찾아가는 길</h3>
 			<div class="station_wayout">

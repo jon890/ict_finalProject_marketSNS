@@ -9,14 +9,14 @@
 	</head>
 	
 	<body>
-		<div id="map" style="width:100%;height:400px;"></div>
+		<div id="map" style="width:1080px;height:350px;"></div>
 		
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=829b550ef1d187e3eb8b49c2475f7f76"></script>
 		<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = { 
 		        center: new daum.maps.LatLng(35.154107, 126.902091), // 지도의 중심좌표
-		        level: 5 // 지도의 확대 레벨
+		        level: 3 // 지도의 확대 레벨
 		    };
 		
 		var map = new daum.maps.Map(mapContainer, mapOption);
@@ -43,6 +43,29 @@
 		  
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker); 
+		
+		var points = [
+		    new daum.maps.LatLng(35.155279, 126.908163),
+		    new daum.maps.LatLng(35.155690, 126.896877),
+		    new daum.maps.LatLng(35.153208, 126.896799)
+		];
+
+		// 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
+		var bounds = new daum.maps.LatLngBounds();    
+
+		var i
+		for (i = 0; i < points.length; i++) {		    
+		    // LatLngBounds 객체에 좌표를 추가합니다
+		    bounds.extend(points[i]);
+		}
+		map.setBounds(bounds);
+		map.setLevel(3);
+		map.setCenter(new daum.maps.LatLng(35.155702, 126.896488));
+		
+		/* 35.155279, 126.908163 -광주고용지원센터
+		35.155690, 126.896877 -공터
+		35.153208, 126.896799 -광제사 */
+	
 		</script>
 		<div class="contact_area">
 			<h3>양동시장 찾아가는 길</h3>

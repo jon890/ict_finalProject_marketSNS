@@ -59,6 +59,7 @@ public class MsgController {
 	public String write(SnsArticleDto snsArticle,
 						@RequestPart("imgname") List<MultipartFile> imgname,
 						HttpServletRequest req) {
+		System.out.println(imgname);
 		/* 파일 업로드 경로 */
 	    String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadImgs/";
 		msgService.write(snsArticle, imgname, uploadDir);

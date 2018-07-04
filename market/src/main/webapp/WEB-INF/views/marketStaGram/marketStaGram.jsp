@@ -50,7 +50,7 @@
 	        	 		
 	        	 		<div id="writeForm">
 	        	 			<p>게시물 작성</p>
-	        	 			<textarea rows="10" cols="110" name="content"></textarea>
+	        	 			<textarea rows="10" cols="100" name="content"></textarea>
 	        	 		</div>
 	        	 		<div id="thumNailImgs">
 	        	 			<p>미리보기 이미지</p>

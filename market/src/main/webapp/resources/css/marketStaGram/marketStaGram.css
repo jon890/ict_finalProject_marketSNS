@@ -71,6 +71,8 @@
 }
 
 #writeForm textarea{
+	margin-left : 25px;
+	margin-right : 25px;
 	width : 90%;
 }
 
@@ -99,7 +101,10 @@
 
 #thumNailImgs{
 	margin-top : 20px;
-	height : 120px;
+	margin-bottom : 10px;
+	height : 160px;
+	overflow : auto;
+
 }
 
 #thumNailImgs p{
@@ -110,12 +115,24 @@
 
 #thumNailImgs img{
 	display : inline-block;
-	width : 100px;
-	height : 100px;
+	margin : 5px;
+	width : 110px;
+	height : 110px;
 }
 
 input[type=file]{
 	display : none;
+}
+
+.thumDelBtn{
+	cursor : pointer;
+	padding-top : 15px;
+	font-size : 15px;
+	margin-left : 5px;
+}
+
+.thumNailImgArticles{
+	float : left;
 }
 /* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
 

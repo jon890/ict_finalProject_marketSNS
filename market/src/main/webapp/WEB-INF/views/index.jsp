@@ -10,7 +10,6 @@
 		<link rel="stylesheet" href="./resources/css/index.css">
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="./resources/js/index.js"></script>
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -50,9 +49,10 @@
 			<article>
 				<div id="main2">
 					<div id="main2Background"></div>
-						<p id="main2Title">축제 및 행사 <p>
+						
 						<!-- 부트스트랩 테마 적용 -->
 						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<p id="main2Title">축제 및 행사 <p>
 						  <ol class="carousel-indicators">
 						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -77,7 +77,7 @@
 						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 						    <span class="sr-only">다음</span>
 						  </a>
-						</div>							`````
+						</div>
 						<!-- 부트스트랩 테마 적용 -->
 					</div>
 			</article>
@@ -89,11 +89,11 @@
 						<div class="btnBoxTitle"><h2>공지사항</h2></div>
 						<ul>
 							<!-- DB에서 공지 뿌리기  -->
-							<li><a>공지1...</a></li>
-							<li><a>공지2...</a></li>
-							<li><a>공지3...</a></li>
-							<li><a>공지4...</a></li>
-							<li><input type="button" value="더 보기 >"></li>
+							<li class="main_li"><a>공지1...</a></li>
+							<li class="main_li"><a>공지2...</a></li>
+							<li class="main_li"><a>공지3...</a></li>
+							<li class="main_li"><a>공지4...</a></li>
+							<li class="li_last"><input type="button" value="더 보기 >" id="notice"></li>
 						</ul>
 					</div>
 
@@ -101,19 +101,19 @@
 						<div class="btnBoxTitle"><h2>고객센터</h2></div>
 						<ul>
 							<!-- DB에서 고객센터 글 뿌리기  -->	
-							<li><a>질문1...</a></li>
-							<li><a>질문2...</a></li>
-							<li><a>질문3...</a></li>
-							<li><a>질문4...</a></li>
-							<li><input type="button" value="더 보기 >"></li>
+							<li class="main_li"><a>질문1...</a></li>
+							<li class="main_li"><a>질문2...</a></li>
+							<li class="main_li"><a>질문3...</a></li>
+							<li class="main_li"><a>질문4...</a></li>
+							<li class="li_last"><input type="button" value="더 보기 >" id="help"></li>
 						</ul>
 					</div>
 
 					<div class="btnBox">
-						<div class="btnBoxTitle2"><h2>가격비교</h2></div>
+						<div class="btnBoxTitle2" id="compare"><h2>가격비교</h2><img src="./resources/uploadImgs/statistics.png" width="100%" height="100%"></div>
 					</div>
 					<div class="btnBox">
-						<div class="btnBoxTitle2"><h2>시장스타그램</h2></div>
+						<div class="btnBoxTitle2" id="msg"><h2>시장스타그램</h2></div>
 					</div>
 				</div>
 			</article>

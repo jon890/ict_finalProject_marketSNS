@@ -45,11 +45,19 @@ $(document).ready(function(){
 			
 			let reader = new FileReader();
 			reader.onload = function(e){
-				let imgHtml = "<img src=\"" + e.target.result + "\">";
+				let imgHtml = "";
+				imgHtml += "<article class='thumNailImgArticles'>";
+				imgHtml += "<img src=\"" + e.target.result + "\">";
+				imgHtml += "<span class='thumDelBtn'>&times;</span>";
+				imgHtml += "</article>";
 				$("#thumNailImgs").append(imgHtml);
 			}
 			reader.readAsDataURL(f);
 		});
+	});
+	
+	$(".thumDelBtn").click(function(){
+		alert("여기를 눌렀습니다");
 	});
 	/* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
 	

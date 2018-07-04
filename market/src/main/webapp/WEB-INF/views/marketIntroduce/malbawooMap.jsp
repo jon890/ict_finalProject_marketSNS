@@ -17,7 +17,7 @@
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = { 
 		        center: new daum.maps.LatLng(35.173853, 126.920129), // 지도의 중심좌표
-		        level: 3 // 지도의 확대 레벨
+		        level: 4 // 지도의 확대 레벨
 		    };
 		
 		var map = new daum.maps.Map(mapContainer, mapOption);
@@ -44,8 +44,9 @@
 		  
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker); 
+		map.setCenter(new daum.maps.LatLng(35.177792, 126.911469));
 		
-		var points = [
+		/* var points = [
 		    new daum.maps.LatLng(35.176044, 126.930532),
 		    new daum.maps.LatLng(35.176413, 126.910308),
 		    new daum.maps.LatLng(35.170308, 126.910636)
@@ -60,8 +61,8 @@
 		    bounds.extend(points[i]);
 		}
 		map.setBounds(bounds);
-		map.setLevel(4);
-		map.setCenter(new daum.maps.LatLng(35.176413, 126.910308));
+		map.setLevel(4); */
+		
 		
 		/* 35.176044, 126.930532 - 무궁화아파트 근처
 		35.176413, 126.910308 - 공동실습관 근처

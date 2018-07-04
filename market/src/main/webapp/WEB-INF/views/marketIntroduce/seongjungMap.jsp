@@ -43,11 +43,13 @@
 		    
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker);
-		
-		var points = [
+		map.setCenter(new daum.maps.LatLng(35.137318, 126.787090));
+		/* var points = [
 		    new daum.maps.LatLng(35.138887, 126.796558),
 		    new daum.maps.LatLng(35.139199, 126.786813),
 		    new daum.maps.LatLng(35.135207, 126.786392)
+		    35.139272, 126.788622
+		    35.138166, 126.787240
 		];
 
 		// 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
@@ -60,7 +62,7 @@
 		}
 		map.setBounds(bounds);
 		map.setLevel(3);
-		map.setCenter(new daum.maps.LatLng(35.138166, 126.787240));
+		 */
 		
 	/* 	35.138887, 126.796558 - 서울곱창전문
 		35.139199, 126.786813 - 송정역 위편

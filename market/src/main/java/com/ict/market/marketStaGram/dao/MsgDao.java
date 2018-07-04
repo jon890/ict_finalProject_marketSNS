@@ -15,6 +15,11 @@ public interface MsgDao {
 	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
 	
 	
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
+	public int getCommentNum(int articleNum);
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
+	
+	
 	/* ********** 게시판 글쓰기 기능 ********** */
 	public void write(SnsArticleDto snsArticle);
 	public void insertImg(ImgDto imgDto);

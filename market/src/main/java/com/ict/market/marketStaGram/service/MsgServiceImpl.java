@@ -33,6 +33,16 @@ public class MsgServiceImpl implements MsgService {
 	}
 	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
 	
+	
+	
+	
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
+	@Override
+	public int getCommentNum(int articleNum) {
+		return msgDao.getCommentNum(articleNum);
+	}
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
+
 
 	
 	
@@ -43,6 +53,8 @@ public class MsgServiceImpl implements MsgService {
 		imgUpload(imgname, snsArticle.getArticleNum(), uploadDir);
 	}
 	
+
+
 	public void imgUpload(List<MultipartFile> imgname, int articleNum, String uploadDir) {
 		ImgDto imgDto = null;
 		

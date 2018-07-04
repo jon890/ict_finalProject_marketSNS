@@ -54,6 +54,23 @@ public class MsgController {
 	
 	
 	
+	/* ********** 글 위에 댓글과 좋아요 갯수 오버랩 기능 ********** */
+	@RequestMapping(value = "/getInfo.msg" , method = RequestMethod.GET)
+	@ResponseBody
+	public HashMap<String, Integer> getInfo(int articleNum) {
+		
+		LikeDto like = new LikeDto();
+		like.setArticleNum(articleNum);
+		
+		HashMap<String, Integer> hm = new HashMap<>();
+		hm.put("likeNum", msgService.getLikeNum(like));
+		hm.put("commentNum", msgService.getCommentNum(articleNum));
+		return hm;
+	}
+	/* ********** 글 위에 댓글과 좋아요 갯수 오버랩 기능 ********** */
+	
+	
+	
 	/* ********** 게시판 글쓰기 기능 ********** */
 	@RequestMapping(value = "/write.msg" , method = RequestMethod.POST)
 	public String write(SnsArticleDto snsArticle,

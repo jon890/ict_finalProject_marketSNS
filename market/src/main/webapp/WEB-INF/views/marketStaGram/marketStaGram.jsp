@@ -70,12 +70,11 @@
 		    <div id="articles">
 
 			    <c:forEach var="img" items="${imgList}">
-			    	<article class="article">
+			    	<article class="article" articleNum="${img.articleNum}">
 			    		<a href="read.msg?articleNum=${img.articleNum}"><img src="./resources/uploadImgs/${img.storedImgName}"></a>					
 			    	</article>
-			    </c:forEach>
-			    
-		    </div> 
+			    </c:forEach>   
+		    </div>
 		    
 		</section>
 	</body>

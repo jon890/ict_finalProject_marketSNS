@@ -15,6 +15,8 @@ public interface MsgService {
 	public List<ImgDto> list(Model model, int pageNum);
 	
 	
+	public int getCommentNum(int articleNum);
+	
 	public void write(SnsArticleDto snsArticle, List<MultipartFile> imgname, String uploadDir);
 	public void read(int articleNum, Model model);
 	public void delete(int articleNum, String uploadDir);

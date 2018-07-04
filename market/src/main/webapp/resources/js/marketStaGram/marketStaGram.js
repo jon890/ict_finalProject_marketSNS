@@ -48,17 +48,18 @@ $(document).ready(function(){
 				let imgHtml = "";
 				imgHtml += "<article class='thumNailImgArticles'>";
 				imgHtml += "<img src=\"" + e.target.result + "\">";
-				imgHtml += "<span class='thumDelBtn'>&times;</span>";
+				imgHtml += "<span class='thumDelBtn'>&times;</a>";
 				imgHtml += "</article>";
 				$("#thumNailImgs").append(imgHtml);
 			}
 			reader.readAsDataURL(f);
 		});
-	});
+	});	
 	
-	$(".thumDelBtn").click(function(){
-		alert("여기를 눌렀습니다");
-	});
+	$(document).on("click", ".thumDelBtn", function(){
+		let that = $(this);
+		that.parent().remove();
+	})
 	/* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
 	
 	
@@ -79,11 +80,11 @@ $(document).ready(function(){
 				success : function(data){
 					let html = "";
 					$.each(data, function(index, img){
-						html += "<article class='article'>";
-						html += "<a href='read.msg?articleNum=" + img.articleNum + "'>"
-						html += "<img src='./resources/uploadImgs/" + img.storedImgName + "'>"
-						html += "</a>"
-						html += "</article>"
+						html += "<article class='article' articleNum='" + img.articleNum + "'>";
+						html += "<a href='read.msg?articleNum=" + img.articleNum + "'>";
+						html += "<img src='./resources/uploadImgs/" + img.storedImgName + "'>";
+						html += "</a>";
+						html += "</article>";
 					});
 					$("#articles").append(html);
 					pageNum++;
@@ -94,4 +95,38 @@ $(document).ready(function(){
 		}
 	});
 	/* ********** 무한 스크롤 기능 ********** */
+	
+	
+	
+	/* ********** 글 호버링 시 좋아요와 댓글개수 가져오기 ********** */
+//	$(".article").on("mouseenter", function(){
+//	동적으로 생성된 태그 -> append등을 이용한 태그는 아래와 같은 형식으로 사용해야 이벤트가 적용된다.
+	$(document).on("mouseenter",".article",function(){
+		let that = $(this);
+		$.ajax({
+			url : "/market/getInfo.msg",
+			data : {
+				articleNum : that.attr("articleNum")
+			},
+			success : function(data){
+				let html = "";
+				html += "<article class='articleOverlap'>";
+				html += "<span id='likeNum'><img src='./resources/images/marketStaGram/dislikebtn.png'>" + data.likeNum + "개</span>";
+				html += "<span id='commentNum'><img src='./resources/images/marketStaGram/commentbtn.png'>" + data.commentNum + "개</span>";
+				html += "</article>";
+				that.append(html);
+			}
+		})	
+	});
+	
+	$(document).on("mouseleave",".article",function(){
+		let that = $(this);
+		that.children("article").remove();
+	});
+
+	$(document).on("click", ".articleOverlap", function(){
+		let that = $(this);
+		location.href = "./read.msg?articleNum=" + that.parent("article").attr("articleNum");
+	});
+	/* ********** 글 호버링 시 좋아요와 댓글개수 가져오기 ********** */
 });

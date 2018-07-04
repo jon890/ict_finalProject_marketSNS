@@ -1,5 +1,6 @@
 package com.ict.market.marketStaGram.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.ict.market.marketStaGram.dto.ImgDto;
@@ -9,9 +10,9 @@ import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 public interface MsgDao {
 	
-	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
-	public List<ImgDto> list();
-	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
+	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
+	public List<ImgDto> list(HashMap<String, Integer> hm);
+	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
 	
 	
 	/* ********** 게시판 글쓰기 기능 ********** */

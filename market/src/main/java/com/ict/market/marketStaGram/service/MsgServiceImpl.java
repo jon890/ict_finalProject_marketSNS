@@ -1,6 +1,7 @@
 package com.ict.market.marketStaGram.service;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,12 +23,15 @@ public class MsgServiceImpl implements MsgService {
 	MsgDao msgDao;
 	
 	
-	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
+	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
 	@Override
-	public void list(Model model) {
-		model.addAttribute("imgList", msgDao.list());	
+	public List<ImgDto> list(Model model, int pageNum) {
+		HashMap<String, Integer> hm = new HashMap<>();	
+		hm.put("startRow", 1 + (pageNum-1) * 9);
+		hm.put("endRow", pageNum * 9);
+		return msgDao.list(hm);	
 	}
-	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
+	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
 	
 
 	

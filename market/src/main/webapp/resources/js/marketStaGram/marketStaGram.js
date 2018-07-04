@@ -11,10 +11,11 @@ $(document).ready(function(){
 	
 	$(span).click(function(){
 		$(modal).css("display", "none");
+		$("#writeForm textarea").val("");
+		$("#thumNailImgs").children().remove();
 	});
 	
 	
-//	모달 박스 밖을 클릭하면 창이 안보이게 하기
 //	$(window).click(function(event){
 //		if(event.target == modal){
 //			$(modal).css("display", "none");
@@ -51,5 +52,38 @@ $(document).ready(function(){
 		});
 	});
 	/* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
-
+	
+	
+	
+	
+	/* ********** 무한 스크롤 기능 ********** */
+	let pageNum = 2;
+	
+	$(document).scroll(function(){
+		let maxHeight = $(document).height();
+		let currentScroll = $(window).scrollTop() + $(window).height();
+		if ( maxHeight <= currentScroll){
+			$.ajax({
+				url : "/market/list.msg",
+				data : {
+					pageNum : pageNum
+				},
+				success : function(data){
+					let html = "";
+					$.each(data, function(index, img){
+						html += "<article class='article'>";
+						html += "<a href='read.msg?articleNum=" + img.articleNum + "'>"
+						html += "<img src='./resources/uploadImgs/" + img.storedImgName + "'>"
+						html += "</a>"
+						html += "</article>"
+					});
+					$("#articles").append(html);
+					pageNum++;
+					let height = $(document).scrollTop();
+				    $('html, body').animate({scrollTop : height+200}, 200);
+				}
+			});
+		}
+	});
+	/* ********** 무한 스크롤 기능 ********** */
 });

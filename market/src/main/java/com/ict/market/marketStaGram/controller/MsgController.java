@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
@@ -34,10 +35,22 @@ public class MsgController {
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	@RequestMapping(value = "/main.msg" , method = RequestMethod.GET)
 	public String marketStaGram(Model model) {
-		msgService.list(model);
+		model.addAttribute("imgList", msgService.list(model, 1));
 		return "marketStaGram";	
 	}
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
+	
+	
+	
+	/* ********** 무한 스크롤을 위한 다음글 가져오기 기능 ********** */
+	@RequestMapping(value = "/list.msg" , method = RequestMethod.GET)
+	@ResponseBody
+	public List<ImgDto> list(@RequestParam int pageNum, Model model) {
+		System.out.println(pageNum);
+		System.out.println(msgService.list(model, pageNum));
+		return msgService.list(model, pageNum);
+	}
+	/* ********** 무한 스크롤을 위한 다음글 가져오기 기능 ********** */
 	
 	
 	
@@ -54,6 +67,7 @@ public class MsgController {
 	/* ********** 게시판 글쓰기 기능 ********** */
 	
 	
+	
 	/* ********** 게시판 글 읽기 기능 ********** */
 	@RequestMapping(value = "/read.msg" , method = RequestMethod.GET)
 	public String read(@RequestParam int articleNum, Model model) {
@@ -61,6 +75,7 @@ public class MsgController {
 		return "msgContent";
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
+	
 	
 	
 	/* ********** 게시판 글 삭제 기능 ********** */

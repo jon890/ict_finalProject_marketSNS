@@ -6,11 +6,16 @@
 <mapper namespace="com.ict.market.marketStaGram.dao.MsgDao">
 
 	<!-- ********** 메인 페이지 로딩시 글 가져오기 기능 ********** -->
-	<select id="list" resultType="msgImg">
-		SELECT STOREDIMGNAME, ARTICLENUM
-		FROM IMGLIST
-		WHERE ROWNUM BETWEEN 1 AND 9
-		ORDER BY ROWNUM ASC
+	<select id="list" parameterType="HashMap" resultType="msgImg">
+		SELECT *
+		FROM (SELECT ROWNUM RM, STOREDIMGNAME, ARTICLENUM
+		      FROM (SELECT STOREDIMGNAME, ARTICLENUM
+		            FROM IMGLIST
+		            WHERE FILENUM IN(SELECT MIN(FILENUM)
+		                             FROM IMGLIST
+		                             GROUP BY ARTICLENUM)
+		            ORDER BY ARTICLENUM DESC))
+		WHERE RM BETWEEN #{startRow} AND #{endRow}
 	</select>
 	<!-- ********** 메인 페이지 로딩시 글 가져오기 기능 ********** -->
 

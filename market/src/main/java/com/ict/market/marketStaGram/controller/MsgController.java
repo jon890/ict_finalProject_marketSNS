@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
@@ -34,10 +35,22 @@ public class MsgController {
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	@RequestMapping(value = "/main.msg" , method = RequestMethod.GET)
 	public String marketStaGram(Model model) {
-		msgService.list(model);
+		model.addAttribute("imgList", msgService.list(model, 1));
 		return "marketStaGram";	
 	}
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
+	
+	
+	
+	/* ********** 무한 스크롤을 위한 다음글 가져오기 기능 ********** */
+	@RequestMapping(value = "/list.msg" , method = RequestMethod.GET)
+	@ResponseBody
+	public List<ImgDto> list(@RequestParam int pageNum, Model model) {
+		System.out.println(pageNum);
+		System.out.println(msgService.list(model, pageNum));
+		return msgService.list(model, pageNum);
+	}
+	/* ********** 무한 스크롤을 위한 다음글 가져오기 기능 ********** */
 	
 	
 	
@@ -46,12 +59,14 @@ public class MsgController {
 	public String write(SnsArticleDto snsArticle,
 						@RequestPart("imgname") List<MultipartFile> imgname,
 						HttpServletRequest req) {
+		System.out.println(imgname);
 		/* 파일 업로드 경로 */
 	    String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadImgs/";
 		msgService.write(snsArticle, imgname, uploadDir);
 		return "redirect:/main.msg";
 	}
 	/* ********** 게시판 글쓰기 기능 ********** */
+	
 	
 	
 	/* ********** 게시판 글 읽기 기능 ********** */
@@ -61,6 +76,7 @@ public class MsgController {
 		return "msgContent";
 	}
 	/* ********** 게시판 글 읽기 기능 ********** */
+	
 	
 	
 	/* ********** 게시판 글 삭제 기능 ********** */

@@ -24,8 +24,8 @@ public class MsgDaoImpl implements MsgDao {
 	
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	@Override
-	public List<ImgDto> list() {
-		return sqlSession.selectList(nameSpace.concat(".list"));
+	public List<ImgDto> list(HashMap<String, Integer> hm) {
+		return sqlSession.selectList(nameSpace.concat(".list"), hm);
 	}
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 

@@ -182,8 +182,12 @@ public class MsgController {
 	/* ********** 해쉬태그 검색기능 ********** */
 	@RequestMapping(value = "/search.msg" , method = RequestMethod.GET)
 	@ResponseBody
-	public HashMap<String, SearchDto> search(@RequestParam String search){
-		return msgService.search(search);
+	public List<SearchDto> search(@RequestParam String keyword){
+		if(keyword.charAt(0) == '#') {
+			keyword = keyword.substring(1);
+			System.out.println(keyword);
+		}
+		return msgService.search(keyword);
 	}
 	/* ********** 해쉬태그 검색기능 ********** */
 	

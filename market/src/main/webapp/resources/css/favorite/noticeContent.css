@@ -1,0 +1,19 @@
+#commentList {
+	width: 1110px;
+	height: 300px;
+	overflow: auto;
+}
+
+#commentBottom {
+	position: relative;
+	margin: 0 auto;
+}
+
+.table {
+	width: 700px;
+	margin: 0 auto;
+}
+
+.table .td01 {
+	width: 30%;
+}

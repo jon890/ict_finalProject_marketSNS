@@ -141,21 +141,36 @@ $(document).ready(function(){
 	/* ********** 해쉬태그 검색 기능 ********** */
 	$(document).on("click", "#searchBtn", function(){
 		
-		let searchContent = $("#searchContent");
-		if(searchContent.val() == ""){
-			searchContent.focus();
+		let keyword = $("#keyword");
+		if(keyword.val() == ""){
+			keyword.focus();
 		} else {
 			$.ajax({
 				url : "/market/search.msg",
 				data : {
-					search : searchContent.val()
+					keyword : keyword.val()
 				},
+				dataType : "json",
 				success : function(data){
+					let html = "";
 					
+					if(data == ""){
+						html += "<ul id='searchResult'>";
+						html += "<li><span class=\"noResult\">검색결과가 없습니다!</span></li>";
+						html += "</ul>";
+						$("#keywordBox").append(html);
+					}
+					
+					$.each(data, function(index, keywordInfo){
+						html += "<ul id='searchResult'>";
+						html += "<li><span class=\"keyword\">" + keywordInfo.keyword + "</span>"
+						html += "<span class=\"keywordTotalCount\"> 게시물 수\t" + keywordInfo.keywordTotalCount + "</span></li>";
+						html += "</ul>";
+						$("#keywordBox").append(html);
+					});		
 				}
 			});
 		}
 	});
-	
 	/* ********** 해쉬태그 검색 기능 ********** */
 });

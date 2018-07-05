@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* ********** 글 쓰기 및 검색 버튼 ********** */
 #btnDiv{
 	margin : 0 auto;
 	width : 1080px;
@@ -19,15 +20,60 @@
     margin-right : 100px;
 }
 
-#btnDiv > input[type=text]{
-	width : 50%;
-	height : 45px;
-	margin-right : 10px;
+#btnDiv input[type=text]{
+	width : 100%;
+	height : 100%;
 }
 
 #btnDiv > #searchBtn{
 	margin-right : 50px;
 }
+/* ********** 글 쓰기 및 검색 버튼 ********** */
+
+
+
+
+/* ********** 검색 결과 표시  ********** */
+#keywordBox{
+	position : relative;
+	display : inline-block;
+	height : 45px;
+	width : 50%;
+	margin-right : 10px;
+}
+
+#searchResult{
+	position : absolute;
+	width : 100%;
+	text-align : left;
+}
+
+#searchResult li{
+	border-bottom : 2px solid grey;
+	border-left : 2px solid grey;
+	border-right : 2px solid grey;
+	height : 45px;
+	padding-top : 10px;
+	font-size : 18px;
+}
+
+#searchResult .keyword{
+	margin-left : 10px;
+	float : left;
+}
+#searchResult .keywordTotalCount{
+	margin-right : 10px;
+	float : right;
+	color : grey;
+}
+
+#searchResult .noResult{
+	text-align : center
+	color : grey;
+}
+/* ********** 검색 결과 표시  ********** */
+
+
 
 /* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
 .modal{
@@ -142,6 +188,7 @@ input[type=file]{
 /* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
 
 
+
 /* ********** SNS 게시물 들 ********** */
 #articles{
 	width : 1080px;
@@ -186,5 +233,4 @@ input[type=file]{
 	height : 18px;
 	border : none;
 }
-
 /* ********** SNS 게시물 들 ********** */

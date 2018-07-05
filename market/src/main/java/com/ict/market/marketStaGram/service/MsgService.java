@@ -1,6 +1,5 @@
 package com.ict.market.marketStaGram.service;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.ui.Model;
@@ -34,5 +33,5 @@ public interface MsgService {
 	public int getLikeNum(LikeDto like);
 	
 	
-	public HashMap<String, SearchDto> search(String search);
+	public List<SearchDto> search(String keyword);
 }

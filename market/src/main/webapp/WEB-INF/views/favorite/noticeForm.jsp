@@ -5,7 +5,6 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    
 	    <!-- 부트스트랩 및 jQuery 로드 -->
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -13,43 +12,9 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
+	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 	    
 	    <style>
-	        /*body{
-	            width:1080px;
-	            margin:0 auto;
-	        }*/
-	        
-	        div.background{
-	            width:100%;
-	            height:300px;
-        	}
-
-	        div.background img{
-	            width:100%;
-	            height: 300px;
-	            /*opacity: 1;*/
-	            z-index:1;
-	        }
-	
-	        div.transbox p{
-	            margin: 3%;
-	            font-weight: bold;
-	            color: white;
-	            text-align:center;
-	            z-index:2;
-	            top:-300px;
-	            position:relative;
-	        }
-	
-	        #p01{
-	            font-size:50px;
-	        }
-	
-	        #p02{
-	            font-size:20px;
-	        }
-	
 	        #p{
 	            font-size:30px;
 	            text-align:center;
@@ -91,8 +56,8 @@
 	    	<div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>Favorite</ins></p>
-	                <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
+	                <p id="p01">공지사항</p>
+	                <p id="p02">우리 사이트의 공지사항을 알려드립니다</p>
 	            </div>
         	</div>
 		    <br>
@@ -126,5 +91,4 @@
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>
 	</body>
-	
 </html>

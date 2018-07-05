@@ -121,7 +121,7 @@ public class MsgDaoImpl implements MsgDao {
 	
 	/* ********** 해쉬태그 검색기능 ********** */
 	@Override
-	public List<SearchDto> search(String search) {
-		return sqlSession.selectList(nameSpace.concat(".search"), search);
+	public List<SearchDto> search(String keyword) {
+		return sqlSession.selectList(nameSpace.concat(".search"), keyword);
 	}
 }

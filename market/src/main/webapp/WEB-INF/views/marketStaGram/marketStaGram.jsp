@@ -32,7 +32,7 @@
         	</div>
         	
         	<div id="btnDiv">
-       			<input type="text" id="searchContent" placeholder="# 해쉬태그를 이용하여 검색">
+       			<span id="keywordBox"><input type="text" id="keyword" placeholder="# 해쉬태그를 이용하여 검색"></span>
        			<a id="searchBtn"><img src="./resources/images/marketStaGram/searchbtn.png"></a>
         		<c:if test="${id != null}">
 	        		<input type="button" value="글쓰기" id="writeBtn">	

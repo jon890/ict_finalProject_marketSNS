@@ -161,9 +161,8 @@ public class MsgServiceImpl implements MsgService {
 
 	/* ********** 해쉬태그 검색기능 ********** */
 	@Override
-	public HashMap<String, SearchDto> search(String search) {
-		msgDao.search(search);
-		return null;
+	public List<SearchDto> search(String keyword) {
+		return msgDao.search(keyword);
 	}
 	/* ********** 해쉬태그 검색기능 ********** */
 }

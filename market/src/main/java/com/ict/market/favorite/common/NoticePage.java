@@ -26,41 +26,40 @@ public class NoticePage {
 		//세미콜론과 콜론 구분하기
 		sb = new StringBuffer();
 		if(startPage < pageBlock) {
-		      sb.append("<li class='disabled'><a href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
-		    } else {
-		      sb.append("<li class=''><a href='notice.favorite?pageNum=");
-		      sb.append(startPage - pageBlock);
-		      sb.append("' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
-		    }
-		     
-		    for(int i = startPage; i <= endPage; i++) {
-		      if(i == pageNum) {
-		        sb.append("<li class='active'><a href='#'>");
-		        sb.append(i);
-		        sb.append("<span class='sr-only'>");
-		        sb.append(i);
-		        sb.append("</span></a></li>");
-		      } else {
-		        sb.append("<li class=''><a href='notice.favorite?pageNum=");
-		        sb.append(i);
-		        sb.append("'>");
-		        sb.append(i);
-		        sb.append("<span class='sr-only'>");
-		        sb.append(i);
-		        sb.append("</span></a></li>");
-		      }
-		    }
-		     
-		    if(endPage < totalPage) {
-		      sb.append("<li class='page-item'><a class='page-link' href='help.favorite?pageNum=");
-		      sb.append(startPage + pageBlock);
-		      sb.append("' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
-		    } else {
-		      sb.append("<li class='disabled'><a href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
-		    }
+	        sb.append("<li class='disabled'><a class='page-link' href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
+	      } else {
+	        sb.append("<li class='page-item'><a class='page-link' href='notice.favorite?pageNum=");
+	        sb.append(startPage - pageBlock);
+	        sb.append("' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
+	      }
+	       
+	      for(int i = startPage; i <= endPage; i++) {
+	        if(i == pageNum) {
+	          sb.append("<li class='active'><a class='page-link' href='#'>");
+	          sb.append(i);
+	          sb.append("<span class='sr-only'>");
+	          sb.append(i);
+	          sb.append("</span></a></li>");
+	        } else {
+	          sb.append("<li class='page-item'><a class='page-link' href='notice.favorite?pageNum=");
+	          sb.append(i);
+	          sb.append("'>");
+	          sb.append(i);
+	          sb.append("<span class='sr-only'>");
+	          sb.append(i);
+	          sb.append("</span></a></li>");
+	        }
+	      }
+	       
+	      if(endPage < totalPage) {
+	        sb.append("<li class='page-item'><a class='page-link' href='help.favorite?pageNum=");
+	        sb.append(startPage + pageBlock);
+	        sb.append("' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
+	      } else {
+	        sb.append("<li class='disabled'><a class='page-link' href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
+	      }
 		
 		pagingMap.put("pageCode", sb.toString());
 		return pagingMap;
 	}	
-	
 }

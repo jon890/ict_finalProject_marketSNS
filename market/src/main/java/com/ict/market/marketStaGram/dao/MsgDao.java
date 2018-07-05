@@ -52,7 +52,7 @@ public interface MsgDao {
 	
 	
 	/* ********** 해쉬태그 검색기능 ********** */
-	public List<SearchDto> search(String search);
+	public List<SearchDto> search(String keyword);
 	/* ********** 해쉬태그 검색기능 ********** */
 	
 }

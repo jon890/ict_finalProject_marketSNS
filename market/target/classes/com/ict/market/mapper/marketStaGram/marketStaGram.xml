@@ -118,7 +118,12 @@
 	
 	<!-- ********** 해쉬태그 검색 기능 ********** -->
 	<select id="search" parameterType="String" resultType="search">
-		SELECT
+		SELECT SUBSTR(CONTENT , INSTR(CONTENT, #{keyword}, 1, 1)-1, INSTR(CONTENT, #{keyword}, 1, 1)-1 + LENGTH(#{keyword})) KEYWORD,
+			   (SELECT COUNT(CONTENT)
+		        FROM MARKETSTAGRAM
+		        WHERE CONTENT LIKE <![CDATA['%#']]>||#{keyword}||<![CDATA['%']]>) KEYWORDTOTALCOUNT
+		FROM MARKETSTAGRAM
+		WHERE CONTENT LIKE <![CDATA['%#']]>||#{keyword}||<![CDATA['%']]>
 	</select>
 	<!-- ********** 해쉬태그 검색 기능 ********** -->
 </mapper>

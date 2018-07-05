@@ -13,38 +13,9 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <style>
+	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 	    
-	        div.background{
-	            width:100%;
-	            height:300px;
-        	}
-
-	        div.background img{
-	            width:100%;
-	            height: 300px;
-	            /*opacity: 1;*/
-	            z-index:1;
-	        }
-	
-	        div.transbox p{
-	            margin: 3%;
-	            font-weight: bold;
-	            color: white;
-	            text-align:center;
-	            z-index:2;
-	            top:-300px;
-	            position:relative;
-	        }
-	
-	        #p01{
-	            font-size:50px;
-	        }
-	
-	        #p02{
-	            font-size:20px;
-	        }
-	
+	    <style>
 	        #p{
 	            font-size:30px;
 	            text-align:center;
@@ -59,8 +30,6 @@
 	            float:right;
 	            margin-bottom:10px;
 	        }
-	        
-	
 	        #th01{
 	            width:15%;
 	        }
@@ -76,37 +45,7 @@
 	        #th04{
 	            width:15%;
 	        }
-	        
-	        .nav-item{
-	            width:20%;
-	            text-align:center;
-	            font-size:20px;
-	            font-weight:bold;
-	        }
-	
-	        .nav-link{
-	            color:black;
-	        }
 	    </style>
-	    <script>
-	    	$(document).ready(function(){
-	    		$("#notice").on("click", function(){
-	    			$(location).attr('href', './notice.favorite');
-	    		})
-	    		$("#hotPlace").on("click", function(){
-	    			$(location).attr('href', './hotPlace.favorite');
-	    		})
-	    		$("#festival").on("click", function(){
-	    			$(location).attr('href', './festival.favorite');
-	    		})
-	    		$("#nightMarket").on("click", function(){
-	    			$(location).attr('href', './nightMarket.favorite');
-	    		})
-	    		$("#help").on("click", function(){
-	    			$(location).attr('href', './help.favorite');
-	    		})
-	    	})
-	    </script>
 	</head>
 
 	<body>

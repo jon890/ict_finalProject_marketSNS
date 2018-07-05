@@ -81,5 +81,51 @@
 	</delete>
 
 
-
+	
+	
+	<!-- ********** 공지사항 게시판 글쓰기 기능 ********** -->
+	<select id="noticeList" resultType="notice">
+		SELECT *
+		FROM (SELECT ROWNUM RM, NOTICE.*
+     		  FROM (SELECT ARTICLENUM, ID, TITLE, TO_CHAR(WRITEDATE,'YY-MM-DD') AS WRITEDATE
+     		        FROM  NOTICE
+					ORDER BY ARTICLENUM DESC
+					) NOTICE
+    		 )
+		WHERE RM BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<insert id="noticeWrite" parameterType="String">
+		INSERT INTO NOTICE 
+		VALUES (NOTICE_SEQ.NEXTVAL, #{id}, #{title}, #{content}, SYSDATE)
+	</insert>
+	
+	<select id="getNoticeCount" resultType="int">
+		SELECT COUNT(ARTICLENUM)
+		FROM NOTICE
+	</select>
+	
+	<select id="noticeContent" parameterType="Integer" resultType="notice">
+		SELECT *
+		FROM NOTICE
+		WHERE ARTICLENUM = #{articleNum}
+	</select>
+	
+	<delete id="noticeDelete" parameterType="Integer">
+		DELETE FROM NOTICE
+		WHERE ARTICLENUM = #{articleNum}
+	</delete>
+	
+	<select id="noticeGetUpdate" parameterType="Integer" resultType="notice">
+		SELECT ARTICLENUM, TITLE, CONTENT 
+		FROM NOTICE 
+		WHERE ARTICLENUM = #{articleNum}
+	</select>
+	
+	<update id="noticePostUpdate" parameterType="notice">
+		UPDATE NOTICE 
+		SET TITLE = #{title}, CONTENT = #{content}
+		WHERE ARTICLENUM = #{articleNum}
+	</update>
+	<!-- ********** 공지사항 게시판 글쓰기 기능 ********** -->
 </mapper>

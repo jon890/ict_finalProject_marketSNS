@@ -13,7 +13,6 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    
 	    <style>
 	        /*body{
 	            width:1080px;
@@ -107,7 +106,7 @@
 	    			$(location).attr('href', './nightMarket.favorite');
 	    		})
 	    		$("#help").on("click", function(){
-	    			$(location).attr('href', './help.favorite?pageNum=1');
+	    			$(location).attr('href', './help.favorite');
 	    		})
 	    	})
 	    </script>
@@ -123,7 +122,7 @@
 	    	<div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01">Favorite</p>
+	                <p id="p01"><ins>Favorite</ins></p>
 	                <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
 	            </div>
         	</div>
@@ -148,7 +147,19 @@
 			            </li>
 			        </ul>
 			        <p id="p">공지사항</p>
-			        <input type="submit" class="btn" value="문의하기" />
+			        <form action="./noticeForm.fovorite" method="get">
+			        <c:if test="${id != null}">
+			        	<div id="writeBtnDiv">
+			        		 <input type="submit" class="btn" value="글쓰기" />
+			        	</div>
+		        	</c:if>
+		        	
+		        	<c:if test="${id == null}">
+		        		<div id="writeBtnDiv">
+		        			<input type="button" class="btn" value="비회원은 글을 쓸 수 없습니다" onclick="document.location.href='/market/login.main'"/>
+			        	</div>  	
+		        	</c:if>
+			        <!-- <input type="submit" class="btn" value="글쓰기" /> -->
 			        <table class="table table-hover">
 			            <thead>
 			                <tr>
@@ -159,35 +170,23 @@
 			                </tr>
 			            </thead>
 			            <tbody>
-			                <tr>
-			                    <td>1</td>
-			                    <td>Doe</td>
-			                    <td>john</td>
-			                    <td>2018.06.27</td>
-			                </tr>
-			                <tr>
-			                    <td>2</td>
-			                    <td>Moe</td>
-			                    <td>mary</td>
-			                    <td>2018.06.27</td>
-			                </tr>
-			                <tr>
-			                    <td>3</td>
-			                    <td>Dooley</td>
-			                    <td>july</td>
-			                    <td>2018.06.27</td>
-			                </tr>
+			                <c:forEach var="notice" items="${noticeList}">
+			                	<tr>
+			                		<td>${notice.articleNum}</td>
+			                		<td><a href="./noticeContent.favorite?articleNum=${notice.articleNum}&pageNum=${pageNum}">${notice.title}</a></td>
+			                		<td>${notice.id}</td>
+			                		<td>${notice.writeDate}</td>
+			                	</tr>
+			                </c:forEach>
 			            </tbody>
 			        </table>
+			        </form>
 			    </div>
 			
 			    <div class="container">
 			        <ul class="pagination justify-content-center">
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
-			        </ul>
+             			${pageCode}
+        			</ul>
 			    </div>
 		    </form>
 	    </section>

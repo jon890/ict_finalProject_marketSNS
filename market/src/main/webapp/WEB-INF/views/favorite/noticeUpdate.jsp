@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -65,17 +65,28 @@
 	            width:30%;
 	            font-weight:400;
 	        }
-	
+	        
 	        #th02{
 	        	text-align:left;
 	        }
-	        
+	
 	        div.container {
 	            text-align:center;
 	        }
 	
 	        .btn-primary{
 	            margin:10px;
+	        }
+	        
+	        input[type=text]{
+	        	border:none;
+	        	width:100%;
+	        }
+	        
+	        textarea{
+	        	width:100%;
+	        	border:none;
+	        	height:300px;
 	        }
 	    </style>
 	</head>
@@ -91,18 +102,20 @@
 	    	<div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01"><ins>Favorite</ins></p>
-	                <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
+	                <p id="p01"><ins>공지사항</ins></p>
+	                <p id="p02">공지사항을 확인하세요</p>
 	            </div>
         	</div>
 		    <br>
-		    <form action="noticeWrite.favorite" method="post">
+		    <form action="noticeUpdate.favorite" method="post">
+		    <input type="hidden" name="pageNum" value="${pageNum}">
+		    <input type="hidden" name="articleNum" value="${noticeContent.articleNum}">
 	        <div class="container">
-	            <p id="p">작성하기</p>
+	            <p id="p">수정하기</p>
 	            <table class="table table-bordered">
 	                <tr>
 	                    <th class="th01">제목</th>
-	                    <th id="th02"><input type="text" name="title" id="_inTitle" title="문의제목 입력" style="width:500px; border:none;" required></th>
+	                    <th id="th02"><input type="text" name="title" value="${noticeContent.title}"></th>
 	                </tr>
 	                <tr>
 	                    <td class="th01">아이디</td>
@@ -110,7 +123,7 @@
 	                </tr>
 	                <tr>
 	                    <td class="th01">내용</td>
-	                    <td><textarea name="content" id="_inContent" title="문의내용 입력" style="width:500px; height:300px; border:none;" required></textarea></td>
+	                    <td><textarea name="content" id="content">${noticeContent.content}</textarea></td>
 	                </tr>
 	            </table>
 	        </div>

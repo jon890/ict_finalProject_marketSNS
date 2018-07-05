@@ -118,6 +118,7 @@
 	
 	<!-- ********** 해쉬태그 검색 기능 ********** -->
 	<select id="search" parameterType="String" resultType="search">
+		SELECT
 	</select>
 	<!-- ********** 해쉬태그 검색 기능 ********** -->
 </mapper>

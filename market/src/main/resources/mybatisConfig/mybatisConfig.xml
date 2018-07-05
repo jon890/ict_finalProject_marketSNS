@@ -29,6 +29,8 @@
 
 		<typeAlias alias="helpArticle" type="com.ict.market.favorite.dto.FavoriteDto"/>
 		<typeAlias alias="commentList" type="com.ict.market.favorite.dto.CommentDto"/>
+		<typeAlias alias="notice" type="com.ict.market.favorite.dto.NoticeDto"/>
+		
 		<typeAlias alias="marketList" type="com.ict.market.marketIntroduce.dto.MarketDto"/>
 	</typeAliases>
 	

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
+import com.ict.market.favorite.dto.NoticeDto;
 
 @Repository
 public class FavoriteDaoImpl implements FavoriteDao {
@@ -84,5 +85,42 @@ public class FavoriteDaoImpl implements FavoriteDao {
 	}
 	
 	
+	
+	
+	/* ********** 공지사항 게시판 기능 ********** */
+	@Override
+	public void noticeWrite(NoticeDto notice) {
+		sqlsession.insert(nameSpace+".noticeWrite",notice);
+	}
 
+	@Override
+	public List<NoticeDto> noticeList(HashMap<String, String> pagingMap) {
+		return sqlsession.selectList(nameSpace+".noticeList",pagingMap);
+	}
+
+	@Override
+	public NoticeDto noticeContent(int articleNum) {
+		return sqlsession.selectOne(nameSpace+".noticeContent", articleNum);
+	}
+
+	@Override
+	public void noticeDelete(int articleNum) {
+		sqlsession.delete(nameSpace+".noticeDelete", articleNum);
+	}
+
+	@Override
+	public NoticeDto noticeGetUpdate(int articleNum) {
+		return sqlsession.selectOne(nameSpace+".noticeGetUpdate", articleNum);
+	}
+
+	@Override
+	public void noticePostUpdate(NoticeDto notice) {
+		sqlsession.update(nameSpace+".noticePostUpdate", notice);
+	}
+
+	@Override
+	public int getNoticeCount() {
+		return sqlsession.selectOne(nameSpace+".getNoticeCount");
+	}
+	/* ********** 공지사항 게시판 기능 ********** */
 }

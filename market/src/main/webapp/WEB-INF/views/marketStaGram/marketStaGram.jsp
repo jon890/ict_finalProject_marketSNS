@@ -32,7 +32,8 @@
         	</div>
         	
         	<div id="btnDiv">
-        		<input type="text" placeholder="# 해쉬태그를 이용하여 검색">
+       			<input type="text" id="searchContent" placeholder="# 해쉬태그를 이용하여 검색">
+       			<a id="searchBtn"><img src="./resources/images/marketStaGram/searchbtn.png"></a>
         		<c:if test="${id != null}">
 	        		<input type="button" value="글쓰기" id="writeBtn">	
         		</c:if>
@@ -70,12 +71,11 @@
 		    <div id="articles">
 
 			    <c:forEach var="img" items="${imgList}">
-			    	<article class="article">
+			    	<article class="article" articleNum="${img.articleNum}">
 			    		<a href="read.msg?articleNum=${img.articleNum}"><img src="./resources/uploadImgs/${img.storedImgName}"></a>					
 			    	</article>
-			    </c:forEach>
-			    
-		    </div> 
+			    </c:forEach>   
+		    </div>
 		    
 		</section>
 	</body>

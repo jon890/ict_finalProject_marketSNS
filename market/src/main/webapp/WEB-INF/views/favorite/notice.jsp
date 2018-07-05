@@ -14,13 +14,8 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <script src="./resources/js/favorite/favoriteMenu.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    
 	    <style>
-	        /*body{
-	            width:1080px;
-	            margin:0 auto;
-	        }*/
-	        
+	    
 	        div.background{
 	            width:100%;
 	            height:300px;
@@ -61,10 +56,11 @@
 	            border:1px solid gray;
 	        }
 	
-	        .btn{
+	        .btn, #writeBtn{
 	            float:right;
 	            margin-bottom:10px;
 	        }
+	        
 	
 	        #th01{
 	            width:15%;
@@ -93,7 +89,6 @@
 	            color:black;
 	        }
 	    </style>
-	    
 	</head>
 
 	<body>
@@ -106,12 +101,11 @@
 	    	<div class="background">
 	            <img src="./resources/images/favorite/favorite_main.png" />
 	            <div class="transbox">
-	                <p id="p01">Favorite</p>
+	                <p id="p01"><ins>Favorite</ins></p>
 	                <p id="p02">광주전통시장의 문화정보를 제공해 드립니다</p>
 	            </div>
         	</div>
         	<br>
-	    	<form action="./noticeForm.favorite" method="post" enctype="multipart/form-data">
 		    	<div class="container">
 			    	<ul class="nav nav-pills" role="tablist">
 			            <li class="nav-item">
@@ -131,7 +125,12 @@
 			            </li>
 			        </ul>
 			        <p id="p">공지사항</p>
-			        <input type="submit" class="btn" value="문의하기" />
+			        <c:if test="${id != null}">
+			        	<c:if test="${adminChk == 1}">
+			        		 <a href="./noticeForm.fovorite" id="writeBtn">글쓰기</a>
+			        	</c:if>
+		        	</c:if>
+		        	
 			        <table class="table table-hover">
 			            <thead>
 			                <tr>
@@ -142,37 +141,23 @@
 			                </tr>
 			            </thead>
 			            <tbody>
-			                <tr>
-			                    <td>1</td>
-			                    <td>Doe</td>
-			                    <td>john</td>
-			                    <td>2018.06.27</td>
-			                </tr>
-			                <tr>
-			                    <td>2</td>
-			                    <td>Moe</td>
-			                    <td>mary</td>
-			                    <td>2018.06.27</td>
-			                </tr>
-			                <tr>
-			                    <td>3</td>
-			                    <td>Dooley</td>
-			                    <td>july</td>
-			                    <td>2018.06.27</td>
-			                </tr>
+			                <c:forEach var="notice" items="${noticeList}">
+			                	<tr>
+			                		<td>${notice.articleNum}</td>
+			                		<td><a href="./noticeContent.favorite?articleNum=${notice.articleNum}&pageNum=${pageNum}">${notice.title}</a></td>
+			                		<td>${notice.id}</td>
+			                		<td>${notice.writeDate}</td>
+			                	</tr>
+			                </c:forEach>
 			            </tbody>
 			        </table>
 			    </div>
 			
 			    <div class="container">
 			        <ul class="pagination justify-content-center">
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-			            <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
-			        </ul>
+             			${pageCode}
+        			</ul>
 			    </div>
-		    </form>
 	    </section>
 	    
 	    <footer id="mainFooter">
@@ -180,5 +165,4 @@
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>
 	</body>
-	
 </html>

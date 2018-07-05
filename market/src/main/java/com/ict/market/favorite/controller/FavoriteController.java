@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
+import com.ict.market.favorite.dto.NoticeDto;
 import com.ict.market.favorite.service.FavoriteService;
 
 @Controller
@@ -34,12 +34,6 @@ public class FavoriteController {
 	public String main() {
 		logger.info("Favorite - 페이지 이동");
 		return "favorite";
-	}
-	
-	@RequestMapping(value="/notice.favorite")
-	public String notice() {
-		logger.info("Notice - 페이지 이동");
-		return "notice";
 	}
 	
 	@RequestMapping(value="/hotPlace.favorite")
@@ -151,5 +145,51 @@ public class FavoriteController {
 		favoriteService.commentDelete(commentNum);
 		return null;
 	}
+	
+	
+	
+	/* ********** 공지사항 게시판 기능 ********** */
+	@RequestMapping(value="/notice.favorite")
+	public String notice(@ModelAttribute("pageNum") String pageNum, Model model) {
+		favoriteService.noticeList(pageNum, model);
+		return "notice";
+	}
+	
+	@RequestMapping(value="/noticeForm.favorite")
+	public String noticeForm() {
+		return "noticeForm";
+	}
+	
+	@RequestMapping(value="/noticeWrite.favorite")
+	public String noticeWrite(NoticeDto notice, HttpSession session) {
+		notice.setId((String)session.getAttribute("id"));
+		favoriteService.noticeWrite(notice);				
+		return "redirect:/notice.favorite?pageNum=1";
+	}
+	
+	@RequestMapping(value="/noticeContent.favorite")
+	public String noticeContent(@RequestParam int articleNum,@ModelAttribute("pageNum") String pageNum, Model model) {
+		favoriteService.noticeContent(articleNum, model);
+		return "noticeContent";
+	}
+	
+	@RequestMapping(value="/noticeDelete.favorite")
+	public String noticeDelete(@RequestParam int articleNum,@RequestParam String pageNum) {
+		favoriteService.noticeDelete(articleNum);
+		return "redirect:/notice.favorite?pageNum="+pageNum;
+	}
+	
+	@RequestMapping(value="/noticeUpdate.favorite", method=RequestMethod.GET)
+	public String noticeGetUpdate(@RequestParam int articleNum, @ModelAttribute("pageNum") String pageNum,Model model) {
+		favoriteService.noticeGetUpdate(articleNum,model);
+		return "noticeUpdate";
+	}
+	
+	@RequestMapping(value="/noticeUpdate.favorite", method=RequestMethod.POST)
+	public String noticePostUpdate(NoticeDto notice, @RequestParam String pageNum, Model model) {
+		favoriteService.noticePostUpdate(notice, model);
+		return "redirect:/noticeContent.favorite?articleNum="+String.valueOf(notice.getArticleNum())+"&pageNum="+pageNum;
+	}
+	/* ********** 공지사항 게시판 기능 ********** */
 	
 }

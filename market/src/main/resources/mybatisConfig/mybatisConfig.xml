@@ -25,9 +25,12 @@
 		<typeAlias alias ="msgImg" type="com.ict.market.marketStaGram.dto.ImgDto"/>
 		<typeAlias alias ="msgComment" type="com.ict.market.marketStaGram.dto.MsgCommentDto"/>
 		<typeAlias alias ="like" type="com.ict.market.marketStaGram.dto.LikeDto"/>
+		<typeAlias alias ="search" type="com.ict.market.marketStaGram.dto.SearchDto"/>
 
 		<typeAlias alias="helpArticle" type="com.ict.market.favorite.dto.FavoriteDto"/>
 		<typeAlias alias="commentList" type="com.ict.market.favorite.dto.CommentDto"/>
+		<typeAlias alias="notice" type="com.ict.market.favorite.dto.NoticeDto"/>
+		
 		<typeAlias alias="marketList" type="com.ict.market.marketIntroduce.dto.MarketDto"/>
 	</typeAliases>
 	

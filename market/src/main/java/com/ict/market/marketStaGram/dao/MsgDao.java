@@ -6,6 +6,7 @@ import java.util.List;
 import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
+import com.ict.market.marketStaGram.dto.SearchDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 public interface MsgDao {
@@ -13,6 +14,11 @@ public interface MsgDao {
 	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
 	public List<ImgDto> list(HashMap<String, Integer> hm);
 	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
+	
+	
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
+	public int getCommentNum(int articleNum);
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
 	
 	
 	/* ********** 게시판 글쓰기 기능 ********** */
@@ -43,5 +49,10 @@ public interface MsgDao {
 	public String likeChk(LikeDto like);
 	public int getLikeNum(LikeDto like);
 	/* ********** 좋아요 기능 ********** */
+	
+	
+	/* ********** 해쉬태그 검색기능 ********** */
+	public List<SearchDto> search(String search);
+	/* ********** 해쉬태그 검색기능 ********** */
 	
 }

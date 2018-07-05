@@ -1,0 +1,58 @@
+@font-face{font-family:'MaplestoryLight2'; src:url('./../../fonts/MaplestoryLight.ttf')}
+
+.roughmap{
+	width:1000px;
+	height:350px;
+	display:inline-block;
+	margin:0 auto;
+}
+
+.contents{
+	background:#f2f2f2;
+	width:100%;
+	margin: 0px auto 0;
+	padding : 15px;
+	position:relative;
+	box-sizing:border-box;
+	display:inline-block;
+	
+}
+
+div{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    
+    font-weight: 300;
+    color: #525252;
+    letter-spacing: -0.5px;
+    /* font: inherit; */
+    vertical-align: baseline;
+	font-family:MaplestoryLight2;
+}
+
+td span{
+	font-size:20px;
+}
+
+.bagimg{
+	width:400px;
+	height:250px;
+	display:inline-block;
+	
+}
+.iconimg{
+	width:64px;
+	height:64px;
+	margin:0 auto;
+	display:inline-block;
+}
+
+p{
+text-align:center;
+}
+
+span{
+	font-size:14px;
+	line-height:20px;
+}

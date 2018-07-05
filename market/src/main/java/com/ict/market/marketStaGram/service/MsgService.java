@@ -1,5 +1,6 @@
 package com.ict.market.marketStaGram.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.ui.Model;
@@ -8,12 +9,15 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
+import com.ict.market.marketStaGram.dto.SearchDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 public interface MsgService {
 
 	public List<ImgDto> list(Model model, int pageNum);
 	
+	
+	public int getCommentNum(int articleNum);
 	
 	public void write(SnsArticleDto snsArticle, List<MultipartFile> imgname, String uploadDir);
 	public void read(int articleNum, Model model);
@@ -29,4 +33,6 @@ public interface MsgService {
 	public boolean likeChk(LikeDto like);
 	public int getLikeNum(LikeDto like);
 	
+	
+	public HashMap<String, SearchDto> search(String search);
 }

@@ -10,15 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.ict.market.favorite.common.NoticePage;
 import com.ict.market.favorite.common.Page;
 import com.ict.market.favorite.dao.FavoriteDao;
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
+import com.ict.market.favorite.dto.NoticeDto;
 
 @Service
 public class FavoriteServiceImpl implements FavoriteService {
 	@Autowired
 	private FavoriteDao favoriteDao;
+	
+	@Autowired
+	private NoticePage noticePage;
 
 	@Autowired
 	private Page page;
@@ -101,5 +106,45 @@ public class FavoriteServiceImpl implements FavoriteService {
 	}
 	
 	
+	
+	
+	
+	/* ********** 공지사항 게시판 기능 ********** */
+	@Override
+	public void noticeWrite(NoticeDto notice) {
+		favoriteDao.noticeWrite(notice);
+	}
 
+
+	@Override
+	public List<NoticeDto> noticeList(String pageNum, Model model) {
+		int totalCount = favoriteDao.getNoticeCount();
+		HashMap<String,String> pagingMap = noticePage.noticePaging(Integer.parseInt(pageNum),totalCount,pageSize,pageBlock);
+		model.addAttribute("pageCode",pagingMap.get("pageCode"));
+		model.addAttribute("noticeList",favoriteDao.noticeList(pagingMap));
+		model.addAttribute("totalCount",totalCount);
+		return favoriteDao.noticeList(pagingMap);
+	}
+
+	@Override
+	public void noticeContent(int articleNum, Model model) {
+		model.addAttribute("noticeContent", favoriteDao.noticeContent(articleNum));
+		
+	}
+
+	@Override
+	public void noticeDelete(int articleNum) {
+		favoriteDao.noticeDelete(articleNum);
+	}
+
+	@Override
+	public void noticeGetUpdate(int articleNum, Model model) {
+		model.addAttribute("noticeContent",favoriteDao.noticeGetUpdate(articleNum));
+	}
+
+	@Override
+	public void noticePostUpdate(NoticeDto notice, Model model) {
+		favoriteDao.noticePostUpdate(notice);
+	}
+	/* ********** 공지사항 게시판 기능 ********** */
 }

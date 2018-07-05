@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
+import com.ict.market.marketStaGram.dto.SearchDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 @Repository
@@ -22,13 +23,23 @@ public class MsgDaoImpl implements MsgDao {
 	
 	
 	
-	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
+	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
 	@Override
 	public List<ImgDto> list(HashMap<String, Integer> hm) {
 		return sqlSession.selectList(nameSpace.concat(".list"), hm);
 	}
-	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
+	/* ********** 해당하는 페이지에 맞는 게시물 가져오기 기능 ********** */
+	
+	
+	
 
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
+	@Override
+	public int getCommentNum(int articleNum) {
+		return sqlSession.selectOne(nameSpace.concat(".getCommentNum"), articleNum);
+	}
+	/* ********** 해당하는 글의 댓글개수 가져오기 기능 ********** */
+	
 	
 	
 	/* ********** 게시판 글쓰기 기능 ********** */
@@ -106,4 +117,11 @@ public class MsgDaoImpl implements MsgDao {
 	}
 	/* ********** 좋아요 기능 ********** */
 
+
+	
+	/* ********** 해쉬태그 검색기능 ********** */
+	@Override
+	public List<SearchDto> search(String search) {
+		return sqlSession.selectList(nameSpace.concat(".search"), search);
+	}
 }

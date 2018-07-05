@@ -22,10 +22,21 @@ public class CompareDAOImpl implements CompareDAO {
 	public List<marketPriceDTO> marketPrice() {
 		return sqlSession.selectList(nameSpace+".marketList");
 	}
+	
+	@Override
+	public List<marketPriceDTO> marketAgo() {
+		return sqlSession.selectList(nameSpace+".marketAgo");
+	}
 
 	@Override
 	public List<martPriceDTO> martPrice() {
 		return sqlSession.selectList(nameSpace+".martList");
+	}
+	
+
+	@Override
+	public List<martPriceDTO> martAgo() {
+		return sqlSession.selectList(nameSpace+".martAgo");
 	}
 
 	@Override

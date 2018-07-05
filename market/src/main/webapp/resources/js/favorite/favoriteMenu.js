@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	    		$("#notice").on("click", function(){
-	    			$(location).attr('href', './notice.favorite');
+	    			$(location).attr('href', './notice.favorite?pageNum=1');
 	    		});
 	    		$("#hotPlace").on("click", function(){
 	    			$(location).attr('href', './hotPlace.favorite');

@@ -21,12 +21,24 @@ public class CompareServiceImpl implements CompareService {
 		model.addAttribute("marketPriceList",compareDAO.marketPrice());
 		return compareDAO.marketPrice();
 	}
+	
+	
+
+	@Override
+	public void marketAgo(Model model) {
+		model.addAttribute("marketPriceList",compareDAO.marketAgo());
+	}
+
+
 
 	@Override
 	public List<martPriceDTO> martPrice(Model model) {
 		System.out.println(compareDAO.martPrice());
 		model.addAttribute("martPriceList",compareDAO.martPrice());
 		return null;
+	}
+	public void martAgo(Model model) {
+		model.addAttribute("martPriceList",compareDAO.martAgo());
 	}
 
 	@Override

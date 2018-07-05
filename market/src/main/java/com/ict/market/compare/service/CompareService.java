@@ -11,6 +11,8 @@ public interface CompareService {
 	public List<marketPriceDTO> marketPrice(Model model);
 	public List<martPriceDTO> martPrice(Model model);
 	public void comparePrice(Model model);
+	public void marketAgo(Model model);
+	public void martAgo(Model model);
 	/*시장 품목별 출력 메소드*/
 	public void marketCorn(Model model);
 	public void marketMeat(Model model);

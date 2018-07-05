@@ -105,9 +105,7 @@
 		  주별로 보기 <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-		  <li><a href="#">6월1주</a></li>
-		  <li><a href="#">6월2주</a></li>
-		  <li><a href="#">6월3주</a></li>
+		    <li><a href="martAgo.compare">6월3주</a></li>
 		</ul>
 	  </div>
 	<div class="btn-group">
@@ -125,6 +123,8 @@
 			  <li><a href="martCleaner.compare">세제</a></li>
 			</ul>
 		  </div>
+	<br>
+	<span>7월 1주차 가격</span>	  
 	<br>
 	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">

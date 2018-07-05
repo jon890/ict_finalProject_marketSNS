@@ -22,12 +22,25 @@ public class CompareController {
 		compareService.marketPrice(model);
 		return "marketPrice";
 	}
+	@RequestMapping(value="/marketAgo.compare")
+	public String marketAgo(Model model) {	
+		compareService.marketAgo(model);
+		return "marketPrice";
+	}
+	
 	@RequestMapping(value="/mart.compare")
 	public String martPrice(Model model){
 		logger.info("mart진입");
 		compareService.martPrice(model);
 		return "martPrice";
 	}
+	@RequestMapping(value="/martAgo.compare")
+	public String martAgo(Model model){
+		logger.info("mart진입");
+		compareService.martAgo(model);
+		return "martPrice";
+	}
+	
 	@RequestMapping(value="/compare.compare")
 	public String comparePrice(Model model){
 		logger.info("compare진입");

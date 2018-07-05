@@ -8,7 +8,9 @@ import com.ict.market.compare.dto.martPriceDTO;
 
 public interface CompareDAO {
 	public List<marketPriceDTO> marketPrice();
+	public List<marketPriceDTO> marketAgo();
 	public List<martPriceDTO> martPrice();
+	public List<martPriceDTO> martAgo();
 	public List<ComparePriceDTO> comparePrice();
 	/*시장 품목별 출력 dao*/
 	public List<marketPriceDTO> marketCorn();

@@ -50,6 +50,10 @@ public class MarketIntroduceController {
 	public String daeinMap() {
 		return "daeinMap";
 	}
+	@RequestMapping(value="/daeinConvenience.mid", method = RequestMethod.GET)
+	public String daeinConvenience() {
+		return "daeinConvenience";
+	}
 	/* ********** 대인시장 ********** */
 	
 	
@@ -78,6 +82,10 @@ public class MarketIntroduceController {
 	@RequestMapping(value="/namgwangjuMap.mid", method = RequestMethod.GET)
 	public String namgwangjuMap() {
 		return "namgwangjuMap";
+	}
+	@RequestMapping(value="/namgwangjuConvenience.mid", method = RequestMethod.GET)
+	public String namgwangjuConvenience() {
+		return "namgwangjuConvenience";
 	}
 	/* ********** 남광주시장 ********** */
 	
@@ -108,6 +116,10 @@ public class MarketIntroduceController {
 	public String yangdongMap() {
 		return "yangdongMap";
 	}
+	@RequestMapping(value="/yangdongConvenience.mid", method = RequestMethod.GET)
+	public String yangdongConvenience() {
+		return "yangdongConvenience";
+	}
 	/* ********** 양동시장 ********** */
 	
 	
@@ -137,6 +149,10 @@ public class MarketIntroduceController {
 	public String malbawooMap() {
 		return "malbawooMap";
 	}
+	@RequestMapping(value="/malbawooConvenience.mid", method = RequestMethod.GET)
+	public String malbawooConvenience() {
+		return "malbawooConvenience";
+	}
 	/* ********** 말바우시장 ********** */
 	
 	
@@ -165,6 +181,10 @@ public class MarketIntroduceController {
 	@RequestMapping(value="/seongjungMap.mid", method = RequestMethod.GET)
 	public String seongjungMap() {
 		return "seongjungMap";
+	}
+	@RequestMapping(value="/seongjungConvenience.mid", method = RequestMethod.GET)
+	public String seongjungConvenience() {
+		return "seongjungConvenience";
 	}
 	/* ********** 송정시장 ********** */
 }

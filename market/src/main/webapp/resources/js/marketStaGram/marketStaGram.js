@@ -34,6 +34,7 @@ $(document).ready(function(){
 	$("#uploadImgs").on("change", function(e){
 		let imgs = e.target.files;
 		let imgsArr = Array.prototype.slice.call(imgs);
+		let imgIndex = 0;
 		
 		imgsArr.forEach(function(f){
 			if(!f.type.match("image.*")){
@@ -48,15 +49,20 @@ $(document).ready(function(){
 				let imgHtml = "";
 				imgHtml += "<article class='thumNailImgArticles'>";
 				imgHtml += "<img src=\"" + e.target.result + "\">";
-				imgHtml += "<span class='thumDelBtn'>&times;</a>";
+				imgHtml += "<span class='thumDelBtn' id='imgIndex";
+				imgHtml += imgIndex + "'>&times;</span>";
 				imgHtml += "</article>";
 				$("#thumNailImgs").append(imgHtml);
+				imgIndex++;
 			}
 			reader.readAsDataURL(f);
 		});
 	});	
 	
-	$(document).on("click", ".thumDelBtn", function(){
+	$(document).on("click", ".thumDelBtn", function(imgIndex){
+		uploadImgs.splice(imgIndex, 1);
+		alert(uploadImgs);
+		alert($("input[type='file']").val());
 		let that = $(this);
 		that.parent().remove();
 	})

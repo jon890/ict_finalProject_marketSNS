@@ -1,40 +1,39 @@
 @font-face{font-family:'MaplestoryLight1'; src:url('./../../fonts/MaplestoryLight.ttf')}
 	
-	
-	.marketName{
-		padding:10px;
-		margin:10px;
-		background:black;
-		font-family:MaplestoryLight1;
-		color:white;
-	}
-	.marketImg{
-		float: left;
-		width:47%;
-		margin:5px 15px;
-	}
-	.marketImg img{
-		display:inline-block;
-		width:500px;
-		height:250px;
-	}
-	.marketSummary{
-		float:left;
-		width:47%;
-		font-family:MaplestoryLight1;
-		margin:5px 15px;
-		border-top:1px solid black;
-		border-bottom:1px solid black;
-	}
-	.marketTitle{
-		width:100px;
-		padding:8px 5px;
-		border-right:1px solid black;
-	}
-	.marketContent{
-		padding:8px 5px;
-	}
-	.market{
-		margin: 15px 20px;
-		font-family:MaplestoryLight1;
-	}
+.marketName{
+	padding:10px;
+	margin:10px;
+	background:black;
+	font-family:MaplestoryLight1;
+	color:white;
+}
+.marketImg{
+	float: left;
+	width:47%;
+	margin:5px 15px;
+}
+.marketImg img{
+	display:inline-block;
+	width:500px;
+	height:250px;
+}
+.marketSummary{
+	float:left;
+	width:47%;
+	font-family:MaplestoryLight1;
+	margin:5px 15px;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+}
+.marketTitle{
+	width:100px;
+	padding:8px 5px;
+	border-right:1px solid black;
+}
+.marketContent{
+	padding:8px 5px;
+}
+.market{
+	margin: 15px 20px;
+	font-family:MaplestoryLight1;
+}

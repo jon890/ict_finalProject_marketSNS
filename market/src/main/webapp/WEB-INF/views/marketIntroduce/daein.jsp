@@ -17,6 +17,12 @@
 			iframe{
 				border : none;
 			}
+			#home{
+	        	height:630px;
+	        }
+	        #menu4{
+	        	height:1650px;
+	        }
 		</style>
 	</head>
 	
@@ -71,8 +77,8 @@
 					</div>
 					<div id="menu4" class="container tab-pane fade">
 						<br>
-						<h3>고객센터</h3>
-						<p>TEST1</p>
+		                <h3>편의시설</h3>
+		                <iframe src="daeinConvenience.mid" width="100%" height="1600px"></iframe>
 					</div>
 				</div>
 			</div>

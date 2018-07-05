@@ -16,6 +16,12 @@
 			iframe{
 				border : none;
 			}
+			#home{
+	        	height:630px;
+	        }
+	        #menu4{
+	        	height:1650px;
+	        }
 		</style>
 	</head>
 	
@@ -30,8 +36,8 @@
 			<div class="background">
 		            <img src="./resources/images/favorite/favorite_main.png" />
 		            <div class="transbox">
-		                <p id="p01"><ins>남광주시장</ins></p>
-		                <p id="p02">"남도의 씽씽한 해산물 맞볼 수 있는 해산물시장"</p>
+		                <p id="p01">남광주시장</p>
+		                <p id="p02">"남도의 싱싱한 해산물 맞볼 수 있는 해산물시장"</p>
 		            </div>
 	        </div>
 	        
@@ -76,8 +82,8 @@
 			            </div>
 			            <div id="menu4" class="container tab-pane fade">
 			                <br>
-			                <h3>고객센터</h3>
-			                <p>TEST1</p>
+		                	<h3>편의시설</h3>
+		                	<iframe src="namgwangjuConvenience.mid" width="100%" height="1600px"></iframe>
 			            </div>
 			        </div>
 			    </div>

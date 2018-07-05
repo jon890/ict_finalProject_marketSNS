@@ -16,6 +16,13 @@
 			iframe{
 				border : none;
 			}
+			#home{
+	        	height:630px;
+	        }
+	        
+	        #menu4{
+	        	height: 1650px;
+	        }
 		</style>
 	</head>
 	
@@ -28,8 +35,8 @@
 			<div class="background">
 		            <img src="./resources/images/favorite/favorite_main.png" />
 		            <div class="transbox">
-		                <p id="p01">대인시장</p>
-		                <p id="p02">"예술이 공존하는 문화관광시장"</p>
+		                <p id="p01">1913 송정역시장</p>
+		                <p id="p02">"내용 채워주세요"</p>
 		            </div>
 	        </div>
 	        
@@ -74,8 +81,8 @@
 		            </div>
 		            <div id="menu4" class="container tab-pane fade">
 		                <br>
-		                <h3>고객센터</h3>
-		                <p>TEST1</p>
+		                <h3>편의시설</h3>
+		                <iframe src="seongjungConvenience.mid" width="100%" height="1600px"></iframe>
 		            </div>
 		        </div>
 		    </div>

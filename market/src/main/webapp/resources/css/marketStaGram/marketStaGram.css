@@ -22,10 +22,10 @@
 #btnDiv > input[type=text]{
 	width : 50%;
 	height : 45px;
-	margin-right : 20px;
+	margin-right : 10px;
 }
 
-#btnDiv > input[type=image]{
+#btnDiv > #searchBtn{
 	margin-right : 50px;
 }
 

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
+import com.ict.market.marketStaGram.dto.SearchDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 @Repository
@@ -116,4 +117,11 @@ public class MsgDaoImpl implements MsgDao {
 	}
 	/* ********** 좋아요 기능 ********** */
 
+
+	
+	/* ********** 해쉬태그 검색기능 ********** */
+	@Override
+	public List<SearchDto> search(String search) {
+		return sqlSession.selectList(nameSpace.concat(".search"), search);
+	}
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
+import com.ict.market.marketStaGram.dto.SearchDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 
 public interface MsgDao {
@@ -48,5 +49,10 @@ public interface MsgDao {
 	public String likeChk(LikeDto like);
 	public int getLikeNum(LikeDto like);
 	/* ********** 좋아요 기능 ********** */
+	
+	
+	/* ********** 해쉬태그 검색기능 ********** */
+	public List<SearchDto> search(String search);
+	/* ********** 해쉬태그 검색기능 ********** */
 	
 }

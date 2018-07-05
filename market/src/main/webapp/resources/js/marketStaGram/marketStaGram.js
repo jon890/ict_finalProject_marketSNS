@@ -135,4 +135,27 @@ $(document).ready(function(){
 		location.href = "./read.msg?articleNum=" + that.parent("article").attr("articleNum");
 	});
 	/* ********** 글 호버링 시 좋아요와 댓글개수 가져오기 ********** */
+	
+	
+	
+	/* ********** 해쉬태그 검색 기능 ********** */
+	$(document).on("click", "#searchBtn", function(){
+		
+		let searchContent = $("#searchContent");
+		if(searchContent.val() == ""){
+			searchContent.focus();
+		} else {
+			$.ajax({
+				url : "/market/search.msg",
+				data : {
+					search : searchContent.val()
+				},
+				success : function(data){
+					
+				}
+			});
+		}
+	});
+	
+	/* ********** 해쉬태그 검색 기능 ********** */
 });

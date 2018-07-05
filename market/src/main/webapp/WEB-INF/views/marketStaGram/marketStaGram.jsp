@@ -31,10 +31,9 @@
 	            </div>
         	</div>
         	
-        	<form action="/search.msg">
         	<div id="btnDiv">
-       			<input type="text" placeholder="# 해쉬태그를 이용하여 검색">
-       			<input type="image" src="./resources/images/marketStaGram/searchbtn.png">
+       			<input type="text" id="searchContent" placeholder="# 해쉬태그를 이용하여 검색">
+       			<a id="searchBtn"><img src="./resources/images/marketStaGram/searchbtn.png"></a>
         		<c:if test="${id != null}">
 	        		<input type="button" value="글쓰기" id="writeBtn">	
         		</c:if>
@@ -42,7 +41,6 @@
 	        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a> 	
         		</c:if>
         	</div>
-        	</form>
         	 
         	 <div id="writeFormModal" class="modal">
         	 	<form action="./write.msg" method="post" enctype="multipart/form-data">

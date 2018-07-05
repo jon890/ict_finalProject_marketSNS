@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ict.market.marketStaGram.dto.ImgDto;
 import com.ict.market.marketStaGram.dto.LikeDto;
 import com.ict.market.marketStaGram.dto.MsgCommentDto;
+import com.ict.market.marketStaGram.dto.SearchDto;
 import com.ict.market.marketStaGram.dto.SnsArticleDto;
 import com.ict.market.marketStaGram.service.MsgService;
 
@@ -174,5 +175,16 @@ public class MsgController {
 		return hm;
 	}
 	/* ********** 좋아요 기능 ********** */
+	
+	
+	
+	
+	/* ********** 해쉬태그 검색기능 ********** */
+	@RequestMapping(value = "/search.msg" , method = RequestMethod.GET)
+	@ResponseBody
+	public HashMap<String, SearchDto> search(@RequestParam String search){
+		return msgService.search(search);
+	}
+	/* ********** 해쉬태그 검색기능 ********** */
 	
 }

@@ -42,9 +42,10 @@
 		});
 		  
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-		infowindow.open(map, marker); 
+		infowindow.open(map, marker);
+		map.setCenter(new daum.maps.LatLng(35.155702, 126.896488));
 		
-		var points = [
+		/* var points = [
 		    new daum.maps.LatLng(35.155279, 126.908163),
 		    new daum.maps.LatLng(35.155690, 126.896877),
 		    new daum.maps.LatLng(35.153208, 126.896799)
@@ -60,7 +61,7 @@
 		}
 		map.setBounds(bounds);
 		map.setLevel(3);
-		map.setCenter(new daum.maps.LatLng(35.155702, 126.896488));
+	 */
 		
 		/* 35.155279, 126.908163 -광주고용지원센터
 		35.155690, 126.896877 -공터

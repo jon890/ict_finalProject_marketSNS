@@ -44,11 +44,14 @@
 		  
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker); 
+		map.setCenter(new daum.maps.LatLng(35.174933, 126.914698));
 		
-		var points = [
+		/* var points = [
 		    new daum.maps.LatLng(35.176044, 126.930532),
 		    new daum.maps.LatLng(35.176413, 126.910308),
 		    new daum.maps.LatLng(35.170308, 126.910636)
+		    35.177491, 126.910108
+		    35.177792, 126.911469
 		];
 
 		// 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
@@ -60,8 +63,8 @@
 		    bounds.extend(points[i]);
 		}
 		map.setBounds(bounds);
-		map.setLevel(4);
-		map.setCenter(new daum.maps.LatLng(35.176413, 126.910308));
+		map.setLevel(4); */
+		
 		
 		/* 35.176044, 126.930532 - 무궁화아파트 근처
 		35.176413, 126.910308 - 공동실습관 근처

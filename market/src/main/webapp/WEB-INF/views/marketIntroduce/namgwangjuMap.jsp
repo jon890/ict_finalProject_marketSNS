@@ -80,8 +80,8 @@
 		  
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker); 
-		
-		var points = [
+		map.setCenter(new daum.maps.LatLng(35.140612, 126.916514));
+		/* var points = [
 		    new daum.maps.LatLng(35.140612, 126.916514),
 		    new daum.maps.LatLng(35.138120, 126.916965),
 		    new daum.maps.LatLng(35.139844, 126.926589)
@@ -98,7 +98,7 @@
 		map.setBounds(bounds);
 		map.setLevel(3);
 		map.setCenter(new daum.maps.LatLng(35.140612, 126.916514));
-		
+		 */
 		</script>
 		
 		

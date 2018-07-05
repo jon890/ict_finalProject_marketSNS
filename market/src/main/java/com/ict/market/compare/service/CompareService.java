@@ -11,4 +11,33 @@ public interface CompareService {
 	public List<marketPriceDTO> marketPrice(Model model);
 	public List<martPriceDTO> martPrice(Model model);
 	public void comparePrice(Model model);
+	/*시장 품목별 출력 메소드*/
+	public void marketCorn(Model model);
+	public void marketMeat(Model model);
+	public void marketFish(Model model);
+	public void marketFruit(Model model);
+	public void marketVege(Model model);
+	public void marketGro(Model model);
+	public void marketOil(Model model);
+	public void marketCleaner(Model model);
+	/*마트 품목별 출력 메소드*/
+	public void martCorn(Model model);
+	public void martMeat(Model model);
+	public void martFish(Model model);
+	public void martFruit(Model model);
+	public void martVege(Model model);
+	public void martGro(Model model);
+	public void martOil(Model model);
+	public void martCleaner(Model model);
+	/*시장vs마트 품목별 출력 메소드*/
+	public void compareCorn(Model model);
+	public void compareMeat(Model model);
+	public void compareFish(Model model);
+	public void compareFruit(Model model);
+	public void compareVege(Model model);
+	public void compareGro(Model model);
+	public void compareOil(Model model);
+	public void compareCleaner(Model model);
+	
+	
 }

@@ -92,7 +92,7 @@
 	    			$(location).attr('href', './nightMarket.favorite');
 	    		})
 	    		$("#help").on("click", function(){
-	    			$(location).attr('href', './help.favorite');
+	    			$(location).attr('href', './help.favorite?pageNum=1');
 	    		})
 	    	})
 	    </script>

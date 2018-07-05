@@ -12,7 +12,7 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    
+	    <script src="./resources/js/favorite/favoriteMenu.js"></script>
 	    <style>
 	    	/*body{
 	            width:1080px;
@@ -77,25 +77,7 @@
 	            color:black;
 	        }
     	</style>
-    	<script>
-	    	$(document).ready(function(){
-	    		$("#notice").on("click", function(){
-	    			$(location).attr('href', './notice.favorite');
-	    		})
-	    		$("#hotPlace").on("click", function(){
-	    			$(location).attr('href', './hotPlace.favorite');
-	    		})
-	    		$("#festival").on("click", function(){
-	    			$(location).attr('href', './festival.favorite');
-	    		})
-	    		$("#nightMarket").on("click", function(){
-	    			$(location).attr('href', './nightMarket.favorite');
-	    		})
-	    		$("#help").on("click", function(){
-	    			$(location).attr('href', './help.favorite');
-	    		})
-	    	})
-	    </script>
+    	
 	</head>
 
 	<body>

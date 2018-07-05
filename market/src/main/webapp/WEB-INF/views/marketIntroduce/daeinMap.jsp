@@ -97,12 +97,13 @@
 		오른쪽 위 -35.155650, 126.923437
 		왼쪽 아래 - 35.152337, 126.913049(금남분식) */
 		 options = { 
-	        center: new daum.maps.LatLng(35.153411,126.918099), // 지도의 중심좌표
+	        center: new daum.maps.LatLng(35.153411,126.918099),// 지도의 중심좌표
+	        level : 3
 	    }; 
 		
 		var map = new daum.maps.Map(mapContainer, options);
 		
-		map.setLevel(3, {anchor: new daum.maps.LatLng(35.153411,126.918099)});
+		
 		// 마커가 표시될 위치입니다 
 		var markerPosition  = new daum.maps.LatLng(35.153411,126.918099); 
 		
@@ -126,9 +127,9 @@
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker);  
 		
+		map.setCenter(new daum.maps.LatLng(35.154895, 126.912787));
 		
-		
-		var points = [
+		/* var points = [
 		    new daum.maps.LatLng(35.155650, 126.923437),
 		    new daum.maps.LatLng(35.1535322,126.9180352),
 		    new daum.maps.LatLng(35.152337, 126.913049)
@@ -143,8 +144,8 @@
 		    bounds.extend(points[i]);
 		}
 		map.setBounds(bounds);
-		map.setLevel(3);
-		map.setCenter(new daum.maps.LatLng(35.154895, 126.912787));
+		map.setLevel(3); */
+		
 		/* function setBounds() {
 		    // LatLngBounds 객체에 추가된 좌표들을 기준으로 지도의 범위를 재설정합니다
 		    // 이때 지도의 중심좌표와 레벨이 변경될 수 있습니다

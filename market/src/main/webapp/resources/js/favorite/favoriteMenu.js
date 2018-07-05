@@ -13,7 +13,5 @@ $(document).ready(function(){
 	    		});
 	    		$("#help").on("click", function(){
 	    			$(location).attr('href', './help.favorite?pageNum=1');
-	    		});
-	    		
-	    		
+	    		});    		
 });

@@ -55,7 +55,6 @@
         	</div>
         	
 			<div class="container">
-	    		<br>
 	    		<ul class="nav nav-pills" role="tablist">
 		            <li class="nav-item">
 		                <a class="nav-link" data-toggle="pill" id="notice">공지사항</a>

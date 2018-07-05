@@ -43,7 +43,6 @@
 	            	<p id="p02">광주의 야시장 정보를 알려드립니다!</p>
 	        	</div>
         	</div>
-		    <br>
 		    <div class="container">
 		    	<ul class="nav nav-pills" role="tablist">
 			        <li class="nav-item">

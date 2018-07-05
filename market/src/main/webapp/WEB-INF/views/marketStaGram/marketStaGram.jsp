@@ -16,10 +16,7 @@
 	</head>
 	
 	<body>
-		<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./../common/mainMenu.jsp" %>
-		</header>
+		<header id="mainMenu"><%@ include file="./../common/mainMenu.jsp" %></header>
 		
 		<section>
 		

@@ -43,8 +43,6 @@
 	            	<p id="p02">전통시장 주변의 축제 정보를 알려드립니다!</p>
 	        	</div>
         	</div>
-        	
-		    <br>
 		    <div class="container">
 		    	<ul class="nav nav-pills" role="tablist">
 			        <li class="nav-item">
@@ -65,7 +63,6 @@
 			    </ul>
 			    <p id="p">축제정보</p>
 	            <div class="card" style="width:400px">
-	                <img class="card-img-top" src="./resources/images/favorite/hotPlace01.jpg" alt="Card image" style="width:100%">
 	                <div class="card-body">
 	                    <h4 class="card-title">John Doe</h4>
 	                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -73,7 +70,6 @@
 	                </div>
 	            </div>
 		        <div class="card" style="width:400px">
-		            <img class="card-img-top" src="./resources/images/favorite/hotPlace01.jpg" alt="Card image" style="width:100%">
 		            <div class="card-body">
 		                <h4 class="card-title">John Doe</h4>
 		                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>

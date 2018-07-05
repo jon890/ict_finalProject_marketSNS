@@ -43,7 +43,6 @@
 	            	<p id="p02">직접 가본 핫한 장소를 알려드립니다!</p>
 	        	</div>
         	</div>
-		    <br>
 		    <div class="container">
 		    	<ul class="nav nav-pills" role="tablist">
 			        <li class="nav-item">

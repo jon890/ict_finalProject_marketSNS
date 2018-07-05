@@ -30,9 +30,263 @@
 	<select id="compareList" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
     ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
-    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
     from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
     where m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	
+	<!--*******************시장 품목별 출력 sql문 시작 ********************-->
+	<select id="marketCorn" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 10 and 80 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	<select id="marketMeat" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 90 and 130 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	<select id="marketFish" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 140 and 200 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	<select id="marketFruit" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 210 and 230 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	<select id="marketVege" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 240 and 310 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	<select id="marketGro" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 320 and 430 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	<select id="marketOil" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 440 and 480 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	<select id="marketCleaner" resultType="market">
+	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
+	m3.price muDeungPrice,m4.price malBawooPrice,m5.price moonPrice
+	from goods g, marketInfo m1,marketInfo m2,marketInfo m3,marketInfo m4, marketInfo m5
+	where g.goodsCode between 490 and 520 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode 
+	and m3.goodsCode=g.goodsCode and m4.goodsCode=g.goodsCode 
+	and m5.goodsCode=g.goodsCode
+	and m1.marketCode=111 and m2.marketCode=222 
+	and m3.marketCode=333 and m4.marketCode=444 
+	and m5.marketCode=555
+	</select>
+	
+	<!--*******************마트 품목별 출력 sql문 시작 ********************-->
+	<select id="martCorn" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 10 and 80 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<select id="martMeat" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 90 and 130 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<select id="martFish" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 140 and 200 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<select id="martFruit" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 210 and 230 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<select id="martVege" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 240 and 310 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<select id="martGro" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 320 and 430 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<select id="martOil" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 440 and 480 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<select id="martCleaner" resultType="mart">
+	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
+	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
+	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
+	where g.goodsCode between 490 and 520 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
+	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
+	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
+	and m4.martCode=44 and m5.martCode=55
+	</select>
+	<!-- ***************시장vs마트 가격 비교 sql문 시작***************** -->
+	<select id="compareCorn" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 10 and 80 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	<select id="compareMeat" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 90 and 130 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	<select id="compareFish" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 140 and 200 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	<select id="compareFruit" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 210 and 230 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	<select id="compareVege" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 240 and 310 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	<select id="compareGro" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 320 and 430 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	<select id="compareOil" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 440 and 480 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
+    and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
+    and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33
+	</select>
+	<select id="compareCleaner" resultType="compare">
+	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
+    ,round((m1.price+m2.price+m3.price)/3,0) avgMarket,m4.price emartPrice,m5.price homePlusPrice,
+    m6.price lotteMartPrice,round((m4.price+m5.price+m6.price)/3,0) avgMart,
+    round(((m1.price+m2.price+m3.price)/3)-((m4.price+m5.price+m6.price)/3),0) gap
+    from goods g,marketInfo m1,marketInfo m2,marketInfo m3,martInfo m4,martInfo m5,martInfo m6
+    where g.goodsCode between 490 and 520 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
     and m4.martCode=11 and m5.martCode=22 and m6.martCode=33

@@ -7,10 +7,18 @@ public class ComparePriceDTO {
 	private String malbawooPrice;
 	private String avgMarket;
 	private String avgMart;
+	private String gap;
 	private String emartPrice;
 	private String homePlusPrice;
 	private String lotteMartPrice;
 	
+	
+	public String getGap() {
+		return gap;
+	}
+	public void setGap(String gap) {
+		this.gap = gap;
+	}
 	public String getGoodsName() {
 		return goodsName;
 	}
@@ -65,14 +73,14 @@ public class ComparePriceDTO {
 	public void setLotteMartPrice(String lotteMartPrice) {
 		this.lotteMartPrice = lotteMartPrice;
 	}
-	
 	@Override
 	public String toString() {
 		return "ComparePriceDTO [goodsName=" + goodsName + ", daeInPrice=" + daeInPrice + ", yangdongPrice="
 				+ yangdongPrice + ", malbawooPrice=" + malbawooPrice + ", avgMarket=" + avgMarket + ", avgMart="
-				+ avgMart + ", emartPrice=" + emartPrice + ", homePlusPrice=" + homePlusPrice + ", lotteMartPrice="
-				+ lotteMartPrice + "]";
+				+ avgMart + ", gap=" + gap + ", emartPrice=" + emartPrice + ", homePlusPrice=" + homePlusPrice
+				+ ", lotteMartPrice=" + lotteMartPrice + "]";
 	}
+	
 	
 	
 	

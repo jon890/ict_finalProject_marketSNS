@@ -61,7 +61,12 @@
 	        .dropdown-menu li {
 	        	text-align:center;
 	        }
-	        
+	        span{
+	      		width:100%
+	      		font-size:15px;
+	      		font-weight:bold;
+	      		float:right;
+	      	}
 	        
 	      </style>
 	      
@@ -111,17 +116,18 @@
 			  품목별 보기 <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu">
-			  <li><a href="#">곡류</a></li>
-			  <li><a href="#">육류</a></li>
-			  <li><a href="#">어류</a></li>
-			  <li><a href="#">과일</a></li>
-			  <li><a href="#">채소</a></li>
-			  <li><a href="#">식료품</a></li>
-			  <li><a href="#">유류</a></li>
-			  <li><a href="#">세제</a></li>
+			  <li><a href="marketCorn.compare">곡류</a></li>
+			  <li><a href="marketMeat.compare">육류</a></li>
+			  <li><a href="marketFish.compare">어류</a></li>
+			  <li><a href="marketFruit.compare">과일</a></li>
+			  <li><a href="marketVege.compare">채소</a></li>
+			  <li><a href="marketGro.compare">식료품</a></li>
+			  <li><a href="marketOil.compare">유류</a></li>
+			  <li><a href="marketCleaner.compare">세제</a></li>
 			</ul>
 		  </div>
-	
+	<br>
+	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">
 			<thead>
 			  <tr>

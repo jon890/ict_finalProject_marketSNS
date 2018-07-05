@@ -42,10 +42,7 @@
 	        #p02{
 	            font-size:20px;
 	        }
-	  
-	        table{
-	        width:1080px;
-	        }
+	      
 	        .nav-item{
 	            width:33%;
 	            text-align:center;
@@ -63,7 +60,12 @@
 	        .dropdown-menu li {
 	        	text-align:center;
 	        }
-	        
+	        span{
+	      		width:100%
+	      		font-size:15px;
+	      		font-weight:bold;
+	      		float:right;
+	      	}
 	        
 	      </style>
 	      
@@ -113,26 +115,27 @@
 			  품목별 보기 <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu">
-			  <li><a href="#">곡류</a></li>
-			  <li><a href="#">육류</a></li>
-			  <li><a href="#">어류</a></li>
-			  <li><a href="#">과일</a></li>
-			  <li><a href="#">채소</a></li>
-			  <li><a href="#">식료품</a></li>
-			  <li><a href="#">유류</a></li>
-			  <li><a href="#">세제</a></li>
+			  <li><a href="martCorn.compare">곡류</a></li>
+			  <li><a href="martMeat.compare">육류</a></li>
+			  <li><a href="martFish.compare">어류</a></li>
+			  <li><a href="martFruit.compare">과일</a></li>
+			  <li><a href="martVege.compare">채소</a></li>
+			  <li><a href="martGro.compare">식료품</a></li>
+			  <li><a href="martOil.compare">유류</a></li>
+			  <li><a href="martCleaner.compare">세제</a></li>
 			</ul>
 		  </div>
-	
+	<br>
+	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">
 			<thead>
 			  <tr>
 				<th>품목/마트명</th>
-				<th>이마트봉선점(남구)</th>
-				<th>홈플러스두암점(북구)</th>
-				<th>롯데마트수완점(광산구)</th>
-				<th>영암마트지산점(동구)</th>
-				<th>롯데마트월드컵점(서구)</th>
+				<th>이마트봉선점<br>(남구)</th>
+				<th>홈플러스두암점<br>(북구)</th>
+				<th>롯데마트수완점<br>(광산구)</th>
+				<th>영암마트지산점<br>(동구)</th>
+				<th>롯데마트월드컵점<br>(서구)</th>
 			  </tr>
 			</thead>
 			<tbody>

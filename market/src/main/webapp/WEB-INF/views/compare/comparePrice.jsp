@@ -60,7 +60,16 @@
 	        .dropdown-menu li {
 	        	text-align:center;
 	        }
-	      
+	        
+	        table{
+	        	font-size:15px;
+	        }
+	      	span{
+	      		width:100%
+	      		font-size:15px;
+	      		font-weight:bold;
+	      		float:right;
+	      	}
 	      </style>
 	      
 <title>가격비교</title>
@@ -92,7 +101,8 @@
 		                <a href="compare.compare" class="btn btn-primary">전통시장vs대형마트</a>
 		            </li>
 		       </ul>
-		  
+	
+	
 	<!-- Single button -->
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -104,22 +114,26 @@
 		  <li><a href="#">6월3주</a></li>
 		</ul>
 	  </div>
+	 
 	<div class="btn-group">
 			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 			  품목별 보기 <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu">
-			  <li><a href="#">곡류</a></li>
-			  <li><a href="#">육류</a></li>
-			  <li><a href="#">어류</a></li>
-			  <li><a href="#">과일</a></li>
-			  <li><a href="#">채소</a></li>
-			  <li><a href="#">식료품</a></li>
-			  <li><a href="#">유류</a></li>
-			  <li><a href="#">세제</a></li>
+			  <li><a href="compareCorn.compare">곡류</a></li>
+			  <li><a href="compareMeat.compare">육류</a></li>
+			  <li><a href="compareFish.compare">어류</a></li>
+			  <li><a href="compareFruit.compare">과일</a></li>
+			  <li><a href="compareVege.compare">채소</a></li>
+			  <li><a href="compareGro.compare">식료품</a></li>
+			  <li><a href="compareOil.compare">유류</a></li>
+			  <li><a href="compareCleaner.compare">세제</a></li>
 			</ul>
 		  </div>
-	
+		  <br>
+	<span> ※ 차이는 (시장평균가-마트평균가) 가격입니다.</span>
+	<br>
+	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">
 			<thead>
 			  <tr>
@@ -128,6 +142,7 @@
 				<th>말바우시장</th>
 				<th>양동시장</th>
 				<th>시장평균가</th>
+				<th>차이</th>
 				<th>마트평균가</th>
 				<th>이마트</th>
 				<th>롯데마트</th>
@@ -143,6 +158,13 @@
 			<td><c:out value="${compare.malbawooPrice}"/></td>
 			<td><c:out value="${compare.yangdongPrice}"/></td>
 			<td><c:out value="${compare.avgMarket}"/></td>
+			<td><c:if test="${compare.gap > 0}">
+				<img src="resources/images/compare/upArr.png"width="15" height="20">
+				</c:if>
+				<c:if test="${compare.gap < 0 }">
+				<img src="resources/images/compare/downArr.png"width="15" height="20">
+				</c:if>
+				<c:out value="${compare.gap}"/></td>			
 			<td><c:out value="${compare.avgMart}"/></td>
 		    <td><c:out value="${compare.emartPrice}"/></td>
 			<td><c:out value="${compare.homePlusPrice}"/></td>

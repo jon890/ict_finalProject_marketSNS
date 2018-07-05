@@ -7,6 +7,14 @@ public class martPriceDTO {
 	private String lotteMartPrice; 
 	private String yeongAmMartPrice;
 	private String lotteMartSouthPrice;
+	private String weekends;
+	
+	public String getWeekends() {
+		return weekends;
+	}
+	public void setWeekends(String weekends) {
+		this.weekends = weekends;
+	}
 	public String getGoodsName() {
 		return goodsName;
 	}
@@ -47,7 +55,7 @@ public class martPriceDTO {
 	public String toString() {
 		return "martPriceDTO [goodsName=" + goodsName + ", emartPrice=" + emartPrice + ", homePlusPrice="
 				+ homePlusPrice + ", lotteMartPrice=" + lotteMartPrice + ", yeongAmMartPrice=" + yeongAmMartPrice
-				+ ", lotteMartSouthPrice=" + lotteMartSouthPrice + "]";
+				+ ", lotteMartSouthPrice=" + lotteMartSouthPrice + ", weekends=" + weekends + "]";
 	}
 	
 	

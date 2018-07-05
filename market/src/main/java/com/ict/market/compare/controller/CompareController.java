@@ -47,6 +47,12 @@ public class CompareController {
 		compareService.comparePrice(model);
 		return "comparePrice";
 	}
+	@RequestMapping(value="/compareAgo.compare")
+	public String compareAgo(Model model){
+		logger.info("compare진입");
+		compareService.compareAgo(model);
+		return "comparePrice";
+	}
 	
 	/*시장 품목별 출력 컨트롤러*/
 	@RequestMapping(value="/marketCorn.compare")

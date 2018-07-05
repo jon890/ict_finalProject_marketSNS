@@ -11,8 +11,14 @@ public class ComparePriceDTO {
 	private String emartPrice;
 	private String homePlusPrice;
 	private String lotteMartPrice;
+	private String weekends;
 	
-	
+	public String getWeekends() {
+		return weekends;
+	}
+	public void setWeekends(String weekends) {
+		this.weekends = weekends;
+	}
 	public String getGap() {
 		return gap;
 	}
@@ -78,8 +84,9 @@ public class ComparePriceDTO {
 		return "ComparePriceDTO [goodsName=" + goodsName + ", daeInPrice=" + daeInPrice + ", yangdongPrice="
 				+ yangdongPrice + ", malbawooPrice=" + malbawooPrice + ", avgMarket=" + avgMarket + ", avgMart="
 				+ avgMart + ", gap=" + gap + ", emartPrice=" + emartPrice + ", homePlusPrice=" + homePlusPrice
-				+ ", lotteMartPrice=" + lotteMartPrice + "]";
+				+ ", lotteMartPrice=" + lotteMartPrice + ", weekends=" + weekends + "]";
 	}
+	
 	
 	
 	

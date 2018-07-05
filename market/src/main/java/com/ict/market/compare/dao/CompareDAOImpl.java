@@ -44,6 +44,11 @@ public class CompareDAOImpl implements CompareDAO {
 		return sqlSession.selectList(nameSpace+".compareList");
 	}
 	
+	@Override
+	public List<ComparePriceDTO> compareAgo() {
+		return sqlSession.selectList(nameSpace+".compareAgo");
+	}
+
 	/*-----------------시장 품목별 출력 메소드------------------*/
 	public List<marketPriceDTO> marketCorn(){
 		return sqlSession.selectList(nameSpace+".marketCorn");

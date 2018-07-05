@@ -45,6 +45,16 @@ public class CompareServiceImpl implements CompareService {
 	public void comparePrice(Model model) {
 		model.addAttribute("comparePriceList",compareDAO.comparePrice());
 	}
+	
+	
+	
+	@Override
+	public void compareAgo(Model model) {
+		model.addAttribute("comparePriceList",compareDAO.compareAgo());
+	}
+
+
+
 	/*시장 품목별 출력 메소드*/
 	@Override
 	public void marketCorn(Model model) {

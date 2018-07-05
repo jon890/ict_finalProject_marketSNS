@@ -14,11 +14,7 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <style>
-	        /*body{
-	            width:1080px;
-	            margin:0 auto;
-	        }*/
-	        
+	    
 	        div.background{
 	            width:100%;
 	            height:300px;
@@ -59,10 +55,11 @@
 	            border:1px solid gray;
 	        }
 	
-	        .btn{
+	        .btn, #writeBtn{
 	            float:right;
 	            margin-bottom:10px;
 	        }
+	        
 	
 	        #th01{
 	            width:15%;
@@ -127,7 +124,6 @@
 	            </div>
         	</div>
         	<br>
-	    	<form action="./noticeForm.favorite" method="post" enctype="multipart/form-data">
 		    	<div class="container">
 			    	<ul class="nav nav-pills" role="tablist">
 			            <li class="nav-item">
@@ -147,19 +143,12 @@
 			            </li>
 			        </ul>
 			        <p id="p">공지사항</p>
-			        <form action="./noticeForm.fovorite" method="get">
 			        <c:if test="${id != null}">
-			        	<div id="writeBtnDiv">
-			        		 <input type="submit" class="btn" value="글쓰기" />
-			        	</div>
+			        	<c:if test="${adminChk == 1}">
+			        		 <a href="./noticeForm.fovorite" id="writeBtn">글쓰기</a>
+			        	</c:if>
 		        	</c:if>
 		        	
-		        	<c:if test="${id == null}">
-		        		<div id="writeBtnDiv">
-		        			<input type="button" class="btn" value="비회원은 글을 쓸 수 없습니다" onclick="document.location.href='/market/login.main'"/>
-			        	</div>  	
-		        	</c:if>
-			        <!-- <input type="submit" class="btn" value="글쓰기" /> -->
 			        <table class="table table-hover">
 			            <thead>
 			                <tr>
@@ -180,7 +169,6 @@
 			                </c:forEach>
 			            </tbody>
 			        </table>
-			        </form>
 			    </div>
 			
 			    <div class="container">
@@ -188,7 +176,6 @@
              			${pageCode}
         			</ul>
 			    </div>
-		    </form>
 	    </section>
 	    
 	    <footer id="mainFooter">
@@ -196,5 +183,4 @@
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>
 	</body>
-	
 </html>

@@ -6,8 +6,8 @@
 <mapper namespace="com.ict.market.main.dao.MainDao">
 
 	<!-- 로그인 기능 -->
-	<select id="login" parameterType="String" resultType="String">
-		SELECT PASSWORD
+	<select id="login" parameterType="String" resultType="member">
+		SELECT PASSWORD, ADMINCHK
 		FROM MARKETMEMBER
 		WHERE ID = #{id}
 	</select>

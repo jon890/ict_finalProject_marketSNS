@@ -15,7 +15,7 @@ public class MainDaoImpl implements MainDao{
 
 	/* ********** 로그인 관련 기능 ********** */
 	@Override
-	public String login(String id) {
+	public MarketMemberDto login(String id) {
 		return sqlSession.selectOne(nameSpace.concat(".login"), id);
 	}
 

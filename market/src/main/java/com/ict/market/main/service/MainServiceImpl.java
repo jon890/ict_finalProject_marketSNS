@@ -23,13 +23,13 @@ public class MainServiceImpl implements MainService {
 	/* ********** 로그인 관련 기능 ********** */
 	@Override
 	public String login(String id, String password, HttpSession session, HttpServletRequest req) {
-		String dbPassword = mainDao.login(id);
+		MarketMemberDto dbMember = mainDao.login(id);
 		String view;
 		
-		if(dbPassword == null) {
+		if(dbMember == null) {
 			logger.info("LOGIN - 회원을 찾을 수 없음");
 			view = "idFail";
-		} else if(!dbPassword.equals(password)) {
+		} else if(!dbMember.getPassword().equals(password)) {
 			logger.info("LOGIN - 비밀번호가 틀림");
 			view = "passwordFail";
 		} else {
@@ -37,6 +37,7 @@ public class MainServiceImpl implements MainService {
 			session.invalidate();
 			session = req.getSession();
 			session.setAttribute("id", id);
+			session.setAttribute("adminChk", dbMember.getAdminchk());
 		}
 		
 //		세션 고정 취약점을 해결한 로그인 방법

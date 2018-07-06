@@ -4,7 +4,7 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>OOO - 1913 송정역시장 찾아오는 길</title>
+	    <title>아따시장 - 1913 송정역시장 찾아오는 길</title>
 	    <link rel="stylesheet" href="./resources/css/marketIntroduce/map.css">
 	</head>
 	

@@ -4,7 +4,7 @@
 <html>
 	<head>
     	<meta charset="utf-8">
-    	<title>OOO - 남광주시장 찾아오는길</title>
+    	<title>아따시장 - 남광주시장 찾아오는길</title>
     	<link rel="stylesheet" href="./resources/css/marketIntroduce/map.css">
 	</head>
 	

@@ -5,7 +5,7 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>OOO - 로그인</title>
+	    <title>아따시장 - 로그인</title>
 	    <link rel="stylesheet" href="./resources/css/common/login.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">	

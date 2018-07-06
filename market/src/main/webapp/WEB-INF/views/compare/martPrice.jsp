@@ -2,47 +2,18 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <link rel="stylesheet" href="./resources/css/compare/comparePrice.css">
-	    
-	    
-	    <style>
-	        div.background{
-	            width:100%;
-	            height:300px;
-        	}
+	<head>
+		<meta charset="UTF-8">
+		<title>아따시장 - 마트가격</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="./resources/css/common/common.css">
+		<link rel="stylesheet" href="./resources/css/compare/comparePrice.css">
+		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 
-	        div.background img{
-	            width:100%;
-	            height: 300px;
-	            /*opacity: 1;*/
-	            z-index:1;
-	        }
-	
-	        div.transbox p{
-	            margin: 3%;
-	            font-weight: bold;
-	            color: white;
-	            text-align:center;
-	            z-index:2;
-	            top:-300px;
-	            position:relative;
-	        }
-	
-	        #p01{
-	            font-size:50px;
-	        }
-	
-	        #p02{
-	            font-size:20px;
-	        }
-	      
+	    <style>
 	        .nav-item{
 	            width:33%;
 	            text-align:center;
@@ -68,9 +39,7 @@
 	      	}
 	        
 	      </style>
-	      
-<title>가격비교</title>
-</head>
+	</head>
 <body>
 <header id="mainMenu">
 			<!-- mainMenu.jsp 파일 include -->

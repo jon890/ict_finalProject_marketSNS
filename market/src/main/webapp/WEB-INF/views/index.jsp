@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>OOO에 오신것을 환영합니다.</title>
+		<title>아따시장에 오신것을 환영합니다.</title>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/index.css">
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -80,7 +80,7 @@
 					</video>
 					
 					<div id="mainVideoFilter">
-						<p>GWANGJU MARKET SNS</p>
+						<p>아따~ 시장에 오신것을 환영합니다</p>
 						<div id="mainVideoClickHere">
 						<img src="./resources/images/menu/clickhere.png" id="moveToMain2">
 						</div>

@@ -4,14 +4,13 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>OOO - 대인시장 찾아오는 길</title>
+	    <title>아따시장 - 대인시장 찾아오는 길</title>
 	    <link rel="stylesheet" href="./resources/css/marketIntroduce/map.css">
 	    <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
 	</head>
 	
 	
 	<body>
-	
 	<div id = "map" style="width: 1080px; height: 350px;"></div>
 		
 		<div class="contact_area">

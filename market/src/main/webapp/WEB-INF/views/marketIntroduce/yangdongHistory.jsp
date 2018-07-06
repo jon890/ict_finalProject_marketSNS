@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>OOO - 양동시장 개요</title>
+		<title>아따시장 - 양동시장 개요</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">
 	</head>
 	

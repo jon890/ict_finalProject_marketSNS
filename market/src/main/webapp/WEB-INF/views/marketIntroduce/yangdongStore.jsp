@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>OOO - 양동시장 먹을거리</title>
+		<title>아따시장 - 양동시장 먹을거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">	
 	</head>
 	

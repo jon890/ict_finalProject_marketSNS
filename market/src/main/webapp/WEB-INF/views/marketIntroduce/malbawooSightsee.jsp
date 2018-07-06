@@ -4,8 +4,8 @@
 <html>
 
 	<head>
-		<title>OOO - 말바우시장 볼거리</title>
 		<meta charset="UTF-8">
+		<title>아따시장 - 말바우시장 볼거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
 	</head>
 	

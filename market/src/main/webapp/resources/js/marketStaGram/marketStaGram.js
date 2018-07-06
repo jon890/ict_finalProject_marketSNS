@@ -139,12 +139,6 @@ $(document).ready(function(){
 		that.children("article").remove();
 		console.log("마우스 나감");
 	});
-	
-	$(document).on("mouseout",".article",function(){
-		let that = $(this);
-		that.children("article").remove();
-		console.log("마우스 나감");
-	});
 	/* ********** 글 호버링 시 좋아요와 댓글개수 가져오기 ********** */
 	
 	

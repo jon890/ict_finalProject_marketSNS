@@ -4,8 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<title>아따시장 - 대인시장 먹을거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
-		<title>OOO - 대인시장 먹을거리</title>
 	</head>
 	
 	<body>

@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>OOO - 대인시장 볼거리</title>	
+		<title>아따시장 - 대인시장 볼거리</title>	
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">	
 	</head>
 	

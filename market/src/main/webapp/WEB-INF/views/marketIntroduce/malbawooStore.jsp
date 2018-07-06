@@ -5,7 +5,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>OOO - 말바우시장 먹을거리</title>
+		<title>아따시장 - 말바우시장 먹을거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
 		<script src="https://code.jquery.com/jquery-3.3.2.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.2/jquery.min.js"></script>

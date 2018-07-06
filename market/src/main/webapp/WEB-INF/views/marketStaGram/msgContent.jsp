@@ -5,7 +5,7 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-		<title>OOO - #시장스타그램 글 읽기</title>
+		<title>아따시장 - #시장스타그램 글 읽기</title>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 		<link rel="stylesheet" href="./resources/css/marketStaGram/msgContent.css">

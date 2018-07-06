@@ -4,8 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">
-		<title>OOO - 남광주시장 개요</title>
+		<title>아따시장 - 남광주시장 개요</title>
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">	
 	</head>
 	
 	<body>

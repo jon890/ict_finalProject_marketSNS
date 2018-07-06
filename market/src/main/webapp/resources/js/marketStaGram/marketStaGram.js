@@ -117,22 +117,24 @@ $(document).ready(function(){
 			success : function(data){
 				let html = "";
 				html += "<article class='articleOverlap'>";
-				html += "<span id='likeNum'><img src='./resources/images/marketStaGram/dislikebtn.png'>" + data.likeNum + "개</span>";
-				html += "<span id='commentNum'><img src='./resources/images/marketStaGram/commentbtn.png'>" + data.commentNum + "개</span>";
+				html += "<span id='likeNum' title='좋아요'>";
+				html += "<img src='./resources/images/marketStaGram/dislikebtn.png' title='좋아요'>" + data.likeNum + "개"
+				html += "</span>";
+				html += "<span id='commentNum' title='댓글'>";
+				html += "<img src='./resources/images/marketStaGram/commentbtn.png' title='댓글'>" + data.commentNum + "개";
+				html += "</span>";
 				html += "</article>";
 				that.append(html);
 			}
 		})	
 	});
-	
-	$(document).on("mouseleave",".article",function(){
-		let that = $(this);
-		that.children("article").remove();
-	});
-
 	$(document).on("click", ".articleOverlap", function(){
 		let that = $(this);
 		location.href = "./read.msg?articleNum=" + that.parent("article").attr("articleNum");
+	});
+	$(document).on("mouseleave",".article",function(){
+		let that = $(this);
+		that.children("article").remove();
 	});
 	/* ********** 글 호버링 시 좋아요와 댓글개수 가져오기 ********** */
 	

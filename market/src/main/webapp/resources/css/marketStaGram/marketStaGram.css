@@ -219,7 +219,7 @@ input[type=file]{
 	background-color : rgba(0,0,0,0.5);
 	color : white;
 	text-align : center;
-	line-height : 16;
+	line-height : 18;
 	cursor : pointer;
 }
 

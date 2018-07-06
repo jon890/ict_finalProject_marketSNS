@@ -8,53 +8,41 @@
 	    <title>OOO - 로그인</title>
 	    <link rel="stylesheet" href="./resources/css/common/login.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
-	    		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">	
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <script src="./resources/js/login.js"></script>
+
 	</head>
 	
 	<body>
-		<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./../common/mainMenu.jsp" %>
-		</header>
+		<header id="mainMenu"><%@ include file="./../common/mainMenu.jsp" %></header>
 		
 		<section>
 			<div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <img src="./resources/images/favorite/favorite_main.png">
 	            <div class="transbox">
 	                <p id="p01">로그인</p>
 	                <p id="p02">로그인 하시면 다양한 서비스를 즐기실 수 있습니다</p>
 	            </div>
         	</div>
-        	
-        	<br>
+        	  	
 		    <div id="loginContainer">
-		        <br><p id="loginTitle">로그인</p><br>
-		        
+		    	<p id="loginTitle">로그인</p><br>
 		        <div id="loginDiv01">
-		        	
-		        	<form action="./login.main" method="post">
-		        
-			            <div id="loginDiv02">
-			                <input type="text" name="id" placeholder="아이디">
-			                <div class="clear"></div>
-			                <input type="password" name="password" placeholder="비밀번호">
-			            </div>
-			            
-			            <input type="submit" value="로그인">
-			            <div class="clear"></div>
-		            </form>
-		            
+	                <input type="text" id="inputId" placeholder="아이디를 입력해주세요..." required>
+	                <input type="password" id="inputPwd" placeholder="비밀번호를 입력해주세요..." required>
+		            <input type="submit" value="로그인" id="loginBtn">
+		            <p id="msg"></p>
 		        </div>
 		        
+		        <div id="loginBtns">
+		        	<a href="register.main">회원가입</a>
+		        </div>
 		    </div>
+		    
 	    </section>
 	    
-	    <footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-	 		<%@ include file="./../common/mainFooter.jsp" %>
-		</footer>
-	    
+	    <footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
 	</body>
 </html>

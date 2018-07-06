@@ -28,12 +28,12 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="./resources/images/marketIntroduce/갱소년.jpg" >
+									<img class="storeimg" src="./resources/images/marketIntroduce/초원팥죽.jpg" >
 								</td>
 								<td class="left">
-									<h3>갱소년</h3>
-									<span>앙갱<br></span>
-									<span>다시 소년,소녀로 돌아갈 시간<br></span>
+									<h3>초원팥죽</h3>
+									<span>팥죽,바지락칼국수,콩물국수<br></span>
+									<span>저렴한 3천원으로 건강한 팥죽을 선사합니다.<br></span>
 								</td>
 								<td>
 									<span>tel : 010-7633-9213</span>
@@ -41,12 +41,25 @@
 							</tr>
 							<tr>
 								<td>
-									<img src="./resources/images/marketIntroduce/갱소년.jpg" >
+									<img class="storeimg" src="./resources/images/marketIntroduce/득량만횟집.jpg">
 								</td>
 								<td class="left">
-									<h3>갱소년</h3>
-									<span>앙갱<br></span>
-									<span>다시 소년,소녀로 돌아갈 시간<br></span>
+									<h3>득량만횟집</h3>
+									<span>전어,숭어,광어,대하 등<br></span>
+									<span>저렴한 가격에 싱싱한 횟를 먹고 싶다면 와<br></span>
+								</td>
+								<td>
+									<span>tel : 010-7633-9213</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img class="storeimg" src="./resources/images/marketIntroduce/제비집.jpg">
+								</td>
+								<td class="left">
+									<h3>제비집</h3>
+									<span>아구찜<br></span>
+									<span>저렴한 아구찜으로 소문난 맛집이다.<br></span>
 								</td>
 								<td>
 									<span>tel : 010-7633-9213</span>

@@ -1,42 +1,35 @@
 #loginContainer{
     width:500px;
-    height:300px;
+    height:400px;
     margin:0 auto;
     border: 1px solid black;
 }
 
 #loginTitle{
+	padding-top:20px;
     font-size:30px;
     color:black;
-    margin:0 auto;
     text-align:center;
 }
 
 #loginDiv01{
     width:400px;
     height:200px;
-    /*border:1px solid red;/*test*/
     margin-left:50px;
+    position : relative;
 }
 
-#loginDiv02 {
-    float: left;
-    /*border:1px solid orange;/*test*/
-    margin-left:50px;
-}
-
-input[type=text], input[type=password]{
-    width:200px;
+section input[type=text], section input[type=password]{
+	margin:10px;
+    width:270px;
     height:30px;
     border:1px solid gray;
 }
 
-.clear{
-    clear:both;
-}
-
 input[type=submit]{
-    float:left;
+	position : absolute;
+	right : 30px;
+	top : 15px;
     width:73px;
     height:70px;
     background:gray;
@@ -44,5 +37,15 @@ input[type=submit]{
     font-weight:bold;
     border-radius:3px;
     border:1px solid rgb(0,77,0);
-    margin-left:5px;
+    cursor : pointer;
+}
+
+#msg{
+	text-align : center;
+	color : red;
+	font-weight : bold;
+}
+
+#loginBtns{
+	text-align : center;
 }

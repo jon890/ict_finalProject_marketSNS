@@ -39,3 +39,9 @@ span{
 	font-size:14px;
 	line-height:20px;
 }
+
+.storeimg{
+	display: inline-block;
+	width:280px;
+	height:180px;
+}

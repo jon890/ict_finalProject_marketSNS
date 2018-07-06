@@ -137,7 +137,7 @@ public class MarketIntroduceController {
 	
 	@RequestMapping(value="/malbawooStore.mid", method = RequestMethod.GET)
 	public String malbawooStore() {
-		return "yangdongStore";
+		return "malbawooStore";
 	}
 	
 	@RequestMapping(value="/malbawooSightsee.mid", method = RequestMethod.GET)
@@ -170,7 +170,7 @@ public class MarketIntroduceController {
 	
 	@RequestMapping(value="/seongjungStore.mid", method = RequestMethod.GET)
 	public String seongjungStore() {
-		return "yangdongStore";
+		return "seongjungStore";
 	}
 	
 	@RequestMapping(value="/seongjungSightsee.mid", method = RequestMethod.GET)

@@ -9,8 +9,8 @@
 	    <link rel="stylesheet" href="./resources/css/common/register.css">
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    <script src="./resources/js/register.js"></script>  
+	    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <script src="./resources/js/register.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	</head>
 	

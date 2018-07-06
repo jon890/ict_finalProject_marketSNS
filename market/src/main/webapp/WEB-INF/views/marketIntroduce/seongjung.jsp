@@ -36,7 +36,7 @@
 		            <img src="./resources/images/favorite/favorite_main.png" />
 		            <div class="transbox">
 		                <p id="p01">1913 송정역시장</p>
-		                <p id="p02">"내용 채워주세요"</p>
+		                <p id="p02">"과거와 현재가 살아 숨쉬는 시장"</p>
 		            </div>
 	        </div>
 	        

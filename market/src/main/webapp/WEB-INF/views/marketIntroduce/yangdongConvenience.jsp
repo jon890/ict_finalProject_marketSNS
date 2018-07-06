@@ -16,7 +16,7 @@
 		<div>
 			<h2>양동시장 안내도</h2>
 			<img class="roughmap"
-				src="resources/images/marketIntroduce/송정역시장_안내도.JPG">
+				src="resources/images/marketIntroduce/양동시장_안내도.jpg">
 		</div>
 		<div class="web">
 			<div>

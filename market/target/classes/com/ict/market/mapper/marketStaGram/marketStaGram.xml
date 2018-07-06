@@ -21,13 +21,14 @@
 	
 	
 	
+	
 	<!-- ********** 해당하는 글의 댓글개수 가져오기 기능 ********** -->
 	<select id="getCommentNum" parameterType="Integer" resultType="Integer">
 		SELECT COUNT(*)
 		FROM MSGCOMMENT
 		WHERE ARTICLENUM = #{articleNum}
 	</select>
-
+	<!-- ********** 해당하는 글의 댓글개수 가져오기 기능 ********** -->
 
 
 	
@@ -36,7 +37,6 @@
 		INSERT INTO MARKETSTAGRAM 
 		VALUES(MARKETSTAGRAM_SEQ.NEXTVAL, #{id}, #{content}, SYSDATE)
 	</insert>
-	
 	
 	<insert id="insertImg" parameterType="msgImg">
 		INSERT INTO IMGLIST

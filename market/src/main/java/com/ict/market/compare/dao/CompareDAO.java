@@ -12,6 +12,7 @@ public interface CompareDAO {
 	public List<martPriceDTO> martPrice();
 	public List<martPriceDTO> martAgo();
 	public List<ComparePriceDTO> comparePrice();
+	public List<ComparePriceDTO> compareAgo();
 	/*시장 품목별 출력 dao*/
 	public List<marketPriceDTO> marketCorn();
 	public List<marketPriceDTO> marketMeat();

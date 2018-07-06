@@ -13,6 +13,7 @@ public class ComparePriceDTO {
 	private String lotteMartPrice;
 	
 	
+
 	public String getGap() {
 		return gap;
 	}
@@ -80,6 +81,8 @@ public class ComparePriceDTO {
 				+ avgMart + ", gap=" + gap + ", emartPrice=" + emartPrice + ", homePlusPrice=" + homePlusPrice
 				+ ", lotteMartPrice=" + lotteMartPrice + "]";
 	}
+	
+	
 	
 	
 	

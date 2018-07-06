@@ -7,6 +7,7 @@ public class martPriceDTO {
 	private String lotteMartPrice; 
 	private String yeongAmMartPrice;
 	private String lotteMartSouthPrice;
+
 	public String getGoodsName() {
 		return goodsName;
 	}

@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      
 <!DOCTYPE html>
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>help</title>
+	    <title>OOO - 고객센터</title>
 	    <link rel="stylesheet" href="./resources/css/favorite/helpForm.css">
 	    <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
 	</head>
@@ -35,13 +34,12 @@
 	                    <td id="td01">내용</td>
 	                    <td id="td02"><textarea name="content" id="content"></textarea></td>
 	                </tr>
-	            </table>
-	        
+	            </table> 
 	        </div>
 	    </div>
 	    <div id="div02">
-	        <input type="submit" value="SEND MESSAGE" class="faba"/>
-	        <input type="reset" value="BACK" class="faba"/>	        
+	        <input type="submit" value="완료" class="faba"/>
+	        <input type="reset" value="취소" class="faba"/>	        
 	    </div>
 	    </form>
 	    <script type="text/javascript">
@@ -61,8 +59,6 @@
 			}
 
 		});
-	   </script> 
-	    
-	    
+	   </script>     
 	</body>
 </html>

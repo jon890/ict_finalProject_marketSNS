@@ -6,8 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,8 +29,6 @@ public class MsgController {
 	@Autowired
 	MsgService msgService;
 	
-	private static final Logger logger = LoggerFactory.getLogger(MsgController.class);
-
 	/* ********** 메인 페이지 로딩시 글 가져오기 기능 ********** */
 	@RequestMapping(value = "/main.msg" , method = RequestMethod.GET)
 	public String marketStaGram(Model model) {
@@ -47,8 +43,6 @@ public class MsgController {
 	@RequestMapping(value = "/list.msg" , method = RequestMethod.GET)
 	@ResponseBody
 	public List<ImgDto> list(@RequestParam int pageNum, Model model) {
-		System.out.println(pageNum);
-		System.out.println(msgService.list(model, pageNum));
 		return msgService.list(model, pageNum);
 	}
 	/* ********** 무한 스크롤을 위한 다음글 가져오기 기능 ********** */
@@ -59,10 +53,8 @@ public class MsgController {
 	@RequestMapping(value = "/getInfo.msg" , method = RequestMethod.GET)
 	@ResponseBody
 	public HashMap<String, Integer> getInfo(int articleNum) {
-		
 		LikeDto like = new LikeDto();
 		like.setArticleNum(articleNum);
-		
 		HashMap<String, Integer> hm = new HashMap<>();
 		hm.put("likeNum", msgService.getLikeNum(like));
 		hm.put("commentNum", msgService.getCommentNum(articleNum));
@@ -77,7 +69,6 @@ public class MsgController {
 	public String write(SnsArticleDto snsArticle,
 						@RequestPart("imgname") List<MultipartFile> imgname,
 						HttpServletRequest req) {
-		System.out.println(imgname);
 		/* 파일 업로드 경로 */
 	    String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadImgs/";
 		msgService.write(snsArticle, imgname, uploadDir);
@@ -138,10 +129,8 @@ public class MsgController {
 	@RequestMapping(value = "/like.msg" , method = RequestMethod.POST)
 	@ResponseBody
 	public HashMap<String, Integer> like(LikeDto like) {
-		
 		HashMap<String, Integer> hm = new HashMap<>();
 		int sw = 0;
-		
 		// true -> 이전에 like를 누른 사용자
 		if( msgService.likeChk(like) ) {
 			msgService.likeCancel(like);
@@ -150,7 +139,6 @@ public class MsgController {
 			msgService.like(like);
 			sw = 1;
 		}
-		
 		hm.put("likeNum", msgService.getLikeNum(like));
 		// 이미지 교체를 위한 스위치 설정
 		hm.put("sw", sw);
@@ -160,15 +148,12 @@ public class MsgController {
 	@RequestMapping(value = "/likeChk.msg" , method = RequestMethod.POST)
 	@ResponseBody
 	public HashMap<String, Integer> likeChk(LikeDto like) {
-		
 		HashMap<String, Integer> hm = new HashMap<>();
 		int sw = 0;
-		
 		// true -> 이전에 like를 누른 사용자
 		if( msgService.likeChk(like) ) {
 			sw = 1;
 		} 
-	
 		hm.put("likeNum", msgService.getLikeNum(like));
 		// 이미지 교체를 위한 스위치 설정
 		hm.put("sw", sw);

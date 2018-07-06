@@ -109,7 +109,7 @@
 		  주별로 보기 <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-		  <li><a href="compareAgo.compare">6월3주</a></li>
+		  <li><a href="#">6월3주</a></li>
 		</ul>
 	  </div>
 	 
@@ -129,7 +129,7 @@
 			</ul>
 		  </div>
 		  <br>
-	<span class="miniTitle">7월 1주차 가격</span>	
+	<span>7월 1주차 가격</span>	
 		  <br>
 	<span> ※ 차이는 (시장평균가-마트평균가) 가격입니다.</span>
 	<br>

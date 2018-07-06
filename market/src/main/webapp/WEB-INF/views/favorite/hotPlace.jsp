@@ -12,6 +12,7 @@
 	   	<script src="./resources/js/favorite/favoriteMenu.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
 	    <style>
 	        #p{
 	            font-size:30px;
@@ -23,11 +24,9 @@
 	        	width:1080px;
 	        	magin:0 auto;
 	        }
-	        
-	        .card{
-	        	width:400px;
-	        	magin:0 auto;
-	        	display:inline-block;
+	         .imgHot{
+	        	width:300px;
+	        	height:350px;
 	        }
     	</style>
 	</head>
@@ -62,37 +61,57 @@
 			        </li>
 			    </ul>
 			    <p id="p">핫플레이스</p>
-	            <div class="card" style="width:400px">
-	                <div class="card-body">
-	                    <h4 class="card-title">John Doe</h4>
-	                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-	                    <a href="#" class="btn btn-primary">See Profile</a>
-	                </div>
-	            </div>
-		        <div class="card" style="width:400px">
-		            <div class="card-body">
-		                <h4 class="card-title">John Doe</h4>
-		                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-		                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">See Profile</a>
-		            </div>
-		        </div>
-	        </div>
-	        <div class="modal fade" id="myModal">
-	            <div class="modal-dialog">
-	                <div class="modal-content">
-	                    <div class="modal-header">
-	                        <h4 class="modal-title">Modal Heading</h4>
-	                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	                    </div>
-	                    <div class="modal-body">
-	                        Modal body..
-	                    </div>
-	                    <div class="modal-footer">
-	                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
+	           <div class="contents">
+			<div class="web">
+				<div class="table_list">
+					<table>
+						<colgroup>
+							<col width="300px">
+							<col width="300px">
+							<col width="480px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td>
+									<img src="resources/images/favorite/시장통닭입구.JPG" class="imgHot">
+								</td>
+								<td>
+									<img src="resources/images/favorite/시장통닭.JPG" class="imgHot">
+								</td>
+								<td class="left">
+									<h3>양동시장</h3>
+									<span>수일통닭<br> </span>
+									<span>가격 : 18,000원 - 후라이드<br> </span>
+									<span> 19,000원 - 양념<br></span>
+									<span> 19,000원 - 양념반 후라이드반<br> </span>
+									<span>한줄평 : 통닭치고 비싸지만 장닭이라 양이 푸짐하고 옛날 치킨 맛이다.<br>
+												바로 앞에 양동통닭도 있으니 둘 다 체험해보길 추천!
+									</span>
+								</td>
+								
+							</tr>
+							<tr>
+								<td>
+									<img src="resources/images/favorite/독일맥주입구.JPG" class="imgHot">
+								</td>
+								<td>
+									<img src="resources/images/favorite/독일맥주.JPG" class="imgHot">
+								</td>
+								<td class="left">
+									<h3>대인시장 </h3>
+									<span>독일맥주 </span>
+									<span>가격 : 4,000원 (3종류 - 밀 /흑 /연인)<br> </span>
+									<span>한줄평 : 야시장의 여러음식을 사서 맥주와 함께 먹을 수 있다.<br>
+										   맥주집안에는 안주가 없으니 꼭 사서 가는걸 추천!
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	  </div>
 	    </section>    
 	    <footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
 	</body>

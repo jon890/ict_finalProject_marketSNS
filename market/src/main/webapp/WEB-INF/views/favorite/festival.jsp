@@ -13,7 +13,7 @@
 	    <script src="./resources/js/favorite/favoriteMenu.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
-	    
+	    <link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
 	    <style>
 	        #p{
 	            font-size:30px;
@@ -24,10 +24,10 @@
 	        	width:1080px;
 	        	magin:0 auto;
 	        }
-	        .card{
-	        	width:400px;
-	        	magin:0 auto;
-	        	display:inline-block;
+	        
+	         .imgFest{
+	        	width:500px;
+	        	height:350px;
 	        }
     	</style>	
 	</head>
@@ -62,45 +62,61 @@
 			        </li>
 			    </ul>
 			    <p id="p">축제정보</p>
-	            <div class="card" style="width:400px">
-	                <div class="card-body">
-	                    <h4 class="card-title">John Doe</h4>
-	                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-	                    <a href="#" class="btn btn-primary">See Profile</a>
-	                </div>
-	            </div>
-		        <div class="card" style="width:400px">
-		            <div class="card-body">
-		                <h4 class="card-title">John Doe</h4>
-		                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-		                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">See Profile</a>
-		            </div>
-		        </div>
-	        </div>
-	        <!-- The Modal -->
-	        <div class="modal fade" id="myModal">
-	            <div class="modal-dialog">
-	                <div class="modal-content">
-	
-	                    <!-- Modal Header -->
-	                    <div class="modal-header">
-	                        <h4 class="modal-title">Modal Heading</h4>
-	                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	                    </div>
-	
-	                    <!-- Modal body -->
-	                    <div class="modal-body">
-	                        Modal body..
-	                    </div>
-	
-	                    <!-- Modal footer -->
-	                    <div class="modal-footer">
-	                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-	                    </div>
-	
-	                </div>
-	            </div>
-	        </div>
+	            <div class="contents">
+			<div class="web">
+				<div class="table_list">
+					<table>
+						<colgroup>
+							<col width="200px">
+							<col width="630px">
+							<col width="100px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td>
+									<img src="resources/images/favorite/대촌행사1.JPG" class="imgFest">
+								</td>
+								<td class="left">
+									<h3>[축제]대촌에서 향악과 놀자</h3>
+									
+									<span>ㆍ기간	2018-06-02 ~ 2018-12-01<br> </span>
+									<span>ㆍ7월 28일 행사 진행<br></span>
+									<span>ㆍ주소	광주광역시 남구 포충로 937<br> </span>
+									<span>ㆍ장소	대촌전통문화커뮤니티센터<br>
+									ㆍ전화  062-676-3844</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="resources/images/favorite/아트행사1.JPG" class="imgFest">
+								</td>
+								<td class="left">
+									<h3>[축제]아트피크닉</h3>
+									<span>ㆍ기간	2018-06-16 ~ 2018-11-03<br> </span>
+									<span>ㆍ주소	광주 북구 하서로 52<br> </span>
+									<span>ㆍ장소	광주시립미술관 옆 잔디광장<br>
+									ㆍ전화	062-945-5670</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="resources/images/favorite/프린지행사1.jpg" class="imgFest">
+								</td>
+								<td class="left">
+									<h3>[축제]광주프린지페스티벌</h3>
+									<span>ㆍ기간	2018-04-07 ~ 2018-12-15<br> </span>
+									<span>ㆍ주소	광주 동구 금남로 245 <br> </span>									
+									<span>ㆍ장소	매주 토요일 518민주광장 및 금남로 일대<br> </span>
+									<span>ㆍ전화	062-601-4914<br>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	 </div>
 	    </section>
 	    
 	    <footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>

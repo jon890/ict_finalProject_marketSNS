@@ -83,8 +83,8 @@
 			    	<tr>
 			      	<c:if test="${id !=null}">
 			    	  <td colspan="4" align="right">
-			    	  <c:if test="${id ==helpArticle.id}">
 			    	  <input type="button" class="btn btn-primary" id="commentWrite" value="댓글달기">
+			    	  <c:if test="${id ==helpArticle.id}">
 			    	  <input type="button" class="btn btn-primary" value="수정하기" onclick="document.location.href='/market/update.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}&fileStatus=${helpArticle.fileStatus}'">
 			    	  <input type="button" class="btn btn-primary" value="삭제하기" onclick="document.location.href='/market/delete.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}'">
 			    	  </c:if>

@@ -13,7 +13,7 @@
 			<h2>양동시장</h2>
 		</div>
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/songjungmarket.jpg">
+			<img src="resources/images/marketIntroduce/양동시장.jpg">
 		</div>
 		<div class="marketSummary ">
 			<table>

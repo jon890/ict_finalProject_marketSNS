@@ -15,7 +15,7 @@
 		</div>
 		
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/songjungmarket.jpg">
+			<img src="resources/images/marketIntroduce/대인시장.jpg">
 		</div>
 		
 		<div class="marketSummary ">

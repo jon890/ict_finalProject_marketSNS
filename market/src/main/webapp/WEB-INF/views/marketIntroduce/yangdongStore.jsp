@@ -21,12 +21,12 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="./resources/images/marketIntroduce/갱소년.jpg" >
+									<img class="storeimg" src="./resources/images/marketIntroduce/수일통닭.JPG" >
 								</td>
 								<td class="left">
-									<h3>갱소년</h3>
-									<span>앙갱<br></span>
-									<span>다시 소년,소녀로 돌아갈 시간<br></span>
+									<h3>수일통닭</h3>
+									<span>후라이드, 양념, 반반<br></span>
+									<span>양동 닭전시장의 양대산맥~!<br></span>
 								</td>
 								<td>
 									<span>tel : 010-7633-9213</span>
@@ -34,12 +34,25 @@
 							</tr>
 							<tr>
 								<td>
-									<img src="./resources/images/marketIntroduce/갱소년.jpg" >
+									<img class="storeimg" src="./resources/images/marketIntroduce/영창식당.jpg" >
 								</td>
 								<td class="left">
-									<h3>갱소년</h3>
-									<span>앙갱<br></span>
-									<span>다시 소년,소녀로 돌아갈 시간<br></span>
+									<h3>영창식당</h3>
+									<span>불고기백반<br></span>
+									<span>한결 같은 가격 6천원에 불고기 백반을 선사합니다.<br></span>
+								</td>
+								<td>
+									<span>tel : 010-7633-9213</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img class="storeimg" src="./resources/images/marketIntroduce/곰베우동.jpg" >
+								</td>
+								<td class="left">
+									<h3>곰베우동</h3>
+									<span>우동, 알밥 등<br></span>
+									<span>직접 우려낸 소스와 육수로 맛을 낸 우동집, 알밥도 유명한 곳입니다.<br></span>
 								</td>
 								<td>
 									<span>tel : 010-7633-9213</span>

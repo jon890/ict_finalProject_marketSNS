@@ -13,7 +13,7 @@
 			<h2>1913송정역시장</h2>
 		</div>
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/songjungmarket.jpg">
+			<img src="resources/images/marketIntroduce/1913송정역시장.jpg">
 		</div>
 		<div class="marketSummary ">
 			<table>

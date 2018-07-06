@@ -8,11 +8,7 @@
 	    <meta charset="utf-8">
 	    <link rel="stylesheet" href="./resources/css/common/mainMenu.css">
 	   	<script src="./resources/js/mainMenu.js"></script>
-	   	
-	   	<!-- jQuery CDN에서 로드 -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+	    <script src="http://code.jquery.com/jquery-latest.js"></script>
 	</head>
 	
 	<body>

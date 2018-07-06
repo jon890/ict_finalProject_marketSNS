@@ -7,7 +7,6 @@ import com.ict.market.main.dto.MarketMemberDto;
 
 public interface MainService {
 	
-	
 	/* ********** 로그인 관련 기능 ********** */
 	public String login(String id, String password, HttpSession session, HttpServletRequest req);
 	public void register(MarketMemberDto member);

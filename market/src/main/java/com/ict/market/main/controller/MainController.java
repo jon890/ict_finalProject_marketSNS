@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ict.market.main.dto.MarketMemberDto;
 import com.ict.market.main.service.MainService;
@@ -33,17 +34,13 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
+	@ResponseBody
 	public String login(@RequestParam String id, 
 						@RequestParam String password, 
 						HttpSession session,
 						HttpServletRequest req) {
-		logger.info("LOGIN - Submit버튼 확인");
-		logger.info("LOGIN - ID 출력 // " + id);
-		logger.info("LOGIN - PASSWORD 출력 // " + password);
-		
-		String view = mainService.login(id, password, session, req);
-		
-		return view;
+		String result = mainService.login(id, password, session, req);
+		return result;
 	}
 	
 	@RequestMapping(value="/logout.main" , method = RequestMethod.GET)

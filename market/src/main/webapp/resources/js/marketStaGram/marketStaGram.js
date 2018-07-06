@@ -125,6 +125,7 @@ $(document).ready(function(){
 				html += "</span>";
 				html += "</article>";
 				that.append(html);
+				console.log("마우스 진입");
 			}
 		})	
 	});
@@ -132,9 +133,17 @@ $(document).ready(function(){
 		let that = $(this);
 		location.href = "./read.msg?articleNum=" + that.parent("article").attr("articleNum");
 	});
+	
 	$(document).on("mouseleave",".article",function(){
 		let that = $(this);
 		that.children("article").remove();
+		console.log("마우스 나감");
+	});
+	
+	$(document).on("mouseout",".article",function(){
+		let that = $(this);
+		that.children("article").remove();
+		console.log("마우스 나감");
 	});
 	/* ********** 글 호버링 시 좋아요와 댓글개수 가져오기 ********** */
 	

@@ -9,6 +9,7 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	    <script src="./resources/js/compare/compareMenu.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/compare/comparePrice.css">
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css"> 
@@ -54,18 +55,18 @@
 	            </div>
         	</div>
 		   <div id="wrapper">
-		 
+		   
 				<ul class="nav nav-pills" role="tablist">
-		              <li class="nav-item">
-		                <a href="market.compare" class="btn btn-primary">전통시장가격</a>
-		            </li>
-		            <li class="nav-item">
-		                <a href="mart.compare" class="btn btn-primary">대형마트가격</a>
-		            </li>
-		            <li class="nav-item">
-		                <a href="compare.compare" class="btn btn-primary">전통시장vs대형마트</a>
-		            </li>
-		       </ul>
+	                <li class="nav-item">
+	                    <a class="nav-link active" data-toggle="pill" href="#market" id="market">전통시장가격</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" data-toggle="pill" href="#mart" id="mart">대형마트가격</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" data-toggle="pill" href="#compare" id="compare">전통시장vs대형마트</a>
+	                </li>
+	            </ul>
 		   
 	<!-- Single button -->
 	<div class="btn-group">

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@font-face{font-family:'SangSangFlowerRoad'; src:url('./../../fonts/SangSangFlowerRoad.otf')}
+@font-face{font-family:'SangSangFlowerRoad'; src:url('./../fonts/SangSangFlowerRoad.otf')}
 
 #container{
 	width : 100%;
@@ -33,6 +33,7 @@
 	width : 100%;
 	font-family : "SangSangFlowerRoad";
 	font-size : 75px;
+	font-weight : bolder;
 	text-align : center;
 	color : white;
 	top : 250px;

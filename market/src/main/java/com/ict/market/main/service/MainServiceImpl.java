@@ -34,6 +34,17 @@ public class MainServiceImpl implements MainService {
 		}	
 		return result;
 	}
+	
+	@Override
+	public String loginWithKakao(String id, String nickName, String profileImg, HttpSession session,
+			HttpServletRequest req) {
+		session.invalidate();
+		session = req.getSession();
+		session.setAttribute("id", nickName);
+		session.setAttribute("profileImg", profileImg);
+		System.out.println(profileImg);
+		return null;
+	}
 
 	@Override
 	public void register(MarketMemberDto member) {

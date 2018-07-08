@@ -35,12 +35,23 @@ public class MainController {
 	
 	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
 	@ResponseBody
-	public String login(@RequestParam String id, 
-						@RequestParam String password, 
+	public String login(@RequestParam String id,
+			 			@RequestParam String password,
 						HttpSession session,
 						HttpServletRequest req) {
 		String result = mainService.login(id, password, session, req);
 		return result;
+	}
+	
+	@RequestMapping(value="/loginWithKakao.main" , method = RequestMethod.POST)
+	@ResponseBody
+	public String loginWithKakao(@RequestParam String id, 
+								 @RequestParam String nickName,
+								 @RequestParam String profileImg,
+								 HttpSession session,
+								 HttpServletRequest req) {
+		mainService.loginWithKakao(id, nickName, profileImg, session, req);
+		return "result";
 	}
 	
 	@RequestMapping(value="/logout.main" , method = RequestMethod.GET)

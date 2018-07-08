@@ -76,7 +76,7 @@
 			<article id="article01" class="box">
 				<div id="mainVideoDiv">
 					<video loop muted autoplay id="mainVideo">
-						<source src="./resources/videos/main.mp4">
+						<source src="./resources/videos/test1.mp4">
 					</video>
 					
 					<div id="mainVideoFilter">

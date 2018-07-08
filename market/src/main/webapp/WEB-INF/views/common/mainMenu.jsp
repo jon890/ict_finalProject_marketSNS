@@ -8,7 +8,7 @@
 	    <meta charset="utf-8">
 	    <link rel="stylesheet" href="./resources/css/common/mainMenu.css">
 	   	<script src="./resources/js/mainMenu.js"></script>
-	    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>

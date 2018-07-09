@@ -6,6 +6,11 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 남광주시장 편의시설</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/convenience.css">
+		<script>
+			function popup(){
+				window.open("resources/images/marketIntroduce/말바우시장_안내도.jpg", "popup","width=700px height=500px");
+			}
+		</script>
 	</head>
 	
 	<body>
@@ -13,7 +18,7 @@
 			<div>
 				<h2>남광주시장 안내도</h2>
 				<img class="roughmap"
-					src="resources/images/marketIntroduce/말바우시장_안내도.JPG">
+					src="resources/images/marketIntroduce/말바우시장_안내도.jpg" onclick="popup()">
 			</div>
 			<div class="web">
 				<div>

@@ -32,8 +32,7 @@ $(document).ready(function(){
 					} else if(data == "pwdError"){
 						$("#msg").html("비밀번호가 다릅니다.");
 					} else if(data == "success"){
-						history.back();
-						//history.go(-1);
+						//history.back();
 					} else {
 						alert("서버 오류가 발생했습니다.");
 					}

@@ -14,7 +14,7 @@
 	    <form action="./write.favorite" method="post" enctype="multipart/form-data">
 	    <div id="div">
 	        <div id="div01">
-	            <span id="span01">광주전통시장</span>에서
+	            <span id="span01">아따~ 시장</span>에서
 	            <br>궁금하신 사항을
 	            <br><span id="span02">문의하는 공간</span>입니다.
 	            <br><br>담당자가 확인 후

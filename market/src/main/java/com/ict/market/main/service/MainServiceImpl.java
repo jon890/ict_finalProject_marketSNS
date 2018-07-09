@@ -42,14 +42,16 @@ public class MainServiceImpl implements MainService {
 	}
 	
 	@Override
-	public String loginWithKakao(String id, String nickName, String profileImg, HttpSession session,
+	public void loginWithKakao(String id, String nickName, String profileImg, HttpSession session,
 			HttpServletRequest req) {
 		session.invalidate();
 		session = req.getSession();
 		session.setAttribute("id", nickName);
 		session.setAttribute("profileImg", profileImg);
-		System.out.println(profileImg);
-		return null;
+		MarketMemberDto member = new MarketMemberDto();
+		member.setId(nickName);
+		member.setPassword(id);
+		mainDao.registerKakao(member);
 	}
 
 	@Override
@@ -65,6 +67,14 @@ public class MainServiceImpl implements MainService {
 		System.out.println(mainDao.mainNotice());
 	}	
 	
-	
-	
+	public String registerIdCheck(String id) {
+		String idCheck = mainDao.registerIdCheck(id);
+		String result = null;
+		if(idCheck != null) {
+			result = "0";
+		} else {
+			result = "1";
+		}
+		return result;
+	}
 }

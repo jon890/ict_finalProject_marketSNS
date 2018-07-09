@@ -22,26 +22,20 @@ public class MainController {
 	@Autowired
 	private MainService mainService;
 	
-	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
-
+	@RequestMapping(value="/")
+	public String mainHelp(Model model) {
+		logger.info("help진입");
+		mainService.mainHelp(model);
+		return "index";
+	}
+	
     /* ********** 로그인 관련 기능 ********** */
 	@RequestMapping(value="/login.main" , method = RequestMethod.GET)
 	public String moveLogin() {
 		logger.info("LOGIN - 페이지 이동");
 		return "/common/login";
-	}
-	
-	
-	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
-	@ResponseBody
-	public String login(@RequestParam String id,
-			 			@RequestParam String password,
-						HttpSession session,
-						HttpServletRequest req) {
-		String result = mainService.login(id, password, session, req);
-		return result;
 	}
 	
 	@RequestMapping(value="/loginWithKakao.main" , method = RequestMethod.POST)
@@ -53,6 +47,17 @@ public class MainController {
 								 HttpServletRequest req) {
 		mainService.loginWithKakao(id, nickName, profileImg, session, req);
 		return "result";
+	}
+	
+	
+	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
+	@ResponseBody
+	public String login(@RequestParam String id, 
+						@RequestParam String password, 
+						HttpSession session,
+						HttpServletRequest req) {
+		String result = mainService.login(id, password, session, req);
+		return result;
 	}
 	
 	@RequestMapping(value="/logout.main" , method = RequestMethod.GET)
@@ -77,15 +82,10 @@ public class MainController {
 		return "index";
 	}
 	/* ********** 로그인 관련 기능 ********** */
-	
-	@RequestMapping(value="/")
-	public String mainHelp(Model model) {
-		logger.info("help진입");
-		mainService.mainHelp(model);
-		return "index";
-	}
-	
-	
-	
-	
+
+	@ResponseBody
+	@RequestMapping(value="/registerIdCheck.main")
+	public String registerIdCheck(@RequestParam String id){
+		return mainService.registerIdCheck(id);
+	}	
 }

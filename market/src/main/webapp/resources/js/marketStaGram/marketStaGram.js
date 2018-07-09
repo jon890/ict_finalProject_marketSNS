@@ -145,7 +145,16 @@ $(document).ready(function(){
 	
 	/* ********** 해쉬태그 검색 기능 ********** */
 	$(document).on("click", "#searchBtn", function(){
-		
+		$.searchFunc();
+	});
+	
+	$("#keyword").keydown(function(event){
+		if(event.keyCode == 13){
+			$.searchFunc();
+		}
+	});
+	
+	$.searchFunc = function(){
 		let keyword = $("#keyword");
 		if(keyword.val() == ""){
 			keyword.focus();
@@ -176,6 +185,6 @@ $(document).ready(function(){
 				}
 			});
 		}
-	});
+	}
 	/* ********** 해쉬태그 검색 기능 ********** */
 });

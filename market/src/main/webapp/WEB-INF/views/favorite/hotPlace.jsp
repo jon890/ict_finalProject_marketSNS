@@ -60,7 +60,7 @@
 			            <a class="nav-link" data-toggle="pill" id="help">고객센터</a>
 			        </li>
 			    </ul>
-			    <p id="p">핫플레이스</p>
+			    <p id="p"><b>핫플레이스</b></p>
 	           <div class="contents">
 			<div class="web">
 				<div class="table_list">

@@ -26,6 +26,11 @@ public class MainDaoImpl implements MainDao{
 	public void register(MarketMemberDto member) {
 		sqlSession.insert(nameSpace.concat(".register"), member);
 	}
+	
+	@Override
+	public void registerKakao(MarketMemberDto member) {
+		sqlSession.insert(nameSpace.concat(".registerKakao"), member);
+	}
 	/* ********** 로그인 관련 기능 ********** */
 
 	@Override
@@ -38,6 +43,7 @@ public class MainDaoImpl implements MainDao{
 		return sqlSession.selectList(nameSpace.concat(".mainNotice"));
 	}
 	
-	
-	
+	public String registerIdCheck(String id) {
+		return sqlSession.selectOne(nameSpace+".registerIdCheck", id);
+	}
 }

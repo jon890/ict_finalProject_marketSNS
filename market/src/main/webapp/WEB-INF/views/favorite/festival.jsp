@@ -37,7 +37,7 @@
 		
 		<section>
 			<div class="background">
-	        	<img src="./resources/images/favorite/favorite_main.png" />
+	        	<img src="./resources/images/favorite/festival.png" />
 	        	<div class="transbox">
 	            	<p id="p01">축제정보</p>
 	            	<p id="p02">전통시장 주변의 축제 정보를 알려드립니다!</p>

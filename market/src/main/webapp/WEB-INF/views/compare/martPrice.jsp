@@ -49,7 +49,7 @@
 		
 		<section>
 		    <div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <img src="./resources/images/compare/martPrice_main.png" />
 	            <div class="transbox">
 	                <p id="p01">대형마트</p>
 	                <p id="p02">대형마트의 가격을 알려 드립니다</p>
@@ -64,7 +64,7 @@
 	                <li class="nav-item">
 	                    <a class="nav-link active" data-toggle="pill" href="#mart" id="mart">대형마트가격</a>
 	                </li>
-	                <li class="nav-item">
+					<li class="nav-item">
 	                    <a class="nav-link" data-toggle="pill" href="#compare" id="compare">전통시장vs대형마트</a>
 	                </li>
 	            </ul>

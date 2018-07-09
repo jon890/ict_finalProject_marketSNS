@@ -38,7 +38,7 @@
 		
 		<section>
 			<div class="background">
-	        	<img src="./resources/images/favorite/favorite_main.png" />
+	        	<img src="./resources/images/favorite/nightmarket.png" />
 	        	<div class="transbox">
 	            	<p id="p01">야시장 정보</p>
 	            	<p id="p02">광주의 야시장 정보를 알려드립니다!</p>

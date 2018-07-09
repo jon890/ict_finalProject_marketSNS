@@ -36,7 +36,7 @@
 		
 		<section>
 			<div class="background">
-	        	<img src="./resources/images/favorite/favorite_main.png" />
+	        	<img src="./resources/images/favorite/hotplace.png" />
 	        	<div class="transbox">
 	            	<p id="p01">HOT PLACE</p>
 	            	<p id="p02">직접 가본 핫한 장소를 알려드립니다!</p>

@@ -9,9 +9,55 @@
 	    <link rel="stylesheet" href="./resources/css/common/register.css">
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-latest.js"></script>
 	    <script src="./resources/js/register.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+		
+		<script>
+		    $.ajaxSetup({
+		    	type : "POST",
+		    	async : true,
+		    	dataType : "json",
+		    	error : function(xhr){
+		    		alert("error html = " + xhr.statusText);
+		    	}
+		    });
+		    
+		    $(document).ready(function(){
+		    	function idCheck(){
+		    		$.ajax({
+		                url : "./registerIdCheck.main",
+		                data : {
+		                    id : $("input[name=id]").val()
+		                },
+		                success : function(result){
+		                    if(result == 1){
+		                    	$("input[name=id]").css("border","solid 1px gray");
+		                    	$("span[id=id_check]").html("사용 가능한 아이디입니다");
+		                    	return true;
+		                    }
+		                    else{
+		                    	$("input[name=id]").css("border","solid red");
+		                    	$("span[id=id_check]").html("사용할 수 없는 아이디입니다");
+		                    	$("input[name=id]").val("");
+		                    	return false;
+		                    }
+		                }
+		            });
+		    	}
+		    	
+		    	$("#idCheck").on("click", function(){
+		    		idCheck();
+		    	});
+		        
+		        $("input[type=submit]").on("click", function(){
+		        	if(!idCheck()){
+		        		return false;
+		        	}
+		        });
+		    });
+	    </script>
+	    
 	</head>
 	
 	<body>
@@ -36,7 +82,9 @@
 						<div id="regNotNull">
 							<p id="notNullTitle">아래 항목은 필수사항입니다!<p>
 							<p class="input">아이디 : <input type="text" name="id" placeholder="아이디를 입력하세요" size="15" maxlength="15" autofocus required>
-									  <input type="button" value="아이디 중복확인"></p>
+									  <!-- <input type="button" value="아이디 중복확인" id="idCheck"> -->
+									  <button type="button" class="btn" id="idCheck">중복확인</button>
+									  <span id="id_check"></span></p>
 							
 							<p class="input">비밀 번호 : <input type="password" name="password" placeholder="비밀번호를 입력하세요" required></p>
 							<p class="input">비밀 번호 확인 : <input type="password" placeholder="비밀번호를 다시 입력하세요" id="pwdChk" required>   

@@ -33,7 +33,7 @@
 		
 		<section>
 			<div class="background">
-				<img src="./resources/images/favorite/favorite_main.png" />
+				<img src="resources/images/marketIntroduce/대인시장메인.JPG" />
 				<div class="transbox">
 					<p id="p01">대인시장</p>
 					<p id="p02">"예술이 공존하는 문화관광시장"</p>

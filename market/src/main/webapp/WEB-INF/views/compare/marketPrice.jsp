@@ -48,7 +48,7 @@
 		
 		<section>
 		    <div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <img src="./resources/images/compare/compare_main.png" />
 	            <div class="transbox">
 	                <p id="p01"> 전통시장 </p>
 	                <p id="p02"> 전통시장의 가격을 알려 드립니다 </p>

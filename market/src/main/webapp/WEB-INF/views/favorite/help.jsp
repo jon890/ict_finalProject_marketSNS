@@ -36,6 +36,16 @@
 	       		font-weight:bold;
 	       		text-align:center;
 	       	} 
+	       	#writeBtn2, #writeBtn3{
+    			float:right;
+    			margin-bottom:10px;
+			}
+
+			#helpTitle{
+			    font-size:30px;
+			    text-align:center;
+			    padding-top:10px;
+			}
 	    </style>
 	</head>
 	
@@ -47,7 +57,7 @@
 		<section>
 		
 		    <div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <img src="./resources/images/favorite/favorite.png" />
 	            <div class="transbox">
 	                <p id="p01">고객센터</p>
 	                <p id="p02">고객의 소리를 담아드립니다</p>
@@ -72,19 +82,19 @@
 		                <a class="nav-link active" data-toggle="pill" id="help">고객센터</a>
 		            </li>
 				</ul>
+				<p id="helpTitle">글목록(전체 글:${totalCount})</p>
 	    		<c:if test="${id != null}">
 		        	<div id="writeBtnDiv">
-		        		 <a class="btn btn-primary" href="./helpForm.favorite">글쓰기</a>
+		        		 <button type="button" class="btn" id ="writeBtn2">글쓰기</button>
 		        	</div>
 	        	</c:if>
 	        	
 	        	<c:if test="${id == null}">
 	        		<div id="writeBtnDiv">
-		        		<a href="./login.main">비 회원은 글을 쓸 수 없습니다</a>
+		        		<button type="button" class="btn" id ="writeBtn3">비회원은 글을 쓸 수 없습니다</button>
 		        	</div>  	
 	        	</c:if>
 	        	
-	 			<b>글목록(전체 글:${totalCount})</b>
 	       		<table class="table table-hover">
 		            <thead>
 		                <tr>

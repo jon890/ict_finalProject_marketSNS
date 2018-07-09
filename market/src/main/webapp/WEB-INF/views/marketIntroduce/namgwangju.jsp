@@ -34,7 +34,7 @@
 		
 		<section>
 			<div class="background">
-		            <img src="./resources/images/favorite/favorite_main.png" />
+		            <img src="resources/images/marketIntroduce/남광주시장메인.png" />
 		            <div class="transbox">
 		                <p id="p01">남광주시장</p>
 		                <p id="p02">"남도의 싱싱한 해산물 맞볼 수 있는 해산물시장"</p>

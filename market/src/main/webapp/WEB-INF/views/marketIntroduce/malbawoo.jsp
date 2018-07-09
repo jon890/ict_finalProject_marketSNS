@@ -32,7 +32,7 @@
 		
 		<section>
 			<div class="background">
-		            <img src="./resources/images/favorite/favorite_main.png" />
+		            <img src="resources/images/marketIntroduce/말바우시장메인3.jpg" />
 		            <div class="transbox">
 		                <p id="p01">말바우시장</p>
 		                <p id="p02">"호남 최대의 5일장과 상설시장의 상생"</p>

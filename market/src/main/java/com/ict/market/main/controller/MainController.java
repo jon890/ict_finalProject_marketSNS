@@ -21,7 +21,6 @@ public class MainController {
 	@Autowired
 	private MainService mainService;
 	
-	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
     /* ********** 로그인 관련 기능 ********** */
@@ -80,8 +79,5 @@ public class MainController {
 	@RequestMapping(value="/registerIdCheck.main")
 	public String registerIdCheck(@RequestParam String id){
 		return mainService.registerIdCheck(id);
-	}
-	
-	
-	
+	}	
 }

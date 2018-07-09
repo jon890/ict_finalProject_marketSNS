@@ -61,7 +61,7 @@
 			            <a class="nav-link" data-toggle="pill" id="help">고객센터</a>
 			        </li>
 			    </ul>
-			    <p id="p">축제정보</p>
+			    <p id="p"><b>축제정보</b></p>
 	            <div class="contents">
 			<div class="web">
 				<div class="table_list">

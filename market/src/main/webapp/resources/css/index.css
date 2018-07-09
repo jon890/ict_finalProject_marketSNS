@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@font-face{font-family:'SangSangFlowerRoad'; src:url('./../fonts/SangSangFlowerRoad.otf')}
 
 #container{
 	width : 100%;
@@ -30,8 +31,9 @@
 #mainVideoFilter p{
 	position : absolute;
 	width : 100%;
-	font-family : "MaplestoryLight";
+	font-family : "SangSangFlowerRoad";
 	font-size : 75px;
+	font-weight : bolder;
 	text-align : center;
 	color : white;
 	top : 250px;

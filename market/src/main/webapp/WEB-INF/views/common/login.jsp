@@ -5,14 +5,14 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>아따시장 - 로그인</title>
+	    <title>아따~ 시장 - 로그인</title>
 	    <link rel="stylesheet" href="./resources/css/common/login.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">	
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-	    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="./resources/js/login.js"></script>
-
+	    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 	</head>
 	
 	<body>
@@ -37,12 +37,51 @@
 		        </div>
 		        
 		        <div id="loginBtns">
-		        	<a href="register.main">회원가입</a>
+		        	<a href="register.main">회원가입</a><br>
+		        	<a id="custom-login-btn" href="javascript:loginWithKakao()"><img src="./resources/images/menu/kakao_account_login_btn_medium_narrow_ov.png"></a>
 		        </div>
 		    </div>
-		    
 	    </section>
-	    
 	    <footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
+	    
+	    <script type="text/javascript">
+	    	Kakao.init("069834a58b5e1ea06acc8264b9047a04");
+	    	function loginWithKakao(){
+	    		Kakao.Auth.login({
+	    			success : function(authObj){
+	    				Kakao.API.request({
+	    				url : "/v1/user/me",
+	    				success : function(res){
+	    					let kakaoData = JSON.stringify(res);
+		    				$("#msg").append(kakaoData);
+		    				
+		    				// 카카오에서 받은 데이터로 로그인하기
+		    				$.ajax({
+	    						url : "/market/loginWithKakao.main",
+	    						type : "post",
+	    						dataType :"json",
+			    				data : {
+			    					id : res.id,
+			    					nickName : res.properties.nickname,
+			    					profileImg : res.properties.profile_image
+			    				},
+			    				success : function(data){
+			    					history.back();
+			    				}
+		    				});
+		    				// 카카오에서 받은 데이터로 로그인하기
+
+	    				},
+	    				fail : function(err){
+	    					$("#msg").append(err);
+	    				}
+	    				});
+	    			},
+	    			fail : function(err){
+	    				alert(JSON.stringfy(err));
+	    			}
+	    		});
+	    	};
+	    </script>
 	</body>
 </html>

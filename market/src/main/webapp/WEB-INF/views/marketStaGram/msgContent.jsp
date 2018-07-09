@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 		<link rel="stylesheet" href="./resources/css/marketStaGram/msgContent.css">
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
@@ -28,7 +27,7 @@
 		<section>
 		
 			<div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png">
+	            <img src="./resources/images/marketStaGram/background.png">
 	            <div class="transbox">
 	                <p id="marketStagramTitle01">#시장스타그램</p>
 	                <p id="marketStagramTitle02">광주 전통시장의 사진을 공유해보세요</p>

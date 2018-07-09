@@ -21,7 +21,7 @@
 		<section>
 		
 		    <div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png">
+	            <img src="./resources/images/marketStaGram/background.png">
 	            <div class="transbox">
 	                <p id="p01">#시장스타그램</p>
 	                <p id="p02">광주 전통시장의 사진을 공유해보세요</p>

@@ -11,7 +11,7 @@
 	
 	
 	<body>
-	<div id = "map" style="width: 1080px; height: 350px;"></div>
+	<div id = "map" style="width: 100%; height: 350px;"></div>
 		
 		<div class="contact_area">
 			<h3>대인시장 찾아오는 길</h3>

@@ -24,14 +24,6 @@
                     event.preventDefault();
                     $('html,body').animate({scrollTop:$("#main2").offset().top}, 1000);
             });
-            
-    		$("#box03").click(function(){
-    			location.href = "./market.compare"
-    		});
-    		
-    		$("#box04").click(function(){
-    			location.href = "./main.msg"
-    		});
     	});
 		
 		window.onload = function (){
@@ -99,9 +91,13 @@
 				<div id="main2">
 					<!-- <div id="main2Background"></div> -->
 						<img src="./resources/images/menu/menu2_7.jpg" width="100%" height="100%" id="main2img">
+						<p id="main2Title01">光   |</p><br>
+						<p id="main2Title02">州   |</p>
+						<p id="main2Title03">빛나는 도시</p>
+						<p id="main2Title04">광주</p>
+						<p id="main2Title">축제 및 행사 <p>
 						<!-- 부트스트랩 테마 적용 -->
 						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-						<!-- <p id="main2Title">축제 및 행사 <p> -->
 						  <ol class="carousel-indicators">
 						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

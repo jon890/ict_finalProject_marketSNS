@@ -22,6 +22,11 @@
 		<property name="prefix" value="/WEB-INF/views/favorite/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<bean id ="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property value="100000000" name="maxUploadSize"></property>
+	</bean>
 		
 	<!-- aop를 aspectj 언어로 사용  -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>

@@ -66,8 +66,23 @@
 		 			<tr>	 
 					 <td>제목 : </td><td>${helpArticle.title}</td>
 					 <td>날짜 : </td><td>${helpArticle.writeDate}</td>
-				 	</tr>
-		            
+					</tr>
+					  <tr>
+					  <td colspan="2">다운로드 :</td>
+					  <td colspan="2">
+					  <c:if test="${article.fileStatus!=0}">
+					  <c:if test="${fileList!=null}">
+					  <ul>
+					  <c:forEach var="file" items="${fileList}">
+					  <li><a href="download.favorite?storedFname=${file.storedFname}&originFname=${file.originFname}&fileLength=${file.filelength}">${file.originFname}</a>
+					  </li>
+					 </c:forEach>
+						</ul>
+						</c:if>
+						</c:if>
+						</td>
+					 </tr>
+					 
 		            </thead>
 		            <tbody>
 		            <tr>			 
@@ -127,7 +142,7 @@
 	    	/* $("#commentRead").on("load",function(){
 	    		getComment(1,event);
 	    	});  */
-	    	$(window).on("load",getComment(1,event));
+	    	$(window).on("load",getComment(1,event),invalidate());
 	   
 	    	$.ajaxSetup({
 	    		type :"POST",
@@ -160,6 +175,10 @@
 	    		}
 	    	});
 	    });	
+	    /* function invaildate(){
+	    	
+	    } */
+	    
 	    
 	     function deleteComment(obj){
 	    	let tr = $(obj).parent().parent();
@@ -200,15 +219,10 @@
 				html +="<td width='600'>"+item.commentContent+"</td>";
 				html +="<td	width='210'>"+item.commentDate+"</td>";
 				html +="<td	width='100'>"+item.commentNum+"</td>";
-				html +="<c:if test='${id=="+item.id+"}'>";
-				html +="<td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td>";
-				html +="</c:if>"
-				html +="<c:if test='${id!="+item.id+"}'>";
-				html +="<td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' disabled='disabled' id='deleteKey'>삭제</button></td>";
-				html +="</c:if>"
+				html +="<td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' disabled='disabled' id='deleteKey'>삭제</button></td>"
 				html +="</tr>"; 
 			});
-			 html +="</table>"; 
+			 html +="</table>";
 			commPageNum=parseInt(commPageNum);
 			if("${article.commentCount}">commPageNum*10){
 				nextPageNum=commPageNum+1;

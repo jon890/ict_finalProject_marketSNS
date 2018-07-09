@@ -5,9 +5,11 @@ import java.util.List;
 
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
+import com.ict.market.favorite.dto.FileDto;
 import com.ict.market.favorite.dto.NoticeDto;
 
 public interface FavoriteDao {
+	/* ********** 고객센터 게시판 기능 ********** */
 	public void write(FavoriteDto helpArticle);
 	public int getTotalCount();
 	public List<FavoriteDto>help(HashMap<String,String> pagingMap);
@@ -19,8 +21,10 @@ public interface FavoriteDao {
 	public void delete(String articleNum);
 	public void increaseHit(String articleNum);
 	public void commentDelete(String commentNum);
-	
-	
+	public void insertFile(FileDto fileDto);
+	public List<FileDto> getFiles(String articleNum);
+	public List<String> getFileName(String articleNum);
+	/* ********** 고객센터 게시판 기능 ********** */
 	
 	/* ********** 공지사항 게시판 기능 ********** */
 	public void noticeWrite(NoticeDto notice);
@@ -31,4 +35,5 @@ public interface FavoriteDao {
 	public NoticeDto noticeGetUpdate(int articleNum);
 	public void noticePostUpdate(NoticeDto notice);
 	/* ********** 공지사항 게시판 기능 ********** */
+	
 }

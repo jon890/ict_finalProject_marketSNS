@@ -3,6 +3,8 @@ package com.ict.market.main.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.ui.Model;
+
 import com.ict.market.main.dto.MarketMemberDto;
 
 public interface MainService {
@@ -12,4 +14,5 @@ public interface MainService {
 	public String loginWithKakao(String id, String password, String profileImg, HttpSession session, HttpServletRequest req);
 	public void register(MarketMemberDto member);
 	/* ********** 로그인 관련 기능 ********** */
+	public void mainHelp(Model model);
 }

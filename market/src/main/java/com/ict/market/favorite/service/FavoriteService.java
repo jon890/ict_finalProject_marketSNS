@@ -2,26 +2,31 @@ package com.ict.market.favorite.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
 import com.ict.market.favorite.dto.NoticeDto;
 
 public interface FavoriteService {
-	public void write(FavoriteDto helpArticle);
+	/* ********** 고객센터 - comment/fileUpload 게시판 기능 ********** */
+	public void write(FavoriteDto helpArticle,List<MultipartFile> fname,String uploadDir);
 	public List<FavoriteDto> help(String pageNum,Model model);
 	public void content(String articleNum,int fileStatus,Model model);
 	public void getUpdateArticle(String articleNum,int fileStatus,Model model);
 	public void updateArticle(FavoriteDto helpArticle,Model model);
 	public void insertComment(CommentDto comment);
 	public List<CommentDto> getComments(int articleNum, int commentRow,Model model);
-	public void delete(String articleNum);
+	public void delete(String articleNum,String uploadDir);
 	public void increaseHit(String articleNum,HttpSession session);
 	public void commentDelete(String commentNum);
-	
+	public FileSystemResource download(HttpServletResponse resp,String storedFname
+			,String originFname,int fileLength,String uploadDir);
 	
 	
 	/* ********** 공지사항 게시판 기능 ********** */

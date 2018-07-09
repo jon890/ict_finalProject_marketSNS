@@ -18,4 +18,17 @@
 		VALUES(#{id}, #{password}, #{name}, #{age}, #{gender}, #{adminchk})
 	</insert>
 
+	<select id="mainHelp" resultType="mainHelpArticle">
+		select * 
+		from (select * from helpArticle order by articleNum desc)
+		where rownum between 1 and 4 
+	</select>
+
+	<select id="mainNotice" resultType="mainNotice">
+		select *
+		from (select * from notice order by articleNum desc)
+		where rowNum between 1 and 4
+	</select>
+
+
 </mapper>

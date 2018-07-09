@@ -10,8 +10,8 @@ public class FavoriteDto {
 	private int hit;
 	private int groupId;
 	private String writeDate;
-	private int commentCount;
 	private int fileStatus;
+	private int commentCount;
 	
 	public int getArticleNum() {
 		return articleNum;

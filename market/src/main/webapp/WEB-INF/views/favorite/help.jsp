@@ -115,8 +115,7 @@
 										<img src=" ">
 									</c:if> <c:if test="${article.depth == 0}">
 										<img src="resources/img/re.png" width="0" height="16">
-									</c:if> <a
-									href="/market/content.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}&fileStatus=${helpArticle.fileStatus}">
+									</c:if> <a href="/market/content.favorite?articleNum=${helpArticle.articleNum}&pageNum=${pageNum}&fileStatus=${helpArticle.fileStatus}">
 										${helpArticle.title} 
 										<c:if test="${helpArticle.commentCount!=0 }">
 											<span style="color: red">(${helpArticle.commentCount})</span>

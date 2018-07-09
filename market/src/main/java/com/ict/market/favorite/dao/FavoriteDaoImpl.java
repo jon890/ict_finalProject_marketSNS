@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
+import com.ict.market.favorite.dto.FileDto;
 import com.ict.market.favorite.dto.NoticeDto;
 
 @Repository
@@ -16,7 +17,7 @@ public class FavoriteDaoImpl implements FavoriteDao {
 	@Autowired
 	private SqlSessionTemplate sqlsession;
 	private final String nameSpace = "com.ict.market.favorite.dao.FavoriteDao";
-	
+	/* ******************** 고객센터 게시판 기능 ***************** */
 	@Override
 	public void write(FavoriteDto helpArticle) {
 		
@@ -64,7 +65,7 @@ public class FavoriteDaoImpl implements FavoriteDao {
 	public void delete(String articleNum) {
 		sqlsession.delete(nameSpace+".delete",articleNum);
 	}
-	/*comment관련 메소드*/
+	/* ****************comment관련 기능****************** */
 	@Override
 	public void insertComment(CommentDto comment) {
 		sqlsession.insert(nameSpace+".insertComment",comment);
@@ -84,14 +85,35 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		sqlsession.delete(nameSpace+".commentDelete",commentNum);
 	}
 	
+	/* ********** 파일업로드 관련 기능 ********** */
+	
+	@Override
+	public void insertFile(FileDto fileDto) {
+		sqlsession.insert(nameSpace+".insertFile",fileDto);
+	}
+	
+	@Override
+	public List<FileDto> getFiles(String articleNum) {
+		return sqlsession.selectList(nameSpace+".getFiles",articleNum);
+	}
+	
+	@Override
+	public List<String> getFileName(String articleNum) {
+		
+		return sqlsession.selectList(nameSpace+".getFileName",articleNum);
+	}
 	
 	
+	/* ********** 파일업로드 관련 기능 ********** */
 	
+	
+
 	/* ********** 공지사항 게시판 기능 ********** */
 	@Override
 	public void noticeWrite(NoticeDto notice) {
 		sqlsession.insert(nameSpace+".noticeWrite",notice);
 	}
+
 
 	@Override
 	public List<NoticeDto> noticeList(HashMap<String, String> pagingMap) {

@@ -5,9 +5,9 @@
 
 <mapper namespace="com.ict.market.favorite.dao.FavoriteDao">
 		
-	<insert id="write" parameterType="helpArticle">
-		insert into helpArticle
-		values(helpArticle_SEQ.nextVal,#{id},#{title},#{content},0,0,0,sysdate,0)
+	<insert id="write" parameterType="helpArticle" useGeneratedKeys="true" keyProperty="articleNum" keyColumn="articleNum">
+	insert into helpArticle 
+	values(helpArticle_seq.nextVal,#{id},#{title},#{content},0,0,0,sysdate,#{fileStatus})
 	</insert>
 	
 	<select id="help" resultType="helpArticle">
@@ -79,8 +79,23 @@
 		from comments
 		where commentNum=#{commentNum}
 	</delete>
+	
+	<insert id="insertFile" parameterType="file">
+		INSERT INTO FILELIST
+		VALUES(file_SEQ.NEXTVAL,#{originFname},#{storedFname},#{filelength},#{articleNum})
+	</insert>
 
-
+	<select id="getFiles" resultType="file" parameterType="String">
+		select originFname,storedFname,filelength
+		from filelist
+		where articleNum=#{articleNum}
+	</select>	
+	
+	<select id="getFileName" resultType="String" parameterType="String">
+		select storedFname
+		from filelist
+		where articleNum=#{articleNum}
+	</select>
 	
 	
 	<!-- ********** 공지사항 게시판 글쓰기 기능 ********** -->

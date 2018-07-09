@@ -135,10 +135,10 @@
 						<div class="btnBoxTitle"><p>공지사항</p></div>
 						<ul>
 							<!-- DB에서 공지 뿌리기  -->
-							<li class="main_li"><a>공지1...</a></li>
-							<li class="main_li"><a>공지2...</a></li>
-							<li class="main_li"><a>공지3...</a></li>
-							<li class="main_li"><a>공지4...</a></li>
+							<c:forEach var="noticeArticle" items="${noticeArticleList}">
+							<!-- DB에서 고객센터 글 뿌리기  -->	
+							<li class="main_li"><a href="/market/noticeContent.favorite?articleNum=${noticeArticle.articleNum}&pageNum=1">${noticeArticle.title}</a></li>
+							</c:forEach>
 							<li class="li_last"><input type="button" value="더 보기 >" id="notice" onclick="document.location.href='/market/notice.favorite?pageNum=1'"></li>
 						</ul>
 					</div>
@@ -146,11 +146,10 @@
 					<div class="btnBox" id="box02">
 						<div class="btnBoxTitle"><p>고객센터</p></div>
 						<ul>
+						<c:forEach var="helpArticle" items="${helpArticleList}">
 							<!-- DB에서 고객센터 글 뿌리기  -->	
-							<li class="main_li"><a>질문1...</a></li>
-							<li class="main_li"><a>질문2...</a></li>
-							<li class="main_li"><a>질문3...</a></li>
-							<li class="main_li"><a>질문4...</a></li>
+							<li class="main_li"><a href="/market/content.favorite?articleNum=${helpArticle.articleNum}&pageNum=1&fileStatus=${helpArticle.fileStatus}">${helpArticle.title}</a></li>
+						</c:forEach>
 							<li class="li_last"><input type="button" value="더 보기 >" id="help" onclick="document.location.href='/market/help.favorite?pageNum=1'"></li>
 						</ul>
 					</div>

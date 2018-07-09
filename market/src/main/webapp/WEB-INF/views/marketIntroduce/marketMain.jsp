@@ -26,6 +26,9 @@
 			#th02{
 			    width:25%;
 			}
+			.nav-pills{
+				z-index:10;
+			}
 	    </style>
 	</head>
 	

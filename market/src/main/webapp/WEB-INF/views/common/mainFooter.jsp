@@ -9,7 +9,7 @@
 	</head>
 	
 	<body>
-        <img src="./resources/images/mainFooter_logo.png" id="mainFooter_logo"/>
+        <img src="./resources/images/menu/sitelogo.png" id="mainFooter_logo" width="300px">
         <select onchange="javascript:handleSelect(this)">
             <option>바로가기</option>
             <option value="http://www.gwangju.go.kr/">광주광역시청</option>

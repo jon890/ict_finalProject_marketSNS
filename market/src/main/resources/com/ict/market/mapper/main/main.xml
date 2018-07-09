@@ -17,5 +17,16 @@
 		INSERT INTO MARKETMEMBER
 		VALUES(#{id}, #{password}, #{name}, #{age}, #{gender}, #{adminchk})
 	</insert>
-
+	
+	<!-- 카카오 로그인 정보를 우리 DB에 저장 -->
+	<insert id="registerKakao" parameterType="member">
+		INSERT INTO MARKETMEMBER
+		VALUES(#{id}, #{password}, #{name}, #{age}, #{gender}, #{adminchk})
+	</insert>
+	
+	<select id="registerIdCheck" parameterType="String" resultType="String">
+		SELECt ID
+		FROM LOGIN
+		WHERE ID = #{id}
+	</select>
 </mapper>

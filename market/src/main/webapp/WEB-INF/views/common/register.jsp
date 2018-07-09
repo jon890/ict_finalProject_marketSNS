@@ -25,25 +25,42 @@
 		    
 		    $(document).ready(function(){
 		    	function idCheck(){
-		    		$.ajax({
-		                url : "./registerIdCheck.main",
-		                data : {
-		                    id : $("input[name=id]").val()
-		                },
-		                success : function(result){
-		                    if(result == 1){
-		                    	$("input[name=id]").css("border","solid 1px gray");
-		                    	$("span[id=id_check]").html("사용 가능한 아이디입니다");
-		                    	return true;
-		                    }
-		                    else{
-		                    	$("input[name=id]").css("border","solid red");
-		                    	$("span[id=id_check]").html("사용할 수 없는 아이디입니다");
-		                    	$("input[name=id]").val("");
-		                    	return false;
-		                    }
-		                }
-		            });
+		    		if($("input[name=id]").val().length != 0){
+			    		$.ajax({
+			                url : "./registerIdCheck.main",
+			                data : {
+			                    id : $("input[name=id]").val()
+			                },
+			                success : function(result){
+			                    if(result == 1){
+			                    	$("input[name=id]").css("border","solid 1px gray");
+			                    	$("span[id=id_check]").html("사용 가능한 아이디입니다");
+			                    	return true;
+			                    }
+			                    else{
+			                    	$("input[name=id]").css("border","solid red");
+			                    	$("span[id=id_check]").html("사용할 수 없는 아이디입니다");
+			                    	$("input[name=id]").val("");
+			                    	return false;
+			                    }
+			                }
+			            });
+		    		}
+		    		else{
+		    			$("input[name=id]").css("border","solid red");
+                    	$("span[id=id_check]").html("아이디를 입력해주세요");
+                    	return false;
+		    		}	//공백도 확인!
+		    	}
+		    	
+		    	function pwdCheck(){
+		    		if($("input:password[name='password']").val() != $("#pwdChk").val()){
+	    				return false;
+	    			} else if($("input:password[name='password']").val() == null){
+	    				return false;
+		    		} else{
+		    			return true;
+		    		}
 		    	}
 		    	
 		    	$("#idCheck").on("click", function(){
@@ -51,7 +68,11 @@
 		    	});
 		        
 		        $("input[type=submit]").on("click", function(){
-		        	if(!idCheck()){
+		        	if(idCheck()){
+		        		return true;
+		        	}
+		        	if(!pwdCheck()){
+		        		alert("비밀번호")
 		        		return false;
 		        	}
 		        });

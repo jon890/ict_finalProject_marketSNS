@@ -9,7 +9,8 @@ public interface MainService {
 	
 	/* ********** 로그인 관련 기능 ********** */
 	public String login(String id, String password, HttpSession session, HttpServletRequest req);
-	public String loginWithKakao(String id, String password, String profileImg, HttpSession session, HttpServletRequest req);
+	public void loginWithKakao(String id, String password, String profileImg, HttpSession session, HttpServletRequest req);
 	public void register(MarketMemberDto member);
 	/* ********** 로그인 관련 기능 ********** */
+	public String registerIdCheck(String id);
 }

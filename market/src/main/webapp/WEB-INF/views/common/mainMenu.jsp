@@ -14,7 +14,7 @@
 	<body>
 	    <nav id="mainMenuNav">
 	        <ul>
-	            <li id="li01"><a href="./"><img src="./resources/images/mainMenu_logo.png" id="mainMenu_logo"></a></li>
+	            <li id="li01"><a href="./"><img src="./resources/images/menu/sitelogo.png" id="mainMenu_logo" width="250px"></a></li>
 	            <li id="li02" class="mainMenu">
 	                <a href="./main.mid">광주의 시장</a>
 	                <div id="div01" class="subMenu">

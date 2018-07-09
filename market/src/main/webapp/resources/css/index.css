@@ -158,41 +158,11 @@
 	text-align:center;
 }
 
-/* .btnBox:first-child{
-	background-color : white;
-	left : 200px;
-	top : 100px;
-	z-index:6;
-	
-}
-
-.btnBox:nth-child(2){
-	background-color : yellow;
-	left : 600px;
-	top : 100px;
-	z-index:6;
-}
-
-.btnBox:nth-child(3){
-	background-color : green;
-	left : 200px;
-	top : 500px;
-	z-index:6;
-}
-
-.btnBox:last-child{
-	background-color : orange;
-	left : 600px;
-	top : 500px;
-	z-index:6;
-} */
-
 #box01{
 	background-color : white;
 	left : 200px;
 	top : 100px;
 	z-index:6;
-	
 }
 
 #box02{
@@ -207,6 +177,7 @@
 	left : 200px;
 	top : 500px;
 	z-index:6;
+	cursor : pointer;
 }
 
 #box04{
@@ -214,6 +185,7 @@
 	left : 600px;
 	top : 500px;
 	z-index:6;
+	cursor : pointer;
 }
 
 #container ul li{

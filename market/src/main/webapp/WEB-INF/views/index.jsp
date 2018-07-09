@@ -24,6 +24,14 @@
                     event.preventDefault();
                     $('html,body').animate({scrollTop:$("#main2").offset().top}, 1000);
             });
+            
+    		$("#box03").click(function(){
+    			location.href = "./market.compare"
+    		});
+    		
+    		$("#box04").click(function(){
+    			location.href = "./main.msg"
+    		});
     	});
 		
 		window.onload = function (){

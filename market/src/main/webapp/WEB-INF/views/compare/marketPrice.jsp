@@ -74,7 +74,7 @@
 		  주별로 보기 <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-		  <li><a href="#">6월3주</a></li>
+		  <li><a href="marketAgo.compare">6월3주</a></li>
 		</ul>
 	  </div>
 	<div class="btn-group">

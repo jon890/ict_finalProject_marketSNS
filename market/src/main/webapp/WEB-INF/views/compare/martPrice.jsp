@@ -41,7 +41,7 @@
 	        
 	      </style>
 	</head>
-<body>
+<body onhashchange="checkPoint()">
 <header id="mainMenu">
 			<!-- mainMenu.jsp 파일 include -->
 			<%@ include file="./../common/mainMenu.jsp" %>
@@ -75,7 +75,7 @@
 		  주별로 보기 <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-		    <li><a href="#">6월3주</a></li>
+		    <li><a href="martAgo.compare" id="aTag">6월3주</a></li>
 		</ul>
 	  </div>
 	<div class="btn-group">
@@ -94,7 +94,7 @@
 			</ul>
 		  </div>
 	<br>
-	<span>7월 1주차 가격</span>	  
+	<span id="miniTitle">7월 1주차 가격</span>	  
 	<br>
 	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">
@@ -131,5 +131,18 @@
 			<!-- mainFooter.jsp 파일 include -->
 			<%@ include file="./../common/mainFooter.jsp" %>
 		</footer>
+		<script>
+	
+			
+			/* $("#miniTitle").text("7월 1주차 가격"); */
+			
+			function checkPoint(){
+				alert("됐나?");
+				$("#miniTitle").text("6월 3주차 가격");
+			}
+			
+	
+		</script>
+		
 </body>
 </html>

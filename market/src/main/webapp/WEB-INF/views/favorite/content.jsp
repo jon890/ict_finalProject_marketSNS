@@ -142,7 +142,7 @@
 	    	/* $("#commentRead").on("load",function(){
 	    		getComment(1,event);
 	    	});  */
-	    	$(window).on("load",getComment(1,event),invalidate());
+	    	$(window).on("load",getComment(1,event));
 	   
 	    	$.ajaxSetup({
 	    		type :"POST",
@@ -175,9 +175,7 @@
 	    		}
 	    	});
 	    });	
-	    /* function invaildate(){
-	    	
-	    } */
+	    
 	    
 	    
 	     function deleteComment(obj){
@@ -210,6 +208,7 @@
 			});
 		}
 	    
+	    
 		function showHtml(data,commPageNum){
 			let html="<table class='table table-hover' width='1100'>"; 
 			$.each(data,function(index,item){ 
@@ -218,8 +217,9 @@
 				html +="<td	width='100'>"+item.id+"</td>";
 				html +="<td width='600'>"+item.commentContent+"</td>";
 				html +="<td	width='210'>"+item.commentDate+"</td>";
-				html +="<td	width='100'>"+item.commentNum+"</td>";
-				html +="<td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' disabled='disabled' id='deleteKey'>삭제</button></td>"
+				html +="<td	width='100'>"+item.commentNum+"</td>";		
+				/* html +="<c:if test='${id!="+item.id+"}'><td width='100'><button onClick='deleteComment(this)' disabled='diabled' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td></c:if>";
+				html +="<c:if test='${id=="+item.id+"}'><td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td></c:if>"; */
 				html +="</tr>"; 
 			});
 			 html +="</table>";

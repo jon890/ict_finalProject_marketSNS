@@ -98,6 +98,8 @@ public class FavoriteController {
 	public String content(@RequestParam("articleNum")String articleNum,
 			@ModelAttribute("pageNum")String pageNum,
 			@RequestParam("fileStatus")int fileStatus,Model model,HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		session.setAttribute("id",id);
 		favoriteService.increaseHit(articleNum,session);
 		favoriteService.content(articleNum,fileStatus,model);
 		return "content";

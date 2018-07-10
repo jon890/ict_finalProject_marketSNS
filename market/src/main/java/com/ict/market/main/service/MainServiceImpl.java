@@ -3,13 +3,10 @@ package com.ict.market.main.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import com.ict.market.main.controller.MainController;
 import com.ict.market.main.dao.MainDao;
 import com.ict.market.main.dto.MarketMemberDto;
 
@@ -19,7 +16,15 @@ public class MainServiceImpl implements MainService {
 	@Autowired
 	private MainDao mainDao;
 	
-	private static final Logger logger = LoggerFactory.getLogger(MainServiceImpl.class);
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	@Override
+	public void indexArticle(Model model) {
+		model.addAttribute("helpArticleList",mainDao.mainHelp());
+		model.addAttribute("noticeArticleList",mainDao.mainNotice());
+	}
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	
+	
 	
 	/* ********** 로그인 관련 기능 ********** */
 	@Override
@@ -46,12 +51,15 @@ public class MainServiceImpl implements MainService {
 			HttpServletRequest req) {
 		session.invalidate();
 		session = req.getSession();
-		session.setAttribute("id", nickName);
+		session.setAttribute("id", nickName + "(Kakao)");
 		session.setAttribute("profileImg", profileImg);
-		MarketMemberDto member = new MarketMemberDto();
-		member.setId(nickName);
-		member.setPassword(id);
-		mainDao.registerKakao(member);
+		
+		if( mainDao.kakaoInsertChk(nickName + "(Kakao)") == null) {
+			MarketMemberDto member = new MarketMemberDto();
+			member.setId(nickName + "(Kakao)");
+			member.setPassword(id + "_Kakao");
+			mainDao.registerKakao(member);
+		}
 	}
 
 	@Override
@@ -60,13 +68,8 @@ public class MainServiceImpl implements MainService {
 	}
 	/* ********** 로그인 관련 기능 ********** */
 
-	@Override
-	public void mainHelp(Model model) {
-		model.addAttribute("helpArticleList",mainDao.mainHelp());
-		model.addAttribute("noticeArticleList",mainDao.mainNotice());
-		System.out.println(mainDao.mainNotice());
-	}	
 	
+	/* ********** 아이디 중복 체크 ********** */
 	public String registerIdCheck(String id) {
 		String idCheck = mainDao.registerIdCheck(id);
 		String result = null;
@@ -77,4 +80,5 @@ public class MainServiceImpl implements MainService {
 		}
 		return result;
 	}
+	/* ********** 아이디 중복 체크 ********** */
 }

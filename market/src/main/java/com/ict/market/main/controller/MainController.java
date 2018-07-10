@@ -3,8 +3,6 @@ package com.ict.market.main.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,20 +20,30 @@ public class MainController {
 	@Autowired
 	private MainService mainService;
 	
-	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
-	
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
 	@RequestMapping(value="/")
-	public String mainHelp(Model model) {
-		logger.info("help진입");
-		mainService.mainHelp(model);
+	public String indexArticle(Model model) {
+		mainService.indexArticle(model);
 		return "index";
 	}
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	
+	
 	
     /* ********** 로그인 관련 기능 ********** */
 	@RequestMapping(value="/login.main" , method = RequestMethod.GET)
 	public String moveLogin() {
-		logger.info("LOGIN - 페이지 이동");
 		return "/common/login";
+	}
+		
+	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
+	@ResponseBody
+	public String login(@RequestParam String id, 
+						@RequestParam String password, 
+						HttpSession session,
+						HttpServletRequest req) {
+		String result = mainService.login(id, password, session, req);
+		return result;
 	}
 	
 	@RequestMapping(value="/loginWithKakao.main" , method = RequestMethod.POST)
@@ -49,43 +57,30 @@ public class MainController {
 		return "result";
 	}
 	
-	
-	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
-	@ResponseBody
-	public String login(@RequestParam String id, 
-						@RequestParam String password, 
-						HttpSession session,
-						HttpServletRequest req) {
-		String result = mainService.login(id, password, session, req);
-		return result;
-	}
-	
 	@RequestMapping(value="/logout.main" , method = RequestMethod.GET)
 	public String logout(HttpSession session) {
-		logger.info("LOGOUT - 로그아웃 ");
 		session.invalidate();
 		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/register.main" , method = RequestMethod.GET)
 	public String moveRegister() {
-		logger.info("REGISTER - 페이지 이동 ");
 		return "/common/register";
 	}
 	
-	
 	@RequestMapping(value="/register.main" , method = RequestMethod.POST)
 	public String register(MarketMemberDto member) {
-		logger.info("REGISTER - Submit 버튼 확인 ");
-		
 		mainService.register(member);
 		return "index";
 	}
 	/* ********** 로그인 관련 기능 ********** */
 
+	
+	/* ********** 아이디 중복 체크 ********** */
 	@ResponseBody
 	@RequestMapping(value="/registerIdCheck.main")
 	public String registerIdCheck(@RequestParam String id){
 		return mainService.registerIdCheck(id);
-	}	
+	}
+	/* ********** 아이디 중복 체크 ********** */
 }

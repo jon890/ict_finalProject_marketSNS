@@ -61,8 +61,6 @@
 	    				url : "/v1/user/me",
 	    				success : function(res){
 	    					let kakaoData = JSON.stringify(res);
-		    				$("#msg").append(kakaoData);
-		    				
 		    				// 카카오에서 받은 데이터로 로그인하기
 		    				$.ajax({
 	    						url : "/market/loginWithKakao.main",
@@ -78,7 +76,6 @@
 			    				}
 		    				});
 		    				// 카카오에서 받은 데이터로 로그인하기
-
 	    				},
 	    				fail : function(err){
 	    					$("#msg").append(err);

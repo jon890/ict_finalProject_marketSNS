@@ -14,6 +14,12 @@ public interface MainService {
 	public void loginWithKakao(String id, String password, String profileImg, HttpSession session, HttpServletRequest req);
 	public void register(MarketMemberDto member);
 	/* ********** 로그인 관련 기능 ********** */
-	public void mainHelp(Model model);
+	
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	public void indexArticle(Model model);
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	
+	/* ********** 아이디 중복 체크 ********** */
 	public String registerIdCheck(String id);
+	/* ********** 아이디 중복 체크 ********** */
 }

@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,7 +103,7 @@ public class MsgController {
 	/* ********** 댓글  기능 ********** */
 	@RequestMapping(value = "/commentWrite.msg" , method = RequestMethod.POST)
 	@ResponseBody
-	public HashMap<String, Object> commentWrite(MsgCommentDto comment, HttpSession session, HttpServletResponse resp) {
+	public HashMap<String, Object> commentWrite(MsgCommentDto comment, HttpSession session) {
 		comment.setId((String)session.getAttribute("id"));
 		msgService.commentWrite(comment);
 		List<MsgCommentDto> commentList = msgService.getComments(comment.getArticleNum(), 10);
@@ -129,7 +128,7 @@ public class MsgController {
 	/* ********** 좋아요 기능 ********** */
 	@RequestMapping(value = "/like.msg" , method = RequestMethod.POST)
 	@ResponseBody
-	public HashMap<String, Integer> like(LikeDto like, HttpSession session, HttpServletResponse resp) {
+	public HashMap<String, Integer> like(LikeDto like) {
 		HashMap<String, Integer> hm = new HashMap<>();
 		int sw = 0;
 		// true -> 이전에 like를 누른 사용자

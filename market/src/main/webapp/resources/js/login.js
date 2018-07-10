@@ -27,12 +27,13 @@ $(document).ready(function(){
 					password : $("#inputPwd").val()
 				},
 				success : function(data){
-					if(data == "idError"){
+					if(data.resultCode == "idError"){
 						$("#msg").html("해당하는 회원을 찾을 수 없습니다.");
-					} else if(data == "pwdError"){
+					} else if(data.resultCode == "pwdError"){
 						$("#msg").html("비밀번호가 다릅니다.");
-					} else if(data == "success"){
-						//history.back();
+					} else if(data.resultCode == "loginSuccess"){
+						alert(data.id + "님 안녕하세요!");
+						location.href = data.backUri;
 					} else {
 						alert("서버 오류가 발생했습니다.");
 					}

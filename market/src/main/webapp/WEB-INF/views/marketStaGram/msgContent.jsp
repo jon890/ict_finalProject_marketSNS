@@ -167,6 +167,9 @@
 								$("#commentContent").val("");
 								showHtml(data.commentList, 1);
 							}
+						},
+						error : function(xhr){
+							notLogin();
 						}
 					});	
 				}
@@ -221,6 +224,9 @@
 							$("#likebtnImg").attr("src", "./resources/images/marketStaGram/dislikebtn.png");
 						}
 						$("#likeNum").html(data.likeNum);
+					},
+					error : function(xhr){
+						notLogin();
 					}
 				});
 			}
@@ -243,9 +249,9 @@
 				});
 			}
 			
-			function login(){
+			function notLogin(){
 				location.href = "./login.main";
-			}	
+			}
 		</script>
 		
 	</body>

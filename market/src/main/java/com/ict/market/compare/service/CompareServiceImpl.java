@@ -25,8 +25,8 @@ public class CompareServiceImpl implements CompareService {
 	
 
 	@Override
-	public void marketAgo(Model model) {
-		model.addAttribute("marketPriceList",compareDAO.marketAgo());
+	public void marketAgo(Model model,String weekends) {
+		model.addAttribute("marketPriceList",compareDAO.marketAgo(weekends));
 	}
 
 
@@ -37,8 +37,8 @@ public class CompareServiceImpl implements CompareService {
 		model.addAttribute("martPriceList",compareDAO.martPrice());
 		return null;
 	}
-	public void martAgo(Model model) {
-		model.addAttribute("martPriceList",compareDAO.martAgo());
+	public void martAgo(Model model,String weekends) {
+		model.addAttribute("martPriceList",compareDAO.martAgo(weekends));
 	}
 
 	@Override
@@ -49,8 +49,8 @@ public class CompareServiceImpl implements CompareService {
 	
 	
 	@Override
-	public void compareAgo(Model model) {
-		model.addAttribute("comparePriceList",compareDAO.compareAgo());
+	public void compareAgo(Model model,String weekends) {
+		model.addAttribute("comparePriceList",compareDAO.compareAgo(weekends));
 	}
 
 

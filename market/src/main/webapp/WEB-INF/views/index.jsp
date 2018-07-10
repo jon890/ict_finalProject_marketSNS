@@ -132,6 +132,7 @@
 			</article>
 
 			<article class="box">
+			
 				<div id="main3">
 					<img src="./resources/images/menu/menu3_2.jpg" width="100%" height="100%" id="main3img">
 					

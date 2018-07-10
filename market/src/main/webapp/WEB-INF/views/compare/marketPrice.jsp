@@ -70,12 +70,10 @@
 		   
 	<!-- Single button -->
 	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		  주별로 보기 <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu" role="menu">
-		  <li><a href="marketAgo.compare">6월3주</a></li>
-		</ul>
+		<form action="./marketAgo.compare" method="POST">
+		<input type="submit" class="btn btn-default" value="6월3주보기">
+		<input type="hidden" name="weekends" value="603">
+		</form>
 	  </div>
 	<div class="btn-group">
 			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -93,7 +91,7 @@
 			</ul>
 		  </div>
 	<br>
-	<span>7월 1주차 가격</span>	  
+	<span></span>	  
 	<br>
 	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">

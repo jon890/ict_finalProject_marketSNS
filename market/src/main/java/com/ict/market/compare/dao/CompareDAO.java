@@ -8,11 +8,11 @@ import com.ict.market.compare.dto.martPriceDTO;
 
 public interface CompareDAO {
 	public List<marketPriceDTO> marketPrice();
-	public List<marketPriceDTO> marketAgo();
+	public List<marketPriceDTO> marketAgo(String weekends);
 	public List<martPriceDTO> martPrice();
-	public List<martPriceDTO> martAgo();
+	public List<martPriceDTO> martAgo(String weekends);
 	public List<ComparePriceDTO> comparePrice();
-	public List<ComparePriceDTO> compareAgo();
+	public List<ComparePriceDTO> compareAgo(String weekends);
 	/*시장 품목별 출력 dao*/
 	public List<marketPriceDTO> marketCorn();
 	public List<marketPriceDTO> marketMeat();

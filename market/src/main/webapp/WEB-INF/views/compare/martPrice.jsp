@@ -41,7 +41,7 @@
 	        
 	      </style>
 	</head>
-<body onhashchange="checkPoint()">
+<body>
 <header id="mainMenu">
 			<!-- mainMenu.jsp 파일 include -->
 			<%@ include file="./../common/mainMenu.jsp" %>
@@ -71,12 +71,10 @@
 		  
 	<!-- Single button -->
 	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		  주별로 보기 <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu" role="menu">
-		    <li><a href="martAgo.compare" id="aTag">6월3주</a></li>
-		</ul>
+	<form action="./martAgo.compare" method="POST">
+		<input type="submit" class="btn btn-default" value="6월3주보기">
+		<input type="hidden" name="weekends" value="603">
+	</form>
 	  </div>
 	<div class="btn-group">
 			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -94,7 +92,7 @@
 			</ul>
 		  </div>
 	<br>
-	<span id="miniTitle">7월 1주차 가격</span>	  
+	<span id="miniTitle"></span>	  
 	<br>
 	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">
@@ -135,12 +133,17 @@
 	
 			
 			/* $("#miniTitle").text("7월 1주차 가격"); */
+			$(document).ready(function(){
 			
-			function checkPoint(){
+			
+				
+				
+			$("#aTag").on("click",function(){
 				alert("됐나?");
-				$("#miniTitle").text("6월 3주차 가격");
-			}
+				$("#miniTitle").html("6월 3주차 가격");
+			});
 			
+			});
 	
 		</script>
 		

@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ict.market.compare.service.CompareService;
 
@@ -23,8 +25,8 @@ public class CompareController {
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketAgo.compare")
-	public String marketAgo(Model model) {	
-		compareService.marketAgo(model);
+	public String marketAgo(Model model,@RequestParam("weekends")String weekends) {	
+		compareService.marketAgo(model,weekends);
 		return "marketPrice";
 	}
 	
@@ -34,10 +36,11 @@ public class CompareController {
 		compareService.martPrice(model);
 		return "martPrice";
 	}
-	@RequestMapping(value="/martAgo.compare")
-	public String martAgo(Model model){
+	@RequestMapping(value="/martAgo.compare",method=RequestMethod.POST)
+	public String martAgo(Model model,@RequestParam("weekends")String weekends){
 		logger.info("mart진입");
-		compareService.martAgo(model);
+		logger.info(weekends);
+		compareService.martAgo(model,weekends);
 		return "martPrice";
 	}
 	
@@ -48,9 +51,9 @@ public class CompareController {
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareAgo.compare")
-	public String compareAgo(Model model){
+	public String compareAgo(Model model,@RequestParam("weekends")String weekends){
 		logger.info("compare진입");
-		compareService.compareAgo(model);
+		compareService.compareAgo(model,weekends);
 		return "comparePrice";
 	}
 	

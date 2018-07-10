@@ -26,8 +26,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=603 and m2.weekends=603 
-	and m3.weekends=603 and m4.weekends=603 and m5.weekends=603
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends}
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	
 	<select id="martList" resultType="mart">
@@ -40,15 +40,15 @@
 	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
 	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
 	</select>
-	<select id="martAgo" resultType="mart">
+	<select id="martAgo" parameterType="String" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
 	m4.price yeongAmMartPrice,m5.price lotteMartSouthPrice
 	from goods g, martInfo m1,martInfo m2,martInfo m3,martInfo m4,martInfo m5
 	where  m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=603 and m2.weekends=603 
-	and m3.weekends=603 and m4.weekends=603 and m5.weekends=603 order by g.goodsCode
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} order by g.goodsCode
 	</select>
 	
 	<select id="compareList" resultType="compare">
@@ -73,8 +73,8 @@
     where m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=603 and m2.weekends=603 
-    and m3.weekends=603 and m4.weekends=603 and m5.weekends=603 and m6.weekends=603 order by g.goodsCode
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+    and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends} order by g.goodsCode
 	</select>
 	
 	<!--*******************시장 품목별 출력 sql문 시작 ********************-->

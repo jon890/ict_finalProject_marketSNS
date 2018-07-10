@@ -19,8 +19,8 @@ public class CompareDAOImpl implements CompareDAO {
 	
 	
 	@Override
-	public List<marketPriceDTO> marketPrice() {
-		return sqlSession.selectList(nameSpace+".marketList");
+	public List<marketPriceDTO> marketPrice(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketList",weekends);
 	}
 	
 	@Override

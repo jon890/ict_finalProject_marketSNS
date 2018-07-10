@@ -7,7 +7,7 @@ import com.ict.market.compare.dto.marketPriceDTO;
 import com.ict.market.compare.dto.martPriceDTO;
 
 public interface CompareDAO {
-	public List<marketPriceDTO> marketPrice();
+	public List<marketPriceDTO> marketPrice(String weekends);
 	public List<marketPriceDTO> marketAgo(String weekends);
 	public List<martPriceDTO> martPrice();
 	public List<martPriceDTO> martAgo(String weekends);

@@ -36,12 +36,12 @@
 	                </div>
 	            </li>
 	            <li id="li04" class="mainMenu">
-	                <a href="./market.compare">가격비교</a>
+	                <a href="./market.compare?weekends=701">가격비교</a>
 	                <div id="div03" class="subMenu">
 	                    <ul class="ul" id="ul03">
-	                        <li><a href="./mart.compare">대형마트</a></li>
-	                        <li><a href="./market.compare">전통시장</a></li>
-	                        <li><a href="./compare.compare">가격비교</a></li>
+	                        <li><a href="./mart.compare?weekends=701">대형마트</a></li>
+	                        <li><a href="./market.compare?weekends=701">전통시장</a></li>
+	                        <li><a href="./compare.compare?weekends=701">가격비교</a></li>
 	                    </ul>
 	                </div>
 	            </li>

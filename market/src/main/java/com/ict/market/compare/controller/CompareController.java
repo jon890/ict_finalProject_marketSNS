@@ -19,40 +19,40 @@ public class CompareController {
 	private static final Logger logger = org.slf4j.LoggerFactory.getLogger(CompareController.class);
 	
 	@RequestMapping(value="/market.compare")
-	public String marketPrice(Model model){
-		logger.info("market진입");
-		compareService.marketPrice(model);
+	public String marketPrice(Model model,@RequestParam("weekends")String weekends){
+		model.addAttribute("weekends",weekends);
+		compareService.marketPrice(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketAgo.compare")
-	public String marketAgo(Model model,@RequestParam("weekends")String weekends) {	
+	public String marketAgo(Model model,@RequestParam("weekends")String weekends) {
+		model.addAttribute("weekends",weekends);
 		compareService.marketAgo(model,weekends);
 		return "marketPrice";
 	}
 	
 	@RequestMapping(value="/mart.compare")
-	public String martPrice(Model model){
-		logger.info("mart진입");
+	public String martPrice(Model model,@RequestParam("weekends")String weekends){
+		model.addAttribute("weekends",weekends);
 		compareService.martPrice(model);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martAgo.compare",method=RequestMethod.POST)
 	public String martAgo(Model model,@RequestParam("weekends")String weekends){
-		logger.info("mart진입");
-		logger.info(weekends);
+		model.addAttribute("weekends",weekends);
 		compareService.martAgo(model,weekends);
 		return "martPrice";
 	}
 	
 	@RequestMapping(value="/compare.compare")
-	public String comparePrice(Model model){
-		logger.info("compare진입");
+	public String comparePrice(Model model,@RequestParam("weekends")String weekends){
+		model.addAttribute("weekends",weekends);
 		compareService.comparePrice(model);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareAgo.compare")
 	public String compareAgo(Model model,@RequestParam("weekends")String weekends){
-		logger.info("compare진입");
+		model.addAttribute("weekends",weekends);
 		compareService.compareAgo(model,weekends);
 		return "comparePrice";
 	}

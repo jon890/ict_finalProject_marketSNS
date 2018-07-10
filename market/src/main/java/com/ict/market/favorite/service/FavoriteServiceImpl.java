@@ -1,20 +1,29 @@
 package com.ict.market.favorite.service;
 
+import java.io.File;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ict.market.favorite.common.NoticePage;
 import com.ict.market.favorite.common.Page;
 import com.ict.market.favorite.dao.FavoriteDao;
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
+import com.ict.market.favorite.dto.FileDto;
 import com.ict.market.favorite.dto.NoticeDto;
 
 @Service
@@ -28,16 +37,58 @@ public class FavoriteServiceImpl implements FavoriteService {
 	@Autowired
 	private Page page;
 	
+	private static final Logger logger = LoggerFactory.getLogger(FavoriteServiceImpl.class);
+	
 	@Resource(name="pageSize")
 	private int pageSize;
 	@Resource(name="pageBlock")
 	private int pageBlock;
 	
 	@Override
-	public void write(FavoriteDto helpArticle) {
+	public void write(FavoriteDto helpArticle,List<MultipartFile> fname,String uploadDir) {
+		logger.info("진입1");
+		if(fname.get(0).isEmpty()) {
 		favoriteDao.write(helpArticle);
+		}else {
+			logger.info("진입2");
+			helpArticle.setFileStatus((byte)1);
+			favoriteDao.write(helpArticle);
+			commonFileUpload(fname,helpArticle.getArticleNum(),uploadDir);
+		}
 	}
-
+	
+	public void commonFileUpload(List<MultipartFile> mfile,int articleNum,String uploadDir) {
+		FileDto fileDto = null;
+		//업로드된 파일을 for문으로 뽑아낸다.
+		for(MultipartFile uploadFile : mfile) {
+			if(!uploadFile.isEmpty()) {
+				//파일을 storedFname에 넣고 
+				String storedFname = save(uploadFile,uploadDir);
+				fileDto = new FileDto();
+				fileDto.setOriginFname(uploadFile.getOriginalFilename());
+				fileDto.setStoredFname(storedFname);
+				fileDto.setFilelength(uploadFile.getSize());
+				fileDto.setArticleNum(articleNum);
+				
+				favoriteDao.insertFile(fileDto);
+				
+			}
+		}
+		
+	}
+	
+	public String save(MultipartFile uploadFile,String uploadDir) {
+		//UUID 파일명 앞에 절대 겹치지 않는 수 생성 +uploadfile filenamd을 가져와서 저장한다.
+		String storedFname = UUID.randomUUID().toString()+"_"+uploadFile.getOriginalFilename();
+		try {
+			//filecopyiesUtil class를 사용해도 된다.
+			uploadFile.transferTo(new File(uploadDir+storedFname));
+		}catch(Exception e) {}
+		
+		return storedFname;
+	}
+	
+	
 	@Override
 	public List<FavoriteDto> help(String pageNum, Model model) {
 		int totalCount = favoriteDao.getTotalCount();
@@ -52,6 +103,9 @@ public class FavoriteServiceImpl implements FavoriteService {
 	public void content(String articleNum, int fileStatus, Model model) {
 		FavoriteDto helpArticle = favoriteDao.content(articleNum); 
 		model.addAttribute("helpArticle",helpArticle);
+		if(fileStatus==1) {
+			model.addAttribute("fileList",favoriteDao.getFiles(articleNum));
+		}
 	}
 
 	@Override
@@ -67,7 +121,16 @@ public class FavoriteServiceImpl implements FavoriteService {
 	}
 	
 	@Override
-	public void delete(String articleNum) {
+	public void delete(String articleNum,String uploadDir) {
+		
+		List<String> deleteList = null;
+		deleteList=favoriteDao.getFileName(articleNum);
+		for(String storedFname:deleteList) {
+			File deleteFname = new File(uploadDir+storedFname);
+			if(deleteFname.exists()) {
+				deleteFname.delete();
+			}
+		}
 		favoriteDao.delete(articleNum);
 	}
 	
@@ -105,10 +168,20 @@ public class FavoriteServiceImpl implements FavoriteService {
 		favoriteDao.commentDelete(commentNum);
 	}
 	
-	
-	
-	
-	
+	@Override
+	public FileSystemResource download(HttpServletResponse resp, String storedFname, String originFname,
+			int fileLength,String uploadDir) {
+		resp.setContentType("application/download");
+		resp.setContentLength(fileLength);
+		try {
+			originFname = URLEncoder.encode(originFname, "UTF-8").replace("+","%20").replace("%28","(").replace("%29",")");
+		}catch(Exception e) {
+		}
+		resp.setHeader("Content-Disposition","attachment;" +"filename=\""+originFname+ "\";");
+		FileSystemResource fsr = new FileSystemResource(uploadDir+storedFname);
+		return fsr;
+	}
+
 	/* ********** 공지사항 게시판 기능 ********** */
 	@Override
 	public void noticeWrite(NoticeDto notice) {

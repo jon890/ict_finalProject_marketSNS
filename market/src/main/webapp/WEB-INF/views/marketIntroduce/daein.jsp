@@ -13,14 +13,30 @@
 		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 		
 		<style>
+		
+			@font-face{font-family:'SangSangFlowerRoad'; src:url('./resources/fonts/SangSangFlowerRoad.otf')}
+			
+			#p01, #p02{
+				font-family : SangSangFlowerRoad;
+			}
+			
+			#p01{
+				font-size : 60px;
+			}
+			
+			#p02{
+				font-size : 30px;
+			}
+			
+			
 			iframe{
 				border : none;
 			}
 			#home{
-	        	height:630px;
+	        	height : 630px;
 	        }
 	        #menu4{
-	        	height:1650px;
+	        	height : 1650px;
 	        }
 		</style>
 	</head>
@@ -33,7 +49,7 @@
 		
 		<section>
 			<div class="background">
-				<img src="./resources/images/favorite/favorite_main.png" />
+				<img src="resources/images/marketIntroduce/대인시장메인.JPG" />
 				<div class="transbox">
 					<p id="p01">대인시장</p>
 					<p id="p02">"예술이 공존하는 문화관광시장"</p>

@@ -1,8 +1,9 @@
 #mainMenuNav{
-	font-family : MaplestoryLight;
+	font-family : "Gwangju";
     text-align : center;
     height : 60px;
     margin-top : 20px;
+    /* font-weight:900; */
 }
 
 #mainMenuNav > ul > li > a{
@@ -26,7 +27,7 @@
 #mainMenuNav ul #li01, #li02, #li03, #li04, #li05{
 	display:inline-block;
     font-size:30px;
-    padding-left:15px;
+    padding-left:10px;
     padding-right:20px;
 }
 
@@ -53,7 +54,7 @@
 #mainMenuNav ul #li03 ul{
     padding-left:30px;
     padding-right:20px;
-    width : 211px;
+    width : 209.3px;
 	positon : absolute;
 	left : -15px;
 }
@@ -72,7 +73,7 @@
     positon : absolute;
     width : 131px;
     positon : absolute;
-    left : -15px;
+    left : -16px;
 }
 
 #mainMenuNav ul li ul li{

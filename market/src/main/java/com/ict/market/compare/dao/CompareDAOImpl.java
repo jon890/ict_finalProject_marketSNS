@@ -19,13 +19,13 @@ public class CompareDAOImpl implements CompareDAO {
 	
 	
 	@Override
-	public List<marketPriceDTO> marketPrice() {
-		return sqlSession.selectList(nameSpace+".marketList");
+	public List<marketPriceDTO> marketPrice(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketList",weekends);
 	}
 	
 	@Override
-	public List<marketPriceDTO> marketAgo() {
-		return sqlSession.selectList(nameSpace+".marketAgo");
+	public List<marketPriceDTO> marketAgo(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketAgo",weekends);
 	}
 
 	@Override
@@ -35,18 +35,21 @@ public class CompareDAOImpl implements CompareDAO {
 	
 
 	@Override
-	public List<martPriceDTO> martAgo() {
-		return sqlSession.selectList(nameSpace+".martAgo");
+	public List<martPriceDTO> martAgo(String weekends) {
+		return sqlSession.selectList(nameSpace+".martAgo",weekends);
 	}
 
+	
+	
+	
 	@Override
 	public List<ComparePriceDTO> comparePrice() {
 		return sqlSession.selectList(nameSpace+".compareList");
 	}
 	
 	@Override
-	public List<ComparePriceDTO> compareAgo() {
-		return sqlSession.selectList(nameSpace+".compareAgo");
+	public List<ComparePriceDTO> compareAgo(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareAgo",weekends);
 	}
 
 	/*-----------------시장 품목별 출력 메소드------------------*/

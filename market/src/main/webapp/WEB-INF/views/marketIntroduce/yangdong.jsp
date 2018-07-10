@@ -31,7 +31,7 @@
 		
 		<section>
 			<div class="background">
-		            <img src="./resources/images/favorite/favorite_main.png" />
+		            <img src="resources/images/marketIntroduce/양동시장메인.png" />
 		            <div class="transbox">
 		                <p id="p01">양동시장</p>
 		                <p id="p02">"호남 최대의 상설시장"</p>

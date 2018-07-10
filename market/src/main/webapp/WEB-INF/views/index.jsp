@@ -91,9 +91,13 @@
 				<div id="main2">
 					<!-- <div id="main2Background"></div> -->
 						<img src="./resources/images/menu/menu2_7.jpg" width="100%" height="100%" id="main2img">
+						<p id="main2Title01">光   |</p><br>
+						<p id="main2Title02">州   |</p>
+						<p id="main2Title03">빛나는 도시</p>
+						<p id="main2Title04">광주</p>
+						<p id="main2Title">축제 및 행사 <p>
 						<!-- 부트스트랩 테마 적용 -->
 						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-						<!-- <p id="main2Title">축제 및 행사 <p> -->
 						  <ol class="carousel-indicators">
 						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -128,6 +132,7 @@
 			</article>
 
 			<article class="box">
+			
 				<div id="main3">
 					<img src="./resources/images/menu/menu3_2.jpg" width="100%" height="100%" id="main3img">
 					
@@ -135,10 +140,10 @@
 						<div class="btnBoxTitle"><p>공지사항</p></div>
 						<ul>
 							<!-- DB에서 공지 뿌리기  -->
-							<li class="main_li"><a>공지1...</a></li>
-							<li class="main_li"><a>공지2...</a></li>
-							<li class="main_li"><a>공지3...</a></li>
-							<li class="main_li"><a>공지4...</a></li>
+							<c:forEach var="noticeArticle" items="${noticeArticleList}">
+							<!-- DB에서 고객센터 글 뿌리기  -->	
+							<li class="main_li"><a href="/market/noticeContent.favorite?articleNum=${noticeArticle.articleNum}&pageNum=1">${noticeArticle.title}</a></li>
+							</c:forEach>
 							<li class="li_last"><input type="button" value="더 보기 >" id="notice" onclick="document.location.href='/market/notice.favorite?pageNum=1'"></li>
 						</ul>
 					</div>
@@ -146,11 +151,10 @@
 					<div class="btnBox" id="box02">
 						<div class="btnBoxTitle"><p>고객센터</p></div>
 						<ul>
+						<c:forEach var="helpArticle" items="${helpArticleList}">
 							<!-- DB에서 고객센터 글 뿌리기  -->	
-							<li class="main_li"><a>질문1...</a></li>
-							<li class="main_li"><a>질문2...</a></li>
-							<li class="main_li"><a>질문3...</a></li>
-							<li class="main_li"><a>질문4...</a></li>
+							<li class="main_li"><a href="/market/content.favorite?articleNum=${helpArticle.articleNum}&pageNum=1&fileStatus=${helpArticle.fileStatus}">${helpArticle.title}</a></li>
+						</c:forEach>
 							<li class="li_last"><input type="button" value="더 보기 >" id="help" onclick="document.location.href='/market/help.favorite?pageNum=1'"></li>
 						</ul>
 					</div>

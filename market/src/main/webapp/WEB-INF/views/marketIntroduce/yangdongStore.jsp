@@ -16,7 +16,7 @@
 						<colgroup>
 							<col width="280px">
 							<col width="500px">
-							<col width="150px">
+							<col width="200px">
 						</colgroup>
 						<tbody>
 							<tr>
@@ -29,7 +29,10 @@
 									<span>양동 닭전시장의 양대산맥~!<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									후라이드 18000원<br>
+									양	념 19000원<br>
+									반반치킨 19000원</span>
 								</td>
 							</tr>
 							<tr>
@@ -37,12 +40,15 @@
 									<img class="storeimg" src="./resources/images/marketIntroduce/영창식당.jpg" >
 								</td>
 								<td class="left">
-									<h3>영창식당</h3>
+									<h3><b>-주요메뉴-</b></h3>
 									<span>불고기백반<br></span>
 									<span>한결 같은 가격 6천원에 불고기 백반을 선사합니다.<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									불고기백반	6000원<br>
+									삼겹살	9000원 <br>
+									대지주물럭	9000원</span>
 								</td>
 							</tr>
 							<tr>
@@ -55,7 +61,10 @@
 									<span>직접 우려낸 소스와 육수로 맛을 낸 우동집, 알밥도 유명한 곳입니다.<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									우동		4000원<br>
+									철판볶음밥 5000원<br>
+									알밥 		6000원</span>
 								</td>
 							</tr>
 						</tbody>

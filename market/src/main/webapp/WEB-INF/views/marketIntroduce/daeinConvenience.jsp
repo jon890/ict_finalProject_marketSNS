@@ -6,6 +6,11 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/convenience.css">
 		<title>아따시장 - 대인시장 편의시설</title>
+		<script>
+			function popup(){
+				window.open("resources/images/marketIntroduce/대인시장_안내도.JPG", "popup","width=700px height=500px");
+			}
+		</script>
 	</head>
 	
 	<body>
@@ -13,7 +18,7 @@
 		
 			<div>
 				<h2>대인시장 안내도</h2>
-				<img class="roughmap" src="resources/images/marketIntroduce/대인시장_안내도.JPG">
+					<img class="roughmap" src="resources/images/marketIntroduce/대인시장_안내도.JPG" onclick="popup()">
 			</div>
 			
 			<div class="web">

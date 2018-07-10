@@ -16,6 +16,8 @@
 	
 	<typeAliases>
 		<typeAlias alias ="member" type="com.ict.market.main.dto.MarketMemberDto"/>
+		<typeAlias alias ="mainHelpArticle" type="com.ict.market.main.dto.MainhelpDto"/>
+		<typeAlias alias ="mainNotice" type="com.ict.market.main.dto.MainnoticeDto"/>
 		
 		<typeAlias alias ="market" type="com.ict.market.compare.dto.marketPriceDTO"/>
 		<typeAlias alias ="mart" type="com.ict.market.compare.dto.martPriceDTO"/>
@@ -30,6 +32,7 @@
 		<typeAlias alias="helpArticle" type="com.ict.market.favorite.dto.FavoriteDto"/>
 		<typeAlias alias="commentList" type="com.ict.market.favorite.dto.CommentDto"/>
 		<typeAlias alias="notice" type="com.ict.market.favorite.dto.NoticeDto"/>
+		<typeAlias alias="file" type="com.ict.market.favorite.dto.FileDto"/>
 		
 		<typeAlias alias="marketList" type="com.ict.market.marketIntroduce.dto.MarketDto"/>
 	</typeAliases>

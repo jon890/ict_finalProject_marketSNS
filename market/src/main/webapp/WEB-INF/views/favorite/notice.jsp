@@ -24,10 +24,10 @@
 		
 	    <section>
 	    	<div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <img src="./resources/images/favorite/favorite.png" />
 	            <div class="transbox">
 	                <p id="p01">공지사항</p>
-	                <p id="p02">우리 사이트의 공지를 알려드립니다</p>
+	                <p id="p02">우리 사이트의 공지사항을 알려드립니다</p>
 	            </div>
         	</div>
         	
@@ -52,7 +52,7 @@
 		        <p id="noticeTitle">공지사항</p>
 		        <c:if test="${id != null}">
 		        	<c:if test="${adminChk == 1}">
-		        		 <a href="./noticeForm.favorite" id="writeBtn">글쓰기</a>
+		        		 <button type="button" class="btn" id ="writeBtn">글쓰기</button>
 		        	</c:if>
 	        	</c:if>
 	        	

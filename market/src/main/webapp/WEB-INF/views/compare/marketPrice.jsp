@@ -48,7 +48,7 @@
 		
 		<section>
 		    <div class="background">
-	            <img src="./resources/images/favorite/favorite_main.png" />
+	            <img src="./resources/images/compare/compare_main.png" />
 	            <div class="transbox">
 	                <p id="p01"> 전통시장 </p>
 	                <p id="p02"> 전통시장의 가격을 알려 드립니다 </p>
@@ -70,12 +70,10 @@
 		   
 	<!-- Single button -->
 	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		  주별로 보기 <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu" role="menu">
-		  <li><a href="#">6월3주</a></li>
-		</ul>
+		<form action="./marketAgo.compare" method="POST">
+		<input type="submit" class="btn btn-default" value="6월3주보기">
+		<input type="hidden" name="weekends" value="603">
+		</form>
 	  </div>
 	<div class="btn-group">
 			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -93,7 +91,7 @@
 			</ul>
 		  </div>
 	<br>
-	<span>7월 1주차 가격</span>	  
+	<span><c:out value="${weekends.replace('0','월')}"/>주차 가격</span>	  
 	<br>
 	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 	<table class="table table-striped">

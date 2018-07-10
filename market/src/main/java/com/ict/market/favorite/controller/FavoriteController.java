@@ -3,11 +3,14 @@ package com.ict.market.favorite.controller;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -15,7 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ict.market.favorite.dto.CommentDto;
 import com.ict.market.favorite.dto.FavoriteDto;
@@ -29,6 +34,9 @@ public class FavoriteController {
 	private static final Logger logger = LoggerFactory.getLogger(FavoriteController.class);
 	@Autowired
 	private FavoriteService favoriteService;
+	
+	
+	
 	
 	@RequestMapping(value="/favorite.favorite")
 	public String main() {
@@ -68,21 +76,28 @@ public class FavoriteController {
 	public String helpForm(FavoriteDto helpArticle,HttpSession session) {
 		return "helpForm";
 	}
+	
 	/*글 남길때 포스트 방식으로 입력*/
 	@Transactional
 	@RequestMapping(value="/write.favorite",method=RequestMethod.POST)
-	public String writeForm(FavoriteDto helpArticle,HttpSession session) {
-		logger.info("write - 페이지 이동");
+	public String writeForm(FavoriteDto helpArticle,HttpSession session
+			,@RequestPart("fname")List<MultipartFile> fname,HttpServletRequest req) {
 		helpArticle.setId((String)session.getAttribute("id"));
-		favoriteService.write(helpArticle);
+		/* 파일 업로드 경로 */
+	    String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadFiles/";
+		logger.info(uploadDir);
+	    favoriteService.write(helpArticle,fname,uploadDir);
 		return "redirect:/help.favorite?pageNum=1";
 	}
+	
 	/*게시물 조회*/
 	@Transactional
 	@RequestMapping(value="/content.favorite")
 	public String content(@RequestParam("articleNum")String articleNum,
 			@ModelAttribute("pageNum")String pageNum,
 			@RequestParam("fileStatus")int fileStatus,Model model,HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		session.setAttribute("id",id);
 		favoriteService.increaseHit(articleNum,session);
 		favoriteService.content(articleNum,fileStatus,model);
 		return "content";
@@ -106,13 +121,15 @@ public class FavoriteController {
 		favoriteService.updateArticle(helpArticle,model);
 		return "redirect:/content.favorite?articleNum="+helpArticle.getArticleNum()+"&pageNum="+pageNum+"&fileStatus="+fileStatus;
 	}
+	
 	@RequestMapping(value="/delete.favorite")
-	public String delete(@RequestParam String articleNum,@RequestParam String pageNum) {
-		
-		favoriteService.delete(articleNum);
+	public String delete(@RequestParam String articleNum,@RequestParam String pageNum,HttpServletRequest req) {
+		String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadFiles/";
+		favoriteService.delete(articleNum,uploadDir);
 		
 		return "redirect:/help.favorite?pageNum="+pageNum;
 	}
+	
 	/*고객센터 안에 답글 달기 기능*/ 
 	@Transactional
 	@RequestMapping(value="/commentWrite.favorite")
@@ -146,7 +163,16 @@ public class FavoriteController {
 		return null;
 	}
 	
-	
+	@RequestMapping(value="/download.favorite")
+	@ResponseBody
+	public FileSystemResource download(HttpServletResponse resp,
+									   @RequestParam String originFname,
+									   @RequestParam String storedFname,
+									   @RequestParam int fileLength,
+									   HttpServletRequest req) {
+		String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadFiles/";
+		return favoriteService.download(resp,storedFname,originFname,fileLength,uploadDir);
+	}
 	
 	/* ********** 공지사항 게시판 기능 ********** */
 	@RequestMapping(value="/notice.favorite")

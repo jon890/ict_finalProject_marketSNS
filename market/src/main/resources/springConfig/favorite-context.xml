@@ -13,6 +13,26 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
+	
+	<!-- 인터셉터 객체 생성 -->
+	<bean id="LoginInterceptor" class="com.ict.market.marketStaGram.common.LoginInterceptor">
+	</bean>
+	
+	<!-- 인터셉터 설정 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/helpForm.favorite"/>
+			<mvc:mapping path="/write.favorite"/>
+			<mvc:mapping path="/update.favorite"/>
+			<mvc:mapping path="/delete.favorite"/>
+			<mvc:mapping path="/commentWrite.favorite"/>
+			<mvc:mapping path="/commentDelete.favorite"/>
+			<mvc:mapping path="/noticeForm.favorite"/>
+			<mvc:mapping path="/noticeDelete.favorite"/>
+			<mvc:mapping path="/noticeUpdate.favorite"/>
+			<ref bean="LoginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
@@ -21,6 +41,11 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/favorite/" />
 		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id ="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property value="100000000" name="maxUploadSize"></property>
 	</bean>
 		
 	<!-- aop를 aspectj 언어로 사용  -->

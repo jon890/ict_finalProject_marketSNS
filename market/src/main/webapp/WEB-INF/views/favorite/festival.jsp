@@ -15,11 +15,6 @@
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
 	    <link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
 	    <style>
-	        #p{
-	            font-size:30px;
-	            text-align:center;
-	            padding-top:10px;
-	        }
 	        .container{
 	        	width:1080px;
 	        	magin:0 auto;
@@ -29,6 +24,15 @@
 	        	width:500px;
 	        	height:350px;
 	        }
+	        .contents{
+				background:#f2f2f2;
+				width:100%;
+				margin: 0px auto 0;
+				padding : 15px;
+				position:relative;
+				box-sizing:border-box;
+				display:inline-block;
+			}
     	</style>	
 	</head>
 
@@ -37,7 +41,7 @@
 		
 		<section>
 			<div class="background">
-	        	<img src="./resources/images/favorite/favorite_main.png" />
+	        	<img src="./resources/images/favorite/festival.png">
 	        	<div class="transbox">
 	            	<p id="p01">축제정보</p>
 	            	<p id="p02">전통시장 주변의 축제 정보를 알려드립니다!</p>
@@ -61,10 +65,8 @@
 			            <a class="nav-link" data-toggle="pill" id="help">고객센터</a>
 			        </li>
 			    </ul>
-			    <p id="p">축제정보</p>
-	            <div class="contents">
-			<div class="web">
-				<div class="table_list">
+			    <br>
+				<div class="contents">
 					<table>
 						<colgroup>
 							<col width="200px">
@@ -114,9 +116,7 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-		</div>
-	 </div>
+	 		</div>
 	    </section>
 	    
 	    <footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>

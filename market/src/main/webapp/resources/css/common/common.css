@@ -1,6 +1,7 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 @font-face{font-family:'MaplestoryLight'; src:url('./../../fonts/MaplestoryLight.ttf')}
-
+@font-face{font-family:'write'; src:url('./../../fonts/서울한강장체B.ttf')}
+@font-face{font-family:'Gwangju'; src:url('./../../fonts/빛고을광주_Medium.ttf')}
 /* *************** 공통 스타일 부분 *************** */
 body{
 	margin : 0;
@@ -35,7 +36,7 @@ header{
 	top: 0px;
 	z-index : 20;
 	background-color : white;
-	font-family : MaplestoryLight;
+	font-family : "Gwangju";
 }
 
 nav{
@@ -54,7 +55,6 @@ footer{
 	height : 200px;
 	margin : 0 auto;
 	width : 1080px;
-	font-family : MaplestoryLight;
+	font-family : "Gwangju";
 }
-
 /* *************** 전체 레이아웃 *************** */

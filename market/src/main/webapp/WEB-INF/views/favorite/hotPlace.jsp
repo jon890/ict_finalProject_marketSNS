@@ -36,7 +36,7 @@
 		
 		<section>
 			<div class="background">
-	        	<img src="./resources/images/favorite/favorite_main.png" />
+	        	<img src="./resources/images/favorite/hotplace.png" />
 	        	<div class="transbox">
 	            	<p id="p01">HOT PLACE</p>
 	            	<p id="p02">직접 가본 핫한 장소를 알려드립니다!</p>
@@ -71,25 +71,7 @@
 							<col width="480px">
 						</colgroup>
 						<tbody>
-							<tr>
-								<td>
-									<img src="resources/images/favorite/시장통닭입구.JPG" class="imgHot">
-								</td>
-								<td>
-									<img src="resources/images/favorite/시장통닭.JPG" class="imgHot">
-								</td>
-								<td class="left">
-									<h3>양동시장</h3>
-									<span>수일통닭<br> </span>
-									<span>가격 : 18,000원 - 후라이드<br> </span>
-									<span> 19,000원 - 양념<br></span>
-									<span> 19,000원 - 양념반 후라이드반<br> </span>
-									<span>한줄평 : 통닭치고 비싸지만 장닭이라 양이 푸짐하고 옛날 치킨 맛이다.<br>
-												바로 앞에 양동통닭도 있으니 둘 다 체험해보길 추천!
-									</span>
-								</td>
-								
-							</tr>
+							
 							<tr>
 								<td>
 									<img src="resources/images/favorite/독일맥주입구.JPG" class="imgHot">
@@ -106,6 +88,79 @@
 									</span>
 								</td>
 							</tr>
+							<tr>
+								<td>
+									<img src="resources/images/favorite/조개굽는오바.JPG" class="imgHot">
+								</td>
+								<td>
+									<img src="resources/images/favorite/조개굽는오바조개.JPG" class="imgHot">
+								</td>
+								<td class="left">
+									<h3>남광주시장 </h3>
+									<span>조개 굽는  O-bar<br></span>
+									<span>가격 : 7,000원 - 양갱조각롤케익<br> </span>
+									<span>한줄평 : 야시장의 음식 중에 아주 비싼편에 속해 부담이 가나 화려한 불쇼와 고소한 치즈와 해산물은 일품이다..<br>
+										 치즈로 한 요리이기 때문에 최대한 빨리 먹는 것을 추천~!
+									</span>
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
+									<img src="resources/images/favorite/시장통닭입구.JPG" class="imgHot">
+								</td>
+								<td>
+									<img src="resources/images/favorite/시장통닭.JPG" class="imgHot">
+								</td>
+								<td class="left">
+									<h3>양동시장</h3>
+									<span>수일통닭<br> </span>
+									<span>가격 : 18,000원 - 후라이드<br> </span>
+									<span> 19,000원 - 양념<br></span>
+									<span> 19,000원 - 양념반 후라이드반<br> </span>
+									<span>한줄평 : 통닭치고 비싸지만 장닭이라 양이 푸짐하고 옛날 치킨 맛이다.<br>
+												바로 앞에 양동통닭도 있으니 둘 다 체험해보길 추천!
+									</span>
+								</td>	
+							</tr>
+							
+							<tr>
+								<td>
+									<img src="resources/images/favorite/초원팥죽입구.JPG" class="imgHot">
+								</td>
+								<td>
+									<img src="resources/images/favorite/초원팥죽국수.JPG" class="imgHot">
+								</td>
+								<td class="left">
+									<h3>말바우시장 </h3>
+									<span>초원팥죽 <br></span>
+									<span>가격 : 3,000원 - 팥죽<br> </span>
+									<span>5,000원 - 바지락칼국수<br> </span>
+									<span>5,000원 - 콩물국수<br> </span>
+									<span>한줄평 : 저렴한 가격에 든든한 팥칼국수를 먹을 수 있다.<br>
+										  팥칼국수 말고도 바지락칼국수, 콩물국수도 맛있으니 다른 국수도 추천~!
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="resources/images/favorite/갱소년소개.JPG" class="imgHot">
+								</td>
+								<td>
+									<img src="resources/images/favorite/갱소년.JPG" class="imgHot">
+								</td>
+								<td class="left">
+									<h3>1913송정역시장 </h3>
+									<span>갱소년 <br></span>
+									<span>가격 : 3,300원 - 양갱조각롤케익<br> </span>
+									<span>4,800원 - 양갱모듬팩_8구<br> </span>
+									<span>4,800원 - 양갱요거트<br> </span>
+									<span>한줄평 : 수제디저트 특성상 가격은 부담스러우나 정갈하고 예쁜 특별한 양갱을 먹을 수 있다.<br>
+										  양갱의 종류도 많고 여러종류 디저트류로도 판매하며 선물셋트도 많은 선물용으로 추천~!
+									</span>
+								</td>
+							</tr>
+							
 						</tbody>
 					</table>
 				</div>

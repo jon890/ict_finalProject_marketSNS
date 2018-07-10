@@ -5,6 +5,22 @@
 
 <mapper namespace="com.ict.market.main.dao.MainDao">
 
+	<!-- 메인 페이지 로딩시 글 4개씩 가져오기-->
+	<select id="mainHelp" resultType="mainHelpArticle">
+		select * 
+		from (select * from helpArticle order by articleNum desc)
+		where rownum between 1 and 4 
+	</select>
+
+	<select id="mainNotice" resultType="mainNotice">
+		select *
+		from (select * from notice order by articleNum desc)
+		where rowNum between 1 and 4
+	</select>
+	<!-- 메인 페이지 로딩시 글 4개씩 가져오기-->
+
+
+
 	<!-- 로그인 기능 -->
 	<select id="login" parameterType="String" resultType="member">
 		SELECT PASSWORD, ADMINCHK
@@ -17,5 +33,24 @@
 		INSERT INTO MARKETMEMBER
 		VALUES(#{id}, #{password}, #{name}, #{age}, #{gender}, #{adminchk})
 	</insert>
+	
+	<select id="kakaoInsertChk" parameterType="String" resultType="String">
+		SELECT PASSWORD
+		FROM MARKETMEMBER
+		WHERE ID = #{id}
+	</select>
 
+	<!-- 카카오 로그인 정보를 우리 DB에 저장 -->
+	<insert id="registerKakao" parameterType="member">
+		INSERT INTO MARKETMEMBER
+		VALUES(#{id}, #{password}, #{name}, #{age}, #{gender}, #{adminchk})
+	</insert>
+
+	
+	<!-- 중복 아이디 체크 -->
+	<select id="registerIdCheck" parameterType="String" resultType="String">
+		SELECt ID
+		FROM MARKETMEMBER
+		WHERE ID = #{id}
+	</select>
 </mapper>

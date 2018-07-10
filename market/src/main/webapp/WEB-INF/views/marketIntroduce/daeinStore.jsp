@@ -16,7 +16,7 @@
 						<colgroup>
 							<col width="280px">
 							<col width="500px">
-							<col width="150px">
+							<col width="200px">
 						</colgroup>
 						<tbody>
 							<tr>
@@ -29,7 +29,9 @@
 									<span>구수한 두부 땟갈 좋은 아이스크림으로 돌아왔다.<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									순두부 아이스크림 3000원<br>
+									토핑 아이스크림 3500원<br>(제주밀차, 초코, 건대추, 단호박, 자색고구마, 딸기)</span>
 								</td>
 							</tr>
 							<tr>
@@ -42,7 +44,10 @@
 									<span>너무 저렴해서 미안해도 가게 되는 가성비 맛집<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									장터국수	1000원<br>
+									비빔국수	2000원<br>
+									부추전	2000원</span>
 								</td>
 							</tr>
 							<tr>
@@ -55,7 +60,10 @@
 									<span>삼겹살과 야채, 소스, 불 맛있을 수 밖에 없는 조합<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><<br>
+									삼뚱이 5000원<br>
+									(매운맛, 순한맛)<br>
+									치즈토핑 추가 1000원</span>
 								</td>
 								<tr>
 								<td>
@@ -64,10 +72,13 @@
 								<td class="left">
 									<h3>영광식당</h3>
 									<span>국밥,국수, 서비스 모둠순대<br></span>
-									<span>시장의 정을 느낄 수 있는 국밥집<br></span>
+									<span>시장의 정을 느낄 수 있는 국밥집</span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									국밥 보통	6000원<br>
+									국밥 특	7000원<br>
+									국수		5000원</span>
 								</td>
 							</tr>
 						</tbody>

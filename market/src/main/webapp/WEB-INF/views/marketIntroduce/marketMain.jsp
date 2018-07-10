@@ -21,10 +21,13 @@
     			margin-left : 20px;
     		}
     		#th01{
-			    width:20%;
+			    width:160px;
 			}
 			#th02{
-			    width:25%;
+			    width:100px;
+			}
+			.nav-pills{
+				z-index:10;
 			}
 	    </style>
 	</head>

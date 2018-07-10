@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.ict.market.main.dao.MainDao;
 import com.ict.market.main.dto.MarketMemberDto;
@@ -14,6 +15,16 @@ public class MainServiceImpl implements MainService {
 	
 	@Autowired
 	private MainDao mainDao;
+	
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	@Override
+	public void indexArticle(Model model) {
+		model.addAttribute("helpArticleList",mainDao.mainHelp());
+		model.addAttribute("noticeArticleList",mainDao.mainNotice());
+	}
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	
+	
 	
 	/* ********** 로그인 관련 기능 ********** */
 	@Override
@@ -36,19 +47,38 @@ public class MainServiceImpl implements MainService {
 	}
 	
 	@Override
-	public String loginWithKakao(String id, String nickName, String profileImg, HttpSession session,
+	public void loginWithKakao(String id, String nickName, String profileImg, HttpSession session,
 			HttpServletRequest req) {
 		session.invalidate();
 		session = req.getSession();
-		session.setAttribute("id", nickName);
+		session.setAttribute("id", nickName + "(Kakao)");
 		session.setAttribute("profileImg", profileImg);
-		System.out.println(profileImg);
-		return null;
+		
+		if( mainDao.kakaoInsertChk(nickName + "(Kakao)") == null) {
+			MarketMemberDto member = new MarketMemberDto();
+			member.setId(nickName + "(Kakao)");
+			member.setPassword(id + "_Kakao");
+			mainDao.registerKakao(member);
+		}
 	}
 
 	@Override
 	public void register(MarketMemberDto member) {
 		mainDao.register(member);
 	}
-	/* ********** 로그인 관련 기능 ********** */	
+	/* ********** 로그인 관련 기능 ********** */
+
+	
+	/* ********** 아이디 중복 체크 ********** */
+	public String registerIdCheck(String id) {
+		String idCheck = mainDao.registerIdCheck(id);
+		String result = null;
+		if(idCheck != null) {
+			result = "0";
+		} else {
+			result = "1";
+		}
+		return result;
+	}
+	/* ********** 아이디 중복 체크 ********** */
 }

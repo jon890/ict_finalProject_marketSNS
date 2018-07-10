@@ -38,7 +38,7 @@
 		
 		<section>
 			<div class="background">
-	        	<img src="./resources/images/favorite/favorite_main.png" />
+	        	<img src="./resources/images/favorite/nightmarket.png" />
 	        	<div class="transbox">
 	            	<p id="p01">야시장 정보</p>
 	            	<p id="p02">광주의 야시장 정보를 알려드립니다!</p>
@@ -62,7 +62,7 @@
 			            <a class="nav-link" data-toggle="pill" id="help">고객센터</a>
 			        </li>
 			    </ul>
-			    <p id="p">야시장정보</p>
+			    <p id="p"><b>야시장정보</b></p>
 		<div class="contents">
 			<div class="web">
 				<div class="table_list">

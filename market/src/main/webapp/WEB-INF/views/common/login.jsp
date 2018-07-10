@@ -13,6 +13,13 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="./resources/js/login.js"></script>
 	    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	    <script>
+	    $(document).ready(function(){
+	    	$("#registerBtn").on("click", function(){
+	    		$(location).attr('href', './register.main');
+	    	});
+	    });
+	    </script>
 	</head>
 	
 	<body>
@@ -30,14 +37,15 @@
 		    <div id="loginContainer">
 		    	<p id="loginTitle">로그인</p><br>
 		        <div id="loginDiv01">
-	                <input type="text" id="inputId" placeholder="아이디를 입력해주세요..." required>
-	                <input type="password" id="inputPwd" placeholder="비밀번호를 입력해주세요..." required>
-		            <input type="submit" value="로그인" id="loginBtn">
+	                <input type="text" class="form-control" id="inputId" placeholder="아이디를 입력해주세요" required>
+	                <input type="password" class="form-control" id="inputPwd" placeholder="비밀번호를 입력해주세요" required>
+		            <input type="submit" value="로그인" id="loginBtn" class="btn btn-secondary">
 		            <p id="msg"></p>
 		        </div>
 		        
 		        <div id="loginBtns">
-		        	<a href="register.main">회원가입</a><br>
+		        	<input type="button" value="회원가입" id="registerBtn" class="btn btn-outline-secondary">
+		        	<br>
 		        	<a id="custom-login-btn" href="javascript:loginWithKakao()"><img src="./resources/images/menu/kakao_account_login_btn_medium_narrow_ov.png"></a>
 		        </div>
 		    </div>
@@ -53,8 +61,6 @@
 	    				url : "/v1/user/me",
 	    				success : function(res){
 	    					let kakaoData = JSON.stringify(res);
-		    				$("#msg").append(kakaoData);
-		    				
 		    				// 카카오에서 받은 데이터로 로그인하기
 		    				$.ajax({
 	    						url : "/market/loginWithKakao.main",
@@ -70,7 +76,6 @@
 			    				}
 		    				});
 		    				// 카카오에서 받은 데이터로 로그인하기
-
 	    				},
 	    				fail : function(err){
 	    					$("#msg").append(err);

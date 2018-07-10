@@ -7,7 +7,17 @@ public class marketPriceDTO {
 	private String muDeungPrice;
 	private String malBawooPrice;
 	private String moonPrice;
+	private int weekends;
 	
+	
+	
+	
+	public int getWeekends() {
+		return weekends;
+	}
+	public void setWeekends(int weekends) {
+		this.weekends = weekends;
+	}
 	public String getGoodsName() {
 		return goodsName;
 	}
@@ -44,11 +54,12 @@ public class marketPriceDTO {
 	public void setMoonPrice(String moonPrice) {
 		this.moonPrice = moonPrice;
 	}
+	
 	@Override
 	public String toString() {
 		return "marketPriceDTO [goodsName=" + goodsName + ", daeInPrice=" + daeInPrice + ", yangDongPrice="
 				+ yangDongPrice + ", muDeungPrice=" + muDeungPrice + ", malBawooPrice=" + malBawooPrice + ", moonPrice="
-				+ moonPrice + "]";
+				+ moonPrice + ", weekends=" + weekends + "]";
 	}
 	
 	

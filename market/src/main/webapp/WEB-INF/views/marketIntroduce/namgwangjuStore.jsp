@@ -16,7 +16,7 @@
 						<colgroup>
 							<col width="280px">
 							<col width="500px">
-							<col width="150px">
+							<col width="200px">
 						</colgroup>
 						<tbody>
 							<tr>
@@ -29,7 +29,8 @@
 									<span>치즈와 키조개의 고소함의 향연~!<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									치즈관자구이 7000원</span>
 								</td>
 							</tr>
 							<tr>
@@ -42,7 +43,8 @@
 									<span>김밥에도 삼겹살시대가 왔다~!<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									삼겹살김밥 4000원</span>
 								</td>
 							</tr>
 							<tr>
@@ -55,7 +57,8 @@
 									<span>8천원의 건강하고 든든한 한식 뷔페<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									보리밥뷔페  8000원</span>
 								</td>
 							</tr>
 						</tbody>

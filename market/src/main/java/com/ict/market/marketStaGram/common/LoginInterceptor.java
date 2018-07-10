@@ -13,6 +13,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			throws Exception {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("id") == null) {
+			System.out.println(request.getHeader("referer"));
 			response.sendRedirect("/market/login.main");
 			return false;
 		}

@@ -16,10 +16,15 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
 	
-	<tx:annotation-driven proxy-target-class="true"/>
+	<bean id="AfterLoginInterceptor" class="com.ict.market.main.common.AfterLoginInterceptor">
+	</bean>
 	
-	<!-- AspectJ를 쓸 수 있게 하는 구문 -->
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/login.main"/>
+			<ref bean="AfterLoginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />

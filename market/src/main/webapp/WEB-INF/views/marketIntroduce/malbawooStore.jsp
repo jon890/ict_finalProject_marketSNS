@@ -22,7 +22,7 @@
 						<colgroup>
 							<col width="280px">
 							<col width="500px">
-							<col width="150px">
+							<col width="200px">
 						</colgroup>
 						<tbody>
 							<tr>
@@ -35,7 +35,10 @@
 									<span>저렴한 3천원으로 건강한 팥죽을 선사합니다.<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									팥죽		3000원<br>
+									동지죽	4000원<br>
+									바지락칼국수5000원</span>
 								</td>
 							</tr>
 							<tr>
@@ -48,7 +51,10 @@
 									<span>저렴한 가격에 싱싱한 횟를 먹고 싶다면 와<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									숭어	10000원<br>
+									전어	10000원<br>
+									탕 별도 5000원</span>
 								</td>
 							</tr>
 							<tr>
@@ -61,7 +67,10 @@
 									<span>저렴한 아구찜으로 소문난 맛집이다.<br></span>
 								</td>
 								<td>
-									<span>tel : 010-7633-9213</span>
+									<span><b>-주요메뉴-</b><br>
+									아구찜	20000~35000원<br>
+									병어회	20000원<br>
+									전어구이	15000원</span>
 								</td>
 							</tr>
 						</tbody>

@@ -83,7 +83,7 @@
 					
 					<hr>
 					<div id="snsArticleBtns">
-						 <c:if test="${id == null}">
+						<%-- <c:if test="${id == null}">
 							<a href="javaScript:login()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
 							<a href="javaScript:login()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
 						</c:if>
@@ -91,7 +91,9 @@
 						<c:if test="${id != null}">
 							<a href="javaScript:likefunc()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
 							<a href="javaScript:commentfunc()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
-						</c:if>
+						</c:if> --%>
+						<a href="javaScript:likefunc()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
+						<a href="javaScript:commentfunc()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
 					</div>
 					
 					<div>좋아요수 : <span id="likeNum">${snsArticle.likeNum}</span></div>

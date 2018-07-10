@@ -114,7 +114,7 @@
 							
 							<p class="input">비밀 번호<br><input type="password" class="form-control" name="password" placeholder="비밀번호를 입력하세요" required></p>
 							<p class="input">비밀 번호 확인<br><input type="password" class="form-control" placeholder="비밀번호를 다시 입력하세요" id="pwdChk" required>   
-								<span id="password_check"></span>
+								<br><span id="password_check"></span>
 							</p>
 						</div>
 						

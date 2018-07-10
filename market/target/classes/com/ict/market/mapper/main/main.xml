@@ -50,7 +50,7 @@
 	<!-- 중복 아이디 체크 -->
 	<select id="registerIdCheck" parameterType="String" resultType="String">
 		SELECt ID
-		FROM LOGIN
+		FROM MARKETMEMBER
 		WHERE ID = #{id}
 	</select>
 </mapper>

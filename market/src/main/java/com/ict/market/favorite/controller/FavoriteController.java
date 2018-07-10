@@ -82,9 +82,7 @@ public class FavoriteController {
 	@RequestMapping(value="/write.favorite",method=RequestMethod.POST)
 	public String writeForm(FavoriteDto helpArticle,HttpSession session
 			,@RequestPart("fname")List<MultipartFile> fname,HttpServletRequest req) {
-		logger.info("write - 페이지 이동");
 		helpArticle.setId((String)session.getAttribute("id"));
-		
 		/* 파일 업로드 경로 */
 	    String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadFiles/";
 		logger.info(uploadDir);

@@ -31,6 +31,11 @@ public class MainDaoImpl implements MainDao{
 	public void registerKakao(MarketMemberDto member) {
 		sqlSession.insert(nameSpace.concat(".registerKakao"), member);
 	}
+	
+	@Override
+	public String kakaoInsertChk(String id) {
+		return sqlSession.selectOne(nameSpace.concat(".kakaoInsertChk"), id);
+	}
 	/* ********** 로그인 관련 기능 ********** */
 
 	@Override

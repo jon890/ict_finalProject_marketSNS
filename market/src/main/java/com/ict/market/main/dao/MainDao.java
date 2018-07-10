@@ -10,6 +10,7 @@ public interface MainDao {
 	public MarketMemberDto login(String id);
 	public void register(MarketMemberDto member);
 	public void registerKakao(MarketMemberDto member);
+	public String kakaoInsertChk(String id);
 	/* ********** 로그인 관련 기능 ********** */
 	public List<MainhelpDto> mainHelp();
 	public List<MainhelpDto> mainNotice();

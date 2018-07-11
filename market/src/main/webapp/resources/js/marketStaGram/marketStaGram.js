@@ -230,14 +230,6 @@ $(document).ready(function(){
 				},
 				success(searchResult){
 					location.href = "./searchArticle.msg?articleNums=" + searchResult;
-//					$.ajax({
-//						url : "/market/searchArticle.msg",
-//						dataType : "json",
-//						traditional : true,
-//						data : {
-//							articleNums : searchResult
-//						}
-//					});
 				}
 			});
 		});

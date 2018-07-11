@@ -8,7 +8,6 @@
 	    <meta charset="utf-8">
 	    <title>아따시장 - #시장스타그램 검색</title>   
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    <script src="./resources/js/marketStaGram/marketStaGram.js"></script>
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
 	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
@@ -71,6 +70,65 @@
 			$(document).ready(function(){
 				$("#backBtn").click(function(){
 					history.back();
+				});
+				
+				/* $(document).scroll(function(){
+					let maxHeight = $(document).height();
+					let currentScroll = $(window).scrollTop() + $(window).height();
+					if ( maxHeight <= currentScroll){
+						$.ajax({
+							url : "/market/list.msg",
+							data : {
+								pageNum : pageNum
+							},
+							success : function(data){
+								let html = "";
+								$.each(data, function(index, img){
+									html += "<article class='article' articleNum='" + img.articleNum + "'>";
+									html += "<a href='read.msg?articleNum=" + img.articleNum + "'>";
+									html += "<img src='./resources/uploadImgs/" + img.storedImgName + "'>";
+									html += "</a>";
+									html += "</article>";
+								});
+								$("#articles").append(html);
+								pageNum++;
+								let height = $(document).scrollTop();
+								$('html, body').animate({scrollTop : height+200}, 200);
+							}
+						});
+					}
+				}); */
+
+				$(document).on("mouseenter",".article",function(){
+					let that = $(this);
+					$.ajax({
+						url : "/market/getInfo.msg",
+						data : {
+							articleNum : that.attr("articleNum")
+						},
+						success : function(data){
+							let html = "";
+							html += "<article class='articleOverlap'>";
+							html += "<span id='likeNum' title='좋아요'>";
+							html += "<img src='./resources/images/marketStaGram/dislikebtn.png' title='좋아요'>" + data.likeNum + "개"
+							html += "</span>";
+							html += "<span id='commentNum' title='댓글'>";
+							html += "<img src='./resources/images/marketStaGram/commentbtn.png' title='댓글'>" + data.commentNum + "개";
+							html += "</span>";
+							html += "</article>";
+							that.append(html);
+						}
+					})	
+				});
+
+				$(document).on("click", ".articleOverlap", function(){
+					let that = $(this);
+					location.href = "./read.msg?articleNum=" + that.parent("article").attr("articleNum");
+				});
+
+				$(document).on("mouseleave",".article",function(){
+					let that = $(this);
+					that.children("article").remove();
 				});
 			});
 		</script>

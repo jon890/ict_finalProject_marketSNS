@@ -29,7 +29,7 @@ public class CompareDAOImpl implements CompareDAO {
 	}
 
 	@Override
-	public List<martPriceDTO> martPrice() {
+	public List<martPriceDTO> martPrice(String weekends) {
 		return sqlSession.selectList(nameSpace+".martList");
 	}
 	
@@ -43,7 +43,7 @@ public class CompareDAOImpl implements CompareDAO {
 	
 	
 	@Override
-	public List<ComparePriceDTO> comparePrice() {
+	public List<ComparePriceDTO> comparePrice(String weekends) {
 		return sqlSession.selectList(nameSpace+".compareList");
 	}
 	
@@ -53,125 +53,125 @@ public class CompareDAOImpl implements CompareDAO {
 	}
 
 	/*-----------------시장 품목별 출력 메소드------------------*/
-	public List<marketPriceDTO> marketCorn(){
-		return sqlSession.selectList(nameSpace+".marketCorn");
+	public List<marketPriceDTO> marketCorn(String weekends){
+		return sqlSession.selectList(nameSpace+".marketCorn",weekends);
 	}
 
 	@Override
-	public List<marketPriceDTO> marketMeat() {
-		return sqlSession.selectList(nameSpace+".marketMeat");
+	public List<marketPriceDTO> marketMeat(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketMeat",weekends);
 	}
 
 	@Override
-	public List<marketPriceDTO> marketFish() {
+	public List<marketPriceDTO> marketFish(String weekends) {
 		
-		return sqlSession.selectList(nameSpace+".marketFish");
+		return sqlSession.selectList(nameSpace+".marketFish",weekends);
 	}
 
 	@Override
-	public List<marketPriceDTO> marketFruit() {
-		return sqlSession.selectList(nameSpace+".marketFruit");
+	public List<marketPriceDTO> marketFruit(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketFruit",weekends);
 	}
 
 	@Override
-	public List<marketPriceDTO> marketVege() {
-		return sqlSession.selectList(nameSpace+".marketVege");
+	public List<marketPriceDTO> marketVege(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketVege",weekends);
 	}
 
 	@Override
-	public List<marketPriceDTO> marketGro() {
-		return sqlSession.selectList(nameSpace+".marketGro");
+	public List<marketPriceDTO> marketGro(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketGro",weekends);
 	}
 
 	@Override
-	public List<marketPriceDTO> marketOil() {
-		return sqlSession.selectList(nameSpace+".marketOil");
+	public List<marketPriceDTO> marketOil(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketOil",weekends);
 	}
 
 	@Override
-	public List<marketPriceDTO> marketCleaner() {
-		return sqlSession.selectList(nameSpace+".marketCorn");
+	public List<marketPriceDTO> marketCleaner(String weekends) {
+		return sqlSession.selectList(nameSpace+".marketCorn",weekends);
 	}
 	
 	/*-------------마트 품목별 출력 메소드-----------------*/
 	@Override
-	public List<martPriceDTO> martCorn() {
-		return sqlSession.selectList(nameSpace+".martCorn");
+	public List<martPriceDTO> martCorn(String weekends) {
+		return sqlSession.selectList(nameSpace+".martCorn",weekends);
 	}
 
 	@Override
-	public List<martPriceDTO> martMeat() {
-		return sqlSession.selectList(nameSpace+".martMeat");
+	public List<martPriceDTO> martMeat(String weekends) {
+		return sqlSession.selectList(nameSpace+".martMeat",weekends);
 	}
 
 	@Override
-	public List<martPriceDTO> martFish() {
-		return sqlSession.selectList(nameSpace+".martFish");
+	public List<martPriceDTO> martFish(String weekends) {
+		return sqlSession.selectList(nameSpace+".martFish",weekends);
 	}
 
 	@Override
-	public List<martPriceDTO> martFruit() {
-		return sqlSession.selectList(nameSpace+".martFruit");
+	public List<martPriceDTO> martFruit(String weekends) {
+		return sqlSession.selectList(nameSpace+".martFruit",weekends);
 	}
 
 	@Override
-	public List<martPriceDTO> martVege() {
-		return sqlSession.selectList(nameSpace+".martVege");
+	public List<martPriceDTO> martVege(String weekends) {
+		return sqlSession.selectList(nameSpace+".martVege",weekends);
 	}
 
 	@Override
-	public List<martPriceDTO> martGro() {
-		return sqlSession.selectList(nameSpace+".martGro");
+	public List<martPriceDTO> martGro(String weekends) {
+		return sqlSession.selectList(nameSpace+".martGro",weekends);
 	}
 
 	@Override
-	public List<martPriceDTO> martOil() {
-		return sqlSession.selectList(nameSpace+".martOil");
+	public List<martPriceDTO> martOil(String weekends) {
+		return sqlSession.selectList(nameSpace+".martOil",weekends);
 	}
 
 	@Override
-	public List<martPriceDTO> martCleaner() {
-		return sqlSession.selectList(nameSpace+".martCleaner");
+	public List<martPriceDTO> martCleaner(String weekends) {
+		return sqlSession.selectList(nameSpace+".martCleaner",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareCorn() {
-		return sqlSession.selectList(nameSpace+".compareCorn");
+	public List<ComparePriceDTO> compareCorn(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareCorn",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareMeat() {
-		return sqlSession.selectList(nameSpace+".compareMeat");
+	public List<ComparePriceDTO> compareMeat(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareMeat",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareFish() {
-		return sqlSession.selectList(nameSpace+".compareFish");
+	public List<ComparePriceDTO> compareFish(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareFish",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareFruit() {
-		return sqlSession.selectList(nameSpace+".compareFruit");
+	public List<ComparePriceDTO> compareFruit(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareFruit",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareVege() {
-		return sqlSession.selectList(nameSpace+".compareVege");
+	public List<ComparePriceDTO> compareVege(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareVege",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareGro() {
-		return sqlSession.selectList(nameSpace+".compareGro");
+	public List<ComparePriceDTO> compareGro(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareGro",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareOil() {
-		return sqlSession.selectList(nameSpace+".compareOil");
+	public List<ComparePriceDTO> compareOil(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareOil",weekends);
 	}
 
 	@Override
-	public List<ComparePriceDTO> compareCleaner() {
-		return sqlSession.selectList(nameSpace+".compareCleaner");
+	public List<ComparePriceDTO> compareCleaner(String weekends) {
+		return sqlSession.selectList(nameSpace+".compareCleaner",weekends);
 	}
 	
 	

@@ -80,20 +80,22 @@
 			  품목별 보기 <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu">
-			  <li><a href="marketCorn.compare">곡류</a></li>
-			  <li><a href="marketMeat.compare">육류</a></li>
-			  <li><a href="marketFish.compare">어류</a></li>
-			  <li><a href="marketFruit.compare">과일</a></li>
-			  <li><a href="marketVege.compare">채소</a></li>
-			  <li><a href="marketGro.compare">식료품</a></li>
-			  <li><a href="marketOil.compare">유류</a></li>
-			  <li><a href="marketCleaner.compare">세제</a></li>
+			  <li><a href="marketCorn.compare?weekends=${weekends}">곡류</a></li>
+			  <li><a href="marketMeat.compare?weekends=${weekends}">육류</a></li>
+			  <li><a href="marketFish.compare?weekends=${weekends}">어류</a></li>
+			  <li><a href="marketFruit.compare?weekends=${weekends}">과일</a></li>
+			  <li><a href="marketVege.compare?weekends=${weekends}">채소</a></li>
+			  <li><a href="marketGro.compare?weekends=${weekends}">식료품</a></li>
+			  <li><a href="marketOil.compare?weekends=${weekends}">유류</a></li>
+			  <li><a href="marketCleaner.compare?weekends=${weekends}">세제</a></li>
 			</ul>
 		  </div>
 	<br>
 	<span><c:out value="${weekends.replace('0','월')}"/>주차 가격</span>	  
 	<br>
-	<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
+	<span>※ 출처: 광주광역시청 홈페이지 참조</span>
+	<br>
+	<span><img src="./resources/images/compare/compare_icon.png" id="icon"></span>
 	<table class="table table-striped">
 			<thead>
 			  <tr>

@@ -87,8 +87,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketMeat" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
@@ -99,8 +99,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketFish" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
@@ -111,8 +111,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketFruit" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
@@ -123,8 +123,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketVege" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
@@ -135,8 +135,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketGro" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
@@ -147,8 +147,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketOil" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
@@ -159,8 +159,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketCleaner" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,
@@ -171,8 +171,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	
 	<!--*******************마트 품목별 출력 sql문 시작 ********************-->
@@ -183,8 +183,8 @@
 	where g.goodsCode between 10 and 80 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="martMeat" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
@@ -193,8 +193,8 @@
 	where g.goodsCode between 90 and 130 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="martFish" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
@@ -203,8 +203,8 @@
 	where g.goodsCode between 140 and 200 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="martFruit" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
@@ -213,8 +213,8 @@
 	where g.goodsCode between 210 and 230 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="martVege" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
@@ -223,7 +223,8 @@
 	where g.goodsCode between 240 and 310 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="martGro" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
@@ -232,8 +233,8 @@
 	where g.goodsCode between 320 and 430 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="martOil" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
@@ -242,8 +243,8 @@
 	where g.goodsCode between 440 and 480 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="martCleaner" resultType="mart">
 	select g.goodsName,m1.price emartPrice,m2.price homePlusPrice,m3.price lotteMartPrice,
@@ -252,8 +253,8 @@
 	where g.goodsCode between 490 and 520 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode
 	and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode
 	and m1.martCode=11 and m2.martCode=22 and m3.martCode=33 
-	and m4.martCode=44 and m5.martCode=55 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m4.martCode=44 and m5.martCode=55 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<!-- ***************시장vs마트 가격 비교 sql문 시작***************** -->
 	<select id="compareCorn" resultType="compare">
@@ -265,8 +266,8 @@
     where g.goodsCode between 10 and 80 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	<select id="compareMeat" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
@@ -277,8 +278,8 @@
     where g.goodsCode between 90 and 130 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	<select id="compareFish" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
@@ -289,8 +290,8 @@
     where g.goodsCode between 140 and 200 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	<select id="compareFruit" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
@@ -301,8 +302,8 @@
     where g.goodsCode between 210 and 230 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	<select id="compareVege" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
@@ -313,8 +314,8 @@
     where g.goodsCode between 240 and 310 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	<select id="compareGro" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
@@ -325,8 +326,8 @@
     where g.goodsCode between 320 and 430 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	<select id="compareOil" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
@@ -337,8 +338,8 @@
     where g.goodsCode between 440 and 480 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	<select id="compareCleaner" resultType="compare">
 	select g.goodsName,m1.price daeInPrice,m2.price yangdongPrice,m3.price malbawooPrice
@@ -349,8 +350,8 @@
     where g.goodsCode between 490 and 520 and m1.goodsCode=g.goodsCode and m2.goodsCode=g.goodsCode and m3.goodsCode=g.goodsCode 
     and m1.marketCode=111 and m2.marketCode=222 and m3.marketCode=444
     and m4.goodsCode=g.goodsCode and m5.goodsCode=g.goodsCode and m6.goodsCode=g.goodsCode 
-    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701 and m6.weekends=701
+    and m4.martCode=11 and m5.martCode=22 and m6.martCode=33 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends} and m6.weekends=#{weekends}
 	</select>
 	
 

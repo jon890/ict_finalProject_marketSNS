@@ -110,9 +110,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 
 	@Override
 	public void getUpdateArticle(String articleNum, int fileStatus, Model model) {
-		
 		model.addAttribute("helpArticle",favoriteDao.getUpdateArticle(articleNum));
-		
 	}
 
 	@Override
@@ -159,6 +157,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 
 	@Override
 	public List<CommentDto> getComments(int articleNum, int commentRow,Model model) {
+		System.out.println(favoriteDao.getComments(articleNum,commentRow));
 		model.addAttribute("commentList",favoriteDao.getComments(articleNum,commentRow));
 		return favoriteDao.getComments(articleNum,commentRow);
 	}
@@ -180,6 +179,15 @@ public class FavoriteServiceImpl implements FavoriteService {
 		resp.setHeader("Content-Disposition","attachment;" +"filename=\""+originFname+ "\";");
 		FileSystemResource fsr = new FileSystemResource(uploadDir+storedFname);
 		return fsr;
+	}
+	
+	@Override
+	public List<CommentDto> commentgetUpdate(String commentNum){
+		return favoriteDao.commentgetUpdate(commentNum);
+	}
+	@Override
+	public void commentUpdate(CommentDto comment) {
+		favoriteDao.commentUpdate(comment);
 	}
 
 	/* ********** 공지사항 게시판 기능 ********** */

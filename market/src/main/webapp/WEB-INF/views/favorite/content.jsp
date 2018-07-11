@@ -175,23 +175,71 @@
 	    		}
 	    	});
 	    });	
-	    
-	    
-	    
-	     function deleteComment(obj){
-	    	let tr = $(obj).parent().parent();
-	    	tr.remove();
-	    	alert($(obj).val());
-	    	$.ajax({
-	    		url:"/market/commentDelete.favorite",
-	    		data:{
-	    			commentNum:$(obj).val()
-	    		},
-	    		success:function(data){
-	    			if(data.result=1){
+	    function updateComment(obj){
+	    	if("${id}"==$(obj).parent().siblings("td[class=id]").html()){
+	    		alert("들어왔다.");
+	    		alert($(obj).val());
+	    		$.ajax({
+	    			url:"/market/commentgetUpdate.favorite",
+	    			data:{
+	    				commentNum:$(obj).val()
+	    			},
+	    			success:function(response){
+	    					console.log(response);
+	    					commentUpdateForm(response);
 	    			}
-	    		}
+	    			
+	    		});
+	    	}else{
+	    		alert("본인의 글이 아닙니다. 다시 한번 확인해주세요.");
+	    	}
+	    	
+	    }
+	    
+	    function commentUpdateForm(response){
+	    	alert("여기 왓는지 확인");
+	    	alert(response);
+	    	let html;
+	    	$(".content").html("");
+	    	html += "<form action='./updateComment.favorite'>";
+	    	$.each(response,function(index,item){ 
+	    	alert(item);
+	    	html += "<input type='hidden' name='commentNum' value="+item.commentNum+">";
+	    	html += "<input type='text' name='commentContent' value="+item.commentContent+">";
 	    	});
+	    	html += "<input type='submit' class='btn btn-primary' value='저장'>";
+	    	html += "</form>";
+	    	$(".content").html(html);
+	    }
+	    
+	     function comfirmDelete(obj){
+	    	alert("${commentList.id}");
+	    	if("${id}"==$(obj).parent().siblings("td[class=id]").html()){
+	    		deleteComment(obj);	
+	    	}else{
+	    		alert("본인의 글이 아닙니다. 다시 한번 확인해주세요.");
+	    	}
+	     }	
+	     function deleteComment(obj){
+	    	let msg = confirm("댓글을 삭제합니다.");
+	    	if(msg==true){
+	    		let tr = $(obj).parent().parent();
+		    	tr.remove();
+		    	alert($(obj).val());
+		    	$.ajax({
+		    		url:"/market/commentDelete.favorite",
+		    		data:{
+		    			commentNum:$(obj).val()
+		    		},
+		    		success:function(data){
+		    			if(data.result=1){
+		    			}
+		    		}
+		    	});
+	    	}else{
+	    		return false;
+	    	}
+	    	
 	    }
 	    
 	    function getComment(commPageNum,event){
@@ -214,10 +262,12 @@
 			$.each(data,function(index,item){ 
 				html +="<tr>"; 
 				html +="<td width='100'>"+(index+1)+"</td>";
-				html +="<td	width='100'>"+item.id+"</td>";
-				html +="<td width='600'>"+item.commentContent+"</td>";
+				html +="<td	class='id' width='100'>"+item.id+"</td>";
+				html +="<td class='content' width='600'>"+item.commentContent+"</td>";
 				html +="<td	width='210'>"+item.commentDate+"</td>";
-				html +="<td	width='100'>"+item.commentNum+"</td>";		
+				html +="<td	width='100'>"+item.commentNum+"</td>";
+				html +="<td width='100'><button onClick='updateComment(this)' value="+item.commentNum+" class='btn btn-primary' id='updateKey'>수정</button></td>";
+				html +="<td width='100'><button onClick='comfirmDelete(this)' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td>";
 				/* html +="<c:if test='${id!="+item.id+"}'><td width='100'><button onClick='deleteComment(this)' disabled='diabled' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td></c:if>";
 				html +="<c:if test='${id=="+item.id+"}'><td width='100'><button onClick='deleteComment(this)' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td></c:if>"; */
 				html +="</tr>"; 

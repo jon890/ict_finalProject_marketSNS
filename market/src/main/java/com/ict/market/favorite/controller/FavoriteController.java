@@ -174,6 +174,24 @@ public class FavoriteController {
 		return favoriteService.download(resp,storedFname,originFname,fileLength,uploadDir);
 	}
 	
+	@RequestMapping(value="/commentgetUpdate.favorite",produces = "application/json; charset=utf8")
+	@ResponseBody
+	public List<CommentDto> commentgetUpdate(@RequestParam("commentNum") String commentNum) {
+		logger.info("업데이트페이지 - 접근");
+		logger.info(commentNum);
+		System.out.println(favoriteService.commentgetUpdate(commentNum));
+		return favoriteService.commentgetUpdate(commentNum);
+	}
+	
+	@RequestMapping(value="/updateComment.favorite")
+	public String commentUpdate(CommentDto comment){
+		favoriteService.commentUpdate(comment);
+		return "redirect:/help.favorite?pageNum=1";
+	}
+	
+	
+	
+	
 	/* ********** 공지사항 게시판 기능 ********** */
 	@RequestMapping(value="/notice.favorite")
 	public String notice(@ModelAttribute("pageNum") String pageNum, Model model) {

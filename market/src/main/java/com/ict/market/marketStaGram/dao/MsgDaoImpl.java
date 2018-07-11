@@ -124,4 +124,16 @@ public class MsgDaoImpl implements MsgDao {
 	public List<SearchDto> search(String keyword) {
 		return sqlSession.selectList(nameSpace.concat(".search"), keyword);
 	}
+
+	@Override
+	public List<String> searchResult(String keyword) {
+		return sqlSession.selectList(nameSpace.concat(".searchResult"), keyword);
+	}
+
+	@Override
+	public List<ImgDto> searchArticle(List<Integer> articleNums) {
+		return sqlSession.selectList(nameSpace.concat(".searchArticle"), articleNums);
+	}
+	/* ********** 해쉬태그 검색기능 ********** */
+	
 }

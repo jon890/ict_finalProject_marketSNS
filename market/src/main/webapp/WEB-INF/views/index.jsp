@@ -13,16 +13,19 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-		<!-- <script>
-			function moveToMain2(){
-				location.href = "#main2";
-			}
-		</script> -->
 		<script>
 		$(document).ready(function() {
             $("#moveToMain2").click(function(event){
                     event.preventDefault();
                     $('html,body').animate({scrollTop:$("#main2").offset().top}, 1000);
+            });
+            
+            $("#box03").click(function(){
+            	location.href = "./compare.compare?weekends=701";
+            });
+            
+            $("#box04").click(function(){
+            	location.href = "./main.msg";
             });
     	});
 		
@@ -65,10 +68,7 @@
 
     <body>
 
-		<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./common/mainMenu.jsp" %>
-		</header>
+		<header id="mainMenu"><%@ include file="./common/mainMenu.jsp" %></header>
 
 		
 		<section>
@@ -93,9 +93,7 @@
 						<img src="./resources/images/menu/menu2_7.jpg" width="100%" height="100%" id="main2img">
 						<p id="main2Title01">光   |</p><br>
 						<p id="main2Title02">州   |</p>
-						<p id="main2Title03">빛나는 도시</p>
-						<p id="main2Title04">광주</p>
-						<p id="main2Title">축제 및 행사 <p>
+						<p id="main2Title">광주 축제 및 행사 </p>
 						<!-- 부트스트랩 테마 적용 -->
 						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 						  <ol class="carousel-indicators">
@@ -132,7 +130,6 @@
 			</article>
 
 			<article class="box">
-			
 				<div id="main3">
 					<img src="./resources/images/menu/menu3_2.jpg" width="100%" height="100%" id="main3img">
 					
@@ -175,9 +172,6 @@
 
 		</section>
 		
-		<footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-			<%@ include file="./common/mainFooter.jsp" %>
-		</footer>
+		<footer id="mainFooter"><%@ include file="./common/mainFooter.jsp" %></footer>
     </body>
 </html>

@@ -8,11 +8,6 @@
 		<title>아따시장 - 말바우시장 먹을거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-					
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-	</head>
 	
 	<body>
 		<div class="contents">
@@ -27,7 +22,8 @@
 						<tbody>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/초원팥죽.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/초원팥죽.jpg" >
+									<img class="storeimg" src="./resources/images/marketIntroduce/초원팥죽.jpg" ></a>
 								</td>
 								<td class="left">
 									<h3>초원팥죽</h3>
@@ -43,7 +39,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/득량만횟집.jpg">
+									<a class="modal" href="./resources/images/marketIntroduce/득량만횟집.jpg" >
+									<img class="storeimg" src="./resources/images/marketIntroduce/득량만횟집.jpg"></a>
 								</td>
 								<td class="left">
 									<h3>득량만횟집</h3>
@@ -59,7 +56,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/제비집.jpg">
+									<a class="modal" href="./resources/images/marketIntroduce/제비집.jpg" >
+									<img class="storeimg" src="./resources/images/marketIntroduce/제비집.jpg"></a>
 								</td>
 								<td class="left">
 									<h3>제비집</h3>
@@ -79,4 +77,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

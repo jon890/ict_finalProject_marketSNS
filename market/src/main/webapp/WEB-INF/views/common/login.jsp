@@ -6,20 +6,13 @@
 	<head>
 	    <meta charset="utf-8">
 	    <title>아따~ 시장 - 로그인</title>
-	    <link rel="stylesheet" href="./resources/css/common/login.css">
-	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">	
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    <script src="./resources/js/login.js"></script>
 	    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-	    <script>
-	    $(document).ready(function(){
-	    	$("#registerBtn").on("click", function(){
-	    		$(location).attr('href', './register.main');
-	    	});
-	    });
-	    </script>
+	    <link rel="stylesheet" href="./resources/css/common/common.css">
+	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+	    <link rel="stylesheet" href="./resources/css/common/login.css">
+	    <script src="./resources/js/login.js"></script>
 	</head>
 	
 	<body>
@@ -61,7 +54,6 @@
 	    				url : "/v1/user/me",
 	    				success : function(res){
 	    					let kakaoData = JSON.stringify(res);
-		    				// 카카오에서 받은 데이터로 로그인하기
 		    				$.ajax({
 	    						url : "/market/loginWithKakao.main",
 	    						type : "post",
@@ -80,7 +72,6 @@
 			    					}
 			    				}
 		    				});
-		    				// 카카오에서 받은 데이터로 로그인하기
 	    				},
 	    				fail : function(err){
 	    					$("#msg").append(err);

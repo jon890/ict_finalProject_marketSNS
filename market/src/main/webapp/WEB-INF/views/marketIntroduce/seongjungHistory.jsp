@@ -6,6 +6,8 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 1913 송정역시장 개요</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+		
 	</head>
 	
 	<body>
@@ -13,7 +15,8 @@
 			<h2>1913송정역시장</h2>
 		</div>
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/1913송정역시장.jpg">
+			<a class="modal" href="resources/images/marketIntroduce/1913송정역시장.jpg">
+			<img src="resources/images/marketIntroduce/1913송정역시장.jpg"></a>
 		</div>
 		<div class="marketSummary ">
 			<table>
@@ -55,4 +58,27 @@
 			1913송정역시장은 꼭 한번 쯤 들러야 하는 광주의 필수여행코스라고 할 수 있다.</span>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>
 </html>

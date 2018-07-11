@@ -17,14 +17,11 @@
 	</head>
 
 	<body>
-		<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./../common/mainMenu.jsp" %>
-		</header>
+		<header id="mainMenu"><%@ include file="./../common/mainMenu.jsp" %></header>
 		
 	    <section>
 	    	<div class="background">
-	            <img src="./resources/images/favorite/favorite.png" />
+	            <img src="./resources/images/favorite/favorite.png">
 	            <div class="transbox">
 	                <p id="p01">공지사항</p>
 	                <p id="p02">우리 사이트의 공지사항을 알려드립니다</p>
@@ -49,7 +46,8 @@
 		                <a class="nav-link" data-toggle="pill" id="help">고객센터</a>
 		            </li>
 		        </ul>
-		        <p id="noticeTitle">공지사항</p>
+		        
+		        <br>
 		        <c:if test="${id != null}">
 		        	<c:if test="${adminChk == 1}">
 		        		 <button type="button" class="btn" id ="writeBtn">글쓰기</button>
@@ -85,9 +83,6 @@
 		    </div>
 	    </section>
 	    
-	    <footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-			<%@ include file="./../common/mainFooter.jsp" %>
-		</footer>
+	    <footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
 	</body>
 </html>

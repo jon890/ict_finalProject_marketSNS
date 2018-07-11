@@ -16,13 +16,13 @@
 	    <link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
 	    <style>
 	        .container{
-	        	width:1080px;
-	        	magin:0 auto;
+	        	width : 1080px;
+	        	margin : 0 auto;
 	        }
 	        
 	         .imgFest{
-	        	width:500px;
-	        	height:350px;
+	        	width : 500px;
+	        	height : 350px;
 	        }
 	        .contents{
 				background:#f2f2f2;
@@ -47,6 +47,7 @@
 	            	<p id="p02">전통시장 주변의 축제 정보를 알려드립니다!</p>
 	        	</div>
         	</div>
+        	
 		    <div class="container">
 		    	<ul class="nav nav-pills" role="tablist">
 			        <li class="nav-item">
@@ -65,8 +66,10 @@
 			            <a class="nav-link" data-toggle="pill" id="help">고객센터</a>
 			        </li>
 			    </ul>
+			    
 			    <br>
 				<div class="contents">
+					<div class="table_list">
 					<table>
 						<colgroup>
 							<col width="200px">
@@ -80,7 +83,6 @@
 								</td>
 								<td class="left">
 									<h3>[축제]대촌에서 향악과 놀자</h3>
-									
 									<span>ㆍ기간	2018-06-02 ~ 2018-12-01<br> </span>
 									<span>ㆍ7월 28일 행사 진행<br></span>
 									<span>ㆍ주소	광주광역시 남구 포충로 937<br> </span>
@@ -115,6 +117,7 @@
 							</tr>
 						</tbody>
 					</table>
+					</div>
 				</div>
 	 		</div>
 	    </section>

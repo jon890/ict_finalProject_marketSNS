@@ -36,7 +36,11 @@ public class MainController {
 	@RequestMapping(value="/login.main" , method = RequestMethod.GET)
 	public String moveLogin(HttpServletRequest req) {
 		HttpSession session = req.getSession();
-		session.setAttribute("referer", req.getHeader("referer"));
+		if( req.getHeader("referer") == null || req.getHeader("referer").equals("http://localhost:8100/market/register.main") ){
+			session.setAttribute("referer", "http://localhost:8100/market/");
+		} else {
+			session.setAttribute("referer", req.getHeader("referer"));
+		}
 		return "/common/login";
 	}
 		

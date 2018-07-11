@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@font-face{font-family:'NanumSquareRoundB'; src:url('./../../fonts/NanumSquareRoundB.ttf')}
+
+#p01, #p02{
+	font-family : NanumSquareRoundB;
+}
+
 /* ********** 글 쓰기 및 검색 버튼 ********** */
 #btnDiv{
 	margin : 0 auto;
@@ -69,8 +75,16 @@
 }
 
 #searchResult .noResult{
-	text-align : center
+	text-align : center;
 	color : grey;
+}
+
+#searchResult .keyword{
+	cursor : pointer;
+}
+
+.keyword:hover{
+	color : green;
 }
 /* ********** 검색 결과 표시  ********** */
 

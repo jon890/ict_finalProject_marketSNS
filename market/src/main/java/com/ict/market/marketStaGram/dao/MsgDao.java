@@ -53,6 +53,8 @@ public interface MsgDao {
 	
 	/* ********** 해쉬태그 검색기능 ********** */
 	public List<SearchDto> search(String keyword);
+	public List<String> searchResult(String keyword);
+	public List<ImgDto> searchArticle(List<Integer> articleNums);
 	/* ********** 해쉬태그 검색기능 ********** */
 	
 }

@@ -5,20 +5,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/convenience.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<title>아따시장 - 대인시장 편의시설</title>
-		<script>
-			function popup(){
-				window.open("resources/images/marketIntroduce/대인시장_안내도.JPG", "popup","width=700px height=500px");
-			}
-		</script>
 	</head>
 	
 	<body>
 		<div class="contents">
-		
+			<div>
+				
+			</div>
 			<div>
 				<h2>대인시장 안내도</h2>
-					<img class="roughmap" src="resources/images/marketIntroduce/대인시장_안내도.JPG" onclick="popup()">
+				<a href="resources/images/marketIntroduce/대인시장_안내도.JPG" class="modal">
+				<img class="roughmap"
+					src="resources/images/marketIntroduce/대인시장_안내도.JPG" alt="안내도"></a>
 			</div>
 			
 			<div class="web">
@@ -34,7 +34,7 @@
 							<tbody>
 								<tr>
 									<td><img class="bagimg"
-										src="resources/images/marketIntroduce/주차장.jpg"></td>
+										src="resources/images/marketIntroduce/주차장.jpg" alt="사진1"></td>
 									<td>
 										<p>
 											<img class="iconimg"
@@ -92,5 +92,31 @@
 				</div>
 			</div>
 		</div>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
+		
+		
+		
 	</body>
 </html>

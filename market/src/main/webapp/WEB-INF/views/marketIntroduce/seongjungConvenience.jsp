@@ -6,19 +6,16 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 1913 송정역시장 편의시설</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/convenience.css">
-		<script>
-			function popup(){
-				window.open("resources/images/marketIntroduce/송정역시장_안내도.JPG", "popup","width=700px height=500px");
-			}
-		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
 		<div class="contents">
 			<div>
 				<h2>1913송정역시장 안내도</h2>
+				<a href="resources/images/marketIntroduce/송정역시장_안내도.JPG" class="modal">
 				<img class="roughmap"
-					src="resources/images/marketIntroduce/송정역시장_안내도.JPG" onclick="popup()">
+					src="resources/images/marketIntroduce/송정역시장_안내도.JPG"></a>
 			</div>
 			<div class="web">
 				<div>
@@ -85,4 +82,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>
 </html>

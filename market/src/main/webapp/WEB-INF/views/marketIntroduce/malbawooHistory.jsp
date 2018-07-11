@@ -5,7 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>아따시장 - 말바우시장 개요</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">	
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 	</head>
 	
 	
@@ -14,7 +15,8 @@
 			<h2>말바우시장</h2>
 		</div>
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/songjungmarket.jpg">
+			<a class="modal" href="resources/images/marketIntroduce/말바우시장.jpg">
+			<img src="resources/images/marketIntroduce/말바우시장.jpg"></a>
 		</div>
 		<div class="marketSummary ">
 			<table>
@@ -55,4 +57,27 @@
 			장날은 매월 2,4,7,9일에 서는 정기 시장으로, 담양, 곡성, 화순 등 주변 시골에서 농민들이 직접 재배한 생산품을 가지고 와서 물건을 파는 전통과 명성이 깊은 시장이다.</span>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>
 </html>

@@ -56,3 +56,26 @@ span{
 	font-size:14px;
 	line-height:20px;
 }
+#glayLayer{
+	position: fixed;
+	display: none;
+	left: 0; top: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	filter:alpha(opacit=60);
+	opacity: 0.60;
+}
+
+#overLayer{
+	display: none;
+	top:35%;
+	left: 35%;
+	margin-top: -300px;
+	margin-left: -300px;
+	position: fixed;
+}
+#overLayer img{
+	width:950px;
+	height:550px;
+}

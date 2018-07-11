@@ -5,7 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>아따시장 - 남광주시장 개요</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">	
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 	</head>
 	
 	<body>
@@ -13,7 +14,8 @@
 			<h2>남광주시장</h2>
 		</div>
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/남광주시장.jpg">
+			<a class="modal" href="resources/images/marketIntroduce/남광주시장.jpg">	
+			<img src="resources/images/marketIntroduce/남광주시장.jpg"></a>	
 		</div>
 		<div class="marketSummary ">
 			<table>
@@ -55,4 +57,27 @@
 			남광주역에 대한 향수와 기차여행에 대한 동경을 접목한 밤기차야시장으로 수산물을 활용한 향토음식과 이색적인 이국요리 등 먹을거리 중심의 야시장이다.</span>
 		</div>	
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>
 </html>

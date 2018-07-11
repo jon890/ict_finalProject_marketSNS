@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 1913 송정역시장 먹을거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -21,7 +22,8 @@
 						<tbody>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/갱소년.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/갱소년.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/갱소년.jpg" ></a>
 								</td>
 								<td class="left">
 									<h3>갱소년</h3>
@@ -37,7 +39,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/밀밭양조장.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/밀밭양조장.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/밀밭양조장.jpg" ></a>
 								</td>
 								<td class="left">
 									<h3>밀밭양조장</h3>
@@ -52,7 +55,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/쑥's초코파이.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/쑥s초코파이.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/쑥s초코파이.jpg"></a>
 								</td>
 								<td class="left">
 									<h3>쑥's초코파이</h3>
@@ -68,7 +72,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/한끼라면.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/한끼라면.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/한끼라면.jpg" ></a>
 								</td>
 								<td class="left">
 									<h3>한끼라면</h3>
@@ -84,7 +89,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/또야식빵.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/또야식빵.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/또야식빵.jpg" ></a>
 								</td>
 								<td class="left">
 									<h3>또야식빵</h3>
@@ -103,4 +109,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

@@ -6,7 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>아따시장 - 말바우시장 볼거리</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -23,10 +24,12 @@
 							
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/중외공원야경.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/중외공원야경.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/중외공원야경.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/시립민속박물관.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/시립민속박물관.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/시립민속박물관.jpg"></a>
 								</td>
 								<td>
 										<h3>중외공원</h3>
@@ -39,10 +42,12 @@
 							
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/광주호호수생태공원안내도.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/광주호호수생태공원안내도.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/광주호호수생태공원안내도.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/광주호호수생태공원산책로.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/광주호호수생태공원산책로.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/광주호호수생태공원산책로.jpg"></a>
 								</td>
 								<td>
 										<h3>광주호호수생태공원</h3>
@@ -57,4 +62,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

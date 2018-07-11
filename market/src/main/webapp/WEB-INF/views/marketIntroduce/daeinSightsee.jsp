@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 대인시장 볼거리</title>	
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">	
-	</head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
 	<body>
 	
@@ -22,10 +22,12 @@
 						<tbody>
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/동명동카페의거리.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/동명동카페의거리.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/동명동카페의거리.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/동명동카페의거리2.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/동명동카페의거리2.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/동명동카페의거리2.jpg"></a>
 								</td>
 								<td>
 										<h3>동명동 카페의 거리</h3>
@@ -39,10 +41,12 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/지산유원지_리프트.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/지산유원지_리프트.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/지산유원지_리프트.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/지산유원지_모노레일.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/지산유원지_모노레일.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/지산유원지_모노레일.jpg"></a>
 								</td>
 								<td>
 										<h3>지산유원지</h3>
@@ -59,4 +63,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

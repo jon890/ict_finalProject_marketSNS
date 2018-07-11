@@ -45,3 +45,27 @@ span{
 	width:280px;
 	height:180px;
 }
+
+#glayLayer{
+	position: fixed;
+	display: none;
+	left: 0; top: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	filter:alpha(opacit=60);
+	opacity: 0.60;
+}
+
+#overLayer{
+	display: none;
+	top:30%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -200px;
+	position: fixed;
+}
+#overLayer img{
+	width:500px;
+	height:400px;
+}

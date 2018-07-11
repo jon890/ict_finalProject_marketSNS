@@ -5,7 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>아따시장 - 1913 송정역시장 볼거리</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  	</head>
  	
 	<body>
@@ -20,10 +21,12 @@
 					<tbody>
 						<tr>
 							<td>
-								<img class="sightmg" src="resources/images/marketIntroduce/승촌보.jpg">
+								<a class="modal" href="resources/images/marketIntroduce/승촌보.jpg">
+								<img class="sightmg" src="resources/images/marketIntroduce/승촌보.jpg"></a>
 							</td>
 							<td>
-								<img class="sightmg" src="resources/images/marketIntroduce/승촌보캠핑장.jpg">
+								<a class="modal" href="resources/images/marketIntroduce/승촌보캠핑장.jpg">
+								<img class="sightmg" src="resources/images/marketIntroduce/승촌보캠핑장.jpg"></a>
 							</td>
 							<td>
 									<h3>승촌보캠핑장</h3>
@@ -34,10 +37,12 @@
 						</tr>
 						<tr>
 							<td>
-								<img class="sightmg" src="resources/images/marketIntroduce/송산유원지안내도.jpg">
+								<a class="modal" href="resources/images/marketIntroduce/송산유원지안내도.jpg">
+								<img class="sightmg" src="resources/images/marketIntroduce/송산유원지안내도.jpg"></a>
 							</td>
 							<td>
-								<img class="sightmg" src="resources/images/marketIntroduce/송산유원지.jpg">
+								<a class="modal" href="resources/images/marketIntroduce/송산유원지.jpg">
+								<img class="sightmg" src="resources/images/marketIntroduce/송산유원지.jpg"></a>
 							</td>
 							<td>
 									<h3>송산유원지</h3>
@@ -51,4 +56,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

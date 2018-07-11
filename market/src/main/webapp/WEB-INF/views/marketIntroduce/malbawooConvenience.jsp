@@ -6,19 +6,16 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 남광주시장 편의시설</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/convenience.css">
-		<script>
-			function popup(){
-				window.open("resources/images/marketIntroduce/말바우시장_안내도.jpg", "popup","width=700px height=500px");
-			}
-		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
 		<div class="contents">
 			<div>
 				<h2>말바우시장 안내도</h2>
+				<a href="resources/images/marketIntroduce/말바우시장_안내도.jpg" class="modal">
 				<img class="roughmap"
-					src="resources/images/marketIntroduce/말바우시장_안내도.jpg" onclick="popup()">
+					src="resources/images/marketIntroduce/말바우시장_안내도.jpg" alt="안내도"></a>
 			</div>
 			<div class="web">
 				<div>
@@ -93,4 +90,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>
 </html>

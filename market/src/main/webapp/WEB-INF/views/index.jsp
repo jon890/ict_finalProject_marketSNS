@@ -9,20 +9,22 @@
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/index.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-		<!-- <script>
-			function moveToMain2(){
-				location.href = "#main2";
-			}
-		</script> -->
 		<script>
 		$(document).ready(function() {
             $("#moveToMain2").click(function(event){
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop:$("#main2").offset().top}, 1000);
+            	event.preventDefault();
+            	$('html,body').animate({scrollTop:$("#main2").offset().top}, 1000);
+            });
+            
+            $("#box03").click(function(){
+            	location.href = "./compare.compare?weekends=701";
+            });
+            
+            $("#box04").click(function(){
+            	location.href = "./main.msg";
             });
     	});
 		
@@ -89,46 +91,43 @@
 
 			<article class="box">
 				<div id="main2">
-					<!-- <div id="main2Background"></div> -->
-						<img src="./resources/images/menu/menu2_7.jpg" width="100%" height="100%" id="main2img">
-						<p id="main2Title01">光   |</p><br>
-						<p id="main2Title02">州   |</p>
-						<p id="main2Title03">빛나는 도시</p>
-						<p id="main2Title04">광주</p>
-						<p id="main2Title">축제 및 행사 <p>
-						<!-- 부트스트랩 테마 적용 -->
-						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-						  <ol class="carousel-indicators">
-						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-						  </ol>
-						  <div class="carousel-inner">
-						    <div class="carousel-item active">
-						      <img class="d-block w-100" src="./resources/images/menu/123.jpg" width="700px" height="400px" alt="첫번째 슬라이드">
-						    </div>
-						    <div class="carousel-item">
-						      <img class="d-block w-100" src="./resources/images/menu/234.jpg" width="700px" height="400px" alt="두번째 슬라이드">
-						    </div>
-						    <div class="carousel-item">
-						      <img class="d-block w-100" src="./resources/images/menu/345.png" width="700px" height="400px" alt="세번째 슬라이드">
-						    </div>
-						    <div class="carousel-item">
-						      <img class="d-block w-100" src="./resources/images/menu/456.png" width="700px" height="400px" alt="네번째 슬라이드">
-						    </div>
-						  </div>
-						  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						    <span class="sr-only">이전</span>
-						  </a>
-						  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-						    <span class="sr-only">다음</span>
-						  </a>
-						</div>
-						<!-- 부트스트랩 테마 적용 -->
+					<img src="./resources/images/menu/menu2_7.jpg" width="100%" height="100%" id="main2img">
+					<p id="main2Title01">光   |</p><br>
+					<p id="main2Title02">州   |</p>
+					<p id="main2Title03">빛나는 도시</p>
+					<p id="main2Title04">광주</p>
+					<p id="main2Title">축제 및 행사 <p>
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					  <ol class="carousel-indicators">
+					    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+					  </ol>
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <img class="d-block w-100" src="./resources/images/menu/123.jpg" width="700px" height="400px" alt="첫번째 슬라이드">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="./resources/images/menu/234.jpg" width="700px" height="400px" alt="두번째 슬라이드">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="./resources/images/menu/345.png" width="700px" height="400px" alt="세번째 슬라이드">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="./resources/images/menu/456.png" width="700px" height="400px" alt="네번째 슬라이드">
+					    </div>
+					  </div>
+					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="sr-only">이전</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="sr-only">다음</span>
+					  </a>
 					</div>
+				</div>
 			</article>
 
 			<article class="box">
@@ -139,9 +138,7 @@
 					<div class="btnBox" id="box01">
 						<div class="btnBoxTitle"><p>공지사항</p></div>
 						<ul>
-							<!-- DB에서 공지 뿌리기  -->
 							<c:forEach var="noticeArticle" items="${noticeArticleList}">
-							<!-- DB에서 고객센터 글 뿌리기  -->	
 							<li class="main_li"><a href="/market/noticeContent.favorite?articleNum=${noticeArticle.articleNum}&pageNum=1">${noticeArticle.title}</a></li>
 							</c:forEach>
 							<li class="li_last"><input type="button" value="더 보기 >" id="notice" onclick="document.location.href='/market/notice.favorite?pageNum=1'"></li>
@@ -152,7 +149,6 @@
 						<div class="btnBoxTitle"><p>고객센터</p></div>
 						<ul>
 						<c:forEach var="helpArticle" items="${helpArticleList}">
-							<!-- DB에서 고객센터 글 뿌리기  -->	
 							<li class="main_li"><a href="/market/content.favorite?articleNum=${helpArticle.articleNum}&pageNum=1&fileStatus=${helpArticle.fileStatus}">${helpArticle.title}</a></li>
 						</c:forEach>
 							<li class="li_last"><input type="button" value="더 보기 >" id="help" onclick="document.location.href='/market/help.favorite?pageNum=1'"></li>
@@ -175,9 +171,6 @@
 
 		</section>
 		
-		<footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-			<%@ include file="./common/mainFooter.jsp" %>
-		</footer>
+		<footer id="mainFooter"><%@ include file="./common/mainFooter.jsp" %></footer>
     </body>
 </html>

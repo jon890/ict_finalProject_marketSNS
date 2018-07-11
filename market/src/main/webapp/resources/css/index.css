@@ -207,35 +207,6 @@
 	text-align:center;
 }
 
-/* .btnBox:first-child{
-	background-color : white;
-	left : 200px;
-	top : 100px;
-	z-index:6;
-	
-}
-
-.btnBox:nth-child(2){
-	background-color : yellow;
-	left : 600px;
-	top : 100px;
-	z-index:6;
-}
-
-.btnBox:nth-child(3){
-	background-color : green;
-	left : 200px;
-	top : 500px;
-	z-index:6;
-}
-
-.btnBox:last-child{
-	background-color : orange;
-	left : 600px;
-	top : 500px;
-	z-index:6;
-} */
-
 #box01{
 	background-color : white;
 	left : 200px;
@@ -255,6 +226,7 @@
 	background-color : green;
 	left : 200px;
 	top : 500px;
+	cursor : pointer;
 	z-index:6;
 }
 
@@ -262,6 +234,7 @@
 	background-color : orange;
 	left : 600px;
 	top : 500px;
+	cursor : pointer;
 	z-index:6;
 }
 
@@ -291,10 +264,6 @@
     text-overflow: ellipsis;
     color:blue
 }
-
-/* .main_li a{
-	color:blue;
-} */
 
 .li_last input{
 	margin-left:20px;

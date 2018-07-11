@@ -6,7 +6,6 @@
 	position:relative;
 	box-sizing:border-box;
 	display:inline-block;
-	
 }
 
 div{
@@ -16,7 +15,6 @@ div{
     font-size: 16px;
     font-weight: 300;
     color: #525252;
-    letter-spacing: -0.5px;
     /* font: inherit; */
     vertical-align: baseline;
 }
@@ -34,15 +32,18 @@ div{
 .table_list table td h3{
 	margin-bottom:10px;
 }
+
 span{
 	font-size:14px;
 	line-height:20px;
 }
+
 .sightmg{
 	display:inline-block;
 	width:290px;
 	height:290px;
 }
+
 #glayLayer{
 	position: fixed;
 	display: none;
@@ -62,6 +63,7 @@ span{
 	margin-left: -200px;
 	position: fixed;
 }
+
 #overLayer img{
 	width:500px;
 	height:500px;

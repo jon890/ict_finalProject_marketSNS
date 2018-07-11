@@ -6,9 +6,9 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/mainMenu.css">
 	   	<script src="./resources/js/mainMenu.js"></script>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>

@@ -19,8 +19,8 @@
             <option value="http://www.bukgu.gwangju.kr/">광주북구청</option>
             <option value="http://www.gwangsan.go.kr/">광주광산구청</option>
         </select>
-        <h4 class="footerCont">광주광역시 남구 송암동 CGI센터</h4>
-        <h4 class="footerCont">Copyright © Gwangju Traditional Market All Rights Reserved.</h4>
+        <h4 class="footerCont">자바기반 금융 SW 및 보안개발자 양성과정 9기</h4>
+        <h4 class="footerCont">Copyright © 3조 프로마켓러 All Rights Reserved.</h4>
 		<script>
 			function handleSelect(optionItem) {
 			    window.open("_blank").location = optionItem.value;

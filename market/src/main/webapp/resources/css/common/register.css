@@ -57,3 +57,8 @@
 #regBtns input:last-Child{
 	margin-left : 20px;
 }
+
+.form-control {
+	width:400px;
+	display:inline-block;
+}

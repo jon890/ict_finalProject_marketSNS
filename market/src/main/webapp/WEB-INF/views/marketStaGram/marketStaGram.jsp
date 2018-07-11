@@ -6,20 +6,19 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>아따시장 - #시장스타그램</title>   
+	    <title>아따~ 시장 - #시장스타그램</title>   
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	    <script src="./resources/js/marketStaGram/marketStaGram.js"></script>
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
-	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">    
+   	    <link rel="stylesheet" href="./resources/css/common/common.css">
+   	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+   	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
+	    <script src="./resources/js/marketStaGram/marketStaGram.js"></script>
 	</head>
 	
 	<body>
 		<header id="mainMenu"><%@ include file="./../common/mainMenu.jsp" %></header>
 		
 		<section>
-		
 		    <div class="background">
 	            <img src="./resources/images/marketStaGram/background.png">
 	            <div class="transbox">
@@ -74,7 +73,6 @@
 			    	</article>
 			    </c:forEach>   
 		    </div>
-		    
 		</section>
 	</body>
 </html>

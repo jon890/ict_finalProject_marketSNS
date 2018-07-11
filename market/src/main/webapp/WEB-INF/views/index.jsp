@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>아따시장에 오신것을 환영합니다.</title>
+		<title>아따~ 시장에 오신것을 환영합니다.</title>
 		<link rel="stylesheet" href="./resources/css/common/common.css">
 		<link rel="stylesheet" href="./resources/css/index.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -67,12 +67,8 @@
 
     <body>
 
-		<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./common/mainMenu.jsp" %>
-		</header>
+		<header id="mainMenu"><%@ include file="./common/mainMenu.jsp" %></header>
 
-		
 		<section>
 			<article id="article01" class="box">
 				<div id="mainVideoDiv">
@@ -168,7 +164,6 @@
 					</div>
 				</div>
 			</article>
-
 		</section>
 		
 		<footer id="mainFooter"><%@ include file="./common/mainFooter.jsp" %></footer>

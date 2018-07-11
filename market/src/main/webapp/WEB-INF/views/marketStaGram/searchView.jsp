@@ -6,13 +6,13 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>아따시장 - #시장스타그램 검색</title>   
+	    <title>아따~ 시장 - #시장스타그램 검색</title>   
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
 	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
-	    
+	    <link rel="stylesheet" href="./resources/css/marketStaGram/marketStaGram.css">
+
 	    <style>
 	    	#searchTitle{
 	    		margin : 0 auto;

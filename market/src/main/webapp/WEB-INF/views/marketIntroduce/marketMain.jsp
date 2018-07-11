@@ -34,10 +34,7 @@
 	
 	
 	<body>
-    	<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./../common/mainMenu.jsp" %>
-		</header>
+    	<header id="mainMenu"><%@ include file="./../common/mainMenu.jsp" %></header>
 	
 	    <section>
 	        <div class="background">
@@ -314,10 +311,7 @@
 	        </div>
 	    </section>
 	 
-		<footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-			<%@ include file="./../common/mainFooter.jsp" %>
-		</footer>
+		<footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
 		
 	</body>
 </html>

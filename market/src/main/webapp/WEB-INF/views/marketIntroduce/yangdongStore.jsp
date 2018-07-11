@@ -6,7 +6,8 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 양동시장 먹을거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="./resources/js/marketIntroduce/convenience.js"></script>
 	</head>
 	
 	<body>
@@ -43,7 +44,7 @@
 									<img class="storeimg" src="./resources/images/marketIntroduce/영창식당.jpg" ></a>
 								</td>
 								<td class="left">
-									<h3><b>-주요메뉴-</b></h3>
+									<h3><b>영창식당</b></h3>
 									<span>불고기백반<br></span>
 									<span>한결 같은 가격 6천원에 불고기 백반을 선사합니다.<br></span>
 								</td>
@@ -76,28 +77,5 @@
 				</div>
 			</div>
 		</div>
-	</body>
-	<script>
-		$(function(){
-			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
-			
-			$("#glaryLayer").click(function(){
-				$(this).hide()
-				$("#overLayer").hide();
-			});
-			
-			$("#overLayer").click(function(){
-				$(this).hide()
-				$("#glayLayer").hide();
-			});
-			
-			$("a.modal").click(function(){
-				$("#glayLayer").show();
-				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
-				return false;
-			});
-			
-		
-		});
-		</script>		
+	</body>	
 </html>

@@ -58,9 +58,7 @@
 					<li class="nav-item"><a class="nav-link" data-toggle="pill"
 						id="help">고객센터</a></li>
 				</ul>
-			</div>
-			
-			<br>
+				<br>
 			<div class="contents">
 				<div class="table_list">
 					<table>
@@ -137,6 +135,7 @@
 						</tbody>
 					</table>
 				</div>
+			</div>
 			</div>
 		</section>
 		<footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp"%></footer>

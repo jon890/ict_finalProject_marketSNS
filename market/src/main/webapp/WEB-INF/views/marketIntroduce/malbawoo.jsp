@@ -26,9 +26,7 @@
 	</head>
 	
 	<body>
-		<header>
-			<%@include file="./../common/mainMenu.jsp"%>
-		</header>
+		<header><%@include file="./../common/mainMenu.jsp"%></header>
 		
 		<section>
 			<div class="background">
@@ -65,31 +63,24 @@
 		            </div>
 		            <div id="menu1" class="container tab-pane fade">
 		                <br>
-		                <h3>먹거리</h3>
 		                <iframe src="malbawooStore.mid" width="100%" height="1080px"></iframe>
 		            </div>
 		            <div id="menu2" class="container tab-pane fade">
 		                <br>
-		                <h3>볼거리</h3>
 		                <iframe src="malbawooSightsee.mid" width="100%" height="1080px"></iframe>
 		            </div>
 		            <div id="menu3" class="container tab-pane fade">
 		                <br>
-		                <h3>찾아오는 길</h3>
 		                <iframe src="malbawooMap.mid" width="100%" height="1080px"></iframe>
 		            </div>
 		            <div id="menu4" class="container tab-pane fade">
 		                <br>
-		                <h3>편의시설</h3>
 		                <iframe src="malbawooConvenience.mid" width="100%" height="1600px"></iframe>
 		            </div>
 		        </div>
 		    </div>
 		</section>
 		
-		<footer>
-			<%@include file="./../common/mainFooter.jsp"%>
-		</footer>
-		
+		<footer><%@include file="./../common/mainFooter.jsp"%></footer>	
 	</body>
 </html>

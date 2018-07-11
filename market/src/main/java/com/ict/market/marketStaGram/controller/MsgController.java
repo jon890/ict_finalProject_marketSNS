@@ -69,13 +69,6 @@ public class MsgController {
 	public String write(SnsArticleDto snsArticle,
 						@RequestPart("imgname") List<MultipartFile> imgname,
 						HttpServletRequest req) {
-		
-		for( MultipartFile img : imgname) {
-			System.out.println("====================");
-			System.out.println(img.getOriginalFilename());
-			System.out.println("====================");
-		}
-		
 		/* 파일 업로드 경로 */
 	    String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadImgs/";
 		msgService.write(snsArticle, imgname, uploadDir);
@@ -191,8 +184,6 @@ public class MsgController {
 	
 	@RequestMapping(value = "/searchArticle.msg" , method = RequestMethod.GET)
 	public String searchArticle(@RequestParam List<Integer> articleNums, Model model) {
-		System.out.println(articleNums);
-		System.out.println(msgService.searchArticle(model, articleNums));
 		model.addAttribute("imgList", msgService.searchArticle(model, articleNums));
 		return "searchView";
 	}

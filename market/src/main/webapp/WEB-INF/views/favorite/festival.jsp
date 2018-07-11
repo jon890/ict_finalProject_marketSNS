@@ -66,8 +66,10 @@
 			            <a class="nav-link" data-toggle="pill" id="help">고객센터</a>
 			        </li>
 			    </ul>
+			    
 			    <br>
 				<div class="contents">
+					<div class="table_list">
 					<table>
 						<colgroup>
 							<col width="200px">
@@ -115,6 +117,7 @@
 							</tr>
 						</tbody>
 					</table>
+					</div>
 				</div>
 	 		</div>
 	    </section>

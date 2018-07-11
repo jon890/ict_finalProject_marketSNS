@@ -49,7 +49,7 @@ td span{
 }
 
 p{
-text-align:center;
+	text-align:center;
 }
 
 span{
@@ -78,4 +78,5 @@ span{
 #overLayer img{
 	width:950px;
 	height:550px;
+	cursor: pointer;
 }

@@ -75,7 +75,7 @@ $(document).ready(function () {
 	function pwdCheck(){
 		if($("input:password[name='password']").val() != $("#pwdChk").val()){
 			return false;
-		} else if($("input:password[name='password']").val() == null){
+		} else if($("input:password[name='password']").val() == ""){
 			return false;
 		} else{
 			return true;

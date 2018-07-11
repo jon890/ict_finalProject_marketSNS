@@ -16,10 +16,10 @@ public class CompareServiceImpl implements CompareService {
 	private CompareDAO compareDAO;
 	
 	@Override
-	public List<marketPriceDTO> marketPrice(Model model) {
-		System.out.println(compareDAO.marketPrice());
-		model.addAttribute("marketPriceList",compareDAO.marketPrice());
-		return compareDAO.marketPrice();
+	public List<marketPriceDTO> marketPrice(Model model,String weekends) {
+		System.out.println(compareDAO.marketPrice(weekends));
+		model.addAttribute("marketPriceList",compareDAO.marketPrice(weekends));
+		return compareDAO.marketPrice(weekends);
 	}
 	
 	

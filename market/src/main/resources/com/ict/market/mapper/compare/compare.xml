@@ -14,8 +14,8 @@
 	and m5.goodsCode=g.goodsCode
 	and m1.marketCode=111 and m2.marketCode=222 
 	and m3.marketCode=333 and m4.marketCode=444 
-	and m5.marketCode=555 and m1.weekends=701 and m2.weekends=701 
-	and m3.weekends=701 and m4.weekends=701 and m5.weekends=701
+	and m5.marketCode=555 and m1.weekends=#{weekends} and m2.weekends=#{weekends} 
+	and m3.weekends=#{weekends} and m4.weekends=#{weekends} and m5.weekends=#{weekends}
 	</select>
 	<select id="marketAgo" resultType="market">
 	select g.goodsName,m1.price daeInPrice,m2.price yangDongPrice,

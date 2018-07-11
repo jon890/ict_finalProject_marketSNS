@@ -11,27 +11,36 @@ $(document).ready(function(){
 	
 	$(span).click(function(){
 		$(modal).css("display", "none");
-		$("#writeForm textarea").val("");
-		$("#thumNailImgs").children().remove();
+		writeFormReset();
 	});
 	
+	$("#writeFormReset").click(function(){
+		writeFormReset();
+		$("#content").focus();
+	});
 	
+	function writeFormReset(){
+		$("#writeForm textarea").val("");
+		$("#thumNailImgs").children("article").remove();
+		$("#uploadImgs").remove();
+		let recoverFileUpload = "<input type='file' name='imgname' id='uploadImgs' multiple>";
+		$("#writeBtns").append(recoverFileUpload);
+	}
+		
 //	$(window).click(function(event){
 //		if(event.target == modal){
 //			$(modal).css("display", "none");
 //		}
 //	});
 
-	$(function(){
-		$("#uploadbtn").click(function(e){
-			e.preventDefault();
-			$("input[type=file]").click();
-		});
+	$(document).on("click", "#uploadbtn", function(e){
+		e.preventDefault();
+		$("input[type=file]").click();
 	});
 	
 	let uploadImgs = [];
 	
-	$("#uploadImgs").on("change", function(e){
+	$(document).on("change", "#uploadImgs", function(e){
 		let imgs = e.target.files;
 		let imgsArr = Array.prototype.slice.call(imgs);
 		let imgIndex = 0;
@@ -61,14 +70,25 @@ $(document).ready(function(){
 	
 	$(document).on("click", ".thumDelBtn", function(imgIndex){
 		uploadImgs.splice(imgIndex, 1);
-		alert(uploadImgs);
-		alert($("input[type='file']").val());
 		let that = $(this);
 		that.parent().remove();
 	})
 	/* ********** 글쓰기 양식을 모달박스로 만들기 ********** */
 	
 	
+	/* ********** 글쓰기 요청전 유효성 검사 ********** */
+	$("#submitBtn").click(function(){
+		if( $("#content").val() == "" ){
+			$("#content").focus();
+			return false;
+		}
+		
+		if( $("input[type='file']").val() == "" ){
+			alert("이미지를 업로드 해주세요!");
+			return false;
+		}
+	});
+	/* ********** 글쓰기 요청전 유효성 검사 ********** */
 	
 	
 	/* ********** 무한 스크롤 기능 ********** */
@@ -125,7 +145,7 @@ $(document).ready(function(){
 				html += "</span>";
 				html += "</article>";
 				that.append(html);
-				console.log("마우스 진입");
+				//console.log("마우스 진입");
 			}
 		})	
 	});
@@ -137,7 +157,7 @@ $(document).ready(function(){
 	$(document).on("mouseleave",".article",function(){
 		let that = $(this);
 		that.children("article").remove();
-		console.log("마우스 나감");
+		//console.log("마우스 나감");
 	});
 	/* ********** 글 호버링 시 좋아요와 댓글개수 가져오기 ********** */
 	

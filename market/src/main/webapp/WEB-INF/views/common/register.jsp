@@ -122,7 +122,7 @@
 							<p id="optionalTitle">다음의 항목은 선택사항입니다.<p>
 							<p class="input">이름   <input type="text" class="form-control" name="name" placeholder="이름을 입력하세요" maxlength="5"></p>
 							<p class="input">나이   <input type="number" name="age" placeholder="나이를 입력하세요" min="1" max="99" value="20"></p>
-							<p class="input">성별   &nbsp<input type="radio" name="gender" value="남">남
+							<p class="input">성별   &nbsp;<input type="radio" name="gender" value="남">남
 									 <input type="radio" name="gender" value="여">여</p>	
 						</div>
 						 

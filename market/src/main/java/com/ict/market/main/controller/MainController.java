@@ -1,5 +1,7 @@
 package com.ict.market.main.controller;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -32,29 +34,29 @@ public class MainController {
 	
     /* ********** 로그인 관련 기능 ********** */
 	@RequestMapping(value="/login.main" , method = RequestMethod.GET)
-	public String moveLogin() {
+	public String moveLogin(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		session.setAttribute("referer", req.getHeader("referer"));
 		return "/common/login";
 	}
 		
 	@RequestMapping(value="/login.main" , method = RequestMethod.POST)
 	@ResponseBody
-	public String login(@RequestParam String id, 
-						@RequestParam String password, 
-						HttpSession session,
-						HttpServletRequest req) {
-		String result = mainService.login(id, password, session, req);
-		return result;
+	public HashMap<String, String> login(@RequestParam String id, 
+										 @RequestParam String password, 
+										 HttpSession session,
+										 HttpServletRequest req) {
+		return mainService.login(id, password, session, req);
 	}
 	
 	@RequestMapping(value="/loginWithKakao.main" , method = RequestMethod.POST)
 	@ResponseBody
-	public String loginWithKakao(@RequestParam String id, 
-								 @RequestParam String nickName,
-								 @RequestParam String profileImg,
-								 HttpSession session,
-								 HttpServletRequest req) {
-		mainService.loginWithKakao(id, nickName, profileImg, session, req);
-		return "result";
+	public HashMap<String, String> loginWithKakao(@RequestParam String id, 
+											 	  @RequestParam String nickName,
+											 	  @RequestParam String profileImg,
+												  HttpSession session,
+												  HttpServletRequest req) {
+		return mainService.loginWithKakao(id, nickName, profileImg, session, req);
 	}
 	
 	@RequestMapping(value="/logout.main" , method = RequestMethod.GET)

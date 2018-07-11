@@ -104,19 +104,16 @@
 					<div id="snsArticleBtns2">
 						<c:if test="${id != null}">
 							<c:if test="${id == snsArticle.id}">
-								<input type="button" value="글 수정" onclick="document.location.href='/market/update.msg?articleNum=${snsArticle.articleNum}'">
-								<input type="button" value="글 삭제" onclick="document.location.href='/market/delete.msg?articleNum=${snsArticle.articleNum}'">
+								<input type="button" id="articleDeleteBtn" value="게시물 삭제" onclick="document.location.href='/market/delete.msg?articleNum=${snsArticle.articleNum}'">
 							</c:if>
 								
 							<c:if test="${id != snsArticle.id}">
-								<input type="button" value="글 수정" disabled="disabled">
-								<input type="button" value="글 삭제" disabled="disabled">
+								<input type="button" value="게시물 삭제" disabled="disabled">
 							</c:if>
 						</c:if>
 		
 						<c:if test="${id == null}">
-							<input type="button" value="수정하기" disabled="disabled">
-							<input type="button" value="삭제하기" disabled="disabled">
+							<input type="button" value="글 삭제" disabled="disabled">
 						</c:if>
 						<input type="button" value="목록으로" onclick="document.location.href='/market/main.msg?'">
 					</div>
@@ -139,6 +136,10 @@
 				likeChk();
 			});
 			
+			$("#articleDeleteBtn").click(function(){
+				confirm("정말 게시물을 삭제하시겠습니까?");
+			});
+			
 			$.ajaxSetup({
 				type : "POST",
 				async : true,
@@ -147,7 +148,6 @@
 					alert("오류가 발생했습니다! 에러코드 =  " + xhr.statusText);
 				}
 			});
-
 		
 			function commentfunc(){
 				// 댓글내용을 입력하지 않으면 댓글쓰는 칸으로 포커스 주기
@@ -167,6 +167,9 @@
 								$("#commentContent").val("");
 								showHtml(data.commentList, 1);
 							}
+						},
+						error : function(xhr){
+							notLogin();
 						}
 					});	
 				}
@@ -221,6 +224,9 @@
 							$("#likebtnImg").attr("src", "./resources/images/marketStaGram/dislikebtn.png");
 						}
 						$("#likeNum").html(data.likeNum);
+					},
+					error : function(xhr){
+						notLogin();
 					}
 				});
 			}
@@ -243,9 +249,9 @@
 				});
 			}
 			
-			function login(){
+			function notLogin(){
 				location.href = "./login.main";
-			}	
+			}
 		</script>
 		
 	</body>

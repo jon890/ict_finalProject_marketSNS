@@ -18,6 +18,7 @@
     border-radius : 3px;
     border : 1px solid rgb(0,77,0);
     margin-right : 100px;
+    cursor : pointer;
 }
 
 #btnDiv input[type=text]{
@@ -139,7 +140,11 @@
 	margin-right : 20px;
 }
 
-#writeBtns > input[type=submit]{
+#writeBtns > input[type=button]{
+    margin-right : 20px;
+}
+
+#writeBtns > input[type=submit], #writeBtns > input[type=button]{
     width : 60px;
     height : 60px;
     background : gray;

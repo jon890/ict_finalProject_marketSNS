@@ -48,7 +48,7 @@
 	        	 		
 	        	 		<div id="writeForm">
 	        	 			<p>게시물 작성</p>
-	        	 			<textarea rows="10" cols="100" name="content"></textarea>
+	        	 			<textarea rows="10" cols="100" name="content" id="content"></textarea>
 	        	 		</div>
 	        	 		<div id="thumNailImgs">
 	        	 			<p>미리보기 이미지</p>
@@ -56,9 +56,10 @@
 	        	 		
 	        	 		<div id="writeBtns">
 	       	 				<input type="hidden" name="id" value="${id}">
+	       	 				<input type="button" id="writeFormReset" value="초기화">
 	        	 			<input type="file" name="imgname" id="uploadImgs" multiple>
 	        	 			<img src="./resources/images/marketStaGram/uploadbtn.png" id="uploadbtn">
-	        	 			<input type="submit" value="게시">
+	        	 			<input type="submit" id="submitBtn" value="게시">
 	        	 		</div>
 	        	 	</div>
 	        	 	

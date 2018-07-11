@@ -1,5 +1,7 @@
 package com.ict.market.main.service;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -28,16 +30,18 @@ public class MainServiceImpl implements MainService {
 	
 	/* ********** 로그인 관련 기능 ********** */
 	@Override
-	public String login(String id, String password, HttpSession session, HttpServletRequest req) {
+	public HashMap<String, String> login(String id, String password, HttpSession session, HttpServletRequest req) {
 		MarketMemberDto dbMember = mainDao.login(id);
-		String result;
+		HashMap<String, String> result = new HashMap<>();
 		
 		if(dbMember == null) {
-			result = "idError";
+			result.put("resultCode", "idError");
 		} else if(!dbMember.getPassword().equals(password)) {
-			result = "pwdError";
+			result.put("resultCode", "pwdError");
 		} else {
-			result = "success";
+			result.put("resultCode", "loginSuccess");
+			result.put("backUri", (String)session.getAttribute("referer"));
+			result.put("id", id);
 			session.invalidate();
 			session = req.getSession();
 			session.setAttribute("id", id);
@@ -47,8 +51,13 @@ public class MainServiceImpl implements MainService {
 	}
 	
 	@Override
-	public void loginWithKakao(String id, String nickName, String profileImg, HttpSession session,
+	public HashMap<String, String> loginWithKakao(String id, String nickName, String profileImg, HttpSession session,
 			HttpServletRequest req) {
+		HashMap<String, String> result = new HashMap<>();
+		result.put("resultCode", "loginSuccess");
+		result.put("backUri", (String)session.getAttribute("referer"));
+		result.put("id", nickName + "(Kakao)");
+		
 		session.invalidate();
 		session = req.getSession();
 		session.setAttribute("id", nickName + "(Kakao)");
@@ -60,6 +69,7 @@ public class MainServiceImpl implements MainService {
 			member.setPassword(id + "_Kakao");
 			mainDao.registerKakao(member);
 		}
+		return result;
 	}
 
 	@Override

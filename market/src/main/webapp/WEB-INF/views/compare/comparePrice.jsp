@@ -97,7 +97,7 @@
 						<li><a href="compareCleaner.compare">세제</a></li>
 					</ul>
 				</div>
-				<br> <span></span> <br> <span> ※ 차이는
+				<br> <span><c:out value="${weekends.replace('0','월')}"/>주차 가격</span> <br> <span> ※ 차이는
 					(시장평균가-마트평균가) 가격입니다.</span> <br> <span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
 				<table class="table table-striped">
 					<thead>

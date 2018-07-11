@@ -72,7 +72,12 @@
 			    					profileImg : res.properties.profile_image
 			    				},
 			    				success : function(data){
-			    					history.back();
+			    					if(data.resultCode == "loginSuccess"){
+			    						alert(data.id + "님 안녕하세요!");
+			    						location.href = data.backUri;
+			    					} else {
+			    						alert("카카오 로그인에서 오류가 발생했습니다! 관리자에게 문의하세요");
+			    					}
 			    				}
 		    				});
 		    				// 카카오에서 받은 데이터로 로그인하기

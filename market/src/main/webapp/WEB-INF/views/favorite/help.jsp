@@ -134,7 +134,7 @@
 	    	
 			<nav aria-label="Page navigation example">
 			<ul class="pagination justify-content-center">
-				${pageCode}
+				<li>${pageCode}</li>
 			 </ul>
 			</nav>
 	    </section>   

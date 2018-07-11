@@ -80,7 +80,7 @@
 		
 		    <div class="container">
 		        <ul class="pagination justify-content-center">
-            		${pageCode}
+            		<li>${pageCode}</li>
        			</ul>
 		    </div>
 	    </section>

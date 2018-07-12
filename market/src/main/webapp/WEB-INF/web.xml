@@ -2,19 +2,12 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
-	<!-- <welcome-file-list>
-		<welcome-file>/WEB-INF/views/index.jsp</welcome-file>
-	</welcome-file-list> -->
-	
 	
 	<session-config>
 		<session-timeout>10</session-timeout>
 	</session-config>
 	
 	
-	<!-- 요청을 처리하기 전에 동작한다. -->
-	<!-- UTF-8 인코딩 필터 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -28,8 +21,7 @@
 		<url-pattern>*</url-pattern>
 	</filter-mapping>
 	
-
-	<!-- XSSFilter -->
+	
 	<filter>
 		<filter-name>XSSFilter</filter-name>
 		<filter-class>com.ict.market.main.filter.XSSFilter</filter-class>
@@ -50,8 +42,6 @@
 	</listener>
 	
 	
-
-
 	<servlet>
 		<servlet-name>mainServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -69,9 +59,6 @@
 	</servlet-mapping>
 	
 
-
-
-
 	<servlet>
 		<servlet-name>favoriteServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -88,8 +75,6 @@
 	</servlet-mapping>
 	
 	
-	
-
 	<servlet>
 		<servlet-name>marketStaGramServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -104,8 +89,6 @@
 		<servlet-name>marketStaGramServlet</servlet-name>
 		<url-pattern>*.msg</url-pattern>
 	</servlet-mapping>
-	
-	
 	
 	
 	<servlet>
@@ -124,8 +107,7 @@
 	</servlet-mapping>
 	
 	
-	
-		<servlet>
+	<servlet>
 		<servlet-name>marketIntroduceServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
@@ -140,6 +122,4 @@
 		<url-pattern>*.mid</url-pattern>
 	</servlet-mapping>
 	
-	
-
 </web-app>

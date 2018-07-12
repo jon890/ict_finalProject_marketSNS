@@ -82,7 +82,7 @@
 		                <a class="nav-link active" data-toggle="pill" id="help">고객센터</a>
 		            </li>
 				</ul>
-				<p id="helpTitle">글목록(전체 글:${totalCount})</p>
+				<br>
 	    		<c:if test="${id != null}">
 		        	<div id="writeBtnDiv">
 		        		 <button type="button" class="btn" id ="writeBtn2">글쓰기</button>

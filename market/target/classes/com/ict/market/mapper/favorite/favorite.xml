@@ -81,7 +81,7 @@
 	</delete>
 	
 	<select id="commentgetUpdate" resultType="commentList" parameterType="String">
-		select commentNum,commentContent
+		select commentNum,id,commentContent,articleNum
 		from comments
 		where commentNum=#{commentNum}
 	</select>

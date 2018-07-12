@@ -53,10 +53,11 @@
 		        	</div>  	
 	        	</c:if>
 	       
-		 		<input type="hidden" name="pageNum" value="${pageNum}" id="market">                 
+		 	    <input type='hidden' name='pageNum' value='${pageNum}'>
 			    <input type="hidden" name="depth" value="${helpArticle.depth}">
 			    <input type="hidden" name="groupId" value="${helpArticle.articleNum}">
 			    
+			
 		        <table class="table table-hover">
 		            <thead>
 		            <tr>
@@ -93,7 +94,7 @@
 		     	
 		    	<div id="commentList">
 		    	</div>
-		    	
+		   
 			    <table id="commentBottom">
 			    	<tr>
 			      	<c:if test="${id !=null}">
@@ -155,6 +156,7 @@
 	    		event.preventDefault();
 	    		let commentContent =$("#commentContent").val();
 	    		if(commentContent.length==0||commentContent==null){
+	    			alert("댓글을 입력해주세요!")
 	    			$("#commentContent").focus();
 	    		}else{
 	    		$.ajax({
@@ -198,18 +200,21 @@
 	    
 	    function commentUpdateForm(response){
 	    	alert("여기 왓는지 확인");
-	    	alert(response);
-	    	let html;
-	    	$(".content").html("");
-	    	html += "<form action='./updateComment.favorite'>";
-	    	$.each(response,function(index,item){ 
-	    	alert(item);
-	    	html += "<input type='hidden' name='commentNum' value="+item.commentNum+">";
-	    	html += "<input type='text' name='commentContent' value="+item.commentContent+">";
-	    	});
-	    	html += "<input type='submit' class='btn btn-primary' value='저장'>";
+	    	
+	    	$("#commentList").html("");
+	    	let html = "<form action='./updateComment.favorite'>";
+	    	html += "<table class='table table-hover' width='1100'>";
+	    	html += "<td><input type='hidden' name='pageNum' value='${pageNum}'></td>"
+	    	html += "<td><input type='hidden' name='fileStatus' value='${helpArticle.fileStatus}'></td>"
+	    	html += "<td><input type='hidden' name='commentNum' value="+response.commentNum+"></td>";
+	    	html += "<td><input type='hidden' name='articleNum' value="+response.articleNum+"></td>";
+	    	html += "<td>"+response.id+"</td>";
+	    	html += "<td><input type='text' name='commentContent' value="+response.commentContent+"></td>";
+	    	html += "<td><input type='submit' class='btn btn-primary' value='저장'></td>";
+	    	html += "</table>";
 	    	html += "</form>";
-	    	$(".content").html(html);
+	    	$("#commentList").html(html);
+	 
 	    }
 	    
 	     function comfirmDelete(obj){
@@ -265,7 +270,7 @@
 				html +="<td	class='id' width='100'>"+item.id+"</td>";
 				html +="<td class='content' width='600'>"+item.commentContent+"</td>";
 				html +="<td	width='210'>"+item.commentDate+"</td>";
-				html +="<td	width='100'>"+item.commentNum+"</td>";
+				html +="<td><input type='hidden' id='commentNum' value="+item.commentNum+"></td>";
 				html +="<td width='100'><button onClick='updateComment(this)' value="+item.commentNum+" class='btn btn-primary' id='updateKey'>수정</button></td>";
 				html +="<td width='100'><button onClick='comfirmDelete(this)' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td>";
 				/* html +="<c:if test='${id!="+item.id+"}'><td width='100'><button onClick='deleteComment(this)' disabled='diabled' value="+item.commentNum+" class='btn btn-primary' id='deleteKey'>삭제</button></td></c:if>";

@@ -176,7 +176,7 @@ public class FavoriteController {
 	
 	@RequestMapping(value="/commentgetUpdate.favorite",produces = "application/json; charset=utf8")
 	@ResponseBody
-	public List<CommentDto> commentgetUpdate(@RequestParam("commentNum") String commentNum) {
+	public CommentDto commentgetUpdate(@RequestParam("commentNum") String commentNum) {
 		logger.info("업데이트페이지 - 접근");
 		logger.info(commentNum);
 		System.out.println(favoriteService.commentgetUpdate(commentNum));
@@ -184,9 +184,9 @@ public class FavoriteController {
 	}
 	
 	@RequestMapping(value="/updateComment.favorite")
-	public String commentUpdate(CommentDto comment){
+	public String commentUpdate(CommentDto comment,@RequestParam("pageNum")String pageNum,@RequestParam("fileStatus")int fileStatus){
 		favoriteService.commentUpdate(comment);
-		return "redirect:/help.favorite?pageNum=1";
+		return "redirect:/content.favorite?articleNum="+comment.getArticleNum()+"&pageNum="+pageNum+"&fileStatus="+fileStatus;
 	}
 	
 	

@@ -24,7 +24,7 @@ public interface FavoriteDao {
 	public void insertFile(FileDto fileDto);
 	public List<FileDto> getFiles(String articleNum);
 	public List<String> getFileName(String articleNum);
-	public List<CommentDto> commentgetUpdate(String commentNum);
+	public CommentDto commentgetUpdate(String commentNum);
 	public void commentUpdate(CommentDto comment);
 	/* ********** 고객센터 게시판 기능 ********** */
 	

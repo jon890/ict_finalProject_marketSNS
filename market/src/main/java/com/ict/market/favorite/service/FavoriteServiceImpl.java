@@ -182,7 +182,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 	}
 	
 	@Override
-	public List<CommentDto> commentgetUpdate(String commentNum){
+	public CommentDto commentgetUpdate(String commentNum){
 		return favoriteDao.commentgetUpdate(commentNum);
 	}
 	@Override

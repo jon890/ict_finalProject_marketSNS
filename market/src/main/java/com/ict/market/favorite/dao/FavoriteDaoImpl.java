@@ -84,8 +84,8 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		sqlsession.delete(nameSpace+".commentDelete",commentNum);
 	}
 	@Override
-	public List<CommentDto> commentgetUpdate(String commentNum) {
-		return sqlsession.selectList(nameSpace+".commentgetUpdate",commentNum);
+	public CommentDto commentgetUpdate(String commentNum) {
+		return sqlsession.selectOne(nameSpace+".commentgetUpdate",commentNum);
 	}
 	
 	@Override

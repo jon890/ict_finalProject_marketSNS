@@ -27,7 +27,7 @@ public interface FavoriteService {
 	public void commentDelete(String commentNum);
 	public FileSystemResource download(HttpServletResponse resp,String storedFname
 			,String originFname,int fileLength,String uploadDir);
-	public List<CommentDto> commentgetUpdate(String commentNum);
+	public CommentDto commentgetUpdate(String commentNum);
 	public void commentUpdate(CommentDto comment);
 	
 	/* ********** 공지사항 게시판 기능 ********** */

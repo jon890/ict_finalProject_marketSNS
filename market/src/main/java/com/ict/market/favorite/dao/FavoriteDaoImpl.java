@@ -76,7 +76,6 @@ public class FavoriteDaoImpl implements FavoriteDao {
 		HashMap<String,Integer> hm = new HashMap<>();
 		hm.put("articleNum",articleNum);
 		hm.put("commentRow",commentRow);
-		System.out.println(sqlsession.selectList(nameSpace+".getComments",hm));
 		return sqlsession.selectList(nameSpace+".getComments",hm);
 	}
 
@@ -84,9 +83,23 @@ public class FavoriteDaoImpl implements FavoriteDao {
 	public void commentDelete(String commentNum) {
 		sqlsession.delete(nameSpace+".commentDelete",commentNum);
 	}
+	@Override
+	public List<CommentDto> commentgetUpdate(String commentNum) {
+		return sqlsession.selectList(nameSpace+".commentgetUpdate",commentNum);
+	}
+	
+	@Override
+	public void commentUpdate(CommentDto comment) {
+		sqlsession.update(nameSpace+".commentUpdate",comment);
+	}
+	
+	
 	
 	/* ********** 파일업로드 관련 기능 ********** */
 	
+	
+
+
 	@Override
 	public void insertFile(FileDto fileDto) {
 		sqlsession.insert(nameSpace+".insertFile",fileDto);

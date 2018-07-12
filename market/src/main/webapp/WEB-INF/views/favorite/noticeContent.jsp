@@ -38,19 +38,19 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<td>글쓴이</td>
+							<td class="td02">글쓴이</td>
 							<td colspan="3" class="td01">${noticeContent.id}</td>
 						</tr>
 						<tr>
-							<td>제목</td>
+							<td class="td02">제목</td>
 							<td class="td01">${noticeContent.title}</td>
-							<td>날짜</td>
+							<td class="td02">날짜</td>
 							<td class="td01">${noticeContent.writeDate}</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>내용</td>
+							<td class="td02">내용</td>
 							<td colspan="3" class="td01">${noticeContent.content}</td>
 						</tr>
 					</tbody>

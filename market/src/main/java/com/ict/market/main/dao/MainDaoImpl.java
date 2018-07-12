@@ -73,4 +73,13 @@ public class MainDaoImpl implements MainDao{
 		sqlSession.update(nameSpace.concat(".memberUpdate"), member);
 	}
 	/* ********** È¸¿ø Á¤º¸ ¼öÁ¤  ********** */
+
+
+	/* ********** È¸¿ø Å»Åð ********** */
+	@Override
+	public void memberDelete(String id) {
+		sqlSession.delete(nameSpace.concat(".memberDelete"), id);
+	}
+	/* ********** È¸¿ø Å»Åð ********** */
+	
 }

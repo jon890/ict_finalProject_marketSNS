@@ -107,4 +107,15 @@ public class MainServiceImpl implements MainService {
 		}
 	}
 	/* ********** È¸¿ø Á¤º¸ ¼öÁ¤  ********** */
+
+	
+
+	/* ********** È¸¿ø Å»Åð ********** */
+	@Override
+	public void memberDelete(String id) {
+		mainDao.memberDelete(id);
+	}
+	/* ********** È¸¿ø Å»Åð ********** */
+	
+	
 }

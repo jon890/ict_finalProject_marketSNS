@@ -77,7 +77,7 @@ public class MainController {
 	@RequestMapping(value="/register.main" , method = RequestMethod.POST)
 	public String register(MarketMemberDto member) {
 		mainService.register(member);
-		return "index";
+		return "redirect:/";
 	}
 	/* ********** 로그인 관련 기능 ********** */
 
@@ -102,7 +102,17 @@ public class MainController {
 	public String memberUpdate(MarketMemberDto member, HttpSession session) {
 		member.setId((String)session.getAttribute("id"));
 		mainService.memberUpdate(member);
-		return "index";
+		return "redirect:/";
 	}
 	/* ********** 회원 정보 수정 ********** */
+	
+	
+	/* ********** 회원 탈퇴 ********** */
+	@RequestMapping(value="/memberDelete.main" , method = RequestMethod.GET)
+	public String memberDelete(@RequestParam String id, HttpSession session) {
+		session.invalidate();
+		mainService.memberDelete(id);
+		return "redirect:/";
+	}
+	/* ********** 회원 탈퇴 ********** */
 }

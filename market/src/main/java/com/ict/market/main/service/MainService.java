@@ -29,4 +29,8 @@ public interface MainService {
 	public MarketMemberDto getMemberUpdate(String id);
 	public void memberUpdate(MarketMemberDto member);
 	/* ********** È¸¿ø Á¤º¸ ¼öÁ¤ ********** */
+	
+	/* ********** È¸¿ø Å»Åð ********** */
+	public void memberDelete(String id);
+	/* ********** È¸¿ø Å»Åð ********** */
 }

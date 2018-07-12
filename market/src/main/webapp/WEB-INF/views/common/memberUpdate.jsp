@@ -30,7 +30,8 @@
 	    		$("#memberDelete").click(function(){
 	    			let deleteChk = confirm("정말로 탈퇴하시겠습니까?");
 	    			if(deleteChk == true){
-	    				location.href = "./memberDelete.main?id=${id}"
+	    				location.href = "./memberDelete.main?id=${id}";
+	    				alert("${id}님 정상적으로 탈퇴되셨습니다.")
 	    			}
 	    		});
 	    	});

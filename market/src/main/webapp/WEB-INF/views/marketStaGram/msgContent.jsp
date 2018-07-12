@@ -86,7 +86,7 @@
 					<div id="snsArticleBtns2">
 						<c:if test="${id != null}">
 							<c:if test="${id == snsArticle.id}">
-								<input type="button" id="articleDeleteBtn" value="게시물 삭제" onclick="document.location.href='/market/delete.msg?articleNum=${snsArticle.articleNum}'">
+								<input type="button" id="articleDeleteBtn" value="게시물 삭제">
 							</c:if>
 								
 							<c:if test="${id != snsArticle.id}">
@@ -113,7 +113,11 @@
 			});
 			
 			$("#articleDeleteBtn").click(function(){
-				confirm("정말 게시물을 삭제하시겠습니까?");
+				let deleteChk = confirm("정말 게시물을 삭제하시겠습니까?");
+				if ( deleteChk == true ){
+					location.href="./delete.msg?articleNum=${snsArticle.articleNum}";
+					alert("게시물이 삭제 되었습니다");
+				}
 			});
 			
 			$.ajaxSetup({

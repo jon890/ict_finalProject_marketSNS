@@ -102,7 +102,9 @@ public class MainServiceImpl implements MainService {
 	
 	@Override
 	public void memberUpdate(MarketMemberDto member) {
-		mainDao.memberUpdate(member);
+		if( member.getAge() != 0 || member.getName() != null || member.getPassword() != null || member.getGender() != null) {
+			mainDao.memberUpdate(member);
+		}
 	}
 	/* ********** 회원 정보 수정  ********** */
 }

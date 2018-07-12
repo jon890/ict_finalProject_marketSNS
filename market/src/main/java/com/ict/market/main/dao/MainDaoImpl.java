@@ -15,6 +15,19 @@ public class MainDaoImpl implements MainDao{
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	private final String nameSpace = "com.ict.market.main.dao.MainDao";
+	
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	@Override
+	public List<MainhelpDto> mainHelp() {
+		return sqlSession.selectList(nameSpace.concat(".mainHelp"));
+	}
+
+	@Override
+	public List<MainhelpDto> mainNotice() {
+		return sqlSession.selectList(nameSpace.concat(".mainNotice"));
+	}
+	/* ********** 메인페이지에 공지사항, 고객센터 글 4개씩 가져오기 기능 ********** */
+	
 
 	/* ********** 로그인 관련 기능 ********** */
 	@Override
@@ -38,17 +51,26 @@ public class MainDaoImpl implements MainDao{
 	}
 	/* ********** 로그인 관련 기능 ********** */
 
-	@Override
-	public List<MainhelpDto> mainHelp() {
-		return sqlSession.selectList(nameSpace.concat(".mainHelp"));
-	}
 
-	@Override
-	public List<MainhelpDto> mainNotice() {
-		return sqlSession.selectList(nameSpace.concat(".mainNotice"));
-	}
 	
+	/* ********** 아이디 중복 체크 ********** */
 	public String registerIdCheck(String id) {
 		return sqlSession.selectOne(nameSpace+".registerIdCheck", id);
 	}
+	/* ********** 아이디 중복 체크 ********** */
+
+	
+	
+	/* ********** 회원 정보 수정  ********** */
+	@Override
+	public MarketMemberDto getMemberUpdate(String id) {
+		return sqlSession.selectOne(nameSpace.concat(".getMemberUpdate"), id);
+	}
+
+	
+	@Override
+	public void memberUpdate(MarketMemberDto member) {
+		sqlSession.update(nameSpace.concat(".memberUpdate"), member);
+	}
+	/* ********** 회원 정보 수정  ********** */
 }

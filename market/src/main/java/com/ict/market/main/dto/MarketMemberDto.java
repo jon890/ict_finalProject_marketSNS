@@ -48,7 +48,7 @@ public class MarketMemberDto {
 	
 	@Override
 	public String toString() {
-		return "Login [id=" + id + ", password=" + password + ", name=" + name + ", age=" + age + ", gender=" + gender
+		return "MarketMember [id=" + id + ", password=" + password + ", name=" + name + ", age=" + age + ", gender=" + gender
 				+ ", adminchk=" + adminchk + "]";
 	}
 		

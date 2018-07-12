@@ -223,6 +223,7 @@
 	background-color : green;
 	left : 200px;
 	top : 500px;
+	cursor : pointer;
 	z-index:6;
 }
 

@@ -59,7 +59,7 @@
 	            </li>
 	            
 				<c:if test="${id!=null}">
-		 			<li id="li06">${id}님 환영합니다!</li>
+		 			<li id="li06"><a href="./memberUpdateForm.main?id=${id}">${id}</a>님 환영합니다!</li>
 		 			<li id="li07"><a href="./logout.main">로그아웃</a></li>
 		 		</c:if>
 		 

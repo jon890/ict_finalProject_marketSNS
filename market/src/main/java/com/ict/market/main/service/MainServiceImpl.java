@@ -91,4 +91,18 @@ public class MainServiceImpl implements MainService {
 		return result;
 	}
 	/* ********** 아이디 중복 체크 ********** */
+
+	
+	
+	/* ********** 회원 정보 수정  ********** */
+	@Override
+	public MarketMemberDto getMemberUpdate(String id) {
+		return mainDao.getMemberUpdate(id);
+	}
+	
+	@Override
+	public void memberUpdate(MarketMemberDto member) {
+		mainDao.memberUpdate(member);
+	}
+	/* ********** 회원 정보 수정  ********** */
 }

@@ -89,4 +89,20 @@ public class MainController {
 		return mainService.registerIdCheck(id);
 	}
 	/* ********** 아이디 중복 체크 ********** */
+	
+	
+	/* ********** 회원 정보 수정 ********** */
+	@RequestMapping(value="/memberUpdateForm.main" , method = RequestMethod.GET)
+	public String memberUpdateForm(@RequestParam String id, Model model) {
+		model.addAttribute("memberUpdate", mainService.getMemberUpdate(id));
+		return "/common/memberUpdate";
+	}
+	
+	@RequestMapping(value="/memberUpdate.main" , method = RequestMethod.POST)
+	public String memberUpdate(MarketMemberDto member, HttpSession session) {
+		member.setId((String)session.getAttribute("id"));
+		mainService.memberUpdate(member);
+		return "index";
+	}
+	/* ********** 회원 정보 수정 ********** */
 }

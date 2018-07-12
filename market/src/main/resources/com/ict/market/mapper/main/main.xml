@@ -49,8 +49,37 @@
 	
 	<!-- 중복 아이디 체크 -->
 	<select id="registerIdCheck" parameterType="String" resultType="String">
-		SELECt ID
+		SELECT ID
 		FROM MARKETMEMBER
 		WHERE ID = #{id}
 	</select>
+	
+	
+	<!-- 회원 정보 수정 -->
+	<select id="getMemberUpdate" parameterType="String" resultType="member">
+		SELECT *
+		FROM MARKETMEMBER
+		WHERE ID = #{id}
+	</select>
+	
+	<update id="memberUpdate" parameterType="member">
+		UPDATE MARKETMEMBER
+		SET
+		<trim suffixOverrides=",">
+			<if test="password != null">
+	    	PASSWORD = #{password},
+	 		</if>
+	 		<if test="name != null">
+	    	NAME = #{name},
+	 		</if>
+	 		<if test="age != null">
+	    	AGE = #{age},
+	 		</if>
+	 		<if test="gender != null">
+	    	GENDER = #{gender},
+	 		</if>
+	 	</trim>
+		WHERE ID = #{id}
+	</update>
+	<!-- 회원 정보 수정 -->
 </mapper>

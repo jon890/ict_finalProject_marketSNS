@@ -80,7 +80,7 @@ public class FavoriteController {
 	/*글 남길때 포스트 방식으로 입력*/
 	@Transactional
 	@RequestMapping(value="/write.favorite",method=RequestMethod.POST)
-	public String writeForm(FavoriteDto helpArticle,HttpSession session
+	public String write(FavoriteDto helpArticle,HttpSession session
 			,@RequestPart("fname")List<MultipartFile> fname,HttpServletRequest req) {
 		helpArticle.setId((String)session.getAttribute("id"));
 		/* 파일 업로드 경로 */

@@ -179,7 +179,6 @@
 	    });	
 	    function updateComment(obj){
 	    	if("${id}"==$(obj).parent().siblings("td[class=id]").html()){
-	    		alert("들어왔다.");
 	    		alert($(obj).val());
 	    		$.ajax({
 	    			url:"/market/commentgetUpdate.favorite",
@@ -199,7 +198,6 @@
 	    }
 	    
 	    function commentUpdateForm(response){
-	    	alert("여기 왓는지 확인");
 	    	
 	    	$("#commentList").html("");
 	    	let html = "<form action='./updateComment.favorite'>";

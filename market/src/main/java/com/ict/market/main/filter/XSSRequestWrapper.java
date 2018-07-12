@@ -13,8 +13,9 @@ public class XSSRequestWrapper extends HttpServletRequestWrapper{
 	@Override
 	public String[] getParameterValues(String name) {
 		String[] values = super.getParameterValues(name);
-		if(name.equals("title") || name.equals("content")) {
-			values[0] = values[0].replace("<","&lt;").replace(">","&gt;");
+		if(name.equals("title") || name.equals("content") || name.equals("commentContent")) {
+			values[0] = values[0].replace("<","&lt;").replace(">","&gt;")
+					.replaceAll("\r\n","<br/>").replaceAll("\u0020","&nbsp");
 		}
 		
 		return values;

@@ -5,7 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>아따시장 - 양동시장 볼거리</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 </head>
 	 
 	 <body>
@@ -21,10 +22,12 @@
 						<tbody>
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/청춘발산마을.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/청춘발산마을.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/청춘발산마을.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/청춘발산마을_야경.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/청춘발산마을_야경.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/청춘발산마을_야경.jpg"></a>
 								</td>
 								<td>
 										<h3>청춘발산마을</h3>
@@ -40,10 +43,12 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/기아챔피언스필드전경.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/기아챔피언스필드전경.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/기아챔피언스필드전경.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/기아챔피언스필드내부.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/기아챔피언스필드내부.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/기아챔피언스필드내부.jpg"></a>
 								</td>
 								<td>
 										<h3>기아챔피언스필드</h3>
@@ -57,4 +62,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

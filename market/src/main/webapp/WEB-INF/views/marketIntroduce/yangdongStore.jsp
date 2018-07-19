@@ -5,7 +5,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>아따시장 - 양동시장 먹을거리</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">	
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="./resources/js/marketIntroduce/convenience.js"></script>
 	</head>
 	
 	<body>
@@ -21,7 +23,8 @@
 						<tbody>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/수일통닭.JPG" >
+									<a class="modal" href="./resources/images/marketIntroduce/수일통닭.JPG">
+									<img class="storeimg" src="./resources/images/marketIntroduce/수일통닭.JPG" ></a>
 								</td>
 								<td class="left">
 									<h3>수일통닭</h3>
@@ -37,10 +40,11 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/영창식당.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/영창식당.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/영창식당.jpg" ></a>
 								</td>
 								<td class="left">
-									<h3><b>-주요메뉴-</b></h3>
+									<h3><b>영창식당</b></h3>
 									<span>불고기백반<br></span>
 									<span>한결 같은 가격 6천원에 불고기 백반을 선사합니다.<br></span>
 								</td>
@@ -53,7 +57,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/곰베우동.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/곰베우동.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/곰베우동.jpg"></a>
 								</td>
 								<td class="left">
 									<h3>곰베우동</h3>
@@ -72,5 +77,5 @@
 				</div>
 			</div>
 		</div>
-	</body>
+	</body>	
 </html>

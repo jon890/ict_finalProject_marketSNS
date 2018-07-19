@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 양동시장 개요</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 	</head>
 	
 	<body>
@@ -13,7 +14,8 @@
 			<h2>양동시장</h2>
 		</div>
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/양동시장.jpg">
+			<a class="modal" href="resources/images/marketIntroduce/양동시장.jpg">
+			<img src="resources/images/marketIntroduce/양동시장.jpg"></a>
 		</div>
 		<div class="marketSummary ">
 			<table>
@@ -54,4 +56,27 @@
 			<span>대인시장은 광주의 번화가에 자리하고 있으며 문화의 예술이 접목된 시장으로 유명하다. 비어 있던 점포에 예술작품이 전시되고 그를 기회로 예술이 동거하는 시장으로 거듭났다. 현재 예술가와 상인들이 함께 거주하는 공간이 되어 예술야시장 등을 개최하며 사람들의 발길을 끌고 있다.</span>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>
 </html>

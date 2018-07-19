@@ -1,3 +1,5 @@
+
+
 .contents{
 	background:#f2f2f2;
 	width:100%;
@@ -6,6 +8,7 @@
 	position:relative;
 	box-sizing:border-box;
 	display:inline-block;
+	font-family: meangjo;
 }
 
 div{
@@ -17,6 +20,7 @@ div{
     color: #525252;
     letter-spacing: -0.5px;
     /* font: inherit; */
+   
     vertical-align: baseline;
 }
 
@@ -41,4 +45,28 @@ span{
 	display:inline-block;
 	width:290px;
 	height:290px;
+}
+#glayLayer{
+	position: fixed;
+	display: none;
+	left: 0; top: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	filter:alpha(opacit=60);
+	opacity: 0.60;
+}
+
+#overLayer{
+	display: none;
+	top:35%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -200px;
+	position: fixed;
+}
+#overLayer img{
+	width:500px;
+	height:500px;
+	cursor: pointer;
 }

@@ -37,3 +37,27 @@
 	margin: 15px 20px;
 	font-family:MaplestoryLight1;
 }
+#glayLayer{
+	position: fixed;
+	display: none;
+	left: 0; top: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	filter:alpha(opacit=60);
+	opacity: 0.60;
+}
+
+#overLayer{
+	display: none;
+	top:25%;
+	left: 40%;
+	margin-top: -200px;
+	margin-left: -200px;
+	position: fixed;
+}
+#overLayer img{
+	width:700px;
+	height:400px;
+	cursor: pointer;
+}

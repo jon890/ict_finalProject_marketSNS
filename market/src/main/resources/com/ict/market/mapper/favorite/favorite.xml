@@ -80,6 +80,19 @@
 		where commentNum=#{commentNum}
 	</delete>
 	
+	<select id="commentgetUpdate" resultType="commentList" parameterType="String">
+		select commentNum,id,commentContent,articleNum
+		from comments
+		where commentNum=#{commentNum}
+	</select>
+	
+	<update id="commentUpdate" parameterType="commentList">
+		update comments
+		set commentContent=#{commentContent}
+		where commentNum=#{commentNum}
+	</update>
+	
+	
 	<insert id="insertFile" parameterType="file">
 		INSERT INTO FILELIST
 		VALUES(file_SEQ.NEXTVAL,#{originFname},#{storedFname},#{filelength},#{articleNum})

@@ -164,5 +164,15 @@ public class MsgServiceImpl implements MsgService {
 	public List<SearchDto> search(String keyword) {
 		return msgDao.search(keyword);
 	}
+
+	@Override
+	public List<String> searchResult(String keyword) {
+		return msgDao.searchResult(keyword);
+	}
+
+	@Override
+	public List<ImgDto> searchArticle(Model model, List<Integer> articleNums) {
+		return msgDao.searchArticle(articleNums);
+	}
 	/* ********** 해쉬태그 검색기능 ********** */
 }

@@ -69,13 +69,6 @@ public class MsgController {
 	public String write(SnsArticleDto snsArticle,
 						@RequestPart("imgname") List<MultipartFile> imgname,
 						HttpServletRequest req) {
-		
-		for( MultipartFile img : imgname) {
-			System.out.println("====================");
-			System.out.println(img.getOriginalFilename());
-			System.out.println("====================");
-		}
-		
 		/* 파일 업로드 경로 */
 	    String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadImgs/";
 		msgService.write(snsArticle, imgname, uploadDir);
@@ -174,12 +167,25 @@ public class MsgController {
 	/* ********** 해쉬태그 검색기능 ********** */
 	@RequestMapping(value = "/search.msg" , method = RequestMethod.GET)
 	@ResponseBody
-	public List<SearchDto> search(@RequestParam String keyword){
+	public List<SearchDto> search(@RequestParam String keyword){	
 		if(keyword.charAt(0) == '#') {
 			keyword = keyword.substring(1);
-			System.out.println(keyword);
 		}
 		return msgService.search(keyword);
+	}
+	
+	@RequestMapping(value = "/searchResult.msg" , method = RequestMethod.GET)
+	@ResponseBody
+	public List<String> searchResult(@RequestParam String keyword, HttpSession session){
+		session.setAttribute("keyword", keyword);
+		keyword = keyword.substring(1);
+		return msgService.searchResult(keyword);
+	}
+	
+	@RequestMapping(value = "/searchArticle.msg" , method = RequestMethod.GET)
+	public String searchArticle(@RequestParam List<Integer> articleNums, Model model) {
+		model.addAttribute("imgList", msgService.searchArticle(model, articleNums));
+		return "searchView";
 	}
 	/* ********** 해쉬태그 검색기능 ********** */
 	

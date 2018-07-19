@@ -6,26 +6,21 @@
 	<head>
 	    <meta charset="utf-8">
 		<title>아따시장 - #시장스타그램 글 읽기</title>
-		<link rel="stylesheet" href="./resources/css/common/common.css">
-		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
-		<link rel="stylesheet" href="./resources/css/marketStaGram/msgContent.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<link rel="stylesheet" href="./resources/css/common/common.css">
+		<link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+		<link rel="stylesheet" href="./resources/css/marketStaGram/msgContent.css">
 	</head>
 	
 	
 	<body>
 	
-		<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./../common/mainMenu.jsp" %>
-		</header>
+		<header id="mainMenu"><%@ include file="./../common/mainMenu.jsp" %></header>
 		
 		<section>
-		
 			<div class="background">
 	            <img src="./resources/images/marketStaGram/background.png">
 	            <div class="transbox">
@@ -37,14 +32,11 @@
 			<article id="contents">
 			
 				<div id="imgs">
-					<!-- 부트스트랩 테마 적용 -->
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">		
 						<div class="carousel-inner">
-							<!-- 대표 이미지 -->
 							<div class="carousel-item active">
 								<img class="d-block w-100" src="./resources/uploadImgs/${imgs[0]}">
 							</div>
-							<!-- 나머지 이미지 -->
 							<c:forEach var="img" items="${imgs}" begin="1">
 								<div class="carousel-item">
 									<img class="d-block w-100" src="./resources/uploadImgs/${img}">
@@ -62,7 +54,6 @@
 							<span class="sr-only">다음</span>
 						</a>
 					</div>
-					<!-- 부트스트랩 테마 적용 -->
 				</div>
 				
 				<div id="snsArticle">
@@ -83,15 +74,6 @@
 					
 					<hr>
 					<div id="snsArticleBtns">
-						<%-- <c:if test="${id == null}">
-							<a href="javaScript:login()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
-							<a href="javaScript:login()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
-						</c:if>
-					
-						<c:if test="${id != null}">
-							<a href="javaScript:likefunc()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
-							<a href="javaScript:commentfunc()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
-						</c:if> --%>
 						<a href="javaScript:likefunc()"><img id="likebtnImg" src="./resources/images/marketStaGram/dislikebtn.png"></a>
 						<a href="javaScript:commentfunc()"><img id="commentbtn" src="./resources/images/marketStaGram/commentbtn.png"></a>
 					</div>
@@ -104,7 +86,7 @@
 					<div id="snsArticleBtns2">
 						<c:if test="${id != null}">
 							<c:if test="${id == snsArticle.id}">
-								<input type="button" id="articleDeleteBtn" value="게시물 삭제" onclick="document.location.href='/market/delete.msg?articleNum=${snsArticle.articleNum}'">
+								<input type="button" id="articleDeleteBtn" value="게시물 삭제">
 							</c:if>
 								
 							<c:if test="${id != snsArticle.id}">
@@ -122,22 +104,20 @@
 			</article>
 		</section>
 		
-		<footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-			<%@ include file="./../common/mainFooter.jsp" %>
-		</footer>
-		
-		
-		
+		<footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
+
 		<script>
-		
 			$(document).ready(function(event){
 				getComment(1, event);
 				likeChk();
 			});
 			
 			$("#articleDeleteBtn").click(function(){
-				confirm("정말 게시물을 삭제하시겠습니까?");
+				let deleteChk = confirm("정말 게시물을 삭제하시겠습니까?");
+				if ( deleteChk == true ){
+					location.href="./delete.msg?articleNum=${snsArticle.articleNum}";
+					alert("게시물이 삭제 되었습니다");
+				}
 			});
 			
 			$.ajaxSetup({
@@ -253,6 +233,5 @@
 				location.href = "./login.main";
 			}
 		</script>
-		
 	</body>
 </html>

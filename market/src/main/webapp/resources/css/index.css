@@ -74,7 +74,7 @@
 	width : 700px;
 	height : 400px;
 	bottom : 10%;
-	left : 30%;
+	left : 28%;
 	z-index:1;
 }
 
@@ -83,34 +83,32 @@
 	/* top : 50px; */
 	bottom : 60%;
 	/* right : 10px; */
-	left:40%;
+	left:33%;
 	font-size : 100px;
 	font-weight : bold;
-	color : #400040;
+	color : #980000;
 	z-index:2;
 	font-family:"SangSangFlowerRoad";
 }
 
 #main2Title01{
 	position : absolute;
-	bottom : 70%;
-	left:10%;
-	font-size : 70px;
+	bottom : 67%;
+	left:26%;
+	font-size : 60px;
 	font-weight : bold;
-	color : #400040;
+	color : #1B315E;
 	z-index:3;
-	/* font-family:"SangSangFlowerRoad"; */
 }
 
 #main2Title02{
 	position : absolute;
-	bottom : 62%;
-	left:10%;
-	font-size : 70px;
+	bottom : 60.8%;
+	left:26%;
+	font-size : 60px;
 	font-weight : bold;
-	color : #400040;
+	color : #1B315E;
 	z-index:3;
-	/* font-family:"SangSangFlowerRoad"; */
 }
 
 #main2Title03{
@@ -121,7 +119,6 @@
 	font-weight : bold;
 	color : #400040;
 	z-index:3;
-	/* font-family:"SangSangFlowerRoad"; */
 }
 
 #main2Title04{
@@ -132,7 +129,6 @@
 	font-weight : bold;
 	color : #400040;
 	z-index:3;
-	/* font-family:"SangSangFlowerRoad"; */
 }
 
 #firstRow{
@@ -207,35 +203,6 @@
 	text-align:center;
 }
 
-/* .btnBox:first-child{
-	background-color : white;
-	left : 200px;
-	top : 100px;
-	z-index:6;
-	
-}
-
-.btnBox:nth-child(2){
-	background-color : yellow;
-	left : 600px;
-	top : 100px;
-	z-index:6;
-}
-
-.btnBox:nth-child(3){
-	background-color : green;
-	left : 200px;
-	top : 500px;
-	z-index:6;
-}
-
-.btnBox:last-child{
-	background-color : orange;
-	left : 600px;
-	top : 500px;
-	z-index:6;
-} */
-
 #box01{
 	background-color : white;
 	left : 200px;
@@ -248,6 +215,7 @@
 	background-color : yellow;
 	left : 600px;
 	top : 100px;
+	cursor : pointer;
 	z-index:6;
 }
 
@@ -255,6 +223,7 @@
 	background-color : green;
 	left : 200px;
 	top : 500px;
+	cursor : pointer;
 	z-index:6;
 }
 
@@ -262,6 +231,7 @@
 	background-color : orange;
 	left : 600px;
 	top : 500px;
+	cursor : pointer;
 	z-index:6;
 }
 
@@ -291,10 +261,6 @@
     text-overflow: ellipsis;
     color:blue
 }
-
-/* .main_li a{
-	color:blue;
-} */
 
 .li_last input{
 	margin-left:20px;

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -87,18 +88,20 @@
 						품목별 보기 <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="compareCorn.compare">곡류</a></li>
-						<li><a href="compareMeat.compare">육류</a></li>
-						<li><a href="compareFish.compare">어류</a></li>
-						<li><a href="compareFruit.compare">과일</a></li>
-						<li><a href="compareVege.compare">채소</a></li>
-						<li><a href="compareGro.compare">식료품</a></li>
-						<li><a href="compareOil.compare">유류</a></li>
-						<li><a href="compareCleaner.compare">세제</a></li>
+						<li><a href="compareCorn.compare?weekends=${weekends}">곡류</a></li>
+						<li><a href="compareMeat.compare?weekends=${weekends}">육류</a></li>
+						<li><a href="compareFish.compare?weekends=${weekends}">어류</a></li>
+						<li><a href="compareFruit.compare?weekends=${weekends}">과일</a></li>
+						<li><a href="compareVege.compare?weekends=${weekends}">채소</a></li>
+						<li><a href="compareGro.compare?weekends=${weekends}">식료품</a></li>
+						<li><a href="compareOil.compare?weekends=${weekends}">유류</a></li>
+						<li><a href="compareCleaner.compare?weekends=${weekends}">세제</a></li>
 					</ul>
 				</div>
-				<br> <span><c:out value="${weekends.replace('0','월')}"/>주차 가격</span> <br> <span> ※ 차이는
-					(시장평균가-마트평균가) 가격입니다.</span> <br> <span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
+				<br> <span><c:out value="${weekends.replace('0','월')}"/>주차 가격</span> 
+				<br> <span> ※ 차이는(시장평균가-마트평균가) 가격입니다.</span> <br> 
+				<span>※ 출처: 광주광역시청 홈페이지 참조 </span><br>
+				<span><img src="./resources/images/compare/compare_icon.png" id="icon"></span>
 				<table class="table table-striped">
 					<thead>
 						<tr>

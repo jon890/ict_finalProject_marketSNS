@@ -125,5 +125,20 @@
 		FROM MARKETSTAGRAM
 		WHERE CONTENT LIKE <![CDATA['%#']]>||#{keyword}||<![CDATA['%']]>
 	</select>
+	
+	<select id="searchResult" parameterType="String" resultType="String">
+		SELECT ARTICLENUM
+		FROM MARKETSTAGRAM
+		WHERE CONTENT LIKE <![CDATA['%#']]>||#{keyword}||<![CDATA['%']]>
+	</select>
+	
+	<select id="searchArticle" parameterType="List" resultType="msgImg">
+		SELECT STOREDIMGNAME, ARTICLENUM
+		FROM IMGLIST
+		WHERE ARTICLENUM IN
+		<foreach collection="list" item="articleNums" open="(" separator="," close=")">
+		#{articleNums}
+		</foreach>
+	</select>
 	<!-- ********** 해쉬태그 검색 기능 ********** -->
 </mapper>

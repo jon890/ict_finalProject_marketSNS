@@ -6,9 +6,9 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/mainMenu.css">
 	   	<script src="./resources/js/mainMenu.js"></script>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -59,7 +59,7 @@
 	            </li>
 	            
 				<c:if test="${id!=null}">
-		 			<li id="li06">${id}님 환영합니다!</li>
+		 			<li id="li06"><a href="./memberUpdateForm.main?id=${id}">${id}</a>님 환영합니다!</li>
 		 			<li id="li07"><a href="./logout.main">로그아웃</a></li>
 		 		</c:if>
 		 

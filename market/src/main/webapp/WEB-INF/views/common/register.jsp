@@ -5,92 +5,17 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <title>아따시장 - 회원가입</title>
-	    <link rel="stylesheet" href="./resources/css/common/register.css">
-	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+	    <title>아따~ 시장 - 회원가입</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <link rel="stylesheet" href="./resources/css/common/common.css">
-	    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <link rel="stylesheet" href="./resources/css/common/backgroundStyle.css">
+	    <link rel="stylesheet" href="./resources/css/common/register.css">
 	    <script src="./resources/js/register.js"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-		<style>
-			.form-control {
-				width:400px;
-				display:inline-block;
-			}
-		</style>
-		<script>
-		    $.ajaxSetup({
-		    	type : "POST",
-		    	async : true,
-		    	dataType : "json",
-		    	error : function(xhr){
-		    		alert("error html = " + xhr.statusText);
-		    	}
-		    });
-		    
-		    $(document).ready(function(){
-		    	function idCheck(){
-		    		if($("input[name=id]").val().length != 0){
-			    		$.ajax({
-			                url : "./registerIdCheck.main",
-			                data : {
-			                    id : $("input[name=id]").val()
-			                },
-			                success : function(result){
-			                    if(result == 1){
-			                    	$("input[name=id]").css("border","solid 1px gray");
-			                    	$("span[id=id_check]").html("사용 가능한 아이디입니다");
-			                    	return true;
-			                    }
-			                    else{
-			                    	$("input[name=id]").css("border","solid red");
-			                    	$("span[id=id_check]").html("사용할 수 없는 아이디입니다");
-			                    	$("input[name=id]").val("");
-			                    	return false;
-			                    }
-			                }
-			            });
-		    		}
-		    		else{
-		    			$("input[name=id]").css("border","solid red");
-                    	$("span[id=id_check]").html("아이디를 입력해주세요");
-                    	return false;
-		    		}	//공백도 확인!
-		    	}
-		    	
-		    	function pwdCheck(){
-		    		if($("input:password[name='password']").val() != $("#pwdChk").val()){
-	    				return false;
-	    			} else if($("input:password[name='password']").val() == null){
-	    				return false;
-		    		} else{
-		    			return true;
-		    		}
-		    	}
-		    	
-		    	$("#idCheck").on("click", function(){
-		    		idCheck();
-		    	});
-		        
-		        $("input[type=submit]").on("click", function(){
-		        	if(idCheck()){
-		        		return true;
-		        	}
-		        	if(!pwdCheck()){
-		        		alert("비밀번호")
-		        		return false;
-		        	}
-		        });
-		    });
-	    </script>
-	    
 	</head>
 	
 	<body>
-		<header id="mainMenu">
-			<!-- mainMenu.jsp 파일 include -->
-			<%@ include file="./../common/mainMenu.jsp" %>
-		</header>
+		<header id="mainMenu"><%@ include file="./../common/mainMenu.jsp" %></header>
 		
 		<section>
 			<div class="background">
@@ -104,39 +29,36 @@
         	<br>
 			<div id="regContainer">
 				<p id="regTitle">회원가입</p>
-					<form action="./register.main" method="post">
-						<div id="regNotNull">
-							<p id="notNullTitle">아래 항목은 필수사항입니다!<p>
-							<p class="input">아이디<br><input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요" size="15" maxlength="15" autofocus required>
-									  <!-- <input type="button" value="아이디 중복확인" id="idCheck"> -->
-									  <button type="button" class="btn" id="idCheck">중복확인</button>
-									  <span id="id_check"></span></p>
-							
-							<p class="input">비밀 번호<br><input type="password" class="form-control" name="password" placeholder="비밀번호를 입력하세요" required></p>
-							<p class="input">비밀 번호 확인<br><input type="password" class="form-control" placeholder="비밀번호를 다시 입력하세요" id="pwdChk" required>   
-								<br><span id="password_check"></span>
-							</p>
-						</div>
+				<form action="./register.main" method="post">
+					<div id="regNotNull">
+						<p id="notNullTitle">아래 항목은 필수사항입니다!<p>
+						<p class="input">아이디<br><input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요" size="15" maxlength="15" autofocus required>
+								  <!-- <input type="button" value="아이디 중복확인" id="idCheck"> -->
+								  <button type="button" class="btn" id="idCheck">중복확인</button>
+								  <span id="id_check"></span></p>
 						
-						<div id="regOptional">
-							<p id="optionalTitle">다음의 항목은 선택사항입니다.<p>
-							<p class="input">이름   <input type="text" class="form-control" name="name" placeholder="이름을 입력하세요" maxlength="5"></p>
-							<p class="input">나이   <input type="number" name="age" placeholder="나이를 입력하세요" min="1" max="99" value="20"></p>
-							<p class="input">성별   &nbsp;<input type="radio" name="gender" value="남">남
-									 <input type="radio" name="gender" value="여">여</p>	
-						</div>
-						 
-						<div id="regBtns">
-							<input type="submit" value="회원가입" class="btn btn-secondary">
-							<input type="reset" value="초기화" class="btn btn-secondary">
-						</div>
-					</form>  
+						<p class="input">비밀 번호<br><input type="password" class="form-control" name="password" placeholder="비밀번호를 입력하세요" required></p>
+						<p class="input">비밀 번호 확인<br><input type="password" class="form-control" placeholder="비밀번호를 다시 입력하세요" id="pwdChk" required>   
+							<br><span id="password_check"></span>
+						</p>
+					</div>
+					
+					<div id="regOptional">
+						<p id="optionalTitle">다음의 항목은 선택사항입니다.<p>
+						<p class="input">이름   <input type="text" class="form-control" name="name" placeholder="이름을 입력하세요" maxlength="5"></p>
+						<p class="input">나이   <input type="number" name="age" placeholder="나이를 입력하세요" min="1" max="99" value="20"></p>
+						<p class="input">성별   &nbsp;<input type="radio" name="gender" value="남">남
+								 <input type="radio" name="gender" value="여">여</p>
+					</div>
+					 
+					<div id="regBtns">
+						<input type="submit" value="회원가입" class="btn btn-secondary">
+						<input type="reset" value="초기화" class="btn btn-secondary">
+					</div>
+				</form> 
 		  	</div>
 	  	</section>
 	  	
-	  	<footer id="mainFooter">
-			<!-- mainFooter.jsp 파일 include -->
-	 		<%@ include file="./../common/mainFooter.jsp" %>
-		</footer>
+	  	<footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
 	</body>
 </html>

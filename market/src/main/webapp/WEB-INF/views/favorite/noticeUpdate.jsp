@@ -72,7 +72,7 @@
         	</div>
         	
 		    <br>
-		    <form action="noticeUpdate.favorite" method="post">
+		    <form:form action="noticeUpdate.favorite" method="post">
 			    <input type="hidden" name="pageNum" value="${pageNum}">
 			    <input type="hidden" name="articleNum" value="${noticeContent.articleNum}">
 		        <div class="container">
@@ -96,7 +96,7 @@
 		            <input type="submit" class="btn btn-primary" value="작성완료"/>
 		            <input type="reset" class="btn btn-danger" value="취소"/>
 		        </div>
-	        </form>
+	        </form:form>
 	    </section>
 	
 	    <footer id="mainFooter">

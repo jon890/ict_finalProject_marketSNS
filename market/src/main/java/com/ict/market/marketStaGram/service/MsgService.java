@@ -34,4 +34,6 @@ public interface MsgService {
 	
 	
 	public List<SearchDto> search(String keyword);
+	public List<String> searchResult(String keyword);
+	public List<ImgDto> searchArticle(Model model, List<Integer> articleNums);
 }

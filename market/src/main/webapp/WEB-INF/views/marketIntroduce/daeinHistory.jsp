@@ -4,7 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">	
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/history.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<title>아따시장 - 대인시장 개요</title>
 	</head>
 	
@@ -15,7 +16,8 @@
 		</div>
 		
 		<div class="marketImg">
-			<img src="resources/images/marketIntroduce/대인시장.jpg">
+			<a class="modal" href="resources/images/marketIntroduce/대인시장.jpg">
+			<img src="resources/images/marketIntroduce/대인시장.jpg"></a>
 		</div>
 		
 		<div class="marketSummary ">
@@ -59,4 +61,27 @@
 		</div>
 		
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

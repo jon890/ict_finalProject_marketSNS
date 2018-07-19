@@ -10,10 +10,10 @@
 }
 
 .table {
-	width: 700px;
+	width: 100%;
 	margin: 0 auto;
 }
 
-.table .td01 {
-	width: 30%;
+.table .td02{
+	width:10%;
 }

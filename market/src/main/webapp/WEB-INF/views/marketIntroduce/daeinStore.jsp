@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 		<title>아따시장 - 대인시장 먹을거리</title>
 		<link rel="stylesheet" href="./resources/css/marketIntroduce/store.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -21,7 +22,8 @@
 						<tbody>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/순두부청년.JPG" >
+									<a class="modal" href="./resources/images/marketIntroduce/순두부청년.JPG">
+									<img class="storeimg" src="./resources/images/marketIntroduce/순두부청년.JPG" ></a>
 								</td>
 								<td class="left">
 									<h3>순두부청년</h3>
@@ -36,7 +38,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/1000냥장터국수.JPG" >
+									<a class="modal" href="./resources/images/marketIntroduce/1000냥장터국수.JPG">
+									<img class="storeimg" src="./resources/images/marketIntroduce/1000냥장터국수.JPG" ></a>
 								</td>
 								<td class="left">
 									<h3>1000냥 장터국수</h3>
@@ -52,7 +55,8 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/불꼬챙이.JPG" >
+									<a class="modal" href="./resources/images/marketIntroduce/불꼬챙이.JPG">
+									<img class="storeimg" src="./resources/images/marketIntroduce/불꼬챙이.JPG" ></a>
 								</td>
 								<td class="left">
 									<h3>불꼬챙이</h3>
@@ -67,7 +71,8 @@
 								</td>
 								<tr>
 								<td>
-									<img class="storeimg" src="./resources/images/marketIntroduce/영광식당.jpg" >
+									<a class="modal" href="./resources/images/marketIntroduce/영광식당.jpg">
+									<img class="storeimg" src="./resources/images/marketIntroduce/영광식당.jpg" ></a>
 								</td>
 								<td class="left">
 									<h3>영광식당</h3>
@@ -87,4 +92,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>

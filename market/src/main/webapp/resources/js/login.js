@@ -1,17 +1,16 @@
-$(document).ready(function(){	
-	
+$(document).ready(function(){
+	$("#registerBtn").on("click", function(){
+		$(location).attr('href', './register.main');
+	});
 	$("#loginBtn").click(function(){
 		$.loginFunc();
 	});
-	
 	$("#inputPwd").keydown(function(event){
 		if(event.keyCode == 13){
 			$.loginFunc();
 		}
 	});
-	
 	$.loginFunc = function(){
-		
 		if( $("#inputId").val() == ""){
 			$("#msg").html("아이디를 입력하세요");
 			$("#inputId").focus();

@@ -79,21 +79,23 @@
 					 품목별 보기 <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-					  <li><a href="martCorn.compare">곡류</a></li>
-					  <li><a href="martMeat.compare">육류</a></li>
-					  <li><a href="martFish.compare">어류</a></li>
-					  <li><a href="martFruit.compare">과일</a></li>
-					  <li><a href="martVege.compare">채소</a></li>
-					  <li><a href="martGro.compare">식료품</a></li>
-					  <li><a href="martOil.compare">유류</a></li>
-					  <li><a href="martCleaner.compare">세제</a></li>
+					  <li><a href="martCorn.compare?weekends=${weekends}">곡류</a></li>
+					  <li><a href="martMeat.compare?weekends=${weekends}">육류</a></li>
+					  <li><a href="martFish.compare?weekends=${weekends}">어류</a></li>
+					  <li><a href="martFruit.compare?weekends=${weekends}">과일</a></li>
+					  <li><a href="martVege.compare?weekends=${weekends}">채소</a></li>
+					  <li><a href="martGro.compare?weekends=${weekends}">식료품</a></li>
+					  <li><a href="martOil.compare?weekends=${weekends}">유류</a></li>
+					  <li><a href="martCleaner.compare?weekends=${weekends}">세제</a></li>
 					</ul>
 				</div>
 				<br>
 				<span><c:out value="${weekends.replace('0','월')}"/>주차 가격</span>	
 				<br>
-				<span> ※ 출처: 광주광역시청 홈페이지 참조 </span>
-				
+				<span>※ 출처: 광주광역시청 홈페이지 참조</span>
+				<br>
+				<span><img src="./resources/images/compare/compare_icon.png" id="icon"></span>
+				<br>
 				<table class="table table-striped">
 					<thead>
 					  <tr>
@@ -123,19 +125,6 @@
 			</div>
 		</section>
 			    
-		<footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>
-			
-		<script>	
-			/* $("#miniTitle").text("7월 1주차 가격"); */
-			$(document).ready(function(){
-					
-				$("#aTag").on("click",function(){
-					alert("됐나?");
-					$("#miniTitle").html("6월 3주차 가격");
-				});
-				
-			});
-	
-		</script>		
+		<footer id="mainFooter"><%@ include file="./../common/mainFooter.jsp" %></footer>	
 	</body>
 </html>

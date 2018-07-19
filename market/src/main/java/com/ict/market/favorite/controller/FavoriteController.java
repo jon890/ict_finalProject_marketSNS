@@ -80,7 +80,7 @@ public class FavoriteController {
 	/*글 남길때 포스트 방식으로 입력*/
 	@Transactional
 	@RequestMapping(value="/write.favorite",method=RequestMethod.POST)
-	public String writeForm(FavoriteDto helpArticle,HttpSession session
+	public String write(FavoriteDto helpArticle,HttpSession session
 			,@RequestPart("fname")List<MultipartFile> fname,HttpServletRequest req) {
 		helpArticle.setId((String)session.getAttribute("id"));
 		/* 파일 업로드 경로 */
@@ -173,6 +173,24 @@ public class FavoriteController {
 		String uploadDir = req.getSession().getServletContext().getRealPath("/") + "resources/uploadFiles/";
 		return favoriteService.download(resp,storedFname,originFname,fileLength,uploadDir);
 	}
+	
+	@RequestMapping(value="/commentgetUpdate.favorite",produces = "application/json; charset=utf8")
+	@ResponseBody
+	public CommentDto commentgetUpdate(@RequestParam("commentNum") String commentNum) {
+		logger.info("업데이트페이지 - 접근");
+		logger.info(commentNum);
+		System.out.println(favoriteService.commentgetUpdate(commentNum));
+		return favoriteService.commentgetUpdate(commentNum);
+	}
+	
+	@RequestMapping(value="/updateComment.favorite")
+	public String commentUpdate(CommentDto comment,@RequestParam("pageNum")String pageNum,@RequestParam("fileStatus")int fileStatus){
+		favoriteService.commentUpdate(comment);
+		return "redirect:/content.favorite?articleNum="+comment.getArticleNum()+"&pageNum="+pageNum+"&fileStatus="+fileStatus;
+	}
+	
+	
+	
 	
 	/* ********** 공지사항 게시판 기능 ********** */
 	@RequestMapping(value="/notice.favorite")

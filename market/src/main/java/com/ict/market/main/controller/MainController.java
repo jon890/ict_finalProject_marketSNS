@@ -36,7 +36,11 @@ public class MainController {
 	@RequestMapping(value="/login.main" , method = RequestMethod.GET)
 	public String moveLogin(HttpServletRequest req) {
 		HttpSession session = req.getSession();
-		session.setAttribute("referer", req.getHeader("referer"));
+		if( req.getHeader("referer") == null || req.getHeader("referer").equals("http://localhost:8100/market/register.main") ){
+			session.setAttribute("referer", "http://localhost:8100/market/");
+		} else {
+			session.setAttribute("referer", req.getHeader("referer"));
+		}
 		return "/common/login";
 	}
 		
@@ -73,7 +77,7 @@ public class MainController {
 	@RequestMapping(value="/register.main" , method = RequestMethod.POST)
 	public String register(MarketMemberDto member) {
 		mainService.register(member);
-		return "index";
+		return "redirect:/";
 	}
 	/* ********** 로그인 관련 기능 ********** */
 
@@ -85,4 +89,30 @@ public class MainController {
 		return mainService.registerIdCheck(id);
 	}
 	/* ********** 아이디 중복 체크 ********** */
+	
+	
+	/* ********** 회원 정보 수정 ********** */
+	@RequestMapping(value="/memberUpdateForm.main" , method = RequestMethod.GET)
+	public String memberUpdateForm(@RequestParam String id, Model model) {
+		model.addAttribute("memberUpdate", mainService.getMemberUpdate(id));
+		return "/common/memberUpdate";
+	}
+	
+	@RequestMapping(value="/memberUpdate.main" , method = RequestMethod.POST)
+	public String memberUpdate(MarketMemberDto member, HttpSession session) {
+		member.setId((String)session.getAttribute("id"));
+		mainService.memberUpdate(member);
+		return "redirect:/";
+	}
+	/* ********** 회원 정보 수정 ********** */
+	
+	
+	/* ********** 회원 탈퇴 ********** */
+	@RequestMapping(value="/memberDelete.main" , method = RequestMethod.GET)
+	public String memberDelete(@RequestParam String id, HttpSession session) {
+		session.invalidate();
+		mainService.memberDelete(id);
+		return "redirect:/";
+	}
+	/* ********** 회원 탈퇴 ********** */
 }

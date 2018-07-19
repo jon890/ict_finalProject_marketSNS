@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ict.market.compare.service.CompareService;
@@ -34,10 +33,10 @@ public class CompareController {
 	@RequestMapping(value="/mart.compare")
 	public String martPrice(Model model,@RequestParam("weekends")String weekends){
 		model.addAttribute("weekends",weekends);
-		compareService.martPrice(model);
+		compareService.martPrice(model,weekends);
 		return "martPrice";
 	}
-	@RequestMapping(value="/martAgo.compare",method=RequestMethod.POST)
+	@RequestMapping(value="/martAgo.compare")
 	public String martAgo(Model model,@RequestParam("weekends")String weekends){
 		model.addAttribute("weekends",weekends);
 		compareService.martAgo(model,weekends);
@@ -47,7 +46,7 @@ public class CompareController {
 	@RequestMapping(value="/compare.compare")
 	public String comparePrice(Model model,@RequestParam("weekends")String weekends){
 		model.addAttribute("weekends",weekends);
-		compareService.comparePrice(model);
+		compareService.comparePrice(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareAgo.compare")
@@ -59,149 +58,173 @@ public class CompareController {
 	
 	/*시장 품목별 출력 컨트롤러*/
 	@RequestMapping(value="/marketCorn.compare")
-	public String marketCorn(Model model) {
+	public String marketCorn(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketCorn진입");
-		compareService.marketCorn(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketCorn(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketMeat.compare")
-	public String marketMeat(Model model) {
+	public String marketMeat(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketMeat진입");
-		compareService.marketMeat(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketMeat(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketFish.compare")
-	public String marketFish(Model model) {
+	public String marketFish(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketFish진입");
-		compareService.marketFish(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketFish(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketFruit.compare")
-	public String marketFruit(Model model) {
+	public String marketFruit(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketFruit진입");
-		compareService.marketFruit(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketFruit(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketVege.compare")
-	public String marketVege(Model model) {
+	public String marketVege(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketVege진입");
-		compareService.marketVege(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketVege(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketGro.compare")
-	public String marketGro(Model model) {
+	public String marketGro(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketGro진입");
-		compareService.marketGro(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketGro(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketOil.compare")
-	public String marketOil(Model model) {
+	public String marketOil(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketOil진입");
-		compareService.marketOil(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketOil(model,weekends);
 		return "marketPrice";
 	}
 	@RequestMapping(value="/marketCleaner.compare")
-	public String marketCleaner(Model model) {
+	public String marketCleaner(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketCleaner진입");
-		compareService.marketCleaner(model);
+		model.addAttribute("weekends",weekends);
+		compareService.marketCleaner(model,weekends);
 		return "marketPrice";
 	}
 	/*마트 품목별 출력 컨트롤러*/
 	@RequestMapping(value="/martCorn.compare")
-	public String martCorn(Model model) {
+	public String martCorn(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("martCorn진입");
-		compareService.martCorn(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martCorn(model,weekends);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martMeat.compare")
-	public String martMeat(Model model) {
+	public String martMeat(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("martMeat진입");
-		compareService.martMeat(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martMeat(model,weekends);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martFish.compare")
-	public String martFish(Model model) {
+	public String martFish(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("markFish진입");
-		compareService.martFish(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martFish(model,weekends);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martFruit.compare")
-	public String martFruit(Model model) {
+	public String martFruit(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("marketFruit진입");
-		compareService.martFruit(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martFruit(model,weekends);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martVege.compare")
-	public String martVege(Model model) {
+	public String martVege(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("martVege진입");
-		compareService.martVege(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martVege(model,weekends);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martGro.compare")
-	public String martGro(Model model) {
+	public String martGro(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("martGro진입");
-		compareService.martGro(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martGro(model,weekends);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martOil.compare")
-	public String martOil(Model model) {
+	public String martOil(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("martOil진입");
-		compareService.martOil(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martOil(model,weekends);
 		return "martPrice";
 	}
 	@RequestMapping(value="/martCleaner.compare")
-	public String martCleaner(Model model) {
+	public String martCleaner(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("martCleaner진입");
-		compareService.martCleaner(model);
+		model.addAttribute("weekends",weekends);
+		compareService.martCleaner(model,weekends);
 		return "martPrice";
 	}
 	/*---------------시장 vs 마트 품목별 출력 컨트롤러-------------*/
 	@RequestMapping(value="/compareCorn.compare")
-	public String compareCorn(Model model) {
+	public String compareCorn(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareCorn진입");
-		compareService.compareCorn(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareCorn(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareMeat.compare")
-	public String compareMeat(Model model) {
+	public String compareMeat(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareMeat진입");
-		compareService.compareMeat(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareMeat(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareFish.compare")
-	public String compareFish(Model model) {
+	public String compareFish(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareFish진입");
-		compareService.compareFish(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareFish(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareFruit.compare")
-	public String compareFruit(Model model) {
+	public String compareFruit(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareFruit진입");
-		compareService.compareFruit(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareFruit(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareVege.compare")
-	public String compareVege(Model model) {
+	public String compareVege(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareVege진입");
-		compareService.compareVege(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareVege(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareGro.compare")
-	public String compareGro(Model model) {
+	public String compareGro(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareGro진입");
-		compareService.compareGro(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareGro(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareOil.compare")
-	public String compareOil(Model model) {
+	public String compareOil(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareOil진입");
-		compareService.compareOil(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareOil(model,weekends);
 		return "comparePrice";
 	}
 	@RequestMapping(value="/compareCleaner.compare")
-	public String compareCleaner(Model model) {
+	public String compareCleaner(Model model,@RequestParam("weekends")String weekends) {
 		logger.info("compareCleaner진입");
-		compareService.compareCleaner(model);
+		model.addAttribute("weekends",weekends);
+		compareService.compareCleaner(model,weekends);
 		return "comparePrice";
 	}
 	

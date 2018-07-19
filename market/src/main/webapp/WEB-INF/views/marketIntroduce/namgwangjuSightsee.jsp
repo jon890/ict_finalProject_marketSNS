@@ -5,7 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>아따시장 - 남광주시장 볼거리</title>
-		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">
+		<link rel="stylesheet" href="./resources/css/marketIntroduce/sightsee.css">	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -21,10 +22,12 @@
 						<tbody>
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/양림동.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/양림동.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/양림동.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/양림동선교사.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/양림동선교사.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/양림동선교사.jpg"></a>
 								</td>
 								<td>
 										<h3>양림동문화거리</h3>
@@ -37,10 +40,12 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/아시아문화전당_약도.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/아시아문화전당_약도.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/아시아문화전당_약도.jpg"></a>
 								</td>
 								<td>
-									<img class="sightmg" src="resources/images/marketIntroduce/아시아문화전당.jpg">
+									<a class="modal" href="resources/images/marketIntroduce/아시아문화전당.jpg">
+									<img class="sightmg" src="resources/images/marketIntroduce/아시아문화전당.jpg"></a>
 								</td>
 								<td>
 										<h3>국립아시아문화전당</h3>
@@ -55,4 +60,27 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glaryLayer").click(function(){
+				$(this).hide()
+				$("#overLayer").hide();
+			});
+			
+			$("#overLayer").click(function(){
+				$(this).hide()
+				$("#glayLayer").hide();
+			});
+			
+			$("a.modal").click(function(){
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+$(this).attr("href")+"'/>");
+				return false;
+			});
+			
+		
+		});
+		</script>		
 </html>
